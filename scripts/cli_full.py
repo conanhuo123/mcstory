@@ -78,7 +78,8 @@ def main(inp):
     for i, ch in enumerate(chars):
         cmd = SUMMON_MAP.get(ch)
         if cmd:
-            x, y, z = origin[0] + (i-1)*2, origin[1] + 1, origin[2] + 2
+            # v4.3 (陆远 21:21): 角色站在 build 前方台阶, 不被 quartz/iron_bars 遮挡, viewer 可见
+            x, y, z = origin[0] + (i-1)*2, origin[1] + 1, origin[2] + 5
             char_summons.append(f"{cmd} {x} {y} {z}")
     # v0.3: 镜头切换表 (5 shot × 7 字段: t, cam_x/y/z, look_x/y/z)
     # camera 类型 → 相对 origin 偏移
@@ -161,7 +162,11 @@ cam.once('spawn', () => {{
       // v0.3: 镜头切换 (5 shot 5 个 camera 位置), shot.camera 决定距离/角度
       const cameraMoves = {json.dumps(camera_moves)};
       // v0.6: 1 个固定 wide camera + spectator
+      // v4.2 撤回 follow, 改 wide camera fixed (前面验证 paper v0.6 baseline 看到 build/character)
       d.chat(`/gamemode spectator camera`);
+      setInterval(() => {{
+        d.chat(`/execute at @e[type=villager,limit=1,sort=nearest] run tp camera ~3 ~2 ~3 facing entity @e[type=villager,limit=1,sort=nearest]`);
+      }}, 2000);  // 每 2s 重新 tp + facing, 跟随 villager 动作
       cameraMoves.forEach(([t, x, y, z, yaw, pitch]) => {{
         setTimeout(() => {{
           d.chat(`/tp camera ${{x}} ${{y}} ${{z}} ${{yaw}} ${{pitch}}`);
