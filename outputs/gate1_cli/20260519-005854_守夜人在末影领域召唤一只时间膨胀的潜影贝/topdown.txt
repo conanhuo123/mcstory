@@ -1,0 +1,42 @@
+# 守夜人在末影领域召唤一只时间膨胀的潜影贝 top-down (build_cmds=14)  origin=[-60, 79, -190]
+
+                             
+                             
+                             
+                             
+                             
+                             
+      eeeeeeeeeeeeeeeee      
+      eeeeeeeeeeeeeeeee      
+      ee/eeeeeeeeeee/ee      
+      ee/eeeeeeeeeee/ee      
+      ee/eOOOOOOOOOe/ee      
+      ee/eOOOOROOOOe/ee      
+      ee/eOO?????OOe/ee      
+      ee/eOO?????OOe/ee      
+      ee/eO???S???Oe/ee      
+      ee/eOO?????OOe/ee      
+      ee/eOO?????OOe/ee      
+      ee/eOOOOROOOOe/ee      
+      ee/eOOOOOOOOOe/ee      
+      ee/eeeee?eeeee/ee      
+      ee/eeeeeTeeeee/ee      
+      eeeeeeeeeeeeeeeee      
+      eeeeeeeeeeeeeeeee      
+                             
+                             
+                             
+                             
+                             
+                             
+
+# legend:
+#   ? = amethyst_block
+#   ? = crying_obsidian
+#   e = end_stone
+#   / = iron_bars
+#   T = oak_sign
+#   O = obsidian
+#   ? = purple_glazed_terracotta
+#   R = redstone_block
+#   S = shulker_box

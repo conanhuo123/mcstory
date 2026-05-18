@@ -1,0 +1,175 @@
+{
+  "scene": "ender_realm",
+  "characters": [
+    "warden",
+    "shulker",
+    "enderman"
+  ],
+  "build_cmds": [
+    "fill -68 79 -198 -52 79 -182 minecraft:end_stone",
+    "fill -64 80 -194 -56 80 -186 minecraft:obsidian",
+    "fill -62 81 -192 -58 81 -188 minecraft:crying_obsidian",
+    "setblock -60 82 -190 minecraft:end_rod",
+    "setblock -60 80 -185 minecraft:purple_glazed_terracotta",
+    "setblock -63 80 -190 minecraft:amethyst_block",
+    "setblock -57 80 -190 minecraft:amethyst_block",
+    "setblock -60 80 -193 minecraft:redstone_block",
+    "setblock -60 80 -187 minecraft:redstone_block",
+    "fill -66 80 -196 -66 83 -184 minecraft:iron_bars",
+    "fill -54 80 -196 -54 83 -184 minecraft:iron_bars",
+    "setblock -60 81 -184 minecraft:oak_sign",
+    "setblock -60 83 -190 minecraft:shulker_box",
+    "fill -61 80 -191 -59 80 -189 minecraft:purple_stained_glass"
+  ],
+  "scene_origin": [
+    -60,
+    79,
+    -190
+  ],
+  "character_spawns": [
+    {
+      "actor": "warden",
+      "xyz": [
+        -60,
+        80,
+        -196
+      ]
+    },
+    {
+      "actor": "enderman",
+      "xyz": [
+        -64,
+        80,
+        -186
+      ]
+    },
+    {
+      "actor": "shulker",
+      "xyz": [
+        -60,
+        83,
+        -190
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "beat": "3s怪事",
+      "start": 0,
+      "duration": 3,
+      "camera": "wide",
+      "scene_action": "末影领域突然进入黑夜，紫色祭坛像钟摆一样闪烁；守夜人warden站岗时，头顶的潜影贝盒提前打开一秒又合上。",
+      "actions": [
+        {
+          "action_id": "time_night",
+          "actor": "scene"
+        },
+        {
+          "action_id": "scene_dark",
+          "actor": "scene"
+        },
+        {
+          "action_id": "scene_glow_purple",
+          "actor": "shulker"
+        }
+      ],
+      "dialogue": [
+        {
+          "actor": "warden",
+          "text": "谁把时间敲响了？"
+        }
+      ],
+      "subtitle": "第0秒，祭坛先动了"
+    },
+    {
+      "beat": "15s追查",
+      "start": 3,
+      "duration": 15,
+      "camera": "medium",
+      "scene_action": "warden沿着红石块和紫玻璃调查，enderman站在告示牌旁发抖；告示牌显字：别在第13秒召唤它。warden不信，举起末影之声准备召唤。",
+      "actions": [
+        {
+          "action_id": "entity_glow_red",
+          "actor": "enderman"
+        },
+        {
+          "action_id": "reveal_sign",
+          "actor": "scene"
+        },
+        {
+          "action_id": "setblock_redstone",
+          "actor": "scene"
+        }
+      ],
+      "dialogue": [
+        {
+          "actor": "enderman",
+          "text": "我刚才看见你……从未来走出来。"
+        },
+        {
+          "actor": "warden",
+          "text": "守夜人只信脚步声，不信预言。"
+        }
+      ],
+      "subtitle": "追查时间裂缝"
+    },
+    {
+      "beat": "8s误导",
+      "start": 18,
+      "duration": 8,
+      "camera": "closeup_object",
+      "scene_action": "第13秒的回声在祭坛上炸开，像是召唤失败；enderman被紫光吓退，观众以为祭坛只是在制造幻觉。warden把手按在潜影贝盒上，雷声落下。",
+      "actions": [
+        {
+          "action_id": "summon_lightning",
+          "actor": "warden"
+        },
+        {
+          "action_id": "explosion_fake",
+          "actor": "scene"
+        },
+        {
+          "action_id": "scene_glow_purple",
+          "actor": "scene"
+        }
+      ],
+      "dialogue": [
+        {
+          "actor": "warden",
+          "text": "出来吧，时间膨胀的潜影贝！"
+        }
+      ],
+      "subtitle": "召唤失败？"
+    },
+    {
+      "beat": "4s反转",
+      "start": 26,
+      "duration": 4,
+      "camera": "freeze_zoom",
+      "scene_action": "画面定格拉近：潜影贝早已在warden背后张开，吐出的不是子弹，而是一块写着30秒后见的告示牌；warden发现自己刚才调查的脚印全是自己的未来脚印。",
+      "actions": [
+        {
+          "action_id": "sign_reveal",
+          "actor": "shulker"
+        },
+        {
+          "action_id": "scene_glow_purple",
+          "actor": "shulker"
+        },
+        {
+          "action_id": "freeze_zoom",
+          "actor": "camera"
+        }
+      ],
+      "dialogue": [
+        {
+          "actor": "shulker",
+          "text": "你不是召唤了我，是被我召唤到现在。"
+        }
+      ],
+      "subtitle": "反转：守夜人来自未来"
+    }
+  ],
+  "title": "守夜人召唤时间潜影贝",
+  "subtitle_color": "purple"
+}
