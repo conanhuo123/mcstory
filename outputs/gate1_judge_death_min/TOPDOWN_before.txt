@@ -1,0 +1,36 @@
+# before top-down (build_cmds=8)  origin=[-40, 79, -240]
+
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+       ggggggggggggggg       
+       ggggggggggggggg       
+       ggggggggggggggg       
+       ggggggggggggggg       
+       ggggggggggggggg       
+       ggggg?????ggggg       
+       ggggg?????ggggg       
+       ggggg?????ggggg       
+       ggggg?????ggggg       
+       ggggg?????ggggg       
+       gggggggTggggggg       
+       ggggggggggggggg       
+       ggggggggggggggg       
+       ggggggggggggggg       
+       ggggggggggggggg       
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+
+# legend:
+#   g = grass_block
+#   T = oak_sign
+#   ? = oak_slab

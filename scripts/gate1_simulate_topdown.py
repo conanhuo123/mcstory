@@ -180,16 +180,30 @@ def render_png(world, origin, half=14, y_top=92, y_bottom=78, out='topdown.png',
         'evoker': (160, 140, 120),
     }
     if spawns:
+        import math
         for sp in spawns:
             actor = sp.get('actor','')
             x, y, z = sp.get('xyz',[0,0,0])
+            yaw = sp.get('yaw', 0)
+            pitch = sp.get('pitch', 0)  # 0=平视, +45=低头, -45=抬头
             dx, dz = x - ox, z - oz
             if -half <= dx <= half and -half <= dz <= half:
                 px_x = pad + (dx+half)*px + px//2
                 px_y = pad + (dz+half)*px + px//2
                 color = CHAR_COLOR.get(actor, (220,80,80))
                 d.ellipse([px_x-8, px_y-8, px_x+8, px_y+8], fill=color, outline=(0,0,0), width=2)
-                d.text((px_x+10, px_y-7), actor[:10], fill=(20,20,20), font=f)
+                d.text((px_x+10, px_y-7), f"{actor[:10]} p={pitch}°", fill=(20,20,20), font=f)
+                # 朝向箭头: yaw 在 xy 平面, pitch=45 显示 ↓ 标志
+                yaw_rad = math.radians(yaw - 90)  # MC yaw 0 朝南
+                arrow_len = 14
+                tip_x = px_x + arrow_len * math.cos(yaw_rad)
+                tip_y = px_y + arrow_len * math.sin(yaw_rad)
+                d.line([px_x, px_y, tip_x, tip_y], fill=(0,0,0), width=2)
+                # pitch 指示: |pitch|>20 加额外箭头 ↓ 或 ↑
+                if pitch > 20:
+                    d.text((px_x-3, px_y+10), "↓", fill=(220,30,30), font=f_big)
+                elif pitch < -20:
+                    d.text((px_x-3, px_y-20), "↑", fill=(30,180,30), font=f_big)
     # 叠加 shots (关 3 视觉级): 简单显示每个 shot 的 camera 偏移点
     if shots:
         for i, s in enumerate(shots):

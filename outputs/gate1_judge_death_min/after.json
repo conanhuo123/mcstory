@@ -1,0 +1,40 @@
+{
+  "scene": "judge_death",
+  "scene_origin": [
+    -40,
+    79,
+    -240
+  ],
+  "build_cmds": [
+    "fill -47 79 -247 -33 79 -233 grass_block",
+    "fill -42 80 -242 -38 80 -238 polished_blackstone",
+    "fill -42 81 -242 -38 83 -242 iron_bars",
+    "fill -42 81 -238 -38 83 -238 iron_bars",
+    "fill -42 81 -242 -42 83 -238 iron_bars",
+    "fill -38 81 -242 -38 83 -238 iron_bars",
+    "fill -42 84 -242 -38 84 -238 oak_slab",
+    "setblock -40 80 -237 oak_sign"
+  ],
+  "character_spawns": [
+    {
+      "actor": "villager",
+      "xyz": [
+        -40,
+        81,
+        -240
+      ],
+      "yaw": 180,
+      "pitch": 45
+    },
+    {
+      "actor": "steve",
+      "xyz": [
+        -40,
+        80,
+        -236
+      ],
+      "yaw": 0,
+      "pitch": 0
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "ts": "20260519-022807",
+  "origin": [
+    -40,
+    79,
+    -240
+  ],
+  "room": {
+    "pass": 7,
+    "total": 7
+  },
+  "cast": {
+    "pass": 3,
+    "total": 6
+  },
+  "action": {
+    "pass": true,
+    "rot_t0": "继任者 has the following entity data: [0.0f, 0.0f]",
+    "rot_t1": "继任者 has the following entity data: [0.0f, 45.0f]",
+    "pitch_now": 45.0
+  },
+  "fails": [
+    {
+      "label": "cast_fail: villager 在牢笼附近",
+      "detail": "Test failed"
+    },
+    {
+      "label": "cast_fail: zombie 在附近",
+      "detail": "Test failed"
+    },
+    {
+      "label": "cast_fail: item_frame 存在",
+      "detail": "Test failed"
+    }
+  ]
+}
