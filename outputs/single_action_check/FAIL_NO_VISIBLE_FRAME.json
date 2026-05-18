@@ -1,0 +1,46 @@
+{
+  "ts": "2026-05-19T03:40:00+08:00",
+  "verdict_received": [
+    "苏白 03:38:59 — armor_stand 只能叫'低头动作替身', 不能叫村民低头",
+    "周朗 03:38:59 — armor_stand 替代村民只能算'姿态控制', 不能算'村民低头'",
+    "赵雪 03:39:01 — visible_check 超时或无帧, 必须落 FAIL_NO_VISIBLE_FRAME",
+    "沈砚 03:39:18 — 下一跳只收 single_action_visible_check 前后帧; 没可见证据不算过关"
+  ],
+  "fail_id": "FAIL_NO_VISIBLE_FRAME",
+  "三项实报": {
+    "村民低头": {
+      "机器": "PASS (RCON Rotation [0,0]→[0,45])",
+      "真实帧": "FAIL — PIL sprite 是工程渲染不是真 MC 帧",
+      "状态": "未完全过关"
+    },
+    "玩家举斧": {
+      "机器": "PASS (ArmorStand Pose.RightArm 0→-90 + HandItems iron_axe)",
+      "真实帧": "FAIL — 同上",
+      "限定": "陆远 verdict: ArmorStand 只算'姿态控制', 不能替代真 villager/steve",
+      "状态": "未完全过关"
+    },
+    "镜头看清": {
+      "机器": "N/A",
+      "真实帧": "FAIL_NO_VISIBLE_FRAME",
+      "状态": "未开始"
+    }
+  },
+  "可见帧采集硬阻塞根因": {
+    "1": "paper RCON `list` 返回 0 players 即使 mineflayer cam 在线 — paper 把 fake client 当 ghost 不注册为 player entity (验证过 mineflayer 长连 + RCON list/data get entity @a 全空)",
+    "2": "因此 paper 端无法 /tp @a[name=cam] — RCON 'No entity was found' 反复复现",
+    "3": "prismarine-viewer + puppeteer 路径之前生成的截图 md5 identical = chunk 缓存复用, 无实时刷",
+    "4": "macOS 装 Minecraft Java Edition 需 Mojang 账号 — 4 类必须老板事件 (2FA / 大额付费 / 系统弹窗 / 机器断电)"
+  },
+  "真路径": [
+    "等老板回家 (5 天内) ReplayMod 客户端 GUI batch render 11 个已录 .mcpr 文件 (fabric_server/recordings/chunks/) → 高质 mp4",
+    "或老板装 minecraft 客户端登录后我远程操控 + screen capture",
+    "或换 Fabric 端 (port 25566) + 真客户端连接 — Fabric 不验证 online-mode 严格"
+  ],
+  "下一跳": "等 verdict — (A) 接受 PIL sprite 作 deterministic 视觉级 mock + FAIL log 沉淀; (B) 等真实帧, 关 3 暂搁; (C) 老板远程协助装客户端",
+  "artifacts": {
+    "machine_pass_summary": "outputs/single_action_check/20260519-030232_summary.json",
+    "sprite_lowhead": "outputs/single_action_check/SPRITE_lowhead_compare.png (deterministic PIL, 不是真 MC 帧)",
+    "sprite_swing": "outputs/single_action_check/SPRITE_swing_compare.png (deterministic PIL, 不是真 MC 帧)",
+    "fail_log": "outputs/single_action_check/FAIL_NO_VISIBLE_FRAME.json (本文件)"
+  }
+}
