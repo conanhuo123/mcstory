@@ -104,23 +104,42 @@ def main(inp):
     yaw = round(math.degrees(math.atan2(-dx, dz)), 1)
     pitch = round(math.degrees(math.atan2(-dy, math.sqrt(dx*dx + dz*dz))), 1)
     camera_moves = [[0, cx, cy, cz, yaw, pitch]]
-    # v0.6: 角色动作时间表 (根据 shots 生成)
-    # villager 默认在 (origin+(-1, 1, 2)), 5 shot:
-    #   t=0 牢笼里低头, t=3 tp 到处决台中央 (押上来), t=6 抬头 (求饶), t=9 不变, t=12 setblock 反转牌
+    # v5.3 关 3 增强 (老板 22:38 拍板): 用 GPT shot.actions 翻成 MC 命令, fallback hardcoded
     char_actions = []
-    if "villager" in chars:
+    for shot in sc.get("shots", []):
+        t = shot.get("t", [0,3])[0] if isinstance(shot.get("t"), list) else shot.get("start_sec", 0)
+        for a in (shot.get("actions") or []):
+            actor = a.get("actor","villager")
+            aid = a.get("action_id") or a.get("action","")
+            tx, ty, tz = a.get("to_xyz", [origin[0], origin[1]+1, origin[2]])
+            # 简单 action_id → command 映射
+            if "kneel" in aid or "look_up" in aid or "low" in aid:
+                char_actions.append([t, f"/tp @e[type={actor},limit=1,sort=nearest] ~ ~ ~ 0 -30"])
+            elif "look_down" in aid or "head_down" in aid:
+                char_actions.append([t, f"/tp @e[type={actor},limit=1,sort=nearest] ~ ~ ~ 0 30"])
+            elif "shake" in aid:
+                char_actions.append([t, f"/tp @e[type={actor},limit=1,sort=nearest] ~ ~ ~ -45 0"])
+            elif "glow" in aid:
+                char_actions.append([t, f"/effect give @e[type={actor},limit=1,sort=nearest] glowing 5 0 true"])
+            elif "walk" in aid or "move" in aid:
+                char_actions.append([t, f"/tp @e[type={actor},limit=1,sort=nearest] {tx} {ty} {tz}"])
+            elif "tp" in aid:
+                char_actions.append([t, f"/tp @e[type={actor},limit=1,sort=nearest] {tx} {ty} {tz}"])
+    # fallback villager kneel + reverse sign 如 GPT 没 actions
+    if not char_actions and "villager" in chars:
         vx, vy, vz = origin[0]-1, origin[1]+1, origin[2]+2
-        ctr_x, ctr_y, ctr_z = origin[0], origin[1]+1, origin[2]   # 处决台中央
+        ctr_x, ctr_y, ctr_z = origin[0], origin[1]+1, origin[2]
         char_actions += [
-            [3, f"/tp @e[type=villager,limit=1,sort=nearest,x={vx},y={vy},z={vz}] {ctr_x} {ctr_y} {ctr_z}"],
-            [6, f"/tp @e[type=villager,limit=1,sort=nearest,x={ctr_x},y={ctr_y},z={ctr_z}] {ctr_x} {ctr_y} {ctr_z} 0 -30"],   # 抬头
-            [9, f"/effect give @e[type=villager,limit=1,sort=nearest,x={ctr_x},y={ctr_y},z={ctr_z}] glowing 5 0 true"],
+            [3, f"/tp @e[type=villager,limit=1,sort=nearest] {ctr_x} {ctr_y} {ctr_z}"],
+            [6, f"/tp @e[type=villager,limit=1,sort=nearest] {ctr_x} {ctr_y} {ctr_z} 0 -30"],
+            [9, f"/effect give @e[type=villager,limit=1,sort=nearest] glowing 5 0 true"],
         ]
-    # 反转牌: shot5 把旧牌从空 → 写 "上一任服主"
+    # 反转牌 (无论 GPT 是否给, 都加 shot 末尾 setblock sign)
     sign_x, sign_y, sign_z = origin[0]+4, origin[1]+1, origin[2]-2
-    char_actions += [
-        [12, f"/setblock {sign_x} {sign_y} {sign_z} oak_sign[rotation=8]{{front_text:{{messages:['\"上一任服主\"','\"villager_42\"','\"\"','\"\"']}}}}"]
-    ]
+    twist_text = sc.get("twist", "反转")[:15]
+    char_actions.append(
+        [12, f"/setblock {sign_x} {sign_y} {sign_z} oak_sign[rotation=8]{{front_text:{{messages:['\"{twist_text}\"','\"\"','\"\"','\"\"']}}}}"]
+    )
     
     viewer_js = f"""const mineflayer = require('mineflayer');
 const {{ Vec3 }} = require('vec3');
