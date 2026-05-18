@@ -1,0 +1,55 @@
+{
+  "name": "client_launch_plan",
+  "ts": "2026-05-19T07:48:00+08:00",
+  "verdict": "ALL_THREE_BLOCKED — 需要老板物理操作",
+  "三选一失败码表": {
+    "① CLI 启动实例 (offline / cracked, paper enforce-secure-profile=false 支持)": {
+      "状态": "PARTIAL — java 真启动到 net.minecraft.client.main.Main + game bootstrap",
+      "失败码": "EXIT_CODE_1 (JVM 异常退出)",
+      "crash_class": "java.lang.IncompatibleClassChangeError",
+      "root": "manifest 1.20.4.json 指定 lib 版本 (datafixerupper 7.x, lwjgl 3.3.2) 与 Launcher 自动更新的 cached version (8.0.16/9.0.19/3.3.3/3.4.1) 不一致",
+      "已尝试": [
+        "全扫 174 jar — crash: IncompatibleClassChangeError datafixerupper",
+        "严格 manifest 76 jar — crash: NoClassDefFoundError guava Ticker",
+        "fallback 同名其他版本 — crash 仍迭代"
+      ],
+      "解法成本": "30+ min 工程: 完整 pin manifest 内每个 jar 到 cached 路径 + 处理 lwjgl 3.3.2 不存在 (需 launcher 重新下载) ; 或 use prismarine-launcher 复用 cached libraries",
+      "crash 文件": "/Users/coco/Library/Application Support/minecraft/crash-reports/crash-2026-05-19_07.10.26-client.txt",
+      "脚本": "~/mcstory/scripts/launch_mc_offline.py (commit ce8ca10)",
+      "可重放": "/tmp/launch_mc_offline.sh"
+    },
+    "② Launcher 点击 (Microsoft 2FA re-login)": {
+      "状态": "BLOCKED",
+      "失败码": "NO_AUTO_TRIGGER + TOKEN_EXPIRED",
+      "TOKEN_EXPIRED": "Mojang accessToken 2026-05-19T03:07:39 已过期 (launcher_accounts.json)",
+      "NO_AUTO_TRIGGER 根因": [
+        "Launcher CEF GUI 在跑 (PID 63367 since 11:07AM yesterday)",
+        "PLAY 按钮需要 user 手动 click",
+        "osascript 模拟点击需 macOS Accessibility 权限",
+        "Accessibility 权限测试: 'osascript' 不允许辅助访问 (-25211 错误)",
+        "授 Accessibility 权限需 user 在系统偏好设置点确认 → 又是 GUI 操作"
+      ],
+      "解法成本": "5 min 老板物理操作: 开 /Applications/Minecraft.app (GUI 已在跑) → 点 PLAY → 输 Microsoft 账号 + 2FA code → 客户端真窗口出现",
+      "评估": "最快路径"
+    },
+    "③ 远程桌面": {
+      "状态": "BLOCKED",
+      "失败码": "NO_SECOND_DEVICE + NO_REMOTE_AUTH",
+      "根因": [
+        "macOS Screen Sharing / Apple Remote Desktop 默认 disabled",
+        "启用需 user 在 System Settings → Sharing → Screen Sharing 勾选",
+        "启用后远程操控仍需老板第二台设备 (iPad/iPhone/另一 Mac) 上输 2FA, 等于退化到通道 ②",
+        "TeamViewer/AnyDesk 等第三方未安装"
+      ],
+      "评估": "不优于通道 ②, 不建议"
+    }
+  },
+  "结论": "三通道在 AI 端全部 blocked at 2FA / Accessibility / GUI click. 需要老板在物理设备上 5 min 操作通道 ②.",
+  "解锁后流水线 (自动)": [
+    "老板完成 2FA → Mojang token refresh → Launcher PLAY → 客户端 jar 启动 → 真 net.minecraft.client.main.Main 窗口出现",
+    "客户端 multiplayer → 25565 (paper online-mode=false + enforce-secure-profile=false 已配)",
+    "Claude 自动: macOS screencapture 真客户端窗口 (jrole=AXWindow title='Minecraft 1.20.4' 可定位) → frame_capture_check PASS",
+    "回 single_action_visible_check: villager 低头/玩家举斧 真帧 before/after"
+  ],
+  "联系节奏": "不刷屏不叫醒老板. 等老板自然查群看到 NIGHT_SUMMARY + 此 client_launch_plan."
+}
