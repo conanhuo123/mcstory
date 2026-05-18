@@ -3,24 +3,504 @@
   "title": "mcstory Scene Library Schema v0.1",
   "description": "场景资产库 — 4 库 + 1 闭环 中的第 3 库.",
   "type": "object",
-  "required": ["id", "size", "origin", "build_cmds"],
+  "required": [
+    "id",
+    "size",
+    "origin",
+    "build_cmds"
+  ],
   "properties": {
-    "id": {"type": "string", "description": "scene id e.g. courtroom"},
-    "name": {"type": "string"},
-    "description": {"type": "string"},
-    "size": {"type": "array", "items": {"type": "integer"}, "minItems": 3, "maxItems": 3},
-    "origin": {"type": "array", "items": {"type": "number"}, "minItems": 3, "maxItems": 3},
-    "biome": {"type": "string", "description": "preferred biome e.g. plains/flat"},
+    "id": {
+      "type": "string",
+      "description": "scene id e.g. courtroom"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "size": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "origin": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "biome": {
+      "type": "string",
+      "description": "preferred biome e.g. plains/flat"
+    },
     "build_cmds": {
       "type": "array",
-      "items": {"type": "string"},
+      "items": {
+        "type": "string"
+      },
       "description": "MC commands to build (in execution order)"
     },
-    "default_camera": {"type": "string", "enum": ["wide", "medium", "closeup_face", "closeup_object", "freeze_zoom"]},
+    "default_camera": {
+      "type": "string",
+      "enum": [
+        "wide",
+        "medium",
+        "closeup_face",
+        "closeup_object",
+        "freeze_zoom"
+      ]
+    },
     "tags": {
       "type": "array",
-      "items": {"type": "string"},
+      "items": {
+        "type": "string"
+      },
       "description": "semantic tags e.g. ['indoor', 'judgement', 'medieval']"
     }
-  }
+  },
+  "examples": [
+    {
+      "id": "courtroom",
+      "name": "法庭",
+      "origin": [
+        -60,
+        79,
+        -190
+      ],
+      "biome": "plains",
+      "build_cmds": [
+        "fill -64 79 -194 -56 79 -190 polished_blackstone",
+        "fill -64 80 -194 -64 82 -190 quartz_pillar",
+        "setblock -60 81 -191 oak_sign{front_text:{messages:['\"判决\"','\"\"','\"\"','\"\"']}}"
+      ],
+      "default_camera": "wide",
+      "tags": [
+        "indoor",
+        "judgement",
+        "medieval"
+      ]
+    },
+    {
+      "id": "volcano",
+      "name": "火山口",
+      "origin": [
+        -60,
+        79,
+        -190
+      ],
+      "biome": "basalt_deltas",
+      "build_cmds": [
+        "fill -68 79 -198 -52 79 -182 basalt",
+        "fill -66 80 -196 -54 82 -184 blackstone",
+        "fill -63 80 -193 -57 80 -187 lava",
+        "fill -61 82 -191 -59 82 -189 obsidian",
+        "setblock -60 83 -190 dragon_egg"
+      ],
+      "default_camera": "wide",
+      "tags": [
+        "outdoor",
+        "danger",
+        "climax"
+      ]
+    },
+    {
+      "id": "underwater",
+      "name": "海底",
+      "origin": [
+        -60,
+        79,
+        -190
+      ],
+      "biome": "deep_ocean",
+      "build_cmds": [
+        "fill -68 79 -198 -52 79 -182 prismarine",
+        "fill -64 80 -194 -56 84 -186 water",
+        "setblock -60 80 -190 sea_lantern",
+        "setblock -60 81 -190 conduit"
+      ],
+      "default_camera": "medium",
+      "tags": [
+        "underwater",
+        "ocean",
+        "mystery"
+      ]
+    },
+    {
+      "id": "end_island",
+      "name": "末地浮岛",
+      "origin": [
+        -60,
+        79,
+        -190
+      ],
+      "biome": "the_end",
+      "build_cmds": [
+        "fill -68 79 -198 -52 79 -182 end_stone",
+        "fill -66 80 -196 -54 82 -184 purpur_block",
+        "setblock -60 83 -190 end_portal_frame{Eye:true}",
+        "setblock -60 84 -190 dragon_head"
+      ],
+      "default_camera": "wide",
+      "tags": [
+        "end",
+        "alien",
+        "cosmic"
+      ]
+    },
+    {
+      "id": "castle_prison",
+      "name": "城堡监狱",
+      "origin": [
+        -60,
+        79,
+        -190
+      ],
+      "biome": "plains",
+      "build_cmds": [
+        "fill -64 79 -194 -56 83 -186 cobblestone hollow",
+        "fill -62 80 -192 -58 82 -188 iron_bars",
+        "setblock -60 80 -191 redstone_torch",
+        "setblock -60 81 -191 oak_sign{front_text:{messages:['\"囚\"']}}"
+      ],
+      "default_camera": "closeup_object",
+      "tags": [
+        "indoor",
+        "prison",
+        "horror"
+      ]
+    },
+    {
+      "id": "village_square",
+      "name": "村庄广场",
+      "origin": [
+        -60,
+        79,
+        -190
+      ],
+      "biome": "plains",
+      "build_cmds": [
+        "fill -68 79 -198 -52 79 -182 grass_block",
+        "fill -62 80 -192 -58 80 -188 oak_planks",
+        "setblock -60 81 -190 oak_sign",
+        "setblock -60 80 -187 emerald_block"
+      ],
+      "default_camera": "wide",
+      "tags": [
+        "village",
+        "outdoor",
+        "social"
+      ]
+    },
+    {
+      "id": "redstone_lab",
+      "name": "红石实验室",
+      "origin": [
+        -60,
+        79,
+        -190
+      ],
+      "biome": "plains",
+      "build_cmds": [
+        "fill -68 79 -198 -52 79 -182 smooth_stone",
+        "fill -66 80 -196 -54 82 -184 glass",
+        "setblock -60 80 -190 redstone_block",
+        "setblock -60 81 -190 piston",
+        "setblock -60 80 -188 repeater"
+      ],
+      "default_camera": "closeup_object",
+      "tags": [
+        "redstone",
+        "tech",
+        "wonder"
+      ]
+    },
+    {
+      "id": "spawn_point",
+      "name": "出生点",
+      "origin": [
+        -60,
+        79,
+        -190
+      ],
+      "biome": "plains",
+      "build_cmds": [
+        "fill -64 79 -194 -56 79 -186 grass_block",
+        "setblock -60 80 -190 lodestone",
+        "setblock -60 81 -190 oak_sign{front_text:{messages:['\"出生点\"']}}"
+      ],
+      "default_camera": "wide",
+      "tags": [
+        "meta",
+        "start",
+        "poignant"
+      ]
+    },
+    {
+      "id": "ender_realm",
+      "name": "末影领域",
+      "origin": [
+        -60,
+        79,
+        -190
+      ],
+      "biome": "the_end",
+      "build_cmds": [
+        "fill -68 79 -198 -52 79 -182 obsidian",
+        "fill -66 80 -196 -54 82 -184 black_concrete",
+        "setblock -60 80 -190 end_portal",
+        "setblock -60 82 -190 dragon_head"
+      ],
+      "default_camera": "freeze_zoom",
+      "tags": [
+        "end",
+        "mystery",
+        "cosmic"
+      ]
+    },
+    {
+      "id": "creeper_wedding",
+      "name": "苦力怕婚礼",
+      "origin": [
+        -60,
+        79,
+        -190
+      ],
+      "biome": "flower_forest",
+      "build_cmds": [
+        "fill -64 79 -194 -56 79 -186 pink_concrete",
+        "fill -62 80 -190 -58 80 -190 oak_fence",
+        "setblock -60 81 -188 cake",
+        "setblock -60 82 -190 oak_sign{front_text:{messages:['\"♥\"']}}"
+      ],
+      "default_camera": "medium",
+      "tags": [
+        "love",
+        "irony",
+        "absurd"
+      ]
+    },
+    {
+      "id": "lava_kingdom",
+      "name": "岩浆王国",
+      "origin": [
+        -60,
+        79,
+        -190
+      ],
+      "biome": "nether_wastes",
+      "build_cmds": [
+        "fill -68 79 -198 -52 79 -182 netherrack",
+        "fill -64 80 -194 -56 80 -186 lava",
+        "fill -62 81 -192 -58 83 -188 magma_block",
+        "setblock -60 84 -190 gold_block"
+      ],
+      "default_camera": "wide",
+      "tags": [
+        "nether",
+        "danger",
+        "royal"
+      ]
+    },
+    {
+      "id": "diamond_dragon",
+      "name": "钻石龙",
+      "origin": [
+        -60,
+        79,
+        -190
+      ],
+      "biome": "mountains",
+      "build_cmds": [
+        "fill -68 79 -198 -52 79 -182 stone",
+        "fill -64 80 -192 -56 84 -188 diamond_block",
+        "setblock -60 83 -190 dragon_head",
+        "setblock -60 84 -190 beacon"
+      ],
+      "default_camera": "freeze_zoom",
+      "tags": [
+        "wealth",
+        "mythic",
+        "reveal"
+      ]
+    },
+    {
+      "id": "time_dilation",
+      "name": "时间膨胀",
+      "origin": [
+        -60,
+        79,
+        -190
+      ],
+      "biome": "plains",
+      "build_cmds": [
+        "fill -64 79 -194 -56 79 -186 quartz_block",
+        "setblock -60 80 -190 clock",
+        "setblock -60 81 -190 oak_sign{front_text:{messages:['\"00:00\"']}}"
+      ],
+      "default_camera": "closeup_object",
+      "tags": [
+        "meta",
+        "abstract",
+        "time"
+      ]
+    },
+    {
+      "id": "soul_market",
+      "name": "灵魂市场",
+      "origin": [
+        -60,
+        79,
+        -190
+      ],
+      "biome": "soul_sand_valley",
+      "build_cmds": [
+        "fill -64 79 -194 -56 79 -186 soul_sand",
+        "fill -62 80 -192 -58 82 -188 soul_lantern",
+        "setblock -60 81 -190 soul_campfire"
+      ],
+      "default_camera": "medium",
+      "tags": [
+        "nether",
+        "dark",
+        "trade"
+      ]
+    },
+    {
+      "id": "shulker_void",
+      "name": "潜影贝虚空",
+      "origin": [
+        -60,
+        79,
+        -190
+      ],
+      "biome": "the_end",
+      "build_cmds": [
+        "fill -64 79 -194 -56 79 -186 purpur_block",
+        "setblock -60 80 -190 shulker_box",
+        "setblock -60 81 -190 chorus_flower"
+      ],
+      "default_camera": "closeup_object",
+      "tags": [
+        "end",
+        "mystery",
+        "reveal"
+      ]
+    },
+    {
+      "id": "nether_portal",
+      "name": "下界传送门",
+      "origin": [
+        -60,
+        79,
+        -190
+      ],
+      "biome": "nether_wastes",
+      "build_cmds": [
+        "fill -62 80 -190 -58 84 -190 obsidian hollow",
+        "fill -61 81 -190 -59 83 -190 nether_portal axis=x",
+        "fill -64 79 -194 -56 79 -186 netherrack"
+      ],
+      "default_camera": "wide",
+      "tags": [
+        "nether",
+        "portal",
+        "transition"
+      ]
+    },
+    {
+      "id": "warden_lullaby",
+      "name": "监守者摇篮曲",
+      "origin": [
+        -60,
+        79,
+        -190
+      ],
+      "biome": "deep_dark",
+      "build_cmds": [
+        "fill -68 79 -198 -52 79 -182 sculk",
+        "fill -66 80 -196 -54 82 -184 sculk_vein",
+        "setblock -60 80 -190 sculk_shrieker",
+        "setblock -60 80 -188 sculk_sensor"
+      ],
+      "default_camera": "freeze_zoom",
+      "tags": [
+        "deep_dark",
+        "horror",
+        "tense"
+      ]
+    },
+    {
+      "id": "piglin_bank",
+      "name": "猪灵银行",
+      "origin": [
+        -60,
+        79,
+        -190
+      ],
+      "biome": "crimson_forest",
+      "build_cmds": [
+        "fill -64 79 -194 -56 79 -186 gold_block",
+        "fill -62 80 -192 -58 82 -188 nether_brick",
+        "setblock -60 80 -190 chest",
+        "setblock -60 81 -190 oak_sign{front_text:{messages:['\"$\"']}}"
+      ],
+      "default_camera": "medium",
+      "tags": [
+        "nether",
+        "trade",
+        "social"
+      ]
+    },
+    {
+      "id": "phantom_post",
+      "name": "幻影邮局",
+      "origin": [
+        -60,
+        79,
+        -190
+      ],
+      "biome": "plains",
+      "build_cmds": [
+        "fill -64 79 -194 -56 79 -186 cyan_concrete",
+        "fill -62 80 -192 -58 82 -188 glass",
+        "setblock -60 80 -190 lectern",
+        "setblock -60 81 -190 oak_sign{front_text:{messages:['\"邮\"']}}"
+      ],
+      "default_camera": "closeup_object",
+      "tags": [
+        "plains",
+        "mystery",
+        "social"
+      ]
+    },
+    {
+      "id": "witch_clinic",
+      "name": "女巫医院",
+      "origin": [
+        -60,
+        79,
+        -190
+      ],
+      "biome": "swamp",
+      "build_cmds": [
+        "fill -64 79 -194 -56 79 -186 dark_oak_planks",
+        "fill -62 80 -192 -58 82 -188 cobblestone",
+        "setblock -60 80 -190 brewing_stand",
+        "setblock -60 81 -190 cauldron[level=3]"
+      ],
+      "default_camera": "medium",
+      "tags": [
+        "swamp",
+        "witch",
+        "weird"
+      ]
+    }
+  ]
 }
