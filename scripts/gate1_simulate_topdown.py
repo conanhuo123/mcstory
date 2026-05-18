@@ -133,7 +133,7 @@ def topdown(world, origin, half=14, y_top=92, y_bottom=78):
         grid.append(row)
     return grid, legend
 
-def render_png(world, origin, half=14, y_top=92, y_bottom=78, out='topdown.png', label=''):
+def render_png(world, origin, half=14, y_top=92, y_bottom=78, out='topdown.png', label='', spawns=None, shots=None):
     ox, oy, oz = origin
     n = half*2+1
     px = 24  # 每格 24px
@@ -170,6 +170,34 @@ def render_png(world, origin, half=14, y_top=92, y_bottom=78, out='topdown.png',
     cx = pad + half*px + px//2
     cy = pad + half*px + px//2
     d.ellipse([cx-5, cy-5, cx+5, cy+5], outline=(220,0,0), width=2)
+
+    # 叠加 character_spawns (关 2 视觉级)
+    CHAR_COLOR = {
+        'villager': (200, 140, 80), 'iron_golem': (220, 220, 220), 'creeper': (60, 200, 60),
+        'steve': (90, 130, 220), 'enderman': (40, 30, 60), 'wolf': (240, 240, 220),
+        'warden': (40, 70, 100), 'piglin': (200, 140, 90), 'witch': (130, 70, 130),
+        'phantom': (60, 60, 120), 'shulker': (170, 120, 170), 'axolotl': (240, 160, 180),
+        'evoker': (160, 140, 120),
+    }
+    if spawns:
+        for sp in spawns:
+            actor = sp.get('actor','')
+            x, y, z = sp.get('xyz',[0,0,0])
+            dx, dz = x - ox, z - oz
+            if -half <= dx <= half and -half <= dz <= half:
+                px_x = pad + (dx+half)*px + px//2
+                px_y = pad + (dz+half)*px + px//2
+                color = CHAR_COLOR.get(actor, (220,80,80))
+                d.ellipse([px_x-8, px_y-8, px_x+8, px_y+8], fill=color, outline=(0,0,0), width=2)
+                d.text((px_x+10, px_y-7), actor[:10], fill=(20,20,20), font=f)
+    # 叠加 shots (关 3 视觉级): 简单显示每个 shot 的 camera 偏移点
+    if shots:
+        for i, s in enumerate(shots):
+            cam_type = s.get('camera', 'wide')
+            # 用 shot index 表示
+            tx = pad + n*px + 10
+            ty = pad + i*18
+            d.text((tx, ty), f"shot{i}: {cam_type[:14]}", fill=(80,30,150), font=f)
     # legend
     ly = pad + n*px + 16
     lx = pad
@@ -201,7 +229,9 @@ if __name__ == '__main__':
         ch, _ = BLOCK_MAP.get(b, ('?', (180,0,180)))
         lines.append(f"#   {ch} = {b}")
     open(out_txt, 'w').write('\n'.join(lines))
-    render_png(world, origin, out=out_png, label=label)
+    render_png(world, origin, out=out_png, label=label,
+               spawns=d.get('character_spawns', []),
+               shots=d.get('shots', []))
     print(f"[SAVED] {out_txt}")
     print(f"[SAVED] {out_png}")
     print()
