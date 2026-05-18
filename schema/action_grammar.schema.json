@@ -344,6 +344,466 @@
         "twist",
         "reveal"
       ]
+    },
+    {
+      "id": "villager_sit",
+      "type": "tp",
+      "actor": "villager",
+      "params": {
+        "xyz": [
+          0,
+          0,
+          0
+        ]
+      },
+      "mc_command": "/tp @e[type=villager,limit=1] <x> <y> <z>",
+      "tags": [
+        "rest",
+        "calm"
+      ]
+    },
+    {
+      "id": "villager_wave",
+      "type": "give_effect",
+      "actor": "villager",
+      "params": {
+        "effect": "speed"
+      },
+      "mc_command": "/effect give @e[type=villager,limit=1] speed 1 2",
+      "tags": [
+        "greet"
+      ]
+    },
+    {
+      "id": "villager_cry",
+      "type": "particle",
+      "actor": "villager",
+      "params": {
+        "effect": "falling_water"
+      },
+      "mc_command": "/particle minecraft:falling_water ~ ~1.5 ~ 0.3 0.3 0.3 0.1 30",
+      "tags": [
+        "sad",
+        "emotion"
+      ]
+    },
+    {
+      "id": "villager_laugh",
+      "type": "particle",
+      "actor": "villager",
+      "params": {
+        "effect": "happy_villager"
+      },
+      "mc_command": "/particle minecraft:happy_villager ~ ~1.5 ~ 0.5 0.5 0.5 0.5 30",
+      "tags": [
+        "happy",
+        "emotion"
+      ]
+    },
+    {
+      "id": "villager_surprise",
+      "type": "particle",
+      "actor": "villager",
+      "params": {
+        "effect": "explosion"
+      },
+      "mc_command": "/particle minecraft:flash ~ ~1.5 ~ 0 0 0 0 1",
+      "tags": [
+        "surprise"
+      ]
+    },
+    {
+      "id": "villager_flee",
+      "type": "give_effect",
+      "actor": "villager",
+      "params": {
+        "effect": "speed"
+      },
+      "mc_command": "/effect give @e[type=villager,limit=1] speed 3 4",
+      "tags": [
+        "flee",
+        "fear"
+      ]
+    },
+    {
+      "id": "villager_eat",
+      "type": "particle",
+      "actor": "villager",
+      "params": {
+        "effect": "item_food"
+      },
+      "mc_command": "/particle minecraft:item bread ~ ~1.4 ~ 0.2 0.2 0.2 0.05 20",
+      "tags": [
+        "eat",
+        "rest"
+      ]
+    },
+    {
+      "id": "villager_drink",
+      "type": "particle",
+      "actor": "villager",
+      "params": {
+        "effect": "potion"
+      },
+      "mc_command": "/particle minecraft:effect ~ ~1.4 ~ 0.2 0.2 0.2 0.1 15",
+      "tags": [
+        "drink"
+      ]
+    },
+    {
+      "id": "villager_sleep",
+      "type": "give_effect",
+      "actor": "villager",
+      "params": {
+        "effect": "slowness"
+      },
+      "mc_command": "/effect give @e[type=villager,limit=1] slowness 10 5 true",
+      "tags": [
+        "sleep",
+        "rest"
+      ]
+    },
+    {
+      "id": "villager_look_up",
+      "type": "tp",
+      "actor": "villager",
+      "params": {
+        "pitch": -45
+      },
+      "mc_command": "/tp @e[type=villager,limit=1] ~ ~ ~ 0 -45",
+      "tags": [
+        "look",
+        "wonder"
+      ]
+    },
+    {
+      "id": "villager_look_down",
+      "type": "tp",
+      "actor": "villager",
+      "params": {
+        "pitch": 45
+      },
+      "mc_command": "/tp @e[type=villager,limit=1] ~ ~ ~ 0 45",
+      "tags": [
+        "look",
+        "sad"
+      ]
+    },
+    {
+      "id": "villager_turn",
+      "type": "tp",
+      "actor": "villager",
+      "params": {
+        "yaw": 180
+      },
+      "mc_command": "/tp @e[type=villager,limit=1] ~ ~ ~ 180 0",
+      "tags": [
+        "turn"
+      ]
+    },
+    {
+      "id": "villager_jump",
+      "type": "give_effect",
+      "actor": "villager",
+      "params": {
+        "effect": "jump_boost"
+      },
+      "mc_command": "/effect give @e[type=villager,limit=1] jump_boost 2 5",
+      "tags": [
+        "jump",
+        "happy"
+      ]
+    },
+    {
+      "id": "villager_levitate",
+      "type": "give_effect",
+      "actor": "villager",
+      "params": {
+        "effect": "levitation"
+      },
+      "mc_command": "/effect give @e[type=villager,limit=1] levitation 3 2",
+      "tags": [
+        "mystic",
+        "ascend"
+      ]
+    },
+    {
+      "id": "villager_burn",
+      "type": "particle",
+      "actor": "villager",
+      "params": {
+        "effect": "flame"
+      },
+      "mc_command": "/particle minecraft:flame ~ ~1 ~ 0.3 0.5 0.3 0.05 50",
+      "tags": [
+        "fire",
+        "danger"
+      ]
+    },
+    {
+      "id": "villager_freeze",
+      "type": "particle",
+      "actor": "villager",
+      "params": {
+        "effect": "snowflake"
+      },
+      "mc_command": "/particle minecraft:snowflake ~ ~1 ~ 0.3 0.5 0.3 0.01 40",
+      "tags": [
+        "cold",
+        "freeze"
+      ]
+    },
+    {
+      "id": "villager_heal",
+      "type": "particle",
+      "actor": "villager",
+      "params": {
+        "effect": "heart"
+      },
+      "mc_command": "/particle minecraft:heart ~ ~1.6 ~ 0.3 0.3 0.3 0.05 10",
+      "tags": [
+        "heal",
+        "love"
+      ]
+    },
+    {
+      "id": "villager_invisible",
+      "type": "give_effect",
+      "actor": "villager",
+      "params": {
+        "effect": "invisibility"
+      },
+      "mc_command": "/effect give @e[type=villager,limit=1] invisibility 5 0 true",
+      "tags": [
+        "hide"
+      ]
+    },
+    {
+      "id": "villager_appear",
+      "type": "particle",
+      "actor": "villager",
+      "params": {
+        "effect": "poof"
+      },
+      "mc_command": "/particle minecraft:poof ~ ~1 ~ 0.5 0.5 0.5 0.1 30",
+      "tags": [
+        "reveal",
+        "appear"
+      ]
+    },
+    {
+      "id": "villager_anger",
+      "type": "particle",
+      "actor": "villager",
+      "params": {
+        "effect": "angry_villager"
+      },
+      "mc_command": "/particle minecraft:angry_villager ~ ~1.5 ~ 0.3 0.3 0.3 0.5 20",
+      "tags": [
+        "anger",
+        "emotion"
+      ]
+    },
+    {
+      "id": "steve_kneel",
+      "type": "give_effect",
+      "actor": "steve",
+      "params": {
+        "effect": "slowness"
+      },
+      "mc_command": "/effect give @p slowness 3 7",
+      "tags": [
+        "plead",
+        "submit"
+      ]
+    },
+    {
+      "id": "steve_cry",
+      "type": "particle",
+      "actor": "steve",
+      "params": {
+        "effect": "falling_water"
+      },
+      "mc_command": "/particle minecraft:falling_water ~ ~1.5 ~ 0.3 0.3 0.3 0.1 30",
+      "tags": [
+        "sad",
+        "emotion"
+      ]
+    },
+    {
+      "id": "steve_laugh",
+      "type": "particle",
+      "actor": "steve",
+      "params": {
+        "effect": "happy"
+      },
+      "mc_command": "/particle minecraft:happy_villager ~ ~1.5 ~ 0.5 0.5 0.5 0.5 30",
+      "tags": [
+        "happy"
+      ]
+    },
+    {
+      "id": "steve_wave",
+      "type": "give_effect",
+      "actor": "steve",
+      "params": {
+        "effect": "glowing"
+      },
+      "mc_command": "/effect give @p glowing 1 0 true",
+      "tags": [
+        "greet"
+      ]
+    },
+    {
+      "id": "steve_fall",
+      "type": "tp",
+      "actor": "steve",
+      "params": {
+        "y_delta": -3
+      },
+      "mc_command": "/tp @p ~ ~-3 ~",
+      "tags": [
+        "fall",
+        "danger"
+      ]
+    },
+    {
+      "id": "setblock_oak_door",
+      "type": "setblock",
+      "actor": "any",
+      "params": {
+        "xyz": [
+          0,
+          0,
+          0
+        ]
+      },
+      "mc_command": "/setblock <x> <y> <z> oak_door",
+      "tags": [
+        "scene",
+        "interaction"
+      ]
+    },
+    {
+      "id": "setblock_chest",
+      "type": "setblock",
+      "actor": "any",
+      "params": {
+        "xyz": [
+          0,
+          0,
+          0
+        ]
+      },
+      "mc_command": "/setblock <x> <y> <z> chest{Items:[{id:diamond,Count:5b,Slot:0b}]}",
+      "tags": [
+        "reveal",
+        "gift"
+      ]
+    },
+    {
+      "id": "setblock_redstone",
+      "type": "setblock",
+      "actor": "any",
+      "params": {
+        "xyz": [
+          0,
+          0,
+          0
+        ]
+      },
+      "mc_command": "/setblock <x> <y> <z> redstone_block",
+      "tags": [
+        "tech",
+        "trigger"
+      ]
+    },
+    {
+      "id": "weather_thunder",
+      "type": "summon",
+      "actor": "any",
+      "params": {},
+      "mc_command": "/weather thunder 60",
+      "tags": [
+        "atmosphere",
+        "danger"
+      ]
+    },
+    {
+      "id": "weather_clear",
+      "type": "summon",
+      "actor": "any",
+      "params": {},
+      "mc_command": "/weather clear 600",
+      "tags": [
+        "atmosphere",
+        "calm"
+      ]
+    },
+    {
+      "id": "time_night",
+      "type": "summon",
+      "actor": "any",
+      "params": {},
+      "mc_command": "/time set night",
+      "tags": [
+        "atmosphere",
+        "time"
+      ]
+    },
+    {
+      "id": "time_day",
+      "type": "summon",
+      "actor": "any",
+      "params": {},
+      "mc_command": "/time set day",
+      "tags": [
+        "atmosphere",
+        "time"
+      ]
+    },
+    {
+      "id": "explosion_fake",
+      "type": "particle",
+      "actor": "any",
+      "params": {},
+      "mc_command": "/particle minecraft:explosion ~ ~ ~ 1 1 1 0 5",
+      "tags": [
+        "climax",
+        "danger"
+      ]
+    },
+    {
+      "id": "firework_celebrate",
+      "type": "summon",
+      "actor": "any",
+      "params": {
+        "xyz": [
+          0,
+          0,
+          0
+        ]
+      },
+      "mc_command": "/summon firework_rocket <x> <y> <z> {LifeTime:20,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Explosions:[{Type:1,Colors:[I;16711680,16776960]}]}}}}",
+      "tags": [
+        "celebrate"
+      ]
+    },
+    {
+      "id": "music_disc_play",
+      "type": "setblock",
+      "actor": "any",
+      "params": {
+        "xyz": [
+          0,
+          0,
+          0
+        ]
+      },
+      "mc_command": "/setblock <x> <y> <z> jukebox{RecordItem:{id:music_disc_pigstep,Count:1b}}",
+      "tags": [
+        "audio"
+      ]
     }
   ]
 }
