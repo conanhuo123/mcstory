@@ -1,0 +1,192 @@
+{
+  "scene": "ancient_forest",
+  "characters": [
+    "dolphin",
+    "villager",
+    "wolf",
+    "creeper"
+  ],
+  "build_cmds": [
+    "fill -70 78 -200 -50 78 -180 minecraft:dirt",
+    "fill -70 79 -200 -50 79 -180 minecraft:grass_block",
+    "fill -68 79 -194 -52 79 -190 minecraft:water",
+    "fill -66 80 -198 -66 85 -198 minecraft:oak_log",
+    "fill -69 86 -201 -63 88 -195 minecraft:oak_leaves",
+    "fill -54 80 -198 -54 86 -198 minecraft:dark_oak_log",
+    "fill -57 87 -201 -51 89 -195 minecraft:dark_oak_leaves",
+    "fill -63 80 -184 -63 86 -184 minecraft:mangrove_log",
+    "fill -66 87 -187 -60 89 -181 minecraft:mangrove_leaves",
+    "setblock -60 80 -190 minecraft:note_block",
+    "setblock -60 81 -190 minecraft:oak_button",
+    "setblock -61 80 -190 minecraft:glow_lichen",
+    "setblock -58 80 -188 minecraft:oak_sign",
+    "fill -62 80 -193 -58 80 -187 minecraft:moss_carpet"
+  ],
+  "scene_origin": [
+    -60,
+    79,
+    -190
+  ],
+  "character_spawns": [
+    {
+      "actor": "dolphin",
+      "xyz": [
+        -66,
+        80,
+        -192
+      ]
+    },
+    {
+      "actor": "villager",
+      "xyz": [
+        -56,
+        80,
+        -188
+      ]
+    },
+    {
+      "actor": "wolf",
+      "xyz": [
+        -62,
+        80,
+        -186
+      ]
+    },
+    {
+      "actor": "creeper",
+      "xyz": [
+        -54,
+        80,
+        -196
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "time": "0-3s",
+      "beat": "怪事",
+      "camera": "wide",
+      "scene_action": "远古林海突然发出空灵歌声，水道里的海豚被歌声吸引，树冠间紫光一闪。",
+      "actions": [
+        {
+          "action_id": "scene_glow_purple",
+          "actor": "scene"
+        }
+      ],
+      "dialogue": "海豚：这森林里……是谁在唱歌？"
+    },
+    {
+      "time": "3-7s",
+      "beat": "追查",
+      "camera": "medium",
+      "scene_action": "海豚沿着林中水道游向发光的老橡树，村民慌张跑来指向苔藓地。",
+      "actions": [
+        {
+          "action_id": "villager_run",
+          "actor": "villager"
+        },
+        {
+          "action_id": "villager_speak",
+          "actor": "villager"
+        }
+      ],
+      "dialogue": "村民：别靠近！昨晚那颗橡子唱哭了三棵树！"
+    },
+    {
+      "time": "7-11s",
+      "beat": "追查",
+      "camera": "closeup_object",
+      "scene_action": "镜头贴近苔藓上的小橡子，橡子旁的音符方块轻轻震动，歌声忽远忽近。",
+      "actions": [
+        {
+          "action_id": "scene_glow_purple",
+          "actor": "scene"
+        }
+      ],
+      "dialogue": "神秘歌声：回家……回到树根下面……"
+    },
+    {
+      "time": "11-15s",
+      "beat": "追查",
+      "camera": "closeup_face",
+      "scene_action": "海豚认真听声辨位，狼低头嗅橡子，突然对远处黑影发出低吼。",
+      "actions": [
+        {
+          "action_id": "villager_look_down",
+          "actor": "villager"
+        }
+      ],
+      "dialogue": "海豚：歌声不是从橡子里传出来的，是从地下传来的！"
+    },
+    {
+      "time": "15-18s",
+      "beat": "追查",
+      "camera": "freeze_zoom",
+      "scene_action": "画面定格放大，橡子下方的苔藓裂开一条细缝，里面露出微弱金光。",
+      "actions": [
+        {
+          "action_id": "sign_reveal",
+          "actor": "scene"
+        }
+      ],
+      "dialogue": "村民：下面有东西！"
+    },
+    {
+      "time": "18-22s",
+      "beat": "误导",
+      "camera": "medium",
+      "scene_action": "苦力怕从树后发光走出，歌声突然变得尖锐，所有人以为它在控制橡子。",
+      "actions": [
+        {
+          "action_id": "creeper_glow",
+          "actor": "creeper"
+        },
+        {
+          "action_id": "villager_surprise",
+          "actor": "villager"
+        }
+      ],
+      "dialogue": "村民：抓到你了！会唱歌的怪物！"
+    },
+    {
+      "time": "22-26s",
+      "beat": "误导",
+      "camera": "wide",
+      "scene_action": "苦力怕委屈后退，海豚挡在它面前，发现苦力怕身上的光其实是橡树根反射的。",
+      "actions": [
+        {
+          "action_id": "villager_cry",
+          "actor": "villager"
+        },
+        {
+          "action_id": "creeper_glow",
+          "actor": "creeper"
+        }
+      ],
+      "dialogue": "海豚：等等，它不是凶手，它也在听歌。"
+    },
+    {
+      "time": "26-30s",
+      "beat": "反转",
+      "camera": "freeze_zoom",
+      "scene_action": "橡子裂开，里面不是种子，而是一只迷你树灵；它唱歌是为了召唤海豚给干枯树根带来水。",
+      "actions": [
+        {
+          "action_id": "scene_glow_purple",
+          "actor": "scene"
+        },
+        {
+          "action_id": "weather_clear",
+          "actor": "scene"
+        },
+        {
+          "action_id": "firework_celebrate",
+          "actor": "scene"
+        }
+      ],
+      "dialogue": "树灵：我不是在求救，我是在找你。海豚一到，整片林海都活了。"
+    }
+  ],
+  "title": "会唱歌的橡子",
+  "subtitle_color": "yellow"
+}

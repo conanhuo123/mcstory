@@ -1,0 +1,43 @@
+# 炼药师用末影珍珠在地心熔炉里酿造时间药水 top-down (build_cmds=12)  origin=[-60, 79, -190]
+
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+        /BBBBBBBBBBB/        
+        /OOOOOOOOOOO/        
+        /OOOOO?OOOOO/        
+        /OOLLLLLLLOO/        
+        /OOLLLLLLLOO/        
+        /OOLL???LLOO/        
+        /OOLa???CLOO/        
+        /OOLL???LLOO/        
+        /OOLLLLLLLOO/        
+        /OOLLLLLLLOO/        
+        /OOOOOTOOOOO/        
+        /OOOOOOOOOOO/        
+        /BBBBBBBBBBB/        
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+
+# legend:
+#   a = cauldron
+#   C = chest
+#   ? = ender_chest
+#   ? = glowstone
+#   / = iron_bars
+#   L = lava
+#   ? = nether_bricks
+#   T = oak_sign
+#   O = obsidian
+#   B = polished_blackstone

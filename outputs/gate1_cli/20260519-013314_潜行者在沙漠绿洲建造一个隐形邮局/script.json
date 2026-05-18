@@ -1,0 +1,207 @@
+{
+  "scene": "desert_oasis_post",
+  "characters": [
+    "creeper",
+    "villager",
+    "steve"
+  ],
+  "build_cmds": [
+    "fill -68 78 -198 -52 78 -182 minecraft:sand",
+    "fill -64 79 -194 -56 79 -186 minecraft:water",
+    "fill -66 79 -196 -54 79 -184 minecraft:sandstone",
+    "fill -63 79 -193 -57 79 -187 minecraft:water",
+    "fill -61 79 -191 -59 82 -189 minecraft:glass",
+    "fill -62 79 -192 -58 79 -188 minecraft:quartz_block",
+    "setblock -60 80 -188 minecraft:oak_door",
+    "setblock -60 81 -188 minecraft:air",
+    "setblock -62 80 -190 minecraft:chest",
+    "setblock -58 80 -190 minecraft:chest",
+    "setblock -60 80 -192 minecraft:oak_sign",
+    "fill -67 79 -197 -65 83 -195 minecraft:oak_log",
+    "fill -67 84 -197 -65 84 -195 minecraft:oak_leaves",
+    "setblock -60 83 -190 minecraft:glowstone"
+  ],
+  "scene_origin": [
+    -60,
+    79,
+    -190
+  ],
+  "character_spawns": [
+    {
+      "actor": "creeper",
+      "xyz": [
+        -60,
+        80,
+        -189
+      ]
+    },
+    {
+      "actor": "villager",
+      "xyz": [
+        -64,
+        80,
+        -186
+      ]
+    },
+    {
+      "actor": "steve",
+      "xyz": [
+        -56,
+        80,
+        -186
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "time": "0-3s",
+      "beat": "怪事",
+      "camera": "wide",
+      "scene_action": "沙漠绿洲中央突然出现一间透明小屋，门口只有一块空白告示牌，潜行者站在水边发出绿色微光，像是在营业。",
+      "actions": [
+        {
+          "action_id": "creeper_glow",
+          "actor": "creeper"
+        },
+        {
+          "action_id": "sign_reveal",
+          "actor": "villager"
+        }
+      ],
+      "dialogue": [
+        {
+          "actor": "villager",
+          "text": "这绿洲昨天还没有邮局！"
+        }
+      ]
+    },
+    {
+      "time": "3-8s",
+      "beat": "追查",
+      "camera": "medium",
+      "scene_action": "史蒂夫绕着玻璃邮局检查，村民对着空箱子投信，信件却凭空消失。",
+      "actions": [
+        {
+          "action_id": "villager_drop_item",
+          "actor": "villager"
+        },
+        {
+          "action_id": "steve_wave",
+          "actor": "steve"
+        }
+      ],
+      "dialogue": [
+        {
+          "actor": "steve",
+          "text": "隐形邮局？谁负责送件？"
+        },
+        {
+          "actor": "villager",
+          "text": "我刚投的绿宝石账单不见了！"
+        }
+      ]
+    },
+    {
+      "time": "8-13s",
+      "beat": "追查",
+      "camera": "closeup_object",
+      "scene_action": "镜头贴近告示牌，牌面慢慢显字：沙漠最快邮局，爆炸级保密。",
+      "actions": [
+        {
+          "action_id": "reveal_sign",
+          "actor": "creeper"
+        }
+      ],
+      "dialogue": [
+        {
+          "actor": "steve",
+          "text": "爆炸级保密？听起来不太妙。"
+        }
+      ]
+    },
+    {
+      "time": "13-18s",
+      "beat": "追查",
+      "camera": "closeup_face",
+      "scene_action": "潜行者害羞地点头，身体忽隐忽现，身后两只箱子同时自动打开又关上。",
+      "actions": [
+        {
+          "action_id": "villager_invisible",
+          "actor": "creeper"
+        },
+        {
+          "action_id": "setblock_chest",
+          "actor": "creeper"
+        }
+      ],
+      "dialogue": [
+        {
+          "actor": "creeper",
+          "text": "嘶……保密到看不见。"
+        }
+      ]
+    },
+    {
+      "time": "18-26s",
+      "beat": "误导",
+      "camera": "dolly_in",
+      "scene_action": "村民以为潜行者要把邮件炸飞，吓得跪在沙地上求饶；史蒂夫拔剑挡在门口。",
+      "actions": [
+        {
+          "action_id": "villager_kneel",
+          "actor": "villager"
+        },
+        {
+          "action_id": "steve_swing",
+          "actor": "steve"
+        },
+        {
+          "action_id": "creeper_glow",
+          "actor": "creeper"
+        }
+      ],
+      "dialogue": [
+        {
+          "actor": "villager",
+          "text": "别炸我的账单！我还没还完贷款！"
+        },
+        {
+          "actor": "steve",
+          "text": "退后，我来拆除这个邮局！"
+        }
+      ]
+    },
+    {
+      "time": "26-30s",
+      "beat": "反转",
+      "camera": "freeze_zoom",
+      "scene_action": "潜行者没有爆炸，而是放出烟花，所有丢失的信件从空中落下；告示牌最终显字：本邮局只是隐形，老板是史蒂夫。",
+      "actions": [
+        {
+          "action_id": "firework_celebrate",
+          "actor": "creeper"
+        },
+        {
+          "action_id": "sign_reveal",
+          "actor": "villager"
+        },
+        {
+          "action_id": "steve_laugh",
+          "actor": "steve"
+        }
+      ],
+      "dialogue": [
+        {
+          "actor": "steve",
+          "text": "欢迎使用我的无人隐形快递！"
+        },
+        {
+          "actor": "villager",
+          "text": "所以最可疑的人是你？！"
+        }
+      ]
+    }
+  ],
+  "title": "潜行者的隐形邮局",
+  "subtitle_color": "yellow"
+}

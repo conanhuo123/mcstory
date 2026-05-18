@@ -1,0 +1,166 @@
+{
+  "scene": "lava_kingdom",
+  "characters": [
+    "witch",
+    "enderman",
+    "villager",
+    "creeper"
+  ],
+  "build_cmds": [
+    "fill -66 79 -196 -54 79 -184 minecraft:polished_blackstone",
+    "fill -65 80 -195 -55 80 -185 minecraft:obsidian",
+    "fill -63 80 -193 -57 80 -187 minecraft:lava",
+    "fill -61 81 -191 -59 81 -189 minecraft:nether_bricks",
+    "setblock -60 82 -190 minecraft:brewing_stand",
+    "setblock -62 81 -190 minecraft:cauldron",
+    "setblock -58 81 -190 minecraft:chest",
+    "setblock -60 81 -186 minecraft:oak_sign",
+    "fill -66 80 -196 -66 84 -184 minecraft:iron_bars",
+    "fill -54 80 -196 -54 84 -184 minecraft:iron_bars",
+    "setblock -60 85 -190 minecraft:glowstone",
+    "setblock -60 81 -194 minecraft:ender_chest"
+  ],
+  "scene_origin": [
+    -60,
+    79,
+    -190
+  ],
+  "character_spawns": [
+    {
+      "actor": "witch",
+      "xyz": [
+        -60,
+        81,
+        -190
+      ]
+    },
+    {
+      "actor": "enderman",
+      "xyz": [
+        -63,
+        81,
+        -188
+      ]
+    },
+    {
+      "actor": "villager",
+      "xyz": [
+        -57,
+        81,
+        -188
+      ]
+    },
+    {
+      "actor": "creeper",
+      "xyz": [
+        -60,
+        81,
+        -194
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "beat": "3s 怪事",
+      "duration": 3,
+      "camera": "wide",
+      "scene_action": "地心熔炉突然发出紫光，炼药师女巫把末影珍珠丢进熔岩中央的酿造台，村民的动作瞬间卡住。",
+      "actions": [
+        {
+          "action_id": "scene_glow_purple",
+          "actor": "scene"
+        },
+        {
+          "action_id": "villager_freeze",
+          "actor": "villager"
+        },
+        {
+          "action_id": "time_night",
+          "actor": "scene"
+        }
+      ],
+      "dialogue": "村民：我怎么动不了了？！",
+      "subtitle": "末影珍珠一入炉，时间停了"
+    },
+    {
+      "beat": "15s 追查",
+      "duration": 15,
+      "camera": "medium",
+      "scene_action": "末影人低头盯着少了一颗的末影珍珠，村民惊慌地指向箱子，女巫假装搅拌药水；镜头绕着熔炉追查，发现告示牌背面写着“时间药水=1颗珍珠+1滴苦力怕泪”。",
+      "actions": [
+        {
+          "action_id": "villager_surprise",
+          "actor": "villager"
+        },
+        {
+          "action_id": "villager_look_down",
+          "actor": "villager"
+        },
+        {
+          "action_id": "reveal_sign",
+          "actor": "scene"
+        },
+        {
+          "action_id": "villager_speak",
+          "actor": "villager"
+        }
+      ],
+      "dialogue": "村民：配方不对！还差苦力怕的眼泪！",
+      "subtitle": "追查配方，发现关键材料"
+    },
+    {
+      "beat": "8s 误导",
+      "duration": 8,
+      "camera": "closeup_face",
+      "scene_action": "苦力怕开始发光，所有人以为它要爆炸毁掉熔炉；女巫急忙举起药瓶，村民跪地求饶，末影人后退。",
+      "actions": [
+        {
+          "action_id": "creeper_glow",
+          "actor": "creeper"
+        },
+        {
+          "action_id": "villager_kneel",
+          "actor": "villager"
+        },
+        {
+          "action_id": "entity_glow_red",
+          "actor": "creeper"
+        },
+        {
+          "action_id": "scene_dark",
+          "actor": "scene"
+        }
+      ],
+      "dialogue": "村民：完了！它要炸炉！",
+      "subtitle": "苦力怕发光，像是即将爆炸"
+    },
+    {
+      "beat": "4s 反转",
+      "duration": 4,
+      "camera": "freeze_zoom",
+      "scene_action": "苦力怕没有爆炸，而是哭出一滴绿色药液；药液落进酿造台，时间药水完成，熔炉倒转，村民突然变回三秒前的姿势。",
+      "actions": [
+        {
+          "action_id": "villager_cry",
+          "actor": "creeper"
+        },
+        {
+          "action_id": "scene_glow_purple",
+          "actor": "scene"
+        },
+        {
+          "action_id": "villager_appear",
+          "actor": "villager"
+        },
+        {
+          "action_id": "firework_celebrate",
+          "actor": "scene"
+        }
+      ],
+      "dialogue": "女巫：谁说苦力怕只会爆炸？它还会酿时间。",
+      "subtitle": "反转：苦力怕眼泪才是真正的时间核心"
+    }
+  ],
+  "title": "地心熔炉的时间药水",
+  "subtitle_color": "yellow"
+}
