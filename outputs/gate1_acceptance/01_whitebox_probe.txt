@@ -1,0 +1,8 @@
+  ( -60, 79,-190) origin floor                        → The target block is not a block entity
+  ( -58, 81,-188) purple_shulker_box                  → minecraft:shulker_box
+  ( -60, 81,-188) chest                               → minecraft:chest
+  ( -62, 81,-188) oak_sign                            → minecraft:sign
+  ( -60, 84,-190) sea_lantern                         → The target block is not a block entity
+  ( -60, 78,-190) below origin (water覆盖区)             → The target block is not a block entity
+  ( -65, 82,-190) iron_bars 区                         → The target block is not a block entity
+  ( -69, 79,-201) sand 区                              → The target block is not a block entity

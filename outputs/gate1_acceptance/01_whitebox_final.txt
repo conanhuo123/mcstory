@@ -1,0 +1,17 @@
+  ✗ ( -70, 78,-202) expect dark_oak_planks        → Test failed
+  ✓ ( -68, 78,-198) expect dark_oak_planks        → Test passed
+  ✓ ( -67, 79,-197) expect oak_planks             → Test passed
+  ✗ ( -58, 81,-184) expect dark_oak_planks        → Test failed
+  ✓ ( -61, 81,-191) expect spruce_log             → Test passed
+  ✓ ( -60, 85,-190) expect white_wool             → Test passed
+  ✓ ( -60, 81,-188) expect chest                  → Test passed
+  ✓ ( -58, 81,-188) expect purple_shulker_box     → Test passed
+  ✓ ( -62, 81,-188) expect oak_sign               → Test passed
+  ✓ ( -60, 84,-190) expect sea_lantern            → Test passed
+  ✓ ( -65, 82,-190) expect iron_bars              → Test passed
+  ✗ ( -50, 79,-199) expect sand                   → Test failed
+
+白盒强验证 (修正探针): PASS 9/12
+  MISS: (-70, 78, -202, 'dark_oak_planks', 'build_cmds[1] 船底 corner', 'Test failed')
+  MISS: (-58, 81, -184, 'dark_oak_planks', 'build_cmds[5] 船尾', 'Test failed')
+  MISS: (-50, 79, -199, 'sand', '海床', 'Test failed')

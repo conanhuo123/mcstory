@@ -1,0 +1,34 @@
+
+=== 深海沉船潜影贝 (underwater) ===
+  build_cmds 执行: 14/14 OK
+  白盒抽样: 4/6 PASS
+    ✗ (-60,83,-190) water → Test failed
+    ✓ (-60,78,-190) dark_oak_planks → Test passed
+    ✓ (-60,79,-190) oak_planks → Test passed
+    ✗ (-60,81,-190) air → Test failed
+    ✓ (-68,82,-198) dark_oak_planks → Test passed
+    ✓ (-53,82,-183) dark_oak_planks → Test passed
+
+=== 末影龙花海产卵 (diamond_dragon) ===
+  build_cmds 执行: 14/15 OK
+  白盒抽样: 5/6 PASS
+    ✓ (-60,79,-190) grass_block → Test passed
+    ✗ (-60,80,-190) air → Test failed
+    ✓ (-60,80,-190) dragon_egg → Test passed
+    ✓ (-67,83,-197) glass → Test passed
+    ✓ (-53,83,-197) glass → Test passed
+    ✓ (-67,83,-183) glass → Test passed
+
+=== 苦力怕监狱钢琴 (castle_prison) ===
+  build_cmds 执行: 14/14 OK
+  白盒抽样: 6/6 PASS
+    ✓ (-60,79,-190) polished_blackstone → Test passed
+    ✓ (-68,82,-190) stone_bricks → Test passed
+    ✓ (-52,82,-190) stone_bricks → Test passed
+    ✓ (-60,82,-198) stone_bricks → Test passed
+    ✓ (-60,82,-182) stone_bricks → Test passed
+    ✓ (-64,81,-196) iron_bars → Test passed
+
+=== 总分 ===
+build 执行: 42/43  (98%)
+白盒抽样: 15/18  (83%)

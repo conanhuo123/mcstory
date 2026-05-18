@@ -1,0 +1,15 @@
+  ✗ ( -60, 78,-190) expect water                  → Test failed
+  ✓ ( -68, 78,-198) expect dark_oak_planks        → Test passed
+  ✓ ( -67, 79,-197) expect oak_planks             → Test passed
+  ✗ ( -66, 81,-196) expect air                    → Test failed
+  ✓ ( -61, 81,-191) expect spruce_log             → Test passed
+  ✓ ( -60, 85,-190) expect white_wool             → Test passed
+  ✓ ( -60, 81,-188) expect chest                  → Test passed
+  ✗ ( -58, 81,-188) expect shulker_box            → Test failed
+  ✓ ( -62, 81,-188) expect oak_sign               → Test passed
+  ✓ ( -60, 84,-190) expect sea_lantern            → Test passed
+  ✓ ( -65, 82,-190) expect iron_bars              → Test passed
+  ✗ ( -69, 79,-201) expect sand                   → Test failed
+
+白盒强验证: PASS 8/12
+未通过: [(-60, 78, -190, 'water'), (-66, 81, -196, 'air'), (-58, 81, -188, 'shulker_box'), (-69, 79, -201, 'sand')]

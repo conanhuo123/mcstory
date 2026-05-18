@@ -1,0 +1,204 @@
+{
+  "scene": "castle_prison",
+  "characters": [
+    "creeper",
+    "villager",
+    "iron_golem"
+  ],
+  "build_cmds": [
+    "fill -68 79 -198 -52 79 -182 minecraft:polished_blackstone",
+    "fill -68 80 -198 -68 85 -182 minecraft:stone_bricks",
+    "fill -52 80 -198 -52 85 -182 minecraft:stone_bricks",
+    "fill -68 80 -198 -52 85 -198 minecraft:stone_bricks",
+    "fill -68 80 -182 -52 85 -182 minecraft:stone_bricks",
+    "fill -66 80 -196 -62 83 -196 minecraft:iron_bars",
+    "fill -58 80 -196 -54 83 -196 minecraft:iron_bars",
+    "fill -63 80 -190 -57 80 -188 minecraft:polished_blackstone",
+    "fill -62 81 -190 -58 81 -190 minecraft:blackstone",
+    "fill -62 81 -189 -58 81 -189 minecraft:quartz_block",
+    "setblock -60 82 -190 minecraft:note_block",
+    "setblock -60 80 -186 minecraft:redstone_lamp",
+    "fill -62 80 -185 -58 80 -185 minecraft:redstone_wire",
+    "setblock -60 81 -184 minecraft:oak_sign"
+  ],
+  "scene_origin": [
+    -60,
+    79,
+    -190
+  ],
+  "character_spawns": [
+    {
+      "actor": "creeper",
+      "xyz": [
+        -60,
+        80,
+        -189
+      ]
+    },
+    {
+      "actor": "villager",
+      "xyz": [
+        -64,
+        80,
+        -194
+      ]
+    },
+    {
+      "actor": "iron_golem",
+      "xyz": [
+        -56,
+        80,
+        -194
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "beat": "3s怪事",
+      "start": 0,
+      "duration": 3,
+      "camera": "wide",
+      "scene_action": "城堡监狱里一片死寂，苦力怕端坐在黑石钢琴前，第一下琴声响起，牢房里的村民和铁傀儡全都僵住不敢动。",
+      "actions": [
+        {
+          "action_id": "music_disc_play",
+          "actor": "creeper"
+        },
+        {
+          "action_id": "villager_surprise",
+          "actor": "villager"
+        }
+      ],
+      "dialogue": "叮——",
+      "subtitle": "苦力怕在监狱里弹钢琴？"
+    },
+    {
+      "beat": "15s追查",
+      "start": 3,
+      "duration": 5,
+      "camera": "medium",
+      "scene_action": "村民跪在铁栏后小声求饶，以为苦力怕每弹错一个音就会爆炸。",
+      "actions": [
+        {
+          "action_id": "villager_kneel",
+          "actor": "villager"
+        },
+        {
+          "action_id": "creeper_glow",
+          "actor": "creeper"
+        }
+      ],
+      "dialogue": "村民：别弹了！我们还年轻！",
+      "subtitle": "没人敢出声"
+    },
+    {
+      "beat": "15s追查",
+      "start": 8,
+      "duration": 5,
+      "camera": "closeup_object",
+      "scene_action": "镜头贴近钢琴键，黑石琴身下露出一条红石线，红石灯随着旋律一闪一闪。",
+      "actions": [
+        {
+          "action_id": "setblock_redstone",
+          "actor": "creeper"
+        }
+      ],
+      "dialogue": "铁傀儡：这不是钢琴，是引爆器？",
+      "subtitle": "琴键下面有红石"
+    },
+    {
+      "beat": "15s追查",
+      "start": 13,
+      "duration": 5,
+      "camera": "closeup_face",
+      "scene_action": "苦力怕脸上发光，缓缓转头看向所有人，大家以为它要进入倒计时。",
+      "actions": [
+        {
+          "action_id": "creeper_glow",
+          "actor": "creeper"
+        },
+        {
+          "action_id": "entity_glow_red",
+          "actor": "creeper"
+        },
+        {
+          "action_id": "villager_flee",
+          "actor": "villager"
+        }
+      ],
+      "dialogue": "苦力怕：嘶——",
+      "subtitle": "全员以为完了"
+    },
+    {
+      "beat": "8s误导",
+      "start": 18,
+      "duration": 4,
+      "camera": "dolly_in",
+      "scene_action": "铁傀儡冲上前想阻止，却被钢琴旁的告示牌吓停：禁止爆炸，违者赔偿城堡。",
+      "actions": [
+        {
+          "action_id": "iron_golem_attack",
+          "actor": "iron_golem"
+        },
+        {
+          "action_id": "sign_reveal",
+          "actor": "creeper"
+        }
+      ],
+      "dialogue": "告示牌：禁止爆炸，赔不起。",
+      "subtitle": "原来它也不敢炸"
+    },
+    {
+      "beat": "8s误导",
+      "start": 22,
+      "duration": 4,
+      "camera": "freeze_zoom",
+      "scene_action": "苦力怕突然用力按下最后一个琴键，红石灯全亮，所有人同时抱头蹲下。",
+      "actions": [
+        {
+          "action_id": "entity_glow_red",
+          "actor": "creeper"
+        },
+        {
+          "action_id": "villager_cry",
+          "actor": "villager"
+        },
+        {
+          "action_id": "explosion_fake",
+          "actor": "creeper"
+        }
+      ],
+      "dialogue": "全员：不要爆！",
+      "subtitle": "最后一键像引爆"
+    },
+    {
+      "beat": "4s反转",
+      "start": 26,
+      "duration": 4,
+      "camera": "wide",
+      "scene_action": "没有爆炸，天花板落下彩烟和烟花。苦力怕站起来鞠躬，原来它只是监狱音乐会的钢琴师，真正不敢爆炸的是观众的掌声。",
+      "actions": [
+        {
+          "action_id": "firework_celebrate",
+          "actor": "creeper"
+        },
+        {
+          "action_id": "villager_laugh",
+          "actor": "villager"
+        },
+        {
+          "action_id": "villager_wave",
+          "actor": "villager"
+        },
+        {
+          "action_id": "music_disc_play",
+          "actor": "creeper"
+        }
+      ],
+      "dialogue": "苦力怕：谢谢，我今天只爆音，不爆炸。",
+      "subtitle": "它只是在开演奏会"
+    }
+  ],
+  "title": "苦力怕监狱钢琴师",
+  "subtitle_color": "yellow"
+}

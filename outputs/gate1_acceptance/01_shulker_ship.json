@@ -1,0 +1,175 @@
+{
+  "scene": "underwater",
+  "characters": [
+    "steve",
+    "shulker",
+    "villager"
+  ],
+  "build_cmds": [
+    "fill -70 78 -202 -50 88 -178 minecraft:water",
+    "fill -68 78 -198 -52 78 -182 minecraft:dark_oak_planks",
+    "fill -67 79 -197 -53 80 -183 minecraft:oak_planks",
+    "fill -66 81 -196 -54 81 -184 minecraft:air",
+    "fill -69 81 -199 -66 83 -196 minecraft:dark_oak_planks",
+    "fill -54 81 -184 -51 83 -181 minecraft:dark_oak_planks",
+    "fill -61 81 -191 -59 87 -189 minecraft:spruce_log",
+    "fill -64 85 -190 -56 85 -190 minecraft:white_wool",
+    "setblock -60 81 -188 minecraft:chest",
+    "setblock -58 81 -188 minecraft:purple_shulker_box",
+    "setblock -62 81 -188 minecraft:oak_sign",
+    "fill -65 82 -195 -55 82 -185 minecraft:iron_bars",
+    "setblock -60 84 -190 minecraft:sea_lantern",
+    "fill -69 79 -201 -50 79 -199 minecraft:sand"
+  ],
+  "scene_origin": [
+    -60,
+    79,
+    -190
+  ],
+  "character_spawns": [
+    {
+      "actor": "steve",
+      "xyz": [
+        -65,
+        82,
+        -194
+      ]
+    },
+    {
+      "actor": "shulker",
+      "xyz": [
+        -58,
+        82,
+        -188
+      ]
+    },
+    {
+      "actor": "villager",
+      "xyz": [
+        -62,
+        82,
+        -186
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "t": "0-3s",
+      "beat": "怪事",
+      "camera": "wide",
+      "scene_action": "深海沉船突然亮起紫光，破船舱里的潜影贝自己打开壳，发出低沉声音：别打开箱子。",
+      "actions": [
+        {
+          "action_id": "scene_dark",
+          "actor": "scene"
+        },
+        {
+          "action_id": "scene_glow_purple",
+          "actor": "shulker"
+        }
+      ],
+      "dialogue": [
+        {
+          "actor": "shulker",
+          "text": "别打开那个箱子……它在等你。"
+        }
+      ]
+    },
+    {
+      "t": "3-18s",
+      "beat": "追查",
+      "camera": "medium",
+      "scene_action": "Steve游进沉船，发现旁边村民探险家跪在地上发抖，木牌上的字慢慢显现：船长不是人。",
+      "actions": [
+        {
+          "action_id": "villager_kneel",
+          "actor": "villager"
+        },
+        {
+          "action_id": "sign_reveal",
+          "actor": "oak_sign"
+        },
+        {
+          "action_id": "steve_kneel",
+          "actor": "steve"
+        }
+      ],
+      "dialogue": [
+        {
+          "actor": "steve",
+          "text": "你为什么会说话？这艘船到底沉了多久？"
+        },
+        {
+          "actor": "villager",
+          "text": "我听见它每天晚上都在数宝藏……数到最后一个人。"
+        },
+        {
+          "actor": "shulker",
+          "text": "箱子里没有宝藏，只有船长留下的名字。"
+        }
+      ]
+    },
+    {
+      "t": "18-26s",
+      "beat": "误导",
+      "camera": "closeup_object",
+      "scene_action": "Steve以为紫色潜影贝在守护诅咒宝箱，举起工具准备敲开它，潜影贝突然红光闪烁，村民转身想逃。",
+      "actions": [
+        {
+          "action_id": "entity_glow_red",
+          "actor": "shulker"
+        },
+        {
+          "action_id": "steve_swing",
+          "actor": "steve"
+        },
+        {
+          "action_id": "villager_flee",
+          "actor": "villager"
+        }
+      ],
+      "dialogue": [
+        {
+          "actor": "steve",
+          "text": "原来你才是诅咒！"
+        },
+        {
+          "actor": "shulker",
+          "text": "不，别碰我。真正的船长在你身后。"
+        }
+      ]
+    },
+    {
+      "t": "26-30s",
+      "beat": "反转",
+      "camera": "freeze_zoom",
+      "scene_action": "镜头定格放大，Steve背后的村民忽然露出笑容，木牌最后一行显现：会说话的不是潜影贝，是被困在壳里的船长；而村民才是沉船怪物。",
+      "actions": [
+        {
+          "action_id": "villager_laugh",
+          "actor": "villager"
+        },
+        {
+          "action_id": "reveal_sign",
+          "actor": "oak_sign"
+        },
+        {
+          "action_id": "scene_glow_purple",
+          "actor": "shulker"
+        }
+      ],
+      "dialogue": [
+        {
+          "actor": "villager",
+          "text": "谢谢你，终于有人替我打开下一个壳了。"
+        },
+        {
+          "actor": "shulker",
+          "text": "快逃……我才是船长。"
+        }
+      ]
+    }
+  ],
+  "title": "深海沉船的说话潜影贝",
+  "subtitle_color": "yellow"
+}

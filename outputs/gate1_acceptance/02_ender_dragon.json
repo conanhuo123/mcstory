@@ -1,0 +1,170 @@
+{
+  "scene": "diamond_dragon",
+  "characters": [
+    "enderman",
+    "villager",
+    "creeper",
+    "iron_golem"
+  ],
+  "build_cmds": [
+    "fill -68 79 -198 -52 79 -182 minecraft:grass_block",
+    "fill -66 80 -196 -54 80 -184 minecraft:air",
+    "setblock -60 80 -190 minecraft:dragon_egg",
+    "fill -67 80 -197 -67 86 -197 minecraft:glass",
+    "fill -53 80 -197 -53 86 -197 minecraft:glass",
+    "fill -67 80 -183 -67 86 -183 minecraft:glass",
+    "fill -53 80 -183 -53 86 -183 minecraft:glass",
+    "setblock -67 87 -197 minecraft:amethyst_block",
+    "setblock -53 87 -197 minecraft:amethyst_block",
+    "setblock -67 87 -183 minecraft:amethyst_block",
+    "setblock -53 87 -183 minecraft:amethyst_block",
+    "setblock -61 80 -191 minecraft:poppy",
+    "setblock -59 80 -191 minecraft:dandelion",
+    "setblock -61 80 -189 minecraft:azure_bluet",
+    "setblock -59 80 -189 minecraft:cornflower"
+  ],
+  "scene_origin": [
+    -60,
+    79,
+    -190
+  ],
+  "character_spawns": [
+    {
+      "actor": "enderman",
+      "xyz": [
+        -62,
+        80,
+        -188
+      ]
+    },
+    {
+      "actor": "villager",
+      "xyz": [
+        -58,
+        80,
+        -188
+      ]
+    },
+    {
+      "actor": "creeper",
+      "xyz": [
+        -60,
+        80,
+        -194
+      ]
+    },
+    {
+      "actor": "iron_golem",
+      "xyz": [
+        -56,
+        80,
+        -190
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "t": "0-3s",
+      "beat": "怪事",
+      "camera": "wide",
+      "scene_action": "花海中央突然出现龙蛋，四根水晶柱同时发出紫光，远处传来末影龙低吼。",
+      "actions": [
+        {
+          "actor": "creeper",
+          "action_id": "creeper_glow"
+        },
+        {
+          "actor": "villager",
+          "action_id": "villager_surprise"
+        },
+        {
+          "actor": "scene",
+          "action_id": "scene_glow_purple"
+        }
+      ],
+      "dialogue": "村民：花海里怎么会有末影龙的蛋？！"
+    },
+    {
+      "t": "3-10s",
+      "beat": "追查",
+      "camera": "medium",
+      "scene_action": "村民跪在龙蛋前检查花瓣痕迹，末影人转身盯着水晶柱，苦力怕身上闪光像在供能。",
+      "actions": [
+        {
+          "actor": "villager",
+          "action_id": "villager_kneel"
+        },
+        {
+          "actor": "enderman",
+          "action_id": "villager_turn"
+        },
+        {
+          "actor": "creeper",
+          "action_id": "entity_glow_red"
+        }
+      ],
+      "dialogue": "村民：蛋壳还是热的，水晶柱刚刚启动过！"
+    },
+    {
+      "t": "10-18s",
+      "beat": "追查",
+      "camera": "closeup_object",
+      "scene_action": "镜头贴近龙蛋，蛋下露出一块木牌，上面写着“不是末地，是花海孵化场”。",
+      "actions": [
+        {
+          "actor": "sign",
+          "action_id": "sign_reveal"
+        },
+        {
+          "actor": "villager",
+          "action_id": "villager_look_down"
+        }
+      ],
+      "dialogue": "村民：谁把末影龙产房搬到主世界了？"
+    },
+    {
+      "t": "18-26s",
+      "beat": "误导",
+      "camera": "closeup_face",
+      "scene_action": "铁傀儡冲向发光苦力怕，大家以为苦力怕偷了龙蛋能量，水晶柱突然更亮。",
+      "actions": [
+        {
+          "actor": "iron_golem",
+          "action_id": "iron_golem_attack"
+        },
+        {
+          "actor": "creeper",
+          "action_id": "creeper_glow"
+        },
+        {
+          "actor": "villager",
+          "action_id": "villager_flee"
+        }
+      ],
+      "dialogue": "村民：抓住它！肯定是苦力怕干的！"
+    },
+    {
+      "t": "26-30s",
+      "beat": "反转",
+      "camera": "freeze_zoom",
+      "scene_action": "龙蛋裂开，里面不是小龙，而是一朵会发光的紫色花；木牌翻面写着“末影龙只是来施肥”。",
+      "actions": [
+        {
+          "actor": "sign",
+          "action_id": "reveal_sign"
+        },
+        {
+          "actor": "scene",
+          "action_id": "firework_celebrate"
+        },
+        {
+          "actor": "villager",
+          "action_id": "villager_surprise"
+        }
+      ],
+      "dialogue": "村民：所以……水晶柱全是花盆支架？！"
+    }
+  ],
+  "title": "末影龙在花海产卵",
+  "subtitle_color": "yellow"
+}

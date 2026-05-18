@@ -1,0 +1,179 @@
+[
+  {
+    "sample": "深海沉船潜影贝",
+    "scene": "underwater",
+    "cmds": 14,
+    "exec_ok": 14,
+    "exec_fail": 0,
+    "wb_ok": 4,
+    "wb_fail": 2,
+    "wb_details": [
+      [
+        -60,
+        83,
+        -190,
+        "water",
+        false,
+        "Test failed"
+      ],
+      [
+        -60,
+        78,
+        -190,
+        "dark_oak_planks",
+        true,
+        "Test passed"
+      ],
+      [
+        -60,
+        79,
+        -190,
+        "oak_planks",
+        true,
+        "Test passed"
+      ],
+      [
+        -60,
+        81,
+        -190,
+        "air",
+        false,
+        "Test failed"
+      ],
+      [
+        -68,
+        82,
+        -198,
+        "dark_oak_planks",
+        true,
+        "Test passed"
+      ],
+      [
+        -53,
+        82,
+        -183,
+        "dark_oak_planks",
+        true,
+        "Test passed"
+      ]
+    ]
+  },
+  {
+    "sample": "末影龙花海产卵",
+    "scene": "diamond_dragon",
+    "cmds": 15,
+    "exec_ok": 14,
+    "exec_fail": 1,
+    "wb_ok": 5,
+    "wb_fail": 1,
+    "wb_details": [
+      [
+        -60,
+        79,
+        -190,
+        "grass_block",
+        true,
+        "Test passed"
+      ],
+      [
+        -60,
+        80,
+        -190,
+        "air",
+        false,
+        "Test failed"
+      ],
+      [
+        -60,
+        80,
+        -190,
+        "dragon_egg",
+        true,
+        "Test passed"
+      ],
+      [
+        -67,
+        83,
+        -197,
+        "glass",
+        true,
+        "Test passed"
+      ],
+      [
+        -53,
+        83,
+        -197,
+        "glass",
+        true,
+        "Test passed"
+      ],
+      [
+        -67,
+        83,
+        -183,
+        "glass",
+        true,
+        "Test passed"
+      ]
+    ]
+  },
+  {
+    "sample": "苦力怕监狱钢琴",
+    "scene": "castle_prison",
+    "cmds": 14,
+    "exec_ok": 14,
+    "exec_fail": 0,
+    "wb_ok": 6,
+    "wb_fail": 0,
+    "wb_details": [
+      [
+        -60,
+        79,
+        -190,
+        "polished_blackstone",
+        true,
+        "Test passed"
+      ],
+      [
+        -68,
+        82,
+        -190,
+        "stone_bricks",
+        true,
+        "Test passed"
+      ],
+      [
+        -52,
+        82,
+        -190,
+        "stone_bricks",
+        true,
+        "Test passed"
+      ],
+      [
+        -60,
+        82,
+        -198,
+        "stone_bricks",
+        true,
+        "Test passed"
+      ],
+      [
+        -60,
+        82,
+        -182,
+        "stone_bricks",
+        true,
+        "Test passed"
+      ],
+      [
+        -64,
+        81,
+        -196,
+        "iron_bars",
+        true,
+        "Test passed"
+      ]
+    ]
+  }
+]
