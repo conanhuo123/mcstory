@@ -1,0 +1,39 @@
+{
+  "name": "client_window_check",
+  "ts": "2026-05-19T06:10:00+08:00",
+  "verdict": "FAIL_NO_CLIENT_WINDOW",
+  "root_cause": "Mojang access token 已过期 (2026-05-19T03:07:39)",
+  "硬阻塞类型": "4 类必须老板事件 — Microsoft OAuth re-login = 2FA",
+  "探测结果": {
+    "/Applications/Minecraft.app": "exists ✓",
+    "~/Library/Application Support/minecraft/": "exists ✓",
+    "versions/1.20.4": "client jar exists ✓",
+    "Minecraft Launcher 进程": "running (PID 63367 since 11:07AM yesterday)",
+    "launcher_accounts.json": "1 account cached (Xbox 'WellMammal4303')",
+    "accessTokenExpiresAt": "2026-05-19T03:07:39 (3 小时前过期)",
+    "真 Minecraft 客户端窗口 (Java game window)": "不存在 — Launcher GUI 在跑但 PLAY 按钮需 user click + valid token"
+  },
+  "为什么打不开真客户端": [
+    "Mojang token 过期, launcher 检测后会要求 Microsoft re-login",
+    "Microsoft login → 2FA (Authenticator app / SMS code)",
+    "2FA 老板专属设备 (4 类必须老板规则之一)",
+    "Claude/AI 团队无法绕过"
+  ],
+  "为什么 prismarine-viewer 路径不算": [
+    "苏白 06:05 verdict: 'Launcher 进程不算客户端'",
+    "苏白 verdict: 必须 Mojang Minecraft Java Edition 真窗口",
+    "prismarine-viewer 是 JavaScript reimplementation 渲染 paper world chunks (mineflayer client state), 不是 Mojang Minecraft.jar 渲染"
+  ],
+  "已交付 (虽不被验收但保留为参考)": {
+    "puppeteer + prismarine-viewer 真帧": "outputs/gate1_judge_death_min/v_thirdperson_before/after.png + outputs/single_action_check/REAL_swing_before/after.png — md5 不同, 真 paper world chunk render"
+  },
+  "解硬阻塞需老板做": [
+    "1. 打开 /Applications/Minecraft.app (Launcher GUI 已在跑)",
+    "2. 点 PLAY (会弹 Microsoft login)",
+    "3. 输入 Microsoft 账号 + 2FA code",
+    "4. Launcher 下载/启动 1.20.4 客户端 (jar 已 cached, 仅刷 token)",
+    "5. 客户端启动后, 老板 connect 25565 (paper server, online-mode=false + enforce-secure-profile=false)",
+    "6. 客户端真窗口出现后 Claude 自动接管: macOS screencapture / window-id capture / mineflayer + 真客户端混合采集"
+  ],
+  "建议": "等老板自然起床 (~7:00), 不刷屏不叫醒. Mojang re-login 5 min 完成, 然后整条 client_window_check + screencapture → single_action_visible_check 全部解锁"
+}
