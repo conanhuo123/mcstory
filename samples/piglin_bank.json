@@ -1,0 +1,74 @@
+{
+  "id": "piglin_bank",
+  "title": "猪灵开金子银行",
+  "logline": "猪灵开金子银行 引发反转",
+  "scene": "village",
+  "characters": [
+    "steve",
+    "villager"
+  ],
+  "redline": "反转必须由画面完成",
+  "dialogue": [
+    "开始",
+    "怎么回事",
+    "真相",
+    "你...",
+    "告示反转"
+  ],
+  "twist": "猪灵开金子银行 的真相",
+  "twist_visual": "最后镜头特写告示牌",
+  "shots": [
+    {
+      "t": [
+        0,
+        3
+      ],
+      "scene_action": "场景开始",
+      "camera": "wide",
+      "subtitle": "开始",
+      "voiceover": "故事拉开序幕。"
+    },
+    {
+      "t": [
+        3,
+        6
+      ],
+      "scene_action": "事件发生",
+      "camera": "medium",
+      "subtitle": "怎么回事",
+      "voiceover": "事件突如其来。"
+    },
+    {
+      "t": [
+        6,
+        9
+      ],
+      "scene_action": "线索浮现",
+      "camera": "closeup_face",
+      "subtitle": "真相",
+      "voiceover": "线索一点点浮现。"
+    },
+    {
+      "t": [
+        9,
+        12
+      ],
+      "scene_action": "角色困惑",
+      "camera": "closeup_face",
+      "subtitle": "你...",
+      "voiceover": "角色不敢相信。"
+    },
+    {
+      "t": [
+        12,
+        15
+      ],
+      "scene_action": "告示牌反转",
+      "camera": "freeze_zoom",
+      "subtitle": "反转",
+      "voiceover": "告示牌升起, 真相揭晓。"
+    }
+  ],
+  "duration_sec": 15,
+  "subtitle_color": "yellow"
+}
