@@ -1,0 +1,19 @@
+{
+  "ts": "20260519-030232",
+  "primary": {
+    "name": "villager_lowhead",
+    "pass": true,
+    "rot_t0": "继任者 has the following entity data: [0.0f, 45.0f]",
+    "rot_t1": "继任者 has the following entity data: [0.0f, 45.0f]",
+    "pitch_t1": 45.0
+  },
+  "fallback": {
+    "name": "armor_stand_swing_axe",
+    "pass": true,
+    "pose_t0": "执行者 has the following entity data: {RightArm: [0.0f, 0.0f, 0.0f]}",
+    "pose_t1": "执行者 has the following entity data: {RightArm: [-90.0f, 0.0f, 0.0f]}",
+    "rarm_t1": -90.0,
+    "axe_present": true
+  },
+  "fails": []
+}
