@@ -3,35 +3,67 @@
   "title": "mcstory Character Library Schema v0.1",
   "description": "道具/角色库 — 4 库 + 1 闭环 中的第 4 库.",
   "type": "object",
-  "required": ["id", "mc_entity", "nbt"],
+  "required": [
+    "id",
+    "mc_entity",
+    "nbt"
+  ],
   "properties": {
-    "id": {"type": "string", "description": "角色 id e.g. steve / villager / iron_golem"},
-    "mc_entity": {"type": "string", "description": "MC entity id e.g. minecraft:villager"},
+    "id": {
+      "type": "string",
+      "description": "角色 id e.g. steve / villager / iron_golem"
+    },
+    "mc_entity": {
+      "type": "string",
+      "description": "MC entity id e.g. minecraft:villager"
+    },
     "nbt": {
       "type": "object",
       "properties": {
-        "NoAI": {"type": "boolean", "default": true},
-        "Silent": {"type": "boolean", "default": true},
-        "PersistenceRequired": {"type": "boolean", "default": true},
-        "Invulnerable": {"type": "boolean", "default": true},
-        "CustomName": {"type": "string"}
+        "NoAI": {
+          "type": "boolean",
+          "default": true
+        },
+        "Silent": {
+          "type": "boolean",
+          "default": true
+        },
+        "PersistenceRequired": {
+          "type": "boolean",
+          "default": true
+        },
+        "Invulnerable": {
+          "type": "boolean",
+          "default": true
+        },
+        "CustomName": {
+          "type": "string"
+        }
       }
     },
     "default_pose": {
       "type": "object",
       "properties": {
-        "yaw": {"type": "number"},
-        "pitch": {"type": "number"}
+        "yaw": {
+          "type": "number"
+        },
+        "pitch": {
+          "type": "number"
+        }
       }
     },
     "available_actions": {
       "type": "array",
-      "items": {"type": "string"},
+      "items": {
+        "type": "string"
+      },
       "description": "本角色支持的 action grammar id list"
     },
     "props": {
       "type": "array",
-      "items": {"type": "string"},
+      "items": {
+        "type": "string"
+      },
       "description": "本角色可持/可关联道具 e.g. ['diamond_sword', 'shield']"
     }
   },
@@ -39,26 +71,222 @@
     {
       "id": "villager",
       "mc_entity": "minecraft:villager",
-      "nbt": {"NoAI": true, "Silent": true, "PersistenceRequired": true, "Invulnerable": true},
-      "default_pose": {"yaw": 0, "pitch": 0},
-      "available_actions": ["villager_kneel", "villager_look_up", "villager_run"],
-      "props": ["emerald", "wheat"]
+      "nbt": {
+        "NoAI": true,
+        "Silent": true,
+        "PersistenceRequired": true,
+        "Invulnerable": true
+      },
+      "default_pose": {
+        "yaw": 0,
+        "pitch": 0
+      },
+      "available_actions": [
+        "villager_kneel",
+        "villager_look_up",
+        "villager_run"
+      ],
+      "props": [
+        "emerald",
+        "wheat"
+      ]
     },
     {
       "id": "iron_golem",
       "mc_entity": "minecraft:iron_golem",
-      "nbt": {"NoAI": true, "Silent": true, "PersistenceRequired": true, "Invulnerable": true},
-      "default_pose": {"yaw": 0, "pitch": 0},
-      "available_actions": ["golem_attack", "golem_protect"],
-      "props": ["poppy"]
+      "nbt": {
+        "NoAI": true,
+        "Silent": true,
+        "PersistenceRequired": true,
+        "Invulnerable": true
+      },
+      "default_pose": {
+        "yaw": 0,
+        "pitch": 0
+      },
+      "available_actions": [
+        "golem_attack",
+        "golem_protect"
+      ],
+      "props": [
+        "poppy"
+      ]
     },
     {
       "id": "creeper",
       "mc_entity": "minecraft:creeper",
-      "nbt": {"NoAI": true, "Silent": true, "PersistenceRequired": true, "Invulnerable": true, "ignited": false},
-      "default_pose": {"yaw": 0, "pitch": 0},
-      "available_actions": ["creeper_ignite", "creeper_extinguish", "creeper_glow"],
-      "props": ["gunpowder", "tnt"]
+      "nbt": {
+        "NoAI": true,
+        "Silent": true,
+        "PersistenceRequired": true,
+        "Invulnerable": true,
+        "ignited": false
+      },
+      "default_pose": {
+        "yaw": 0,
+        "pitch": 0
+      },
+      "available_actions": [
+        "creeper_ignite",
+        "creeper_extinguish",
+        "creeper_glow"
+      ],
+      "props": [
+        "gunpowder",
+        "tnt"
+      ]
+    },
+    {
+      "id": "enderman",
+      "mc_entity": "minecraft:enderman",
+      "nbt": {
+        "NoAI": true,
+        "Silent": true,
+        "PersistenceRequired": true,
+        "Invulnerable": true
+      },
+      "default_pose": {
+        "yaw": 0,
+        "pitch": 0
+      },
+      "available_actions": [
+        "entity_glow_red",
+        "kill_entity"
+      ],
+      "props": [
+        "ender_pearl",
+        "grass_block"
+      ]
+    },
+    {
+      "id": "wolf",
+      "mc_entity": "minecraft:wolf",
+      "nbt": {
+        "NoAI": true,
+        "Silent": true,
+        "PersistenceRequired": true,
+        "Invulnerable": true,
+        "CollarColor": 14
+      },
+      "default_pose": {
+        "yaw": 0,
+        "pitch": 0
+      },
+      "available_actions": [
+        "villager_run",
+        "entity_glow_red"
+      ],
+      "props": [
+        "bone"
+      ]
+    },
+    {
+      "id": "warden",
+      "mc_entity": "minecraft:warden",
+      "nbt": {
+        "NoAI": true,
+        "Silent": true,
+        "PersistenceRequired": true,
+        "Invulnerable": true
+      },
+      "default_pose": {
+        "yaw": 0,
+        "pitch": 0
+      },
+      "available_actions": [
+        "entity_glow_red",
+        "kill_entity"
+      ],
+      "props": [
+        "sculk_catalyst"
+      ]
+    },
+    {
+      "id": "piglin",
+      "mc_entity": "minecraft:piglin",
+      "nbt": {
+        "NoAI": true,
+        "Silent": true,
+        "PersistenceRequired": true,
+        "Invulnerable": true,
+        "IsImmuneToZombification": true
+      },
+      "default_pose": {
+        "yaw": 0,
+        "pitch": 0
+      },
+      "available_actions": [
+        "villager_speak",
+        "villager_drop_item"
+      ],
+      "props": [
+        "gold_ingot",
+        "crossbow"
+      ]
+    },
+    {
+      "id": "witch",
+      "mc_entity": "minecraft:witch",
+      "nbt": {
+        "NoAI": true,
+        "Silent": true,
+        "PersistenceRequired": true,
+        "Invulnerable": true
+      },
+      "default_pose": {
+        "yaw": 0,
+        "pitch": 0
+      },
+      "available_actions": [
+        "villager_speak",
+        "entity_glow_red"
+      ],
+      "props": [
+        "potion",
+        "brewing_stand"
+      ]
+    },
+    {
+      "id": "phantom",
+      "mc_entity": "minecraft:phantom",
+      "nbt": {
+        "NoAI": true,
+        "Silent": true,
+        "PersistenceRequired": true,
+        "Invulnerable": true
+      },
+      "default_pose": {
+        "yaw": 0,
+        "pitch": 0
+      },
+      "available_actions": [
+        "entity_glow_red"
+      ],
+      "props": [
+        "phantom_membrane"
+      ]
+    },
+    {
+      "id": "shulker",
+      "mc_entity": "minecraft:shulker",
+      "nbt": {
+        "NoAI": true,
+        "Silent": true,
+        "PersistenceRequired": true,
+        "Invulnerable": true,
+        "Color": 10
+      },
+      "default_pose": {
+        "yaw": 0,
+        "pitch": 0
+      },
+      "available_actions": [
+        "entity_glow_red",
+        "reveal_sign"
+      ],
+      "props": [
+        "shulker_shell"
+      ]
     }
   ]
 }

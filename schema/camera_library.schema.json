@@ -3,32 +3,315 @@
   "title": "mcstory Camera Library Schema v0.1",
   "description": "镜头库 — 5 镜头 preset 标准化. 4 库 + 1 闭环 中的第 2 库.",
   "type": "object",
-  "required": ["id", "offset_xyz", "look_offset", "duration_s"],
+  "required": [
+    "id",
+    "offset_xyz",
+    "look_offset",
+    "duration_s"
+  ],
   "properties": {
-    "id": {"type": "string", "enum": ["wide", "medium", "closeup_face", "closeup_object", "freeze_zoom"]},
+    "id": {
+      "type": "string",
+      "enum": [
+        "wide",
+        "medium",
+        "closeup_face",
+        "closeup_object",
+        "freeze_zoom"
+      ]
+    },
     "offset_xyz": {
-      "type": "array", "items": {"type": "number"}, "minItems": 3, "maxItems": 3,
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 3,
+      "maxItems": 3,
       "description": "相对 scene origin 的偏移 (camera 位置)"
     },
     "look_offset": {
-      "type": "array", "items": {"type": "number"}, "minItems": 3, "maxItems": 3,
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 3,
+      "maxItems": 3,
       "description": "相对 scene origin 的偏移 (camera 看向位置)"
     },
-    "duration_s": {"type": "number", "default": 3, "description": "镜头时长"},
-    "fov": {"type": "number", "default": 70},
+    "duration_s": {
+      "type": "number",
+      "default": 3,
+      "description": "镜头时长"
+    },
+    "fov": {
+      "type": "number",
+      "default": 70
+    },
     "post": {
       "type": "object",
       "properties": {
-        "zoom_in_to": {"type": "number"},
-        "freeze_last_frame": {"type": "boolean"}
+        "zoom_in_to": {
+          "type": "number"
+        },
+        "freeze_last_frame": {
+          "type": "boolean"
+        }
       }
     }
   },
   "examples": [
-    {"id": "wide", "offset_xyz": [6, 4, 8], "look_offset": [0, 1, 0], "duration_s": 3, "fov": 70},
-    {"id": "medium", "offset_xyz": [4, 2, 5], "look_offset": [0, 1, 0], "duration_s": 3, "fov": 60},
-    {"id": "closeup_face", "offset_xyz": [2, 1.6, 2.5], "look_offset": [0, 1.5, 0], "duration_s": 3, "fov": 50},
-    {"id": "closeup_object", "offset_xyz": [1.5, 0.5, 2], "look_offset": [0, 0, 0], "duration_s": 3, "fov": 40},
-    {"id": "freeze_zoom", "offset_xyz": [3, 1, 4], "look_offset": [3, 1, 1], "duration_s": 3, "fov": 55, "post": {"zoom_in_to": 30, "freeze_last_frame": true}}
+    {
+      "id": "wide",
+      "offset_xyz": [
+        6,
+        4,
+        8
+      ],
+      "look_offset": [
+        0,
+        1,
+        0
+      ],
+      "duration_s": 3,
+      "fov": 70
+    },
+    {
+      "id": "medium",
+      "offset_xyz": [
+        4,
+        2,
+        5
+      ],
+      "look_offset": [
+        0,
+        1,
+        0
+      ],
+      "duration_s": 3,
+      "fov": 60
+    },
+    {
+      "id": "closeup_face",
+      "offset_xyz": [
+        2,
+        1.6,
+        2.5
+      ],
+      "look_offset": [
+        0,
+        1.5,
+        0
+      ],
+      "duration_s": 3,
+      "fov": 50
+    },
+    {
+      "id": "closeup_object",
+      "offset_xyz": [
+        1.5,
+        0.5,
+        2
+      ],
+      "look_offset": [
+        0,
+        0,
+        0
+      ],
+      "duration_s": 3,
+      "fov": 40
+    },
+    {
+      "id": "freeze_zoom",
+      "offset_xyz": [
+        3,
+        1,
+        4
+      ],
+      "look_offset": [
+        3,
+        1,
+        1
+      ],
+      "duration_s": 3,
+      "fov": 55,
+      "post": {
+        "zoom_in_to": 30,
+        "freeze_last_frame": true
+      }
+    },
+    {
+      "id": "low_angle_hero",
+      "offset_xyz": [
+        0,
+        0.3,
+        3
+      ],
+      "look_offset": [
+        0,
+        1.8,
+        0
+      ],
+      "duration_s": 3,
+      "fov": 55
+    },
+    {
+      "id": "high_angle_top",
+      "offset_xyz": [
+        0,
+        8,
+        1
+      ],
+      "look_offset": [
+        0,
+        1,
+        0
+      ],
+      "duration_s": 3,
+      "fov": 70
+    },
+    {
+      "id": "over_shoulder",
+      "offset_xyz": [
+        1,
+        1.6,
+        1.2
+      ],
+      "look_offset": [
+        3,
+        1,
+        0
+      ],
+      "duration_s": 3,
+      "fov": 60
+    },
+    {
+      "id": "dutch_tilt",
+      "offset_xyz": [
+        4,
+        2.5,
+        5
+      ],
+      "look_offset": [
+        0,
+        1,
+        0
+      ],
+      "duration_s": 2.5,
+      "fov": 62,
+      "post": {
+        "roll_deg": 15
+      }
+    },
+    {
+      "id": "dolly_in",
+      "offset_xyz": [
+        3,
+        1.5,
+        8
+      ],
+      "look_offset": [
+        0,
+        1,
+        0
+      ],
+      "duration_s": 4,
+      "fov": 58,
+      "post": {
+        "end_offset_xyz": [
+          1,
+          1.2,
+          3
+        ]
+      }
+    },
+    {
+      "id": "pan_left",
+      "offset_xyz": [
+        6,
+        2,
+        3
+      ],
+      "look_offset": [
+        0,
+        1,
+        0
+      ],
+      "duration_s": 3,
+      "fov": 65,
+      "post": {
+        "end_look_offset": [
+          -3,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "id": "orbit_360",
+      "offset_xyz": [
+        5,
+        2,
+        0
+      ],
+      "look_offset": [
+        0,
+        1,
+        0
+      ],
+      "duration_s": 5,
+      "fov": 60,
+      "post": {
+        "orbit": true
+      }
+    },
+    {
+      "id": "god_view",
+      "offset_xyz": [
+        0,
+        20,
+        0.1
+      ],
+      "look_offset": [
+        0,
+        0,
+        0
+      ],
+      "duration_s": 2,
+      "fov": 80
+    },
+    {
+      "id": "pov_first_person",
+      "offset_xyz": [
+        0,
+        1.6,
+        0
+      ],
+      "look_offset": [
+        0,
+        1.6,
+        5
+      ],
+      "duration_s": 3,
+      "fov": 75
+    },
+    {
+      "id": "bullet_time",
+      "offset_xyz": [
+        3,
+        1.5,
+        3
+      ],
+      "look_offset": [
+        0,
+        1,
+        0
+      ],
+      "duration_s": 2,
+      "fov": 50,
+      "post": {
+        "orbit": true,
+        "slowmo": 0.3
+      }
+    }
   ]
 }
