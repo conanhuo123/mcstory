@@ -3,27 +3,71 @@
   "title": "mcstory Action Grammar Schema v0.1",
   "description": "动作语法库 — 每个 action token 标准化定义. 4 库 + 1 闭环 中的第 1 库. 跨剧本复利.",
   "type": "object",
-  "required": ["id", "type", "actor", "params"],
+  "required": [
+    "id",
+    "type",
+    "actor",
+    "params"
+  ],
   "properties": {
-    "id": {"type": "string", "description": "唯一 ID, e.g. 'walk_to_block'"},
+    "id": {
+      "type": "string",
+      "description": "唯一 ID, e.g. 'walk_to_block'"
+    },
     "type": {
       "type": "string",
-      "enum": ["walk", "tp", "look", "say", "attack", "use_item", "place_block", "setblock", "give_effect", "summon", "kill", "particle"],
+      "enum": [
+        "walk",
+        "tp",
+        "look",
+        "say",
+        "attack",
+        "use_item",
+        "place_block",
+        "setblock",
+        "give_effect",
+        "summon",
+        "kill",
+        "particle"
+      ],
       "description": "动作类型"
     },
     "actor": {
       "type": "string",
-      "enum": ["steve", "villager", "iron_golem", "creeper", "enderman", "wolf", "any"],
+      "enum": [
+        "steve",
+        "villager",
+        "iron_golem",
+        "creeper",
+        "enderman",
+        "wolf",
+        "any"
+      ],
       "description": "执行者"
     },
     "params": {
       "type": "object",
       "properties": {
-        "xyz": {"type": "array", "items": {"type": "number"}, "minItems": 3, "maxItems": 3},
-        "target": {"type": "string"},
-        "text": {"type": "string"},
-        "duration_s": {"type": "number"},
-        "effect": {"type": "string"}
+        "xyz": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "target": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "duration_s": {
+          "type": "number"
+        },
+        "effect": {
+          "type": "string"
+        }
       }
     },
     "mc_command": {
@@ -32,7 +76,9 @@
     },
     "tags": {
       "type": "array",
-      "items": {"type": "string"},
+      "items": {
+        "type": "string"
+      },
       "description": "语义 tag e.g. ['plead', 'die', 'reveal']"
     }
   },
@@ -41,25 +87,263 @@
       "id": "villager_kneel",
       "type": "tp",
       "actor": "villager",
-      "params": {"xyz": [0, 0, 0], "duration_s": 1},
+      "params": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "duration_s": 1
+      },
       "mc_command": "/tp @e[type=villager,limit=1] <x> <y> <z> 0 -30",
-      "tags": ["plead", "submit"]
+      "tags": [
+        "plead",
+        "submit"
+      ]
     },
     {
       "id": "creeper_glow",
       "type": "give_effect",
       "actor": "creeper",
-      "params": {"effect": "glowing", "duration_s": 5},
+      "params": {
+        "effect": "glowing",
+        "duration_s": 5
+      },
       "mc_command": "/effect give @e[type=creeper,limit=1] glowing <duration_s> 0 true",
-      "tags": ["highlight", "reveal"]
+      "tags": [
+        "highlight",
+        "reveal"
+      ]
     },
     {
       "id": "sign_reveal",
       "type": "setblock",
       "actor": "any",
-      "params": {"xyz": [0, 0, 0]},
+      "params": {
+        "xyz": [
+          0,
+          0,
+          0
+        ]
+      },
       "mc_command": "/setblock <x> <y> <z> oak_sign{front_text:{messages:[\"<line1>\"]}}",
-      "tags": ["twist", "reveal"]
+      "tags": [
+        "twist",
+        "reveal"
+      ]
+    },
+    {
+      "id": "villager_run",
+      "type": "walk",
+      "actor": "villager",
+      "params": {
+        "xyz": [
+          0,
+          0,
+          0
+        ]
+      },
+      "mc_command": "/tp @e[type=villager,limit=1] <x> <y> <z>",
+      "tags": [
+        "flee",
+        "chase"
+      ]
+    },
+    {
+      "id": "villager_speak",
+      "type": "say",
+      "actor": "villager",
+      "params": {
+        "text": "..."
+      },
+      "mc_command": "/tellraw @a {\"text\":\"<villager>: <text>\"}",
+      "tags": [
+        "dialog"
+      ]
+    },
+    {
+      "id": "iron_golem_attack",
+      "type": "attack",
+      "actor": "iron_golem",
+      "params": {
+        "target": "creeper"
+      },
+      "mc_command": "/data merge entity @e[type=iron_golem,limit=1] {Target:'<target>'}",
+      "tags": [
+        "combat",
+        "protect"
+      ]
+    },
+    {
+      "id": "creeper_explode",
+      "type": "give_effect",
+      "actor": "creeper",
+      "params": {
+        "effect": "ignited"
+      },
+      "mc_command": "/data merge entity @e[type=creeper,limit=1] {ignited:1b,Fuse:30}",
+      "tags": [
+        "climax",
+        "danger"
+      ]
+    },
+    {
+      "id": "steve_swing",
+      "type": "use_item",
+      "actor": "steve",
+      "params": {
+        "item": "diamond_sword"
+      },
+      "mc_command": "/effect give @p slowness 1 1",
+      "tags": [
+        "combat"
+      ]
+    },
+    {
+      "id": "villager_drop_item",
+      "type": "place_block",
+      "actor": "villager",
+      "params": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "block": "emerald"
+      },
+      "mc_command": "/summon item ~ ~ ~ {Item:{id:emerald,Count:1}}",
+      "tags": [
+        "reveal",
+        "gift"
+      ]
+    },
+    {
+      "id": "player_kneel",
+      "type": "give_effect",
+      "actor": "steve",
+      "params": {
+        "effect": "slowness"
+      },
+      "mc_command": "/effect give @p slowness 3 3",
+      "tags": [
+        "plead",
+        "weak"
+      ]
+    },
+    {
+      "id": "entity_glow_red",
+      "type": "give_effect",
+      "actor": "any",
+      "params": {
+        "effect": "glowing"
+      },
+      "mc_command": "/effect give @e[type=<actor>,limit=1] glowing 5 0 true",
+      "tags": [
+        "highlight",
+        "danger"
+      ]
+    },
+    {
+      "id": "scene_dark",
+      "type": "particle",
+      "actor": "any",
+      "params": {
+        "effect": "smoke"
+      },
+      "mc_command": "/particle minecraft:smoke ~ ~ ~ 5 5 5 0.5 200",
+      "tags": [
+        "atmosphere"
+      ]
+    },
+    {
+      "id": "scene_glow_purple",
+      "type": "particle",
+      "actor": "any",
+      "params": {
+        "effect": "portal"
+      },
+      "mc_command": "/particle minecraft:portal ~ ~ ~ 3 3 3 0.3 100",
+      "tags": [
+        "mystery"
+      ]
+    },
+    {
+      "id": "setblock_diamond_block",
+      "type": "place_block",
+      "actor": "any",
+      "params": {
+        "xyz": [
+          0,
+          0,
+          0
+        ]
+      },
+      "mc_command": "/setblock <x> <y> <z> diamond_block",
+      "tags": [
+        "wealth",
+        "reveal"
+      ]
+    },
+    {
+      "id": "setblock_lava",
+      "type": "place_block",
+      "actor": "any",
+      "params": {
+        "xyz": [
+          0,
+          0,
+          0
+        ]
+      },
+      "mc_command": "/setblock <x> <y> <z> lava",
+      "tags": [
+        "danger"
+      ]
+    },
+    {
+      "id": "summon_lightning",
+      "type": "summon",
+      "actor": "any",
+      "params": {
+        "xyz": [
+          0,
+          0,
+          0
+        ]
+      },
+      "mc_command": "/summon lightning_bolt <x> <y> <z>",
+      "tags": [
+        "shock",
+        "climax"
+      ]
+    },
+    {
+      "id": "kill_entity",
+      "type": "kill",
+      "actor": "any",
+      "params": {},
+      "mc_command": "/kill @e[type=<actor>,limit=1,sort=nearest]",
+      "tags": [
+        "death"
+      ]
+    },
+    {
+      "id": "reveal_sign",
+      "type": "setblock",
+      "actor": "any",
+      "params": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "text": ""
+      },
+      "mc_command": "/setblock <x> <y> <z> oak_sign{front_text:{messages:[\"<text>\"]}}",
+      "tags": [
+        "twist",
+        "reveal"
+      ]
     }
   ]
 }
