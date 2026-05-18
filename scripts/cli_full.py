@@ -67,23 +67,25 @@ def main(inp):
     build_cmds = [b["cmd"] for b in scene_build.get("blocks", []) if "cmd" in b]
     origin = scene_build.get("origin", [-60, 80, -190])
     # v0.2.1: summon characters in scene
+    # v0.8: NoAI:1 让 mob 不乱走 + Silent:1 不发声 + PersistenceRequired:1 不消失
+    NBT = '{NoAI:1b,Silent:1b,PersistenceRequired:1b,Invulnerable:1b}'
     SUMMON_MAP = {
-        "villager": "/summon villager",
-        "iron_golem": "/summon iron_golem",
-        "creeper": "/summon creeper",
-        "steve": None,  # steve = director player, 不 summon
+        "villager": f"/summon villager <X> <Y> <Z> {NBT}",
+        "iron_golem": f"/summon iron_golem <X> <Y> <Z> {NBT}",
+        "creeper": f"/summon creeper <X> <Y> <Z> {NBT}",
+        "steve": None,
     }
     char_summons = []
     chars = sc.get("characters", [])
     for i, ch in enumerate(chars):
-        cmd = SUMMON_MAP.get(ch)
-        if cmd:
+        tmpl = SUMMON_MAP.get(ch)
+        if tmpl:
             x, y, z = origin[0] + (i-1)*2, origin[1] + 1, origin[2] + 2
-            char_summons.append(f"{cmd} {x} {y} {z}")
+            char_summons.append(tmpl.replace("<X>", str(x)).replace("<Y>", str(y)).replace("<Z>", str(z)))
     # v0.3: 镜头切换表 (5 shot × 7 字段: t, cam_x/y/z, look_x/y/z)
     # camera 类型 → 相对 origin 偏移
     CAM_OFFSETS = {
-        "wide":           {"pos": [6, 4, 8], "look": [0, 1, 0]},   # 远 + 高
+        "wide":           {"pos": [4, 3, 5], "look": [0, 1, 0]},   # 远 + 高
         "medium":         {"pos": [6, 4, 8],   "look": [0, 1, 0]},   # 中距
         "closeup_face":   {"pos": [3, 2, 4],   "look": [0, 1, 0]},   # 近
         "closeup_object": {"pos": [2, 1, 3],   "look": [0, 0, 0]},   # 极近, 看物
@@ -119,11 +121,27 @@ def main(inp):
     viewer_js = f"""const mineflayer = require('mineflayer');
 const {{ Vec3 }} = require('vec3');
 const {{ mineflayer: pv }} = require('prismarine-viewer');
+const {{ pathfinder, Movements, goals }} = require('mineflayer-pathfinder');
 const cam = mineflayer.createBot({{host:'localhost',port:25565,username:'camera',version:'1.20.4'}});
+cam.loadPlugin(pathfinder);
 cam.once('spawn', () => {{
-  console.log('cam spawned');
-  pv(cam, {{port: 3007, firstPerson: true, viewDistance: 6}});
+  console.log('cam spawned at', cam.entity.position);
+  pv(cam, {{port: 3007, firstPerson: true, viewDistance: 8}});
   console.log('VIEWER_READY');
+  // v1.4 关键 fix: cam 默认 yaw=0 看 south. build 在 cam 的 north+up, 必须 cam.look 让它看 build 方向
+  // build origin 在 cam spawn 的 north (z 小), 上方 (y 大). yaw=PI (look north), pitch=-PI/4 (look up 45°)
+  setTimeout(() => {{
+    try {{
+      // 自动算: build origin (-60, 100, -190) vs cam spawn (~ -56, 78, -185)
+      // dx = -60-(-56) = -4, dy = 100-79 = 21, dz = -190-(-185) = -5
+      // yaw = atan2(-dx, dz) = atan2(4, -5), pitch = atan2(-dy, sqrt(dx²+dz²))
+      const dx = -4, dy = 21, dz = -5;
+      const yaw = Math.atan2(-dx, dz);  // 弧度
+      const pitch = Math.atan2(-dy, Math.sqrt(dx*dx + dz*dz));
+      cam.look(yaw, pitch, true);
+      console.log(`cam.look y=${{(yaw*180/Math.PI).toFixed(0)}} p=${{(pitch*180/Math.PI).toFixed(0)}}`);
+    }} catch(e) {{ console.error('init look', e.message); }}
+  }}, 2000);
   setTimeout(() => {{
     const d = mineflayer.createBot({{host:'localhost',port:25565,username:'director',version:'1.20.4'}});
     d.on('messagestr', s => {{ if(s.toLowerCase().includes('error')||s.includes('找不到')) console.error('CHAT:', s.slice(0,80)); }});
@@ -131,6 +149,16 @@ cam.once('spawn', () => {{
       // v0.2: 给 director op 权限 + 先 build scene + tp camera 到 scene 上空, 再喊台词
       const buildCmds = {json.dumps(build_cmds, ensure_ascii=False)};
       const origin = {json.dumps(origin)};
+      // v0.8: 稳定场景
+      d.chat('/time set noon');
+      d.chat('/weather clear');
+      d.chat('/gamerule doDaylightCycle false');
+      d.chat('/gamerule doWeatherCycle false');
+      d.chat('/gamerule doMobSpawning false');
+      d.chat('/gamerule mobGriefing false');
+      d.chat('/difficulty peaceful');
+      // v1.3: 重设 world spawn 到 scene 旁, 下次 bot reconnect 就在 scene 附近
+      d.chat(`/setworldspawn ${{origin[0]+8}} ${{origin[1]+5}} ${{origin[2]+10}}`);
       // camera + director 都已在 ops.json, 直接 build + tp
       // tp camera 到 scene 前方 + 让它 lookAt scene 中心 (firstPerson 跟 entity rotation)
       // 先在 camera 落点放石头让它站住, 再 tp + lookAt
@@ -160,14 +188,31 @@ cam.once('spawn', () => {{
       const buildEnd = 1000 + buildCmds.length*100 + 500 + charSummons.length*200 + 1500;
       // v0.3: 镜头切换 (5 shot 5 个 camera 位置), shot.camera 决定距离/角度
       const cameraMoves = {json.dumps(camera_moves)};
-      // v0.6: 1 个固定 wide camera + spectator
-      d.chat(`/gamemode spectator camera`);
-      cameraMoves.forEach(([t, x, y, z, yaw, pitch]) => {{
+      // v1.5: creative cam + 阶梯 /tp 步进 + 每步 emit move (强制 viewer chunk update)
+      d.chat(`/gamemode creative camera`);
+      const move0 = cameraMoves[0];
+      setTimeout(() => {{
+        const steps = 20;
+        const sx = cam.entity.position.x, sy = cam.entity.position.y, sz = cam.entity.position.z;
+        const dx = (move0[1] - sx) / steps, dy = (move0[2] - sy) / steps, dz = (move0[3] - sz) / steps;
+        for (let i = 1; i <= steps; i++) {{
+          setTimeout(() => {{
+            const tx = sx + dx*i, ty = sy + dy*i, tz = sz + dz*i;
+            d.chat(`/tp camera ${{tx.toFixed(1)}} ${{ty.toFixed(1)}} ${{tz.toFixed(1)}}`);
+            // 强制 cam.entity.position update + emit move 让 worldView.updatePosition + load 新 chunks
+            try {{
+              cam.entity.position.x = tx; cam.entity.position.y = ty; cam.entity.position.z = tz;
+              cam.emit('move');
+            }} catch(e) {{}}
+          }}, i * 300);  // 每 300ms 走一步, 20 steps = 6s
+        }}
+        // 最后设朝向 (用 cam.look)
         setTimeout(() => {{
-          d.chat(`/tp camera ${{x}} ${{y}} ${{z}} ${{yaw}} ${{pitch}}`);
-          console.log(`cam fixed @ (${{x.toFixed(1)}},${{y}},${{z.toFixed(1)}}) y${{yaw}} p${{pitch}}`);
-        }}, buildEnd + t*1000);
-      }});
+          d.chat(`/tp camera ${{move0[1]}} ${{move0[2]}} ${{move0[3]}} ${{move0[4]}} ${{move0[5]}}`);
+          try {{ cam.look(move0[4] * Math.PI/180, move0[5] * Math.PI/180, true); }} catch(e) {{}}
+          console.log(`cam settled @ (${{move0[1].toFixed(1)}},${{move0[2]}},${{move0[3].toFixed(1)}}) y${{move0[4]}} p${{move0[5]}}`);
+        }}, steps * 300 + 500);
+      }}, buildEnd);
       // v0.6: 角色动作时间表
       const charActions = {json.dumps(char_actions, ensure_ascii=False)};
       charActions.forEach(([t, cmd]) => {{
@@ -197,8 +242,8 @@ setTimeout(() => process.exit(0), 120000);
             print("  viewer ready")
             break
     
-    # 等 director spawn (6s) + build (~3s) + summon (~2s) + tp 渲染 (~2s) = 14s 总
-    time.sleep(14)
+    # 等: director spawn (6s) + build (~3s) + summon (~2s) + 阶梯 tp (~6s) + 缓冲 = 20s 总
+    time.sleep(20)
 
     # puppeteer headless 录 (不依赖 chrome GUI / 不依赖 user session, 真 headless)
     raw = work / "raw.mp4"
