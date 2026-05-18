@@ -20,6 +20,7 @@ body { font-family: -apple-system, "PingFang SC", system-ui, sans-serif; backgro
 .card h3 { font-size: 18px; color: #5cffb2; margin-bottom: 8px; }
 .card .logline { font-size: 14px; color: #8b95a7; margin-bottom: 12px; }
 .card .twist { font-size: 14px; padding: 12px; background: #0a0e14; border-radius: 6px; color: #ffc857; }
+.card video { width: 100%; border-radius: 6px; margin-bottom: 12px; background: #000; }
 .how { padding: 80px 24px; background: #0d1117; }
 .how-inner { max-width: 900px; margin: 0 auto; }
 .how h2 { font-size: 32px; margin-bottom: 32px; text-align: center; }
@@ -44,32 +45,67 @@ footer { text-align: center; padding: 32px; font-size: 13px; color: #4a5263; }
 </section>
 
 <section id="samples" class="samples">
-  <h2>Five templates shipping today</h2>
+  <h2>Ten templates shipping today</h2>
   <div class="grid">
     <div class="card">
+      <video src="demos/judge_death.mp4" muted loop playsinline preload="metadata" controls></video>
       <h3>judge_death</h3>
       <p class="logline">A villager pleads in his own voice on the execution block.</p>
       <p class="twist">Twist: he is the previous server owner.</p>
     </div>
     <div class="card">
+      <video src="demos/creeper_refuse.mp4" muted loop playsinline preload="metadata" controls></video>
       <h3>creeper_refuse</h3>
       <p class="logline">A creeper stands but refuses to detonate.</p>
       <p class="twist">Twist: it's guarding a glowing villager egg under its feet.</p>
     </div>
     <div class="card">
+      <video src="demos/redstone_door.mp4" muted loop playsinline preload="metadata" controls></video>
       <h3>redstone_door</h3>
       <p class="logline">A player walks through a redstone door at night.</p>
       <p class="twist">Twist: the mirror inside shows a villager's face — his own.</p>
     </div>
     <div class="card">
+      <video src="demos/missing_spawn.mp4" muted loop playsinline preload="metadata" controls></video>
       <h3>missing_spawn</h3>
       <p class="logline">A player wakes; bed gone, map corrupted.</p>
       <p class="twist">Twist: the sign reads "you were never born here."</p>
     </div>
     <div class="card">
+      <video src="demos/dying_memory.mp4" muted loop playsinline preload="metadata" controls></video>
       <h3>dying_memory</h3>
       <p class="logline">A villager forgets one memory per morning.</p>
       <p class="twist">Twist: he turns into a creeper before the screen cuts.</p>
+    </div>
+    <div class="card">
+      <video src="demos/sun_thief.mp4" muted loop playsinline preload="metadata" controls></video>
+      <h3>sun_thief</h3>
+      <p class="logline">An enderman steals the sun. Player chases purple particles to the End.</p>
+      <p class="twist">Twist: it was guarding the End from a sleeping intruder.</p>
+    </div>
+    <div class="card">
+      <video src="demos/fake_ally.mp4" muted loop playsinline preload="metadata" controls></video>
+      <h3>fake_ally</h3>
+      <p class="logline">A teammate keeps saving you, never speaks.</p>
+      <p class="twist">Twist: it's a revive command block you set before dying.</p>
+    </div>
+    <div class="card">
+      <video src="demos/village_trial.mp4" muted loop playsinline preload="metadata" controls></video>
+      <h3>village_trial</h3>
+      <p class="logline">The village puts you on trial for stealing diamonds.</p>
+      <p class="twist">Twist: the chest contains 16 papers with your own name.</p>
+    </div>
+    <div class="card">
+      <video src="demos/golem_betray.mp4" muted loop playsinline preload="metadata" controls></video>
+      <h3>golem_betray</h3>
+      <p class="logline">Iron golem stands still during a zombie raid.</p>
+      <p class="twist">Twist: behind it hides a baby zombie the village raised in secret.</p>
+    </div>
+    <div class="card">
+      <video src="demos/redstone_world.mp4" muted loop playsinline preload="metadata" controls></video>
+      <h3>redstone_world</h3>
+      <p class="logline">Player digs deep, hears ticking. Follows redstone wires.</p>
+      <p class="twist">Twist: the entire server is a redstone simulation.</p>
     </div>
   </div>
 </section>
@@ -85,6 +121,28 @@ footer { text-align: center; padding: 32px; font-size: 13px; color: #4a5263; }
    <span class="arrow">↓</span>  puppeteer + ffmpeg      →  capture, burn subtitles, mix TTS
 final.mp4 (15s, 1080×1920, vertical)</pre>
     <p style="color:#8b95a7;margin-top:24px;font-size:14px">Per-render cost: ~$0.02 (just the LLM call). Server is local; no Sora-class $2-per-clip fees. Multi-shot narrative — not one continuous take.</p>
+  </div>
+</section>
+
+<section class="how">
+  <div class="how-inner">
+    <h2>Two quality tiers</h2>
+    <pre class="flow">┌─────────────────────────┬──────────────────────────┬──────────┬──────┐
+│ Tier                    │ Tool                     │ Time     │ Cost │
+├─────────────────────────┼──────────────────────────┼──────────┼──────┤
+│ <span class="arrow">Draft</span> (built-in)        │ puppeteer + viewer       │ 60s      │ $0.02│
+│ <span class="arrow">Production</span> (recommended)│ Your MC client + ReplayMod│ 5 min    │ Free │
+└─────────────────────────┴──────────────────────────┴──────────┴──────┘
+
+<span class="arrow">Production workflow</span>:
+1. python3 cli_full.py "your one-sentence idea"
+2. Boot Paper 1.20.4 server (java -jar paper.jar)
+3. Open your MC client → join localhost:25565 (install ReplayMod once)
+4. node outputs/.../bot.js   # builds scene, summons NPCs, fires dialogue
+5. ReplayMod: F6 to record, F6 to stop
+6. ReplayMod → Render → 1080p 60fps (add Iris shaders for cinematic look)
+7. python3 postprod.py recording.mp4 timeline.json final.mp4  # burn subs + TTS</pre>
+    <p style="color:#8b95a7;margin-top:24px;font-size:14px">Why split? The headless renderer (<a href="https://github.com/PrismarineJS/prismarine-viewer/issues/477" style="color:#5cffb2">prismarine-viewer #477</a>) doesn't support jump-cuts to arbitrary positions. Full-quality MC video has always been a semi-manual ReplayMod workflow — mcstory automates the script + scaffolding parts.</p>
   </div>
 </section>
 

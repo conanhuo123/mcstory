@@ -124,6 +124,28 @@ final.mp4 (15s, 1080×1920, vertical)</pre>
   </div>
 </section>
 
+<section class="how">
+  <div class="how-inner">
+    <h2>Two quality tiers</h2>
+    <pre class="flow">┌─────────────────────────┬──────────────────────────┬──────────┬──────┐
+│ Tier                    │ Tool                     │ Time     │ Cost │
+├─────────────────────────┼──────────────────────────┼──────────┼──────┤
+│ <span class="arrow">Draft</span> (built-in)        │ puppeteer + viewer       │ 60s      │ $0.02│
+│ <span class="arrow">Production</span> (recommended)│ Your MC client + ReplayMod│ 5 min    │ Free │
+└─────────────────────────┴──────────────────────────┴──────────┴──────┘
+
+<span class="arrow">Production workflow</span>:
+1. python3 cli_full.py "your one-sentence idea"
+2. Boot Paper 1.20.4 server (java -jar paper.jar)
+3. Open your MC client → join localhost:25565 (install ReplayMod once)
+4. node outputs/.../bot.js   # builds scene, summons NPCs, fires dialogue
+5. ReplayMod: F6 to record, F6 to stop
+6. ReplayMod → Render → 1080p 60fps (add Iris shaders for cinematic look)
+7. python3 postprod.py recording.mp4 timeline.json final.mp4  # burn subs + TTS</pre>
+    <p style="color:#8b95a7;margin-top:24px;font-size:14px">Why split? The headless renderer (<a href="https://github.com/PrismarineJS/prismarine-viewer/issues/477" style="color:#5cffb2">prismarine-viewer #477</a>) doesn't support jump-cuts to arbitrary positions. Full-quality MC video has always been a semi-manual ReplayMod workflow — mcstory automates the script + scaffolding parts.</p>
+  </div>
+</section>
+
 <section id="tester" class="tester">
   <h2>Looking for 5 beta testers</h2>
   <p>You run Minecraft on Mac, want to ship short-drama IP weekly, and can give honest feedback on which templates land. DM the maintainer.</p>
