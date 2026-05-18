@@ -36,13 +36,85 @@ footer { text-align: center; padding: 32px; font-size: 13px; color: #4a5263; }
 
 <section class="hero">
   <h1>One sentence → 15s Minecraft short</h1>
-  <p class="tag">Type a logline. Get back a 15-second cinematic Minecraft drama — scene built, characters spawned, camera shots, AI voiceover, subtitles, mp4. Fully automated, ~$0.02 per render.</p>
-  <div class="demo">mcstory "the creeper refuses to explode, because it's guarding a glowing villager egg"</div>
-  <div>
-    <a href="#tester" class="cta">Join 5 beta testers</a>
-    <a href="#samples" class="cta secondary">See 5 samples</a>
+  <p class="tag">Type a logline. The Minecraft world spawns in your browser. Drag to look. Hit Record to keep it.</p>
+
+  <div style="max-width:680px;margin:0 auto 24px;background:#1a1f29;border:1px solid #2a3140;border-radius:12px;padding:24px;">
+    <input id="prompt" type="text" placeholder="e.g. a creeper refuses to explode, because it's guarding a glowing villager egg"
+      style="width:100%;padding:14px;background:#0a0e14;border:1px solid #2a3140;border-radius:6px;color:#e6e6e6;font-size:16px;margin-bottom:12px;"/>
+    <div style="display:flex;gap:8px;">
+      <button onclick="startRender()" id="renderBtn" class="cta" style="border:0;cursor:pointer;flex:1">Render in browser</button>
+      <button onclick="recordVideo()" id="recBtn" class="cta secondary" style="border:0;cursor:pointer;">⏺ Record</button>
+    </div>
+    <div id="status" style="margin-top:12px;font-size:13px;color:#8b95a7;min-height:18px;"></div>
+  </div>
+
+  <iframe id="viewer" src="about:blank" style="display:none;width:90vw;max-width:1280px;height:60vh;border:1px solid #2a3140;border-radius:8px;background:#000;"></iframe>
+
+  <div style="margin-top:32px">
+    <a href="#samples" class="cta secondary">See 10 ready samples</a>
   </div>
 </section>
+
+<script>
+let currentJob = null, mediaRecorder = null, recordedChunks = [];
+const API = window.location.hostname === 'conanhuo123.github.io' ? null : window.location.origin;
+
+async function startRender() {
+  const p = document.getElementById('prompt').value.trim();
+  if (!p) { alert('Please type a sentence first'); return; }
+  if (!API) { alert('GitHub Pages is the marketing page. To actually render, run mcstory on your Mac:\n\n  cd ~/mcstory && python3 server.py\n\nthen visit http://localhost:8000'); return; }
+  document.getElementById('status').textContent = '⏳ Booting Fabric server + bot...';
+  document.getElementById('renderBtn').disabled = true;
+  try {
+    const r = await fetch(API + '/api/render', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({prompt:p})});
+    const j = await r.json();
+    currentJob = j.job_id;
+    document.getElementById('viewer').src = j.viewer_url + '?t=' + Date.now();
+    document.getElementById('viewer').style.display = 'block';
+    pollStatus();
+  } catch (e) {
+    document.getElementById('status').textContent = '❌ ' + e.message;
+    document.getElementById('renderBtn').disabled = false;
+  }
+}
+
+async function pollStatus() {
+  if (!currentJob) return;
+  const r = await fetch(API + '/api/status/' + currentJob);
+  const j = await r.json();
+  document.getElementById('status').textContent = `Status: ${j.status} | drag mouse in viewer to look around`;
+  if (j.status === 'done' || j.status === 'fail') {
+    document.getElementById('renderBtn').disabled = false;
+    return;
+  }
+  setTimeout(pollStatus, 3000);
+}
+
+async function recordVideo() {
+  const iframe = document.getElementById('viewer');
+  if (!iframe.src || iframe.src === 'about:blank') { alert('Render something first'); return; }
+  // Record the page (MediaRecorder + getDisplayMedia)
+  try {
+    const stream = await navigator.mediaDevices.getDisplayMedia({video: {frameRate: 30}, audio: false});
+    mediaRecorder = new MediaRecorder(stream, {mimeType: 'video/webm; codecs=vp9'});
+    recordedChunks = [];
+    mediaRecorder.ondataavailable = e => e.data.size > 0 && recordedChunks.push(e.data);
+    mediaRecorder.onstop = () => {
+      const blob = new Blob(recordedChunks, {type: 'video/webm'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = `mcstory_${Date.now()}.webm`;
+      a.click();
+      document.getElementById('status').textContent = '✓ Recording saved (webm). Convert to mp4 with: ffmpeg -i recording.webm out.mp4';
+    };
+    mediaRecorder.start();
+    document.getElementById('recBtn').textContent = '⏹ Stop';
+    document.getElementById('recBtn').onclick = () => { mediaRecorder.stop(); stream.getTracks().forEach(t=>t.stop()); document.getElementById('recBtn').onclick = recordVideo; document.getElementById('recBtn').textContent = '⏺ Record'; };
+  } catch (e) {
+    document.getElementById('status').textContent = '❌ Record failed: ' + e.message;
+  }
+}
+</script>
 
 <section id="samples" class="samples">
   <h2>Ten templates shipping today</h2>
