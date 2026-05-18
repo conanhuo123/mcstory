@@ -16,16 +16,33 @@ def get_key():
 
 def parse_prompt(user_prompt):
     """一句话 → 30s 剧本结构 (4 拍式: 3+15+8+4)"""
-    # 加载模板
+    # 加载模板 (v0.1 旧模板, 保留兼容)
     scenes = json.load(open(os.path.expanduser('~/mcstory/templates/scenes/scenes.json')))
     chars = json.load(open(os.path.expanduser('~/mcstory/templates/characters/characters.json')))
     cams = json.load(open(os.path.expanduser('~/mcstory/templates/cameras/cameras.json')))
 
+    # v6.4 D2 扩库: 4 库 schema examples 实时注入 GPT prompt
+    schema_dir = os.path.expanduser('~/mcstory/schema')
+    actions_lib = json.load(open(f'{schema_dir}/action_grammar.schema.json'))['examples']
+    cameras_lib = json.load(open(f'{schema_dir}/camera_library.schema.json'))['examples']
+    scenes_lib = json.load(open(f'{schema_dir}/scene_library.schema.json'))['examples']
+    chars_lib = json.load(open(f'{schema_dir}/character_library.schema.json'))['examples']
+    action_ids = [a['id'] for a in actions_lib]
+    camera_ids = [c['id'] for c in cameras_lib]
+    scene_ids = [s['id'] for s in scenes_lib]
+    char_ids = [c['id'] for c in chars_lib]
+
     system = f"""你是 MC 短剧导演. 输入一句话用户需求, 输出严格 JSON 格式的 30s 剧本.
 
-可选场景: {[s['id'] for s in scenes['scenes']]}
-可选角色: {[c['id'] for c in chars['characters']]}
-可选镜头: {[c['id'] for c in cams['cameras']]}
+可选场景 (v0.1): {[s['id'] for s in scenes['scenes']]}
+可选角色 (v0.1): {[c['id'] for c in chars['characters']]}
+可选镜头 (v0.1): {[c['id'] for c in cams['cameras']]}
+
+【D2 扩库 v6.4 — 优先用以下扩库 id】
+扩库 actions ({len(action_ids)}): {action_ids}
+扩库 cameras ({len(camera_ids)}): {camera_ids}
+扩库 scenes ({len(scene_ids)}): {scene_ids}
+扩库 characters ({len(char_ids)}): {char_ids}
 
 输出 JSON 结构:
 {{
