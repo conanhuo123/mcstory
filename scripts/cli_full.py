@@ -142,7 +142,8 @@ cam.once('spawn', () => {{
         d.chat(`/tp camera ${{origin[0]+10}} ${{origin[1]+8}} ${{origin[2]+12}}`);
         d.chat(`/effect give camera minecraft:levitation 60 0 true`);
         setTimeout(() => {{
-          try {{ cam.lookAt(new Vec3(origin[0], origin[1]+1, origin[2]), true); console.log('cam lookAt scene'); }} catch(e) {{ console.error('look err', e.message); }}
+          // v4.4: cam 看 character 中心 (origin+5z), 不再看 build origin
+          try {{ cam.lookAt(new Vec3(origin[0], origin[1]+2, origin[2]+5), true); console.log('cam lookAt characters'); }} catch(e) {{ console.error('look err', e.message); }}
         }}, 4500);
       }}, 800);
       // 然后批量 build (每条 50ms 间隔)
