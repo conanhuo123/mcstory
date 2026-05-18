@@ -1,0 +1,14 @@
+{
+  "id":"lava_kingdom","title":"岩浆王国","logline":"玩家挖到地下岩浆湖, 发现一个金币王国, 国王是村民",
+  "scene":"mine","characters":["steve","villager"],"redline":"用 magma_block + gold_block 表达",
+  "dialogue":["挖到岩浆","金子!","王国?","你是国王?","告示:税务司"],
+  "twist":"村民其实是上来收税的",
+  "twist_visual":"villager 头上 gold crown + 告示 '税务司'",
+  "shots":[
+    {"t":[0,3],"scene_action":"玩家挖矿挖到 magma_block","camera":"wide","subtitle":"挖到岩浆","voiceover":"玩家挖到一片岩浆海。"},
+    {"t":[3,6],"scene_action":"周围 gold_block 闪光","camera":"medium","subtitle":"金子!","voiceover":"岩浆周围全是金块, 闪闪发光。"},
+    {"t":[6,9],"scene_action":"villager 走来戴皇冠","camera":"closeup_face","subtitle":"王国?","voiceover":"一个村民戴皇冠走来。"},
+    {"t":[9,12],"scene_action":"玩家问","camera":"closeup_face","subtitle":"你是国王?","voiceover":"玩家恭敬一问。"},
+    {"t":[12,15],"scene_action":"告示牌 '税务司' 升起","camera":"freeze_zoom","subtitle":"税务司","voiceover":"告示翻转, 写着: 不是国王, 是税务司。"}
+  ],"duration_sec":15,"subtitle_color":"yellow"
+}

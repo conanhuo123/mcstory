@@ -1,0 +1,14 @@
+{
+  "id":"xp_god","title":"经验之神","logline":"玩家杀僵尸涨到 999 级, 然后游戏自动卸载",
+  "scene":"village","characters":["steve","villager"],"redline":"用 xp_orb particle + chat 表达",
+  "dialogue":["1000 级","村民鞠躬","太亮了!","卸载?","告示:封号"],
+  "twist":"经验涨太高被系统认为是作弊",
+  "twist_visual":"告示 'ban hammer activated'",
+  "shots":[
+    {"t":[0,3],"scene_action":"玩家身上 xp_orb 围绕","camera":"wide","subtitle":"1000 级","voiceover":"玩家全身光芒, 经验球围绕。"},
+    {"t":[3,6],"scene_action":"villager 鞠躬","camera":"medium","subtitle":"村民鞠躬","voiceover":"村民们对玩家深深鞠躬。"},
+    {"t":[6,9],"scene_action":"玩家身上闪光","camera":"closeup_face","subtitle":"太亮了!","voiceover":"玩家光太亮, 村民眼睛眯不开。"},
+    {"t":[9,12],"scene_action":"玩家身体开始消失","camera":"closeup_face","subtitle":"卸载?","voiceover":"玩家身上像素一点点消失。"},
+    {"t":[12,15],"scene_action":"地上 'BAN HAMMER' 告示","camera":"freeze_zoom","subtitle":"封号","voiceover":"地上告示: ban hammer 已触发, 经验作弊。"}
+  ],"duration_sec":15,"subtitle_color":"red"
+}

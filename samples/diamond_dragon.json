@@ -1,0 +1,14 @@
+{
+  "id":"diamond_dragon","title":"钻石龙","logline":"末影龙不吐火, 吐钻石, 因为它在喂养玩家",
+  "scene":"village","characters":["steve","villager"],"redline":"用 diamond particle + heart 表达",
+  "dialogue":["龙来了","快躲","它吐了","钻石!","告示:为你"],
+  "twist":"龙是玩家死去伙伴的灵魂",
+  "twist_visual":"diamond 粒子 + 告示 '为你 — 老朋友'",
+  "shots":[
+    {"t":[0,3],"scene_action":"龙的阴影从天空过","camera":"wide","subtitle":"龙来了","voiceover":"末影龙的阴影掠过村庄。"},
+    {"t":[3,6],"scene_action":"villager 慌张躲","camera":"medium","subtitle":"快躲","voiceover":"村民慌张, 抱头蹲下。"},
+    {"t":[6,9],"scene_action":"龙张嘴喷出闪光","camera":"closeup_face","subtitle":"它吐了","voiceover":"龙张嘴, 一道闪光喷出。"},
+    {"t":[9,12],"scene_action":"地上落下 diamond_block","camera":"closeup_object","subtitle":"钻石!","voiceover":"地上一阵叮当, 钻石散落。"},
+    {"t":[12,15],"scene_action":"龙身后告示 '为你 老朋友'","camera":"freeze_zoom","subtitle":"为你","voiceover":"告示浮出: 为你, 老朋友。"}
+  ],"duration_sec":15,"subtitle_color":"cyan"
+}

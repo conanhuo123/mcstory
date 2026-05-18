@@ -1,0 +1,14 @@
+{
+  "id":"clock_dilation","title":"时间膨胀","logline":"玩家挂机一天, 醒来发现村民老了 100 年",
+  "scene":"village","characters":["steve","villager"],"redline":"用 cobweb + brown_concrete 表达老化",
+  "dialogue":["我睡过头?","村庄破了","老人?","你...?","告示:100 年"],
+  "twist":"玩家挂机时间被时间膨胀放大",
+  "twist_visual":"villager 旁告示 'AFK detected: 100 years'",
+  "shots":[
+    {"t":[0,3],"scene_action":"玩家醒来, 周围 cobweb 缠绕","camera":"wide","subtitle":"我睡过头?","voiceover":"玩家睁眼, 蜘蛛网缠满床头。"},
+    {"t":[3,6],"scene_action":"村庄房子破败, 木头变深色","camera":"medium","subtitle":"村庄破了","voiceover":"村庄一片破败, 木屋长满苔藓。"},
+    {"t":[6,9],"scene_action":"白胡子 villager 拄棍走来","camera":"closeup_face","subtitle":"老人?","voiceover":"一个白胡子村民拄棍走来。"},
+    {"t":[9,12],"scene_action":"玩家认出 villager","camera":"closeup_face","subtitle":"你...?","voiceover":"玩家眯眼一看, 那是老朋友 但已经苍老。"},
+    {"t":[12,15],"scene_action":"告示 '100 年了, 你 AFK'","camera":"freeze_zoom","subtitle":"100 年","voiceover":"告示浮出: 你挂机了 100 年。"}
+  ],"duration_sec":15,"subtitle_color":"gray"
+}
