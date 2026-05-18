@@ -1,0 +1,14 @@
+{
+  "id":"stage1_solo_villager","title":"村民独白","logline":"村民站在处决台上独白 — stage1 单角色验证",
+  "scene":"courtroom","characters":["villager"],"redline":"只 1 角色, 验证看向/走位/反应 3 能力",
+  "dialogue":["开庭","抬头","摇头","低头","告示反转"],
+  "twist":"村民独白结束反转","twist_visual":"最后告示牌写'独白完毕'",
+  "shots":[
+    {"t":[0,3],"scene_action":"村民静站, 镜头入场","camera":"wide","subtitle":"开庭","voiceover":"村民独自站在处决台。"},
+    {"t":[3,6],"scene_action":"villager 抬头 (验证 look)","camera":"closeup_face","subtitle":"抬头","voiceover":"村民抬头看天空。"},
+    {"t":[6,9],"scene_action":"villager 摇头 (验证 yaw 变化)","camera":"closeup_face","subtitle":"摇头","voiceover":"村民摇头, 似乎不甘心。"},
+    {"t":[9,12],"scene_action":"villager 低头 (验证 pitch)","camera":"closeup_face","subtitle":"低头","voiceover":"村民最终低头。"},
+    {"t":[12,15],"scene_action":"setblock 告示反转 (验证 prop_state)","camera":"freeze_zoom","subtitle":"独白完毕","voiceover":"告示牌升起: 独白完毕。"}
+  ],"duration_sec":15,"subtitle_color":"yellow",
+  "stage":1
+}

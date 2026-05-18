@@ -1,0 +1,14 @@
+{
+  "id":"stage2_duel","title":"双人对峙","logline":"steve 与 villager 处决台对峙 — stage2 验证双角色看向+反应",
+  "scene":"courtroom","characters":["steve","villager"],"redline":"只 2 角色, 验证看向/对话/反应",
+  "dialogue":["开庭","你?","村民开口","对望","告示反转"],
+  "twist":"村民开口求饶, steve 停手","twist_visual":"steve 举起斧, villager 抬头, 告示牌反转",
+  "shots":[
+    {"t":[0,3],"scene_action":"steve 走上台, villager 跪着","camera":"wide","subtitle":"开庭","voiceover":"处决台升起, steve 走上台。"},
+    {"t":[3,6],"scene_action":"两人对望 (双向 look)","camera":"medium","subtitle":"你?","voiceover":"steve 看向 villager, villager 抬头。"},
+    {"t":[6,9],"scene_action":"villager 摇头喊冤","camera":"closeup_face","subtitle":"村民开口","voiceover":"村民摇头, 喊冤。"},
+    {"t":[9,12],"scene_action":"steve 举斧停顿","camera":"closeup_face","subtitle":"对望","voiceover":"steve 举起斧, 双目对望。"},
+    {"t":[12,15],"scene_action":"告示牌反转","camera":"freeze_zoom","subtitle":"上一任服主","voiceover":"告示浮出: 上一任服主。"}
+  ],"duration_sec":15,"subtitle_color":"red",
+  "stage":2
+}
