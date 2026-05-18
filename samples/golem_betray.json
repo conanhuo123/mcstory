@@ -1,0 +1,13 @@
+{
+  "id":"golem_betray","title":"铁傀儡背叛","logline":"村庄遭袭铁傀儡不动, 反转它在保护真正的怪物",
+  "scene":"village","characters":["steve","villager","iron_golem"],"redline":"铁傀儡静止不动是关键",
+  "dialogue":["快保护!","它不动!","为什么?","身后有声","它在守怪物"],
+  "twist":"铁傀儡守的不是村庄, 是村民曾经偷养的怪物","twist_visual":"镜头绕到铁傀儡身后, 看到一个小僵尸躲着",
+  "shots":[
+    {"t":[0,3],"scene_action":"村庄夜袭, 火光冲天","camera":"wide","subtitle":"快保护!","voiceover":"村庄遭僵尸围, 火把烧得正旺。"},
+    {"t":[3,6],"scene_action":"铁傀儡站着不动","camera":"medium","subtitle":"它不动!","voiceover":"村民惊呼铁傀儡不动, 它定在原地。"},
+    {"t":[6,9],"scene_action":"玩家走近铁傀儡","camera":"closeup_face","subtitle":"为什么?","voiceover":"玩家走近, 铁傀儡眼里没有杀意。"},
+    {"t":[9,12],"scene_action":"铁傀儡身后传来声音","camera":"closeup_object","subtitle":"身后有声","voiceover":"铁傀儡身后传出哀嚎, 像是被困住的什么。"},
+    {"t":[12,15],"scene_action":"镜头绕到背后, 小僵尸藏着","camera":"freeze_zoom","subtitle":"它在守怪物","voiceover":"镜头一绕, 它身后藏着村民曾偷养的小僵尸。"}
+  ],"duration_sec":15,"subtitle_color":"orange"
+}

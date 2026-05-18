@@ -1,0 +1,14 @@
+{
+  "id":"ender_killer","title":"末影杀手","logline":"末影人每晚拿走玩家一件物品, 最后拿走的是玩家的脸",
+  "scene":"village","characters":["steve","villager"],"redline":"用 item_frame + skull 表达拿走",
+  "dialogue":["背包少了","又少了","我...","谁?","告示:我是你"],
+  "twist":"末影人就是玩家的影子",
+  "twist_visual":"item_frame 里是玩家头骨",
+  "shots":[
+    {"t":[0,3],"scene_action":"玩家清晨开背包发现少了一个钻石剑","camera":"wide","subtitle":"背包少了","voiceover":"第一天清晨, 钻石剑不见了。"},
+    {"t":[3,6],"scene_action":"玩家第二天开背包又少了苹果","camera":"medium","subtitle":"又少了","voiceover":"第二天, 苹果也消失了。"},
+    {"t":[6,9],"scene_action":"玩家照镜子, 镜中没有脸","camera":"closeup_face","subtitle":"我...","voiceover":"玩家照镜子, 镜中的人没有脸。"},
+    {"t":[9,12],"scene_action":"末影人闪现走过","camera":"closeup_face","subtitle":"谁?","voiceover":"末影人闪现, 嘴里嘟囔。"},
+    {"t":[12,15],"scene_action":"item_frame 里浮现 steve 头骨 + 告示","camera":"freeze_zoom","subtitle":"我是你","voiceover":"镜头转向墙上, item_frame 里是玩家头骨, 告示: 我是你。"}
+  ],"duration_sec":15,"subtitle_color":"purple"
+}

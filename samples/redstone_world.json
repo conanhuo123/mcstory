@@ -1,0 +1,13 @@
+{
+  "id":"redstone_world","title":"红石世界","logline":"玩家挖到地底发现整个服务器是红石机器人在演",
+  "scene":"redstone_door","characters":["steve","villager"],"redline":"红石电路特写是反转关键",
+  "dialogue":["地底有声","红石声?","跟着挖","居然是机器","原来都是假的"],
+  "twist":"村民/动物/天气全是红石电路驱动的, 服务器是机器人模拟","twist_visual":"巨型红石电路全景, 上面爬满 redstone wire",
+  "shots":[
+    {"t":[0,3],"scene_action":"玩家在矿洞听到下方声音","camera":"wide","subtitle":"地底有声","voiceover":"玩家挖矿时, 听到地底传出滴答声。"},
+    {"t":[3,6],"scene_action":"玩家挖石头, 红石粉飞溅","camera":"medium","subtitle":"红石声?","voiceover":"挖开石壁, 红石电流嗡鸣。"},
+    {"t":[6,9],"scene_action":"挖出一条红石通道","camera":"medium","subtitle":"跟着挖","voiceover":"玩家挖出通道, 顺红石线深入。"},
+    {"t":[9,12],"scene_action":"豁然开朗, 巨型机器轮廓","camera":"wide","subtitle":"居然是机器","voiceover":"豁然开朗, 眼前是巨型红石机器。"},
+    {"t":[12,15],"scene_action":"全景: 红石矩阵驱动整个地图","camera":"freeze_zoom","subtitle":"原来都是假的","voiceover":"镜头拉远, 整个服务器在红石矩阵之上, 假的。"}
+  ],"duration_sec":15,"subtitle_color":"red"
+}

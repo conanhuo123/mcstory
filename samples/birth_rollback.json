@@ -1,0 +1,13 @@
+{
+  "id":"birth_rollback","title":"出生点被退档","logline":"玩家死后重生发现自己被回滚到前一个版本",
+  "scene":"village","characters":["steve","villager"],"redline":"反转必须由 chest 内 NBT 信息体现",
+  "dialogue":["我重生了","怎么不一样了","村民也不认识我","你是谁?","告示:版本 1.19"],
+  "twist":"玩家被回滚到 1.19 版本, 当前服已升 1.20","twist_visual":"chest 物品栏里出现 1.19 才有的 sweet_berries",
+  "shots":[
+    {"t":[0,3],"scene_action":"玩家在床边醒来, 房间一片空","camera":"wide","subtitle":"我重生了","voiceover":"玩家睁眼, 床位还是熟悉的, 但房子空了一半。"},
+    {"t":[3,6],"scene_action":"玩家走到村庄, 路过的村民冷漠","camera":"medium","subtitle":"怎么不一样了","voiceover":"村民像不认识他, 头也不抬继续工作。"},
+    {"t":[6,9],"scene_action":"玩家拉住村民问","camera":"closeup_face","subtitle":"村民也不认识我","voiceover":"玩家拉住一个村民, 村民眼神空洞。"},
+    {"t":[9,12],"scene_action":"村民转身指 chest","camera":"closeup_object","subtitle":"你是谁?","voiceover":"村民没说话, 只是指了指角落的 chest。"},
+    {"t":[12,15],"scene_action":"chest 打开, 里面是 1.19 sweet_berries + 告示","camera":"freeze_zoom","subtitle":"告示:版本 1.19","voiceover":"打开 chest, 告示牌写: 你已被回滚到版本 1.19。"}
+  ],"duration_sec":15,"subtitle_color":"red"
+}

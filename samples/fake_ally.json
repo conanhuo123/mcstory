@@ -1,0 +1,13 @@
+{
+  "id":"fake_ally","title":"假队友","logline":"队友一直救你, 最后发现它是你死前的命令方块",
+  "scene":"mine","characters":["steve","iron_golem"],"redline":"队友救人姿态精确, 命令方块特写反转",
+  "dialogue":["有人救我?","谢了!","跟我走","你怎么不说话","告示:命令方块"],
+  "twist":"队友其实是你死前留下的复活命令方块","twist_visual":"镜头推到命令方块, 显字: ON_DEATH_REVIVE",
+  "shots":[
+    {"t":[0,3],"scene_action":"玩家被怪物围, 队友扑救","camera":"wide","subtitle":"有人救我?","voiceover":"矿洞深处玩家被围, 突然有人扑上来挡攻击。"},
+    {"t":[3,6],"scene_action":"队友举剑挥砍","camera":"medium","subtitle":"谢了!","voiceover":"玩家被解救, 道谢起身。"},
+    {"t":[6,9],"scene_action":"队友走前面带路","camera":"medium","subtitle":"跟我走","voiceover":"队友默默带路, 不发一言。"},
+    {"t":[9,12],"scene_action":"玩家追问, 队友不回应","camera":"closeup_face","subtitle":"你怎么不说话","voiceover":"玩家追问, 队友只是机械前进。"},
+    {"t":[12,15],"scene_action":"地上一个命令方块, 写复活脚本","camera":"freeze_zoom","subtitle":"告示:命令方块","voiceover":"镜头一推, 地上是命令方块, 上面写: ON_DEATH_REVIVE。"}
+  ],"duration_sec":15,"subtitle_color":"red"
+}

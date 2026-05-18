@@ -1,0 +1,14 @@
+{
+  "id":"creeper_propose","title":"苦力怕求婚","logline":"苦力怕拿钻石求婚, 嘶嘶倒计时不是爆炸而是紧张",
+  "scene":"village","characters":["steve","villager","creeper"],"redline":"用 diamond_block + heart particle 表达",
+  "dialogue":["嘶嘶...","它来了","它拿着...","钻石?","告示:嫁给我"],
+  "twist":"苦力怕的嘶嘶是紧张, 拿的是钻石而不是 TNT",
+  "twist_visual":"苦力怕脚下 diamond_block + 红心 particle",
+  "shots":[
+    {"t":[0,3],"scene_action":"苦力怕嘶嘶倒计时, 玩家躲","camera":"wide","subtitle":"嘶嘶...","voiceover":"苦力怕嘶嘶倒计时, 玩家本能后退。"},
+    {"t":[3,6],"scene_action":"村民也吓得躲, 但苦力怕慢慢走","camera":"medium","subtitle":"它来了","voiceover":"村民吓得退到墙角, 苦力怕慢慢靠近。"},
+    {"t":[6,9],"scene_action":"苦力怕脚下浮出 diamond_block","camera":"closeup_object","subtitle":"它拿着...","voiceover":"苦力怕脚下浮出闪光的钻石块。"},
+    {"t":[9,12],"scene_action":"玩家停步惊讶, 红心 particle","camera":"closeup_face","subtitle":"钻石?","voiceover":"玩家停步, 红心粒子从苦力怕身上飘出。"},
+    {"t":[12,15],"scene_action":"告示牌升起 '嫁给我'","camera":"freeze_zoom","subtitle":"嫁给我","voiceover":"告示牌升起, 上面写: 嫁给我。"}
+  ],"duration_sec":15,"subtitle_color":"pink"
+}

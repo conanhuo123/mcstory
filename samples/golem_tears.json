@@ -1,0 +1,14 @@
+{
+  "id":"golem_tears","title":"铁傀儡的眼泪","logline":"铁傀儡守了 100 天村庄, 终于哭了, 因为没人记得它",
+  "scene":"village","characters":["steve","villager","iron_golem"],"redline":"用 water + poppy 表达眼泪",
+  "dialogue":["100 天了","它哭了?","为什么?","没人记得","告示:它是村长"],
+  "twist":"铁傀儡是上一代村长被困住的灵魂",
+  "twist_visual":"铁傀儡脚下 poppy + water 一滴落",
+  "shots":[
+    {"t":[0,3],"scene_action":"铁傀儡呆立 100 天, 周围 poppy 盛开","camera":"wide","subtitle":"100 天了","voiceover":"铁傀儡守村已 100 天, 一动不动。"},
+    {"t":[3,6],"scene_action":"铁傀儡眼下一滴 water 落","camera":"closeup_face","subtitle":"它哭了?","voiceover":"忽然一滴水从铁傀儡眼下落下。"},
+    {"t":[6,9],"scene_action":"玩家走近, villager 围过来","camera":"medium","subtitle":"为什么?","voiceover":"玩家走近, 村民也聚过来。"},
+    {"t":[9,12],"scene_action":"村民摇头, 不认识它","camera":"closeup_face","subtitle":"没人记得","voiceover":"村民摇头, 谁都不记得它做过什么。"},
+    {"t":[12,15],"scene_action":"铁傀儡脚下浮现告示","camera":"freeze_zoom","subtitle":"它是村长","voiceover":"告示浮出: 它是这个村庄的第一任村长。"}
+  ],"duration_sec":15,"subtitle_color":"yellow"
+}

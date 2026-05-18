@@ -1,0 +1,13 @@
+{
+  "id":"sun_thief","title":"末影人偷太阳","logline":"末影人深夜偷走太阳, 玩家追到末地发现真相",
+  "scene":"village","characters":["steve","villager"],"redline":"末影人不出镜, 用粒子+黑屏暗示",
+  "dialogue":["天没亮?","太阳被偷了","谁干的?","跟着粒子","它在守末地"],
+  "twist":"末影人偷太阳是因为有人在末地睡觉, 它在守末地","twist_visual":"镜头推到末影珍珠, 蓝紫粒子缠绕",
+  "shots":[
+    {"t":[0,3],"scene_action":"村庄漆黑, 火把灭","camera":"wide","subtitle":"天没亮?","voiceover":"村庄一片漆黑, 该是黎明的时辰。"},
+    {"t":[3,6],"scene_action":"玩家看告示牌","camera":"medium","subtitle":"太阳被偷了","voiceover":"告示上写: 太阳, 被偷了。"},
+    {"t":[6,9],"scene_action":"村民颤抖指方向","camera":"closeup_face","subtitle":"谁干的?","voiceover":"村民颤抖, 指向远方蓝紫光。"},
+    {"t":[9,12],"scene_action":"玩家跟末影粒子","camera":"medium","subtitle":"跟着粒子","voiceover":"玩家沿蓝紫粒子追到末地传送门。"},
+    {"t":[12,15],"scene_action":"末影珍珠特写, 粒子缠绕","camera":"freeze_zoom","subtitle":"它在守末地","voiceover":"末影珍珠浮起, 镜头定格: 它在守末地。"}
+  ],"duration_sec":15,"subtitle_color":"purple"
+}

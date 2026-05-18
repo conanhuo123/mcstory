@@ -1,0 +1,14 @@
+{
+  "id":"redstone_jail","title":"红石监狱","logline":"玩家被红石电路圈起来当囚犯, 看守是命令方块",
+  "scene":"redstone_door","characters":["steve","villager"],"redline":"用 piston + redstone 表达囚禁",
+  "dialogue":["我在哪?","门?","red 信号","谁?","告示:你判终身"],
+  "twist":"玩家是被系统判刑的, 看守是命令方块",
+  "twist_visual":"command_block 突然显字 'sentence: life'",
+  "shots":[
+    {"t":[0,3],"scene_action":"玩家醒在石牢笼里, 周围红石","camera":"wide","subtitle":"我在哪?","voiceover":"红石嗡嗡响, 玩家被困在 2x2 的石室。"},
+    {"t":[3,6],"scene_action":"玩家试推门, 门没反应","camera":"medium","subtitle":"门?","voiceover":"玩家推门, 但门一动不动。"},
+    {"t":[6,9],"scene_action":"红石脉冲, 活塞挤压","camera":"closeup_face","subtitle":"red 信号","voiceover":"远处红石脉冲传来, 活塞开始挤压。"},
+    {"t":[9,12],"scene_action":"村民走过窥探","camera":"closeup_face","subtitle":"谁?","voiceover":"远方一个村民驻足看了眼, 摇摇头走了。"},
+    {"t":[12,15],"scene_action":"command_block 浮现告示","camera":"freeze_zoom","subtitle":"你判终身","voiceover":"墙后的命令方块闪烁, 告示浮出: 你判终身。"}
+  ],"duration_sec":15,"subtitle_color":"red"
+}

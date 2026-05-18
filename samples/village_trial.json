@@ -1,0 +1,13 @@
+{
+  "id":"village_trial","title":"村庄审判","logline":"全村审玩家偷钻石, 箱子里却是玩家失踪的名字",
+  "scene":"courtroom","characters":["steve","villager","iron_golem"],"redline":"反转通过 chest 内容打开",
+  "dialogue":["你偷了!","我没有!","开箱!","..名字?","告示:你被删了"],
+  "twist":"箱子里不是钻石而是玩家自己的名字, 玩家其实早被删","twist_visual":"chest 打开, 物品栏 16 个写有玩家名字的纸",
+  "shots":[
+    {"t":[0,3],"scene_action":"村民围成圈, 铁傀儡看守","camera":"wide","subtitle":"你偷了!","voiceover":"全村围着玩家, 铁傀儡举锤。"},
+    {"t":[3,6],"scene_action":"玩家举手喊冤","camera":"closeup_face","subtitle":"我没有!","voiceover":"玩家喊冤, 双手举高表清白。"},
+    {"t":[6,9],"scene_action":"铁傀儡指箱子","camera":"medium","subtitle":"开箱!","voiceover":"铁傀儡指向中央的箱子, 命令开箱。"},
+    {"t":[9,12],"scene_action":"玩家颤抖打开箱子","camera":"closeup_object","subtitle":"..名字?","voiceover":"玩家颤抖打开, 里面是 16 张写自己名字的纸。"},
+    {"t":[12,15],"scene_action":"告示牌特写: 你被删了","camera":"freeze_zoom","subtitle":"告示:你被删了","voiceover":"镜头推到告示: 你被删了。"}
+  ],"duration_sec":15,"subtitle_color":"red"
+}
