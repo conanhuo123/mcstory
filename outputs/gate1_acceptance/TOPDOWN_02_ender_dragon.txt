@@ -1,0 +1,40 @@
+# 02_ender_dragon top-down (build_cmds=15)  origin=[-60, 79, -190]
+
+                             
+                             
+                             
+                             
+                             
+                             
+      ggggggggggggggggg      
+      g?ggggggggggggg?g      
+      ggggggggggggggggg      
+      ggggggggggggggggg      
+      ggggggggggggggggg      
+      ggggggggggggggggg      
+      ggggggggggggggggg      
+      ggggggg?g?ggggggg      
+      ggggggggEgggggggg      
+      ggggggg?g?ggggggg      
+      ggggggggggggggggg      
+      ggggggggggggggggg      
+      ggggggggggggggggg      
+      ggggggggggggggggg      
+      ggggggggggggggggg      
+      g?ggggggggggggg?g      
+      ggggggggggggggggg      
+                             
+                             
+                             
+                             
+                             
+                             
+
+# legend:
+#   ? = amethyst_block
+#   ? = azure_bluet
+#   ? = cornflower
+#   ? = dandelion
+#   E = dragon_egg
+#   g = grass_block
+#   ? = poppy

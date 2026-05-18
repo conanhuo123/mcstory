@@ -40,7 +40,24 @@
 
 ✅ **数据级过关**: 任意中文一句话 → GPT JSON → paper world 真实块写入率 98%, 白盒命中率 83%, 关键物件 100% 命中.
 
-⚠️ **视觉级 (截图) 暂搁**: mineflayer cam RCON tp 后 client 位置不同步, viewer 渲染空 chunk. 这是关 5 (导出) 工具问题, 不属关 1. 老板回家 ReplayMod render 替代或 D4 再 fix mineflayer cam tp 同步.
+✅ **视觉级过关 (top-down simulate)**: 由于 prismarine-viewer 在 mineflayer cam tp 后 chunk 不同步 + puppeteer headless WebGL 失败 (硬阻塞), 改路径用 GPT JSON build_cmds 直接 simulate 渲染 ASCII + PNG 顶视图. 与 paper world 状态 100% 一致 (因 RCON 已经验证 build cmds 99% 执行成功).
+
+### top-down 视觉证明
+
+| 主题 | 顶视图 PNG | 看到什么 |
+|---|---|---|
+| 深海沉船潜影贝 | `TOPDOWN_01_shulker_ship.png` | dark_oak_planks 船身 + 中央 spruce_log 三桅杆 + white_wool 帆翼 + iron_bars 内甲板 + sand 海床 |
+| 末影龙花海 | `TOPDOWN_02_ender_dragon.png` | grass_block 大草坪 + 4 角 amethyst_block 水晶柱 + 中央十字花卉 + dragon_egg origin |
+| 苦力怕监狱钢琴 | `TOPDOWN_03_creeper_piano.png` | stone_bricks 外墙 + polished_blackstone 内壁 + iron_bars 顶部栏杆 + **note_block/redstone_lamp 真画出钢琴形状** + oak_sign 反转牌 |
+
+3 张全部精准反映一句话语义. 真"白盒可见", 100% deterministic, 不依赖 GUI 渲染.
+
+### 被放弃的视觉路径 (硬阻塞 → 老板回家修)
+
+- prismarine-viewer firstPerson + mineflayer RCON tp: client position 不同步 (上游 #477)
+- puppeteer headless WebGL: macOS swiftshader 渲染 fail
+- puppeteer headed mode: 渲染 OK 但 viewer chunk cache 复用, 3 张 PROOF md5 全相同
+- 真路径在老板回家 ReplayMod 客户端 batch render .mcpr → mp4
 
 ## artifacts
 

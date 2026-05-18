@@ -1,0 +1,42 @@
+# 03_creeper_piano top-down (build_cmds=14)  origin=[-60, 79, -190]
+
+                             
+                             
+                             
+                             
+                             
+                             
+      #################      
+      #BBBBBBBBBBBBBBB#      
+      #B/////BBB/////B#      
+      #BBBBBBBBBBBBBBB#      
+      #BBBBBBBBBBBBBBB#      
+      #BBBBBBBBBBBBBBB#      
+      #BBBBBBBBBBBBBBB#      
+      #BBBBBBBBBBBBBBB#      
+      #BBBBBBB?BBBBBBB#      
+      #BBBBB?????BBBBB#      
+      #BBBBBBBBBBBBBBB#      
+      #BBBBBBBBBBBBBBB#      
+      #BBBBBBB?BBBBBBB#      
+      #BBBBB?????BBBBB#      
+      #BBBBBBBTBBBBBBB#      
+      #BBBBBBBBBBBBBBB#      
+      #################      
+                             
+                             
+                             
+                             
+                             
+                             
+
+# legend:
+#   B = blackstone
+#   / = iron_bars
+#   ? = note_block
+#   T = oak_sign
+#   B = polished_blackstone
+#   ? = quartz_block
+#   ? = redstone_lamp
+#   ? = redstone_wire
+#   # = stone_bricks

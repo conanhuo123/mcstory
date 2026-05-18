@@ -1,0 +1,39 @@
+# 01_shulker_ship top-down (build_cmds=14)  origin=[-60, 79, -190]
+
+                             
+                             
+                             
+     ssssssssssssssssssss    
+     ssssssssssssssssssss    
+     PPPPssssssssssssssss    
+     PPPPPPPPPPPPPPPPPP      
+     PPPPPPPPPPPPPPPPPP      
+     PPPPPPPPPPPPPPPPPP      
+      PPP///////////PPP      
+      PPP///////////PPP      
+      PPP///////////PPP      
+      PPP///////////PPP      
+      PPP////|||////PPP      
+      PPP/WWW|||WWW/PPP      
+      PPP////|||////PPP      
+      PPP///////////PPP      
+      PPP///////////PPP      
+      PPP///////////PPP      
+      PPP///////////PPP      
+      PPPPPPPPPPPPPPPPPP     
+      PPPPPPPPPPPPPPPPPP     
+      PPPPPPPPPPPPPPPPPP     
+                    PPPP     
+                             
+                             
+                             
+                             
+                             
+
+# legend:
+#   P = dark_oak_planks
+#   / = iron_bars
+#   P = oak_planks
+#   s = sand
+#   | = spruce_log
+#   W = white_wool
