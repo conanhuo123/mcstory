@@ -76,11 +76,15 @@ def main(inp):
     }
     char_summons = []
     chars = sc.get("characters", [])
+    # v5.2 (老板 22:11+22:38): 用 GPT 输出的 character_spawns 坐标, fallback hardcoded
+    gpt_spawns = {s["actor"]: s["xyz"] for s in sc.get("character_spawns",[]) if "actor" in s and "xyz" in s}
     for i, ch in enumerate(chars):
         cmd = SUMMON_MAP.get(ch)
         if cmd:
-            # v4.3 (陆远 21:21): 角色站在 build 前方台阶, 不被 quartz/iron_bars 遮挡, viewer 可见
-            x, y, z = origin[0] + (i-1)*2, origin[1] + 1, origin[2] + 5
+            if ch in gpt_spawns:
+                x, y, z = gpt_spawns[ch]
+            else:
+                x, y, z = origin[0] + (i-1)*2, origin[1] + 1, origin[2] + 5
             char_summons.append(f"{cmd} {x} {y} {z}")
     # v0.3: 镜头切换表 (5 shot × 7 字段: t, cam_x/y/z, look_x/y/z)
     # camera 类型 → 相对 origin 偏移

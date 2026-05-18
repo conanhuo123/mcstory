@@ -37,6 +37,10 @@ def parse_prompt(user_prompt):
     "..."
   ],
   "scene_origin": [-60, 79, -190],
+  "character_spawns": [
+    {{"actor": "villager", "xyz": [-60, 80, -185]}},
+    {{"actor": "iron_golem", "xyz": [-58, 80, -185]}}
+  ],
   "shots": [...],
   "title": "封面主标题",
   "subtitle_color": "yellow|red"
