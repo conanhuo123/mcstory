@@ -1,0 +1,40 @@
+# 01 top-down (build_cmds=15)  origin=[-60, 79, -190]
+
+                             
+                             
+                             
+                             
+                             
+                             
+      BBBBBBBBBBBBBBBBB      
+      BBBBBBBBBBBBBBBBB      
+      BB/BBBBBBBBBBB/BB      
+      BB/BBBBBBBBBBB/BB      
+      BB/BBBBBBBBBBB/BB      
+      BB/BBBBBBBBBBB/BB      
+      BB/BBBBBBBBBBB/BB      
+      BB/BBBBBBBBBBB/BB      
+      BB/BBBBBBBBBBB/BB      
+      BB/BBBBBBBBBBB/BB      
+      BB/BBBBBTBBBBB/BB      
+      BB/B?????????B/BB      
+      BB/B?????????B/BB      
+      BB/B?????????B/BB      
+      BB/B?????????B/BB      
+      BBBBBBBBBBBBBBBBB      
+      BBBBBBBBBBBBBBBBB      
+                             
+                             
+                             
+                             
+                             
+                             
+
+# legend:
+#   / = iron_bars
+#   ? = note_block
+#   T = oak_sign
+#   B = polished_blackstone
+#   ? = quartz_block
+#   ? = redstone_lamp
+#   ? = redstone_wire

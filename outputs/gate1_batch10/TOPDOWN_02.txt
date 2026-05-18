@@ -1,0 +1,41 @@
+# 02 top-down (build_cmds=15)  origin=[-60, 79, -190]
+
+             ???             
+             ???             
+             ???             
+             ???             
+                             
+              T              
+      eeeeeeeeeeeeeeeee      
+      eOeeeeeeeeeeeeeOe      
+      eeeeeeeeeeeeeeeee      
+      eeeeeeeeeeeeeeeee      
+      eeeeBBBBBBBBBeeee      
+      eeeeBBBBBBBBBeeee      
+      eeeeBB?????BBeeee      
+      eeeeBB?????BBeeee      
+      ee??BB?????BB??ee      
+      eeeeBB?????BBeeee      
+      eeeeBB?????BBeeee      
+      eeeeBBBBBBBBBeeee      
+      eeeeBBBBBBBBBeeee      
+      eeeeeeeeeeeeeeeee      
+      eeeeeeeeeeeeeeeee      
+      eOeeeeeeeeeeeeeOe      
+      eeeeeeeeeeeeeeeee      
+                             
+                             
+                             
+                             
+                             
+                             
+
+# legend:
+#   ? = amethyst_block
+#   ? = crying_obsidian
+#   ? = end_rod
+#   e = end_stone
+#   T = oak_sign
+#   O = obsidian
+#   B = polished_blackstone
+#   ? = quartz_block

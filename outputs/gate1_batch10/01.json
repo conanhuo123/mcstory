@@ -1,0 +1,213 @@
+{
+  "scene": "castle_prison",
+  "characters": [
+    "villager",
+    "iron_golem",
+    "creeper",
+    "steve"
+  ],
+  "build_cmds": [
+    "fill -68 79 -198 -52 79 -182 minecraft:polished_blackstone",
+    "fill -68 80 -198 -52 84 -198 minecraft:polished_blackstone",
+    "fill -68 80 -182 -52 84 -182 minecraft:polished_blackstone",
+    "fill -68 80 -198 -68 84 -182 minecraft:polished_blackstone",
+    "fill -52 80 -198 -52 84 -182 minecraft:polished_blackstone",
+    "fill -67 80 -197 -53 83 -183 minecraft:air",
+    "fill -66 80 -196 -66 83 -184 minecraft:iron_bars",
+    "fill -54 80 -196 -54 83 -184 minecraft:iron_bars",
+    "fill -64 80 -186 -56 80 -184 minecraft:quartz_block",
+    "fill -64 81 -187 -56 81 -187 minecraft:redstone_wire",
+    "setblock -60 81 -185 minecraft:note_block",
+    "setblock -62 81 -185 minecraft:note_block",
+    "setblock -58 81 -185 minecraft:note_block",
+    "setblock -60 82 -187 minecraft:redstone_lamp",
+    "setblock -60 81 -188 minecraft:oak_sign"
+  ],
+  "scene_origin": [
+    -60,
+    79,
+    -190
+  ],
+  "character_spawns": [
+    {
+      "actor": "villager",
+      "xyz": [
+        -60,
+        80,
+        -185
+      ]
+    },
+    {
+      "actor": "iron_golem",
+      "xyz": [
+        -63,
+        80,
+        -190
+      ]
+    },
+    {
+      "actor": "creeper",
+      "xyz": [
+        -56,
+        80,
+        -191
+      ]
+    },
+    {
+      "actor": "steve",
+      "xyz": [
+        -64,
+        80,
+        -193
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "t": "0-3s",
+      "beat": "怪事",
+      "camera": "wide",
+      "scene_action": "城堡监狱忽然全黑，铁栏杆后传来整齐的红石节拍，红石灯自己闪烁。",
+      "dialogue": "steve：监狱里怎么会有音乐？",
+      "actions": [
+        {
+          "action_id": "scene_dark",
+          "actor": "scene"
+        },
+        {
+          "action_id": "setblock_redstone",
+          "actor": "scene"
+        }
+      ]
+    },
+    {
+      "t": "3-7s",
+      "beat": "追查",
+      "camera": "medium",
+      "scene_action": "steve举着火把走近舞台，发现村民站在石英台上挥手指挥，像在排练一场秘密演出。",
+      "dialogue": "villager：嗯哼！今晚这里不是监狱，是演唱会！",
+      "actions": [
+        {
+          "action_id": "villager_wave",
+          "actor": "villager"
+        },
+        {
+          "action_id": "villager_speak",
+          "actor": "villager"
+        }
+      ]
+    },
+    {
+      "t": "7-11s",
+      "beat": "追查",
+      "camera": "closeup_object",
+      "scene_action": "镜头贴近音符盒和红石线，红石信号一格格亮起，铁栏杆被敲出鼓点。",
+      "dialogue": "steve：你用牢房当低音鼓？",
+      "actions": [
+        {
+          "action_id": "setblock_redstone",
+          "actor": "scene"
+        },
+        {
+          "action_id": "music_disc_play",
+          "actor": "scene"
+        }
+      ]
+    },
+    {
+      "t": "11-15s",
+      "beat": "追查",
+      "camera": "medium",
+      "scene_action": "铁傀儡冲进来，以为有人越狱，举起手臂准备镇压。",
+      "dialogue": "iron_golem：禁止非法集会！",
+      "actions": [
+        {
+          "action_id": "iron_golem_attack",
+          "actor": "iron_golem"
+        },
+        {
+          "action_id": "villager_surprise",
+          "actor": "villager"
+        }
+      ]
+    },
+    {
+      "t": "15-18s",
+      "beat": "追查",
+      "camera": "closeup_face",
+      "scene_action": "村民突然下跪，掏出一块写着“监狱红石音乐会”的告示牌。",
+      "dialogue": "villager：我只是想让大家今晚不再害怕黑暗！",
+      "actions": [
+        {
+          "action_id": "villager_kneel",
+          "actor": "villager"
+        },
+        {
+          "action_id": "sign_reveal",
+          "actor": "villager"
+        }
+      ]
+    },
+    {
+      "t": "18-22s",
+      "beat": "误导",
+      "camera": "dutch_tilt",
+      "scene_action": "角落里的苦力怕突然发绿光，节拍越来越快，所有人以为音乐会马上爆炸。",
+      "dialogue": "steve：等等，主唱是苦力怕？！",
+      "actions": [
+        {
+          "action_id": "creeper_glow",
+          "actor": "creeper"
+        },
+        {
+          "action_id": "entity_glow_red",
+          "actor": "creeper"
+        }
+      ]
+    },
+    {
+      "t": "22-26s",
+      "beat": "误导",
+      "camera": "freeze_zoom",
+      "scene_action": "苦力怕站上舞台中央，全场定格，红石灯疯狂闪烁，铁傀儡准备一拳打飞它。",
+      "dialogue": "iron_golem：危险目标，清除！",
+      "actions": [
+        {
+          "action_id": "creeper_glow",
+          "actor": "creeper"
+        },
+        {
+          "action_id": "iron_golem_attack",
+          "actor": "iron_golem"
+        }
+      ]
+    },
+    {
+      "t": "26-30s",
+      "beat": "反转",
+      "camera": "wide",
+      "scene_action": "苦力怕没有爆炸，而是发射烟花，红石灯组成心形，铁栏杆自动打开，监狱变成全员合唱舞台。",
+      "dialogue": "villager：它不是炸弹，它是低音炮！",
+      "actions": [
+        {
+          "action_id": "explosion_fake",
+          "actor": "creeper"
+        },
+        {
+          "action_id": "firework_celebrate",
+          "actor": "scene"
+        },
+        {
+          "action_id": "villager_laugh",
+          "actor": "villager"
+        },
+        {
+          "action_id": "weather_clear",
+          "actor": "scene"
+        }
+      ]
+    }
+  ],
+  "title": "村民监狱红石音乐会",
+  "subtitle_color": "yellow"
+}

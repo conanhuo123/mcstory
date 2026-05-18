@@ -1,0 +1,196 @@
+{
+  "scene": "ender_realm",
+  "characters": [
+    "axolotl",
+    "enderman",
+    "villager",
+    "creeper"
+  ],
+  "build_cmds": [
+    "fill -68 79 -198 -52 79 -182 minecraft:end_stone",
+    "fill -64 80 -194 -56 80 -186 minecraft:obsidian",
+    "fill -62 81 -192 -58 81 -188 minecraft:water",
+    "setblock -60 82 -190 minecraft:sea_lantern",
+    "fill -68 80 -198 -68 84 -182 minecraft:purple_stained_glass",
+    "fill -52 80 -198 -52 84 -182 minecraft:purple_stained_glass",
+    "setblock -60 80 -184 minecraft:oak_sign",
+    "setblock -61 80 -184 minecraft:crying_obsidian",
+    "setblock -59 80 -184 minecraft:crying_obsidian",
+    "setblock -60 80 -196 minecraft:end_rod",
+    "setblock -64 80 -190 minecraft:chorus_flower",
+    "setblock -56 80 -190 minecraft:chorus_flower"
+  ],
+  "scene_origin": [
+    -60,
+    79,
+    -190
+  ],
+  "character_spawns": [
+    {
+      "actor": "axolotl",
+      "xyz": [
+        -60,
+        82,
+        -190
+      ]
+    },
+    {
+      "actor": "enderman",
+      "xyz": [
+        -63,
+        80,
+        -187
+      ]
+    },
+    {
+      "actor": "villager",
+      "xyz": [
+        -57,
+        80,
+        -187
+      ]
+    },
+    {
+      "actor": "creeper",
+      "xyz": [
+        -60,
+        80,
+        -195
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "t": "0-3s",
+      "duration": 3,
+      "beat": "怪事",
+      "camera": "wide",
+      "scene_action": "末影领域的水池突然发出紫光，一只美西螈漂在海晶灯上方，像被末影能量托起，四周末影人全部停止移动。",
+      "actions": [
+        {
+          "action_id": "scene_glow_purple",
+          "actor": "axolotl"
+        },
+        {
+          "action_id": "villager_look_up",
+          "actor": "villager"
+        }
+      ],
+      "dialogue": "村民：水里的东西……在天上说话？"
+    },
+    {
+      "t": "3-8s",
+      "duration": 5,
+      "beat": "追查",
+      "camera": "medium",
+      "scene_action": "村民冲到水池边跪下询问，美西螈面前的木牌自动显字：末日倒计时十五秒。",
+      "actions": [
+        {
+          "action_id": "villager_kneel",
+          "actor": "villager"
+        },
+        {
+          "action_id": "sign_reveal",
+          "actor": "axolotl"
+        }
+      ],
+      "dialogue": "美西螈：当末影之门吞下最后一滴水，方块世界将重置。"
+    },
+    {
+      "t": "8-13s",
+      "duration": 5,
+      "beat": "追查",
+      "camera": "closeup_object",
+      "scene_action": "镜头贴近木牌，牌子旁的哭泣黑曜石渗出紫色粒子，末影人盯着水池开始颤抖。",
+      "actions": [
+        {
+          "action_id": "reveal_sign",
+          "actor": "axolotl"
+        },
+        {
+          "action_id": "entity_glow_red",
+          "actor": "enderman"
+        }
+      ],
+      "dialogue": "末影人：它知道龙蛋消失的真相……"
+    },
+    {
+      "t": "13-18s",
+      "duration": 5,
+      "beat": "追查",
+      "camera": "closeup_face",
+      "scene_action": "美西螈转向苦力怕，眼睛泛红，预言下一句：爆炸不是毁灭，而是钥匙。",
+      "actions": [
+        {
+          "action_id": "creeper_glow",
+          "actor": "creeper"
+        },
+        {
+          "action_id": "scene_dark",
+          "actor": "axolotl"
+        }
+      ],
+      "dialogue": "美西螈：绿色的沉默者，会打开末日的门。"
+    },
+    {
+      "t": "18-22s",
+      "duration": 4,
+      "beat": "误导",
+      "camera": "freeze_zoom",
+      "scene_action": "画面定格放大苦力怕，所有人以为它即将引爆世界，村民尖叫逃跑。",
+      "actions": [
+        {
+          "action_id": "villager_flee",
+          "actor": "villager"
+        },
+        {
+          "action_id": "creeper_glow",
+          "actor": "creeper"
+        }
+      ],
+      "dialogue": "村民：快跑！末日是苦力怕带来的！"
+    },
+    {
+      "t": "22-26s",
+      "duration": 4,
+      "beat": "误导",
+      "camera": "medium",
+      "scene_action": "苦力怕开始闪光，末影领域震动，水池边突然生成一格岩浆，看起来预言正在成真。",
+      "actions": [
+        {
+          "action_id": "setblock_lava",
+          "actor": "creeper"
+        },
+        {
+          "action_id": "explosion_fake",
+          "actor": "creeper"
+        }
+      ],
+      "dialogue": "末影人：末日倒计时，三、二、一！"
+    },
+    {
+      "t": "26-30s",
+      "duration": 4,
+      "beat": "反转",
+      "camera": "closeup_face",
+      "scene_action": "苦力怕没有爆炸，只吐出一张告示牌：水池漏水了。美西螈尴尬挥鳍，所谓世界末日只是它的水桶快干了。",
+      "actions": [
+        {
+          "action_id": "sign_reveal",
+          "actor": "creeper"
+        },
+        {
+          "action_id": "weather_clear",
+          "actor": "axolotl"
+        },
+        {
+          "action_id": "villager_laugh",
+          "actor": "villager"
+        }
+      ],
+      "dialogue": "美西螈：我说的世界末日……是我的世界要没水了。"
+    }
+  ],
+  "title": "美西螈预言末影末日",
+  "subtitle_color": "red"
+}

@@ -1,0 +1,202 @@
+{
+  "scene": "creeper_wedding",
+  "characters": [
+    "creeper",
+    "iron_golem",
+    "villager"
+  ],
+  "build_cmds": [
+    "fill -70 79 -200 -50 79 -180 minecraft:grass_block",
+    "fill -62 80 -200 -58 80 -181 minecraft:oak_planks",
+    "fill -66 80 -194 -64 80 -192 minecraft:poppy",
+    "fill -56 80 -194 -54 80 -192 minecraft:poppy",
+    "fill -65 80 -188 -55 80 -186 minecraft:dandelion",
+    "fill -69 80 -199 -67 80 -181 minecraft:cornflower",
+    "fill -53 80 -199 -51 80 -181 minecraft:azure_bluet",
+    "setblock -60 80 -186 minecraft:diamond_block",
+    "setblock -60 81 -186 minecraft:oak_sign",
+    "setblock -63 80 -184 minecraft:chest",
+    "fill -64 80 -183 -56 80 -183 minecraft:red_carpet",
+    "setblock -64 80 -185 minecraft:lantern",
+    "setblock -56 80 -185 minecraft:lantern",
+    "fill -61 80 -182 -59 83 -182 minecraft:oak_fence",
+    "fill -62 84 -182 -58 84 -182 minecraft:flowering_azalea_leaves"
+  ],
+  "scene_origin": [
+    -60,
+    79,
+    -190
+  ],
+  "character_spawns": [
+    {
+      "actor": "creeper",
+      "xyz": [
+        -60,
+        80,
+        -188
+      ]
+    },
+    {
+      "actor": "iron_golem",
+      "xyz": [
+        -60,
+        80,
+        -183
+      ]
+    },
+    {
+      "actor": "villager",
+      "xyz": [
+        -65,
+        80,
+        -186
+      ]
+    },
+    {
+      "actor": "villager",
+      "xyz": [
+        -55,
+        80,
+        -186
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "t": "0-3s",
+      "duration": 3,
+      "beat": "怪事",
+      "camera": "wide",
+      "scene_action": "花海中央的红花突然排成爱心，苦力怕全身发光，单膝跪在钻石块前，铁傀儡愣住。",
+      "actions": [
+        {
+          "action_id": "creeper_glow",
+          "actor": "creeper"
+        },
+        {
+          "action_id": "villager_surprise",
+          "actor": "villager"
+        }
+      ],
+      "dialogue": "村民：它不是要炸……它是在求婚？！"
+    },
+    {
+      "t": "3-8s",
+      "duration": 5,
+      "beat": "追查",
+      "camera": "medium",
+      "scene_action": "苦力怕把钻石块推到铁傀儡面前，旁边木牌慢慢翻出求婚文字。",
+      "actions": [
+        {
+          "action_id": "sign_reveal",
+          "actor": "creeper"
+        },
+        {
+          "action_id": "villager_speak",
+          "actor": "villager"
+        }
+      ],
+      "dialogue": "木牌：铁傀儡，你愿意守护我的心吗？"
+    },
+    {
+      "t": "8-13s",
+      "duration": 5,
+      "beat": "追查",
+      "camera": "closeup_face",
+      "scene_action": "铁傀儡低头看苦力怕，苦力怕紧张到闪烁，两个村民开始检查旁边的箱子。",
+      "actions": [
+        {
+          "action_id": "villager_look_down",
+          "actor": "villager"
+        },
+        {
+          "action_id": "creeper_glow",
+          "actor": "creeper"
+        }
+      ],
+      "dialogue": "村民：先别答应！它的箱子里肯定有火药！"
+    },
+    {
+      "t": "13-18s",
+      "duration": 5,
+      "beat": "追查",
+      "camera": "closeup_object",
+      "scene_action": "箱子打开，里面没有火药，只有一朵虞美人和一张写着‘我学会不爆炸了’的纸。",
+      "actions": [
+        {
+          "action_id": "villager_surprise",
+          "actor": "villager"
+        },
+        {
+          "action_id": "reveal_sign",
+          "actor": "villager"
+        }
+      ],
+      "dialogue": "村民：等等，它真的准备了花？！"
+    },
+    {
+      "t": "18-22s",
+      "duration": 4,
+      "beat": "误导",
+      "camera": "dutch_tilt",
+      "scene_action": "天空突然变暗，苦力怕的身体开始急速发亮，花海被闪电照亮，村民吓得后退。",
+      "actions": [
+        {
+          "action_id": "scene_dark",
+          "actor": "creeper"
+        },
+        {
+          "action_id": "weather_thunder",
+          "actor": "creeper"
+        },
+        {
+          "action_id": "villager_flee",
+          "actor": "villager"
+        }
+      ],
+      "dialogue": "村民：完了！求婚失败，它要爆了！"
+    },
+    {
+      "t": "22-26s",
+      "duration": 4,
+      "beat": "误导",
+      "camera": "freeze_zoom",
+      "scene_action": "铁傀儡举起双臂像要攻击，苦力怕闭眼颤抖，全场定格在爆炸前一秒。",
+      "actions": [
+        {
+          "action_id": "iron_golem_attack",
+          "actor": "iron_golem"
+        },
+        {
+          "action_id": "creeper_glow",
+          "actor": "creeper"
+        }
+      ],
+      "dialogue": "苦力怕：嘶……如果你拒绝，我也不会炸你。"
+    },
+    {
+      "t": "26-30s",
+      "duration": 4,
+      "beat": "反转",
+      "camera": "wide",
+      "scene_action": "铁傀儡没有攻击，而是把苦力怕轻轻抱起；苦力怕的白光变成烟花，花海升起庆祝光点。",
+      "actions": [
+        {
+          "action_id": "firework_celebrate",
+          "actor": "creeper"
+        },
+        {
+          "action_id": "weather_clear",
+          "actor": "iron_golem"
+        },
+        {
+          "action_id": "villager_laugh",
+          "actor": "villager"
+        }
+      ],
+      "dialogue": "铁傀儡：我愿意。村民：原来闪光是戒指特效！"
+    }
+  ],
+  "title": "苦力怕向铁傀儡求婚",
+  "subtitle_color": "yellow"
+}

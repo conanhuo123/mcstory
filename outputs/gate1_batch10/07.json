@@ -1,0 +1,203 @@
+{
+  "scene": "piglin_bank",
+  "characters": [
+    "piglin",
+    "warden",
+    "iron_golem"
+  ],
+  "build_cmds": [
+    "fill -68 79 -198 -52 79 -182 minecraft:polished_blackstone",
+    "fill -68 80 -198 -52 84 -198 minecraft:gilded_blackstone",
+    "fill -68 80 -182 -52 84 -182 minecraft:gilded_blackstone",
+    "fill -68 80 -198 -68 84 -182 minecraft:gilded_blackstone",
+    "fill -52 80 -198 -52 84 -182 minecraft:gilded_blackstone",
+    "fill -66 80 -196 -54 80 -184 minecraft:gold_block",
+    "fill -63 80 -194 -57 82 -192 minecraft:iron_bars",
+    "setblock -60 80 -193 minecraft:chest",
+    "setblock -60 81 -193 minecraft:oak_sign",
+    "fill -67 85 -197 -53 85 -183 minecraft:quartz_block",
+    "setblock -60 80 -182 minecraft:iron_door",
+    "fill -62 80 -188 -58 80 -186 minecraft:redstone_block",
+    "setblock -64 80 -190 minecraft:lantern",
+    "setblock -56 80 -190 minecraft:soul_lantern"
+  ],
+  "scene_origin": [
+    -60,
+    79,
+    -190
+  ],
+  "character_spawns": [
+    {
+      "actor": "piglin",
+      "xyz": [
+        -62,
+        80,
+        -191
+      ]
+    },
+    {
+      "actor": "piglin",
+      "xyz": [
+        -58,
+        80,
+        -191
+      ]
+    },
+    {
+      "actor": "warden",
+      "xyz": [
+        -60,
+        80,
+        -186
+      ]
+    },
+    {
+      "actor": "iron_golem",
+      "xyz": [
+        -65,
+        80,
+        -190
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "beat": "3s怪事",
+      "time": "0-3s",
+      "duration": 3,
+      "camera": "wide",
+      "scene_action": "猪灵银行金砖大厅突然熄灯，保险柜前的箱子自己打开，监守者站在红石地砖上低吼，金块被震得跳动。",
+      "actions": [
+        {
+          "action_id": "scene_dark",
+          "actor": "scene"
+        },
+        {
+          "action_id": "setblock_chest",
+          "actor": "scene"
+        },
+        {
+          "action_id": "entity_glow_red",
+          "actor": "warden"
+        }
+      ],
+      "dialogue": [
+        {
+          "actor": "piglin",
+          "text": "哼？我的金子在唱悲歌？"
+        }
+      ]
+    },
+    {
+      "beat": "15s追查",
+      "time": "3-18s",
+      "duration": 15,
+      "camera": "medium",
+      "scene_action": "两只猪灵顺着红石粉和灵魂灯调查，发现每个脚印都震碎金砖。铁傀儡保安冲进来，却被监守者一声咆哮逼退。猪灵行长举起告示牌，牌子慢慢显现：抢劫犯喜欢黑暗。",
+      "actions": [
+        {
+          "action_id": "villager_surprise",
+          "actor": "piglin"
+        },
+        {
+          "action_id": "iron_golem_attack",
+          "actor": "iron_golem"
+        },
+        {
+          "action_id": "sign_reveal",
+          "actor": "piglin"
+        },
+        {
+          "action_id": "weather_thunder",
+          "actor": "scene"
+        }
+      ],
+      "dialogue": [
+        {
+          "actor": "piglin",
+          "text": "脚印这么大，肯定是监守者！"
+        },
+        {
+          "actor": "warden",
+          "text": "我只听见……金子的心跳。"
+        },
+        {
+          "actor": "piglin",
+          "text": "抓住它！别让它进VIP金库！"
+        }
+      ]
+    },
+    {
+      "beat": "8s误导",
+      "time": "18-26s",
+      "duration": 8,
+      "camera": "closeup_object",
+      "scene_action": "镜头贴近空箱子，箱底留下监守者爪印。猪灵们以为监守者已经把金子吞掉，全部跪地求它吐出来。监守者发光后慢慢后退，像是被冤枉。",
+      "actions": [
+        {
+          "action_id": "villager_kneel",
+          "actor": "piglin"
+        },
+        {
+          "action_id": "creeper_glow",
+          "actor": "warden"
+        },
+        {
+          "action_id": "villager_cry",
+          "actor": "piglin"
+        }
+      ],
+      "dialogue": [
+        {
+          "actor": "piglin",
+          "text": "大哥，金子不好消化，吐一半行吗？"
+        },
+        {
+          "actor": "warden",
+          "text": "我没拿，我是在追声音。"
+        }
+      ]
+    },
+    {
+      "beat": "4s反转",
+      "time": "26-30s",
+      "duration": 4,
+      "camera": "freeze_zoom",
+      "scene_action": "突然雷声一响，告示牌背面显现真正提示：金子在地板下。红石地砖打开，满地金块弹出。原来猪灵行长为了骗保险金自导自演，监守者只是听见地下金库震动来报警。",
+      "actions": [
+        {
+          "action_id": "summon_lightning",
+          "actor": "scene"
+        },
+        {
+          "action_id": "reveal_sign",
+          "actor": "scene"
+        },
+        {
+          "action_id": "setblock_diamond_block",
+          "actor": "scene"
+        },
+        {
+          "action_id": "villager_surprise",
+          "actor": "piglin"
+        },
+        {
+          "action_id": "firework_celebrate",
+          "actor": "scene"
+        }
+      ],
+      "dialogue": [
+        {
+          "actor": "warden",
+          "text": "真正的抢劫，是你报警前先藏金。"
+        },
+        {
+          "actor": "piglin",
+          "text": "完了，我的保险金也没了！"
+        }
+      ]
+    }
+  ],
+  "title": "监守者抢劫猪灵银行？",
+  "subtitle_color": "yellow"
+}

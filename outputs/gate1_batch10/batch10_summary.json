@@ -1,0 +1,154 @@
+[
+  {
+    "file": "00.json",
+    "scene": "piglin_bank",
+    "scene_in_lib": true,
+    "chars": [
+      "enderman",
+      "piglin"
+    ],
+    "chars_in_lib": 2,
+    "build_cmds_count": 15,
+    "shots": 4,
+    "camera_refs": 4,
+    "action_refs": 15
+  },
+  {
+    "file": "01.json",
+    "scene": "castle_prison",
+    "scene_in_lib": true,
+    "chars": [
+      "villager",
+      "iron_golem",
+      "creeper",
+      "steve"
+    ],
+    "chars_in_lib": 3,
+    "build_cmds_count": 15,
+    "shots": 8,
+    "camera_refs": 8,
+    "action_refs": 18
+  },
+  {
+    "file": "02.json",
+    "scene": "diamond_dragon",
+    "scene_in_lib": true,
+    "chars": [
+      "steve",
+      "enderman",
+      "shulker"
+    ],
+    "chars_in_lib": 2,
+    "build_cmds_count": 15,
+    "shots": 4,
+    "camera_refs": 4,
+    "action_refs": 11
+  },
+  {
+    "file": "03.json",
+    "scene": "creeper_wedding",
+    "scene_in_lib": true,
+    "chars": [
+      "creeper",
+      "iron_golem",
+      "villager"
+    ],
+    "chars_in_lib": 3,
+    "build_cmds_count": 15,
+    "shots": 7,
+    "camera_refs": 7,
+    "action_refs": 16
+  },
+  {
+    "file": "04.json",
+    "scene": "underwater",
+    "scene_in_lib": true,
+    "chars": [
+      "shulker",
+      "villager",
+      "creeper"
+    ],
+    "chars_in_lib": 3,
+    "build_cmds_count": 15,
+    "shots": 6,
+    "camera_refs": 6,
+    "action_refs": 13
+  },
+  {
+    "file": "05.json",
+    "scene": "witch_clinic",
+    "scene_in_lib": true,
+    "chars": [
+      "villager",
+      "witch",
+      "phantom",
+      "steve"
+    ],
+    "chars_in_lib": 3,
+    "build_cmds_count": 14,
+    "shots": 8,
+    "camera_refs": 8,
+    "action_refs": 22
+  },
+  {
+    "file": "06.json",
+    "scene": "warden_lullaby",
+    "scene_in_lib": true,
+    "chars": [
+      "steve",
+      "villager",
+      "warden"
+    ],
+    "chars_in_lib": 2,
+    "build_cmds_count": 15,
+    "shots": 7,
+    "camera_refs": 7,
+    "action_refs": 16
+  },
+  {
+    "file": "07.json",
+    "scene": "piglin_bank",
+    "scene_in_lib": true,
+    "chars": [
+      "piglin",
+      "warden",
+      "iron_golem"
+    ],
+    "chars_in_lib": 3,
+    "build_cmds_count": 14,
+    "shots": 4,
+    "camera_refs": 4,
+    "action_refs": 15
+  },
+  {
+    "file": "08.json",
+    "scene": "ender_realm",
+    "scene_in_lib": true,
+    "chars": [
+      "axolotl",
+      "enderman",
+      "villager",
+      "creeper"
+    ],
+    "chars_in_lib": 3,
+    "build_cmds_count": 12,
+    "shots": 7,
+    "camera_refs": 7,
+    "action_refs": 15
+  },
+  {
+    "file": "09.json",
+    "scene": "phantom_post",
+    "scene_in_lib": true,
+    "chars": [
+      "phantom",
+      "villager",
+      "enderman"
+    ],
+    "chars_in_lib": 3,
+    "build_cmds_count": 14,
+    "shots": 4,
+    "camera_refs": 4,
+    "action_refs": 15
+  }
+]

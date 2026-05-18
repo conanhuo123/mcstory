@@ -1,0 +1,144 @@
+{
+  "scene": "diamond_dragon",
+  "characters": [
+    "steve",
+    "enderman",
+    "shulker"
+  ],
+  "build_cmds": [
+    "fill -68 79 -198 -52 79 -182 minecraft:end_stone",
+    "fill -64 80 -194 -56 80 -186 minecraft:polished_blackstone",
+    "fill -62 81 -192 -58 81 -188 minecraft:quartz_block",
+    "setblock -60 82 -190 minecraft:diamond_block",
+    "setblock -60 83 -190 minecraft:end_rod",
+    "fill -67 80 -197 -67 86 -197 minecraft:obsidian",
+    "fill -53 80 -197 -53 86 -197 minecraft:obsidian",
+    "fill -67 80 -183 -67 86 -183 minecraft:obsidian",
+    "fill -53 80 -183 -53 86 -183 minecraft:obsidian",
+    "fill -61 78 -205 -59 78 -201 minecraft:crying_obsidian",
+    "fill -62 77 -207 -58 77 -203 minecraft:diamond_block",
+    "fill -63 76 -209 -57 76 -205 minecraft:glass",
+    "setblock -60 80 -199 minecraft:oak_sign",
+    "fill -66 80 -190 -65 82 -190 minecraft:amethyst_block",
+    "fill -55 80 -190 -54 82 -190 minecraft:amethyst_block"
+  ],
+  "scene_origin": [
+    -60,
+    79,
+    -190
+  ],
+  "character_spawns": [
+    {
+      "actor": "steve",
+      "xyz": [
+        -60,
+        80,
+        -184
+      ]
+    },
+    {
+      "actor": "enderman",
+      "xyz": [
+        -64,
+        80,
+        -188
+      ]
+    },
+    {
+      "actor": "shulker",
+      "xyz": [
+        -56,
+        80,
+        -188
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "t": "0-3s",
+      "beat": "怪事",
+      "camera": "wide",
+      "scene_action": "末地祭坛中央的钻石方块突然发紫光，虚空裂缝里传来龙吟，四根黑曜石柱同时闪烁。",
+      "actions": [
+        {
+          "action_id": "scene_glow_purple",
+          "actor": "altar"
+        },
+        {
+          "action_id": "scene_dark",
+          "actor": "world"
+        }
+      ],
+      "dialogue": "",
+      "subtitle": "祭坛下面，有东西醒了。"
+    },
+    {
+      "t": "3-18s",
+      "beat": "追查",
+      "camera": "medium",
+      "scene_action": "Steve靠近祭坛查看橡木告示牌，末影人挡在路口，潜影贝不断开合，像在警告他不要碰核心。",
+      "actions": [
+        {
+          "action_id": "reveal_sign",
+          "actor": "altar_sign"
+        },
+        {
+          "action_id": "entity_glow_red",
+          "actor": "enderman"
+        },
+        {
+          "action_id": "steve_kneel",
+          "actor": "steve"
+        }
+      ],
+      "dialogue": "Steve：这不是宝藏……这是封印？",
+      "subtitle": "告示牌写着：献上贪婪者，唤醒守护者。"
+    },
+    {
+      "t": "18-26s",
+      "beat": "误导",
+      "camera": "closeup_object",
+      "scene_action": "祭坛核心裂开，钻石块从虚空一层层升起，像巨龙的头骨。潜影贝突然发光，Steve以为它才是幕后黑手。",
+      "actions": [
+        {
+          "action_id": "setblock_diamond_block",
+          "actor": "void_dragon"
+        },
+        {
+          "action_id": "villager_surprise",
+          "actor": "steve"
+        },
+        {
+          "action_id": "scene_glow_purple",
+          "actor": "shulker"
+        }
+      ],
+      "dialogue": "Steve：原来是你在控制祭坛！",
+      "subtitle": "虚空里升起的，不是怪物？"
+    },
+    {
+      "t": "26-30s",
+      "beat": "反转",
+      "camera": "freeze_zoom",
+      "scene_action": "钻石龙完整升出虚空，挡在Steve面前，却没有攻击；它一口光焰击碎偷袭的末影人，随后盘绕祭坛守护核心。",
+      "actions": [
+        {
+          "action_id": "summon_lightning",
+          "actor": "diamond_dragon"
+        },
+        {
+          "action_id": "kill_entity",
+          "actor": "enderman"
+        },
+        {
+          "action_id": "firework_celebrate",
+          "actor": "altar"
+        }
+      ],
+      "dialogue": "Steve：它不是来毁灭末地……它是在守护末地！",
+      "subtitle": "钻石龙真正守护的，是最后一座末地祭坛。"
+    }
+  ],
+  "title": "虚空升起钻石龙",
+  "subtitle_color": "yellow"
+}

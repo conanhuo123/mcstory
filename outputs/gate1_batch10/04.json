@@ -1,0 +1,172 @@
+{
+  "scene": "underwater",
+  "characters": [
+    "shulker",
+    "villager",
+    "creeper"
+  ],
+  "build_cmds": [
+    "fill -70 78 -200 -50 78 -180 minecraft:sand",
+    "fill -70 79 -200 -50 88 -180 minecraft:water",
+    "fill -67 79 -197 -53 79 -183 minecraft:oak_planks",
+    "fill -66 80 -196 -54 82 -184 minecraft:oak_planks",
+    "fill -65 81 -195 -55 83 -185 minecraft:air",
+    "fill -68 80 -198 -68 84 -182 minecraft:oak_log",
+    "fill -52 80 -198 -52 84 -182 minecraft:oak_log",
+    "setblock -60 80 -190 minecraft:lectern",
+    "setblock -61 80 -190 minecraft:oak_sign",
+    "setblock -58 80 -191 minecraft:chest",
+    "setblock -63 80 -188 minecraft:sea_lantern",
+    "setblock -57 80 -188 minecraft:sea_lantern",
+    "fill -64 84 -194 -56 84 -186 minecraft:glass",
+    "setblock -60 81 -184 minecraft:oak_door",
+    "setblock -60 80 -187 minecraft:kelp"
+  ],
+  "scene_origin": [
+    -60,
+    79,
+    -190
+  ],
+  "character_spawns": [
+    {
+      "actor": "shulker",
+      "xyz": [
+        -60,
+        80,
+        -190
+      ]
+    },
+    {
+      "actor": "villager",
+      "xyz": [
+        -64,
+        80,
+        -188
+      ]
+    },
+    {
+      "actor": "creeper",
+      "xyz": [
+        -58,
+        80,
+        -191
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "t": "0-3s",
+      "duration": 3,
+      "beat": "怪事",
+      "camera": "wide",
+      "scene_action": "海底沉船里一盏海晶灯忽明忽暗，潜影贝趴在讲台前，贝壳一开一合，像在用气泡写日记。",
+      "actions": [
+        {
+          "action_id": "scene_glow_purple",
+          "actor": "shulker"
+        }
+      ],
+      "subtitle": "沉船里，有人在写日记？"
+    },
+    {
+      "t": "3-8s",
+      "duration": 5,
+      "beat": "追查",
+      "camera": "medium",
+      "scene_action": "村民潜水员从破洞游进船舱，发现木牌上浮出第一行字：今天，我又听见船长的脚步。",
+      "actions": [
+        {
+          "action_id": "villager_look_down",
+          "actor": "villager"
+        },
+        {
+          "action_id": "sign_reveal",
+          "actor": "shulker"
+        }
+      ],
+      "subtitle": "日记第一页：船长回来了"
+    },
+    {
+      "t": "8-13s",
+      "duration": 5,
+      "beat": "追查",
+      "camera": "closeup_object",
+      "scene_action": "镜头贴近讲台，日记气泡不断变成文字：午夜，箱子会自己呼吸。村民回头看向角落的箱子。",
+      "actions": [
+        {
+          "action_id": "reveal_sign",
+          "actor": "shulker"
+        },
+        {
+          "action_id": "villager_turn",
+          "actor": "villager"
+        }
+      ],
+      "subtitle": "箱子会呼吸？"
+    },
+    {
+      "t": "13-18s",
+      "duration": 5,
+      "beat": "追查",
+      "camera": "closeup_face",
+      "scene_action": "潜影贝突然合上壳，紫光照亮它的脸。村民小声问：你到底在记录谁？潜影贝只吐出一串坐标。",
+      "actions": [
+        {
+          "action_id": "villager_speak",
+          "actor": "villager"
+        },
+        {
+          "action_id": "entity_glow_red",
+          "actor": "shulker"
+        }
+      ],
+      "subtitle": "坐标：-58 80 -191"
+    },
+    {
+      "t": "18-26s",
+      "duration": 8,
+      "beat": "误导",
+      "camera": "dolly_in",
+      "scene_action": "镜头推进到箱子旁，苦力怕从阴影里发绿光。村民吓得后退，日记浮出新字：不要打开，它会炸掉真相。",
+      "actions": [
+        {
+          "action_id": "creeper_glow",
+          "actor": "creeper"
+        },
+        {
+          "action_id": "villager_surprise",
+          "actor": "villager"
+        },
+        {
+          "action_id": "scene_dark",
+          "actor": "creeper"
+        }
+      ],
+      "subtitle": "凶手是苦力怕？"
+    },
+    {
+      "t": "26-30s",
+      "duration": 4,
+      "beat": "反转",
+      "camera": "freeze_zoom",
+      "scene_action": "箱子打开，里面没有炸药，只有一本写满救援日期的日记。潜影贝最后写下：我不是记录沉船，我在记录每个来救我的人。",
+      "actions": [
+        {
+          "action_id": "setblock_chest",
+          "actor": "shulker"
+        },
+        {
+          "action_id": "villager_cry",
+          "actor": "villager"
+        },
+        {
+          "action_id": "sign_reveal",
+          "actor": "shulker"
+        }
+      ],
+      "subtitle": "它写的不是日记，是求救名单"
+    }
+  ],
+  "title": "潜影贝的海底日记",
+  "subtitle_color": "yellow"
+}

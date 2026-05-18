@@ -1,0 +1,194 @@
+{
+  "scene": "warden_lullaby",
+  "characters": [
+    "steve",
+    "villager",
+    "warden"
+  ],
+  "build_cmds": [
+    "fill -68 79 -198 -52 79 -182 minecraft:sculk",
+    "fill -66 80 -196 -54 83 -184 minecraft:deepslate_bricks",
+    "fill -65 80 -195 -55 82 -185 minecraft:air",
+    "fill -63 80 -192 -57 80 -188 minecraft:blue_wool",
+    "fill -64 81 -193 -56 81 -187 minecraft:dark_oak_planks",
+    "setblock -60 82 -190 minecraft:note_block",
+    "setblock -61 82 -190 minecraft:oak_fence",
+    "setblock -59 82 -190 minecraft:oak_fence",
+    "setblock -60 83 -190 minecraft:gold_block",
+    "setblock -60 84 -190 minecraft:chain",
+    "setblock -62 80 -186 minecraft:oak_sign",
+    "setblock -58 80 -186 minecraft:oak_sign",
+    "fill -67 84 -197 -53 84 -183 minecraft:black_stained_glass",
+    "setblock -60 80 -197 minecraft:soul_lantern",
+    "setblock -60 80 -183 minecraft:soul_lantern"
+  ],
+  "scene_origin": [
+    -60,
+    79,
+    -190
+  ],
+  "character_spawns": [
+    {
+      "actor": "warden",
+      "xyz": [
+        -60,
+        80,
+        -190
+      ]
+    },
+    {
+      "actor": "steve",
+      "xyz": [
+        -64,
+        80,
+        -185
+      ]
+    },
+    {
+      "actor": "villager",
+      "xyz": [
+        -56,
+        80,
+        -185
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "t": "0-3s",
+      "duration": 3,
+      "beat": "怪事",
+      "camera": "wide",
+      "scene_action": "监守者摇篮里传出温柔竖琴声，warden 坐在蓝色摇篮中央，黑玻璃穹顶闪着幽光。",
+      "dialogue": "steve：谁在远古城开音乐会？",
+      "actions": [
+        {
+          "action_id": "scene_dark",
+          "actor": "scene"
+        },
+        {
+          "action_id": "scene_glow_purple",
+          "actor": "scene"
+        },
+        {
+          "action_id": "music_disc_play",
+          "actor": "warden"
+        }
+      ]
+    },
+    {
+      "t": "3-7s",
+      "duration": 4,
+      "beat": "追查",
+      "camera": "medium",
+      "scene_action": "Steve 和村民小心靠近摇篮，warden 低头拨动 note_block 旁的金色竖琴框。",
+      "dialogue": "villager：这不是怪物，这是摇篮曲大师！",
+      "actions": [
+        {
+          "action_id": "villager_surprise",
+          "actor": "villager"
+        },
+        {
+          "action_id": "villager_look_up",
+          "actor": "villager"
+        }
+      ]
+    },
+    {
+      "t": "7-12s",
+      "duration": 5,
+      "beat": "追查",
+      "camera": "closeup_object",
+      "scene_action": "镜头贴近竖琴，金块、栅栏和音符盒组成的琴身自动发光，每拨一下，sculk 地面就跳一次。",
+      "dialogue": "steve：这竖琴好像在控制整个摇篮。",
+      "actions": [
+        {
+          "action_id": "entity_glow_red",
+          "actor": "warden"
+        },
+        {
+          "action_id": "scene_glow_purple",
+          "actor": "scene"
+        }
+      ]
+    },
+    {
+      "t": "12-18s",
+      "duration": 6,
+      "beat": "追查",
+      "camera": "over_shoulder",
+      "scene_action": "村民发现摇篮两侧木牌写着“不要叫醒宝宝”，Steve 盯着空摇篮边缘发抖。",
+      "dialogue": "villager：宝宝？这里除了监守者还有谁？",
+      "actions": [
+        {
+          "action_id": "sign_reveal",
+          "actor": "scene"
+        },
+        {
+          "action_id": "villager_speak",
+          "actor": "villager"
+        }
+      ]
+    },
+    {
+      "t": "18-22s",
+      "duration": 4,
+      "beat": "误导",
+      "camera": "dutch_tilt",
+      "scene_action": "warden 突然停止弹奏，转头面向 Steve，整个摇篮剧烈震动，像要发动攻击。",
+      "dialogue": "steve：完了，它要用竖琴把我们震碎！",
+      "actions": [
+        {
+          "action_id": "scene_dark",
+          "actor": "scene"
+        },
+        {
+          "action_id": "entity_glow_red",
+          "actor": "warden"
+        }
+      ]
+    },
+    {
+      "t": "22-26s",
+      "duration": 4,
+      "beat": "误导",
+      "camera": "closeup_face",
+      "scene_action": "村民跪地求饶，Steve 后退撞到木牌，音符盒突然发出低沉警报声。",
+      "dialogue": "villager：别打我！我只是路过的听众！",
+      "actions": [
+        {
+          "action_id": "villager_kneel",
+          "actor": "villager"
+        },
+        {
+          "action_id": "steve_fall",
+          "actor": "steve"
+        }
+      ]
+    },
+    {
+      "t": "26-30s",
+      "duration": 4,
+      "beat": "反转",
+      "camera": "freeze_zoom",
+      "scene_action": "warden 抱起竖琴旁的小音符盒，原来它不是攻击，而是在哄自己的“方块宝宝”睡觉。Steve 和村民尴尬鼓掌。",
+      "dialogue": "warden：嘘……宝宝刚睡着。",
+      "actions": [
+        {
+          "action_id": "music_disc_play",
+          "actor": "warden"
+        },
+        {
+          "action_id": "villager_wave",
+          "actor": "villager"
+        },
+        {
+          "action_id": "weather_clear",
+          "actor": "scene"
+        }
+      ]
+    }
+  ],
+  "title": "监守者摇篮里的竖琴声",
+  "subtitle_color": "yellow"
+}

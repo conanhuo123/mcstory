@@ -1,0 +1,240 @@
+{
+  "scene": "witch_clinic",
+  "characters": [
+    "villager",
+    "witch",
+    "phantom",
+    "steve"
+  ],
+  "build_cmds": [
+    "fill -67 79 -197 -53 79 -183 minecraft:quartz_block",
+    "fill -67 80 -197 -53 84 -197 minecraft:polished_blackstone",
+    "fill -67 80 -183 -53 84 -183 minecraft:polished_blackstone",
+    "fill -67 80 -197 -67 84 -183 minecraft:polished_blackstone",
+    "fill -53 80 -197 -53 84 -183 minecraft:polished_blackstone",
+    "fill -66 84 -196 -54 84 -184 minecraft:glass",
+    "fill -62 80 -185 -58 80 -185 minecraft:redstone_block",
+    "setblock -60 80 -186 minecraft:brewing_stand",
+    "setblock -63 80 -190 minecraft:cauldron",
+    "setblock -57 80 -190 minecraft:chest",
+    "setblock -60 80 -193 minecraft:oak_sign",
+    "fill -64 80 -195 -56 80 -195 minecraft:iron_bars",
+    "setblock -60 81 -190 minecraft:purple_stained_glass",
+    "setblock -60 80 -184 minecraft:oak_door"
+  ],
+  "scene_origin": [
+    -60,
+    79,
+    -190
+  ],
+  "character_spawns": [
+    {
+      "actor": "villager",
+      "xyz": [
+        -60,
+        80,
+        -191
+      ]
+    },
+    {
+      "actor": "witch",
+      "xyz": [
+        -63,
+        80,
+        -190
+      ]
+    },
+    {
+      "actor": "phantom",
+      "xyz": [
+        -60,
+        84,
+        -190
+      ]
+    },
+    {
+      "actor": "steve",
+      "xyz": [
+        -56,
+        80,
+        -188
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "t": "0-3s",
+      "beat": "怪事",
+      "camera": "wide",
+      "scene_action": "女巫医院半夜突然变紫，病床上的“唤魔者”村民跪在红石手术台前，天花板玻璃后有幻影倒挂闪光。",
+      "actions": [
+        {
+          "action_id": "time_night",
+          "actor": "scene"
+        },
+        {
+          "action_id": "scene_glow_purple",
+          "actor": "scene"
+        },
+        {
+          "action_id": "villager_kneel",
+          "actor": "villager"
+        }
+      ],
+      "subtitle": "女巫医院半夜响起了召唤铃！"
+    },
+    {
+      "t": "3-7s",
+      "beat": "追查",
+      "camera": "medium",
+      "scene_action": "史蒂夫推门冲进诊室，女巫挡在药锅前，假装只是普通治疗。",
+      "actions": [
+        {
+          "action_id": "setblock_oak_door",
+          "actor": "scene"
+        },
+        {
+          "action_id": "villager_speak",
+          "actor": "witch"
+        },
+        {
+          "action_id": "steve_wave",
+          "actor": "steve"
+        }
+      ],
+      "subtitle": "史蒂夫：谁在医院里召唤怪物？"
+    },
+    {
+      "t": "7-11s",
+      "beat": "追查",
+      "camera": "closeup_object",
+      "scene_action": "镜头贴近红石手术台，台面出现一封发光信件，信封上刻着幻影羽毛图案。",
+      "actions": [
+        {
+          "action_id": "setblock_redstone",
+          "actor": "scene"
+        },
+        {
+          "action_id": "sign_reveal",
+          "actor": "scene"
+        },
+        {
+          "action_id": "scene_glow_purple",
+          "actor": "scene"
+        }
+      ],
+      "subtitle": "桌上多了一封会呼吸的信。"
+    },
+    {
+      "t": "11-15s",
+      "beat": "追查",
+      "camera": "closeup_face",
+      "scene_action": "唤魔者村民抬头，眼睛红光一闪，嘴里低声念出坐标。",
+      "actions": [
+        {
+          "action_id": "villager_look_up",
+          "actor": "villager"
+        },
+        {
+          "action_id": "entity_glow_red",
+          "actor": "villager"
+        },
+        {
+          "action_id": "villager_speak",
+          "actor": "villager"
+        }
+      ],
+      "subtitle": "唤魔者：信使，去把审判带来。"
+    },
+    {
+      "t": "15-18s",
+      "beat": "追查",
+      "camera": "freeze_zoom",
+      "scene_action": "幻影突然从玻璃天花板俯冲下来，叼走信件，定格放大它爪子上的医院号码牌。",
+      "actions": [
+        {
+          "action_id": "villager_surprise",
+          "actor": "steve"
+        },
+        {
+          "action_id": "phantom_post",
+          "actor": "phantom"
+        },
+        {
+          "action_id": "reveal_sign",
+          "actor": "scene"
+        }
+      ],
+      "subtitle": "它不是来攻击的，是来送信的！"
+    },
+    {
+      "t": "18-22s",
+      "beat": "误导",
+      "camera": "medium",
+      "scene_action": "女巫突然挥药水，病房变暗，史蒂夫以为女巫才是幕后黑手，拔剑冲向药锅。",
+      "actions": [
+        {
+          "action_id": "scene_dark",
+          "actor": "scene"
+        },
+        {
+          "action_id": "villager_anger",
+          "actor": "witch"
+        },
+        {
+          "action_id": "steve_swing",
+          "actor": "steve"
+        }
+      ],
+      "subtitle": "女巫在掩护召唤仪式？"
+    },
+    {
+      "t": "22-26s",
+      "beat": "误导",
+      "camera": "closeup_object",
+      "scene_action": "药锅里冒出紫光，史蒂夫砍开箱子，却发现里面全是治疗药水和急救账单。",
+      "actions": [
+        {
+          "action_id": "setblock_chest",
+          "actor": "scene"
+        },
+        {
+          "action_id": "villager_heal",
+          "actor": "witch"
+        },
+        {
+          "action_id": "sign_reveal",
+          "actor": "scene"
+        }
+      ],
+      "subtitle": "证据反而证明：女巫在救人。"
+    },
+    {
+      "t": "26-30s",
+      "beat": "反转",
+      "camera": "freeze_zoom",
+      "scene_action": "幻影信使带回回执，牌子显现：病人欠费三年。唤魔者召唤它不是送战书，而是寄医院催款单。",
+      "actions": [
+        {
+          "action_id": "phantom_post",
+          "actor": "phantom"
+        },
+        {
+          "action_id": "reveal_sign",
+          "actor": "scene"
+        },
+        {
+          "action_id": "villager_cry",
+          "actor": "villager"
+        },
+        {
+          "action_id": "witch_laugh",
+          "actor": "witch"
+        }
+      ],
+      "subtitle": "反转：幻影信使只负责催缴医药费！"
+    }
+  ],
+  "title": "唤魔者医院召唤幻影信使",
+  "subtitle_color": "yellow"
+}

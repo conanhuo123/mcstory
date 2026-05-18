@@ -1,0 +1,187 @@
+{
+  "scene": "piglin_bank",
+  "characters": [
+    "enderman",
+    "piglin"
+  ],
+  "build_cmds": [
+    "fill -68 79 -198 -52 79 -182 minecraft:nether_bricks",
+    "fill -68 80 -198 -68 85 -182 minecraft:nether_bricks",
+    "fill -52 80 -198 -52 85 -182 minecraft:nether_bricks",
+    "fill -68 80 -198 -52 85 -198 minecraft:nether_bricks",
+    "fill -68 80 -182 -52 85 -182 minecraft:nether_bricks",
+    "fill -66 80 -196 -54 80 -184 minecraft:polished_blackstone",
+    "setblock -60 80 -190 minecraft:chest",
+    "setblock -61 80 -190 minecraft:gold_block",
+    "setblock -59 80 -190 minecraft:gold_block",
+    "fill -63 80 -186 -57 82 -186 minecraft:iron_bars",
+    "fill -67 80 -197 -66 80 -196 minecraft:lava",
+    "fill -54 80 -197 -53 80 -196 minecraft:lava",
+    "setblock -60 81 -182 minecraft:oak_sign",
+    "setblock -64 81 -190 minecraft:redstone_torch",
+    "setblock -56 81 -190 minecraft:redstone_torch"
+  ],
+  "scene_origin": [
+    -60,
+    79,
+    -190
+  ],
+  "character_spawns": [
+    {
+      "actor": "enderman",
+      "xyz": [
+        -66,
+        80,
+        -194
+      ]
+    },
+    {
+      "actor": "piglin",
+      "xyz": [
+        -60,
+        80,
+        -186
+      ]
+    },
+    {
+      "actor": "piglin",
+      "xyz": [
+        -55,
+        80,
+        -190
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "start": 0,
+      "duration": 3,
+      "camera": "wide",
+      "beat": "怪事",
+      "scene_action": "下界堡垒金库里，两个猪灵守着金块宝箱。灯火突然变暗，角落出现紫色粒子，一个高瘦的末影杀手贴墙潜入。",
+      "dialogue": [
+        {
+          "actor": "piglin",
+          "text": "哼？刚才谁动了金条？"
+        }
+      ],
+      "actions": [
+        {
+          "action_id": "scene_dark",
+          "actor": "scene"
+        },
+        {
+          "action_id": "scene_glow_purple",
+          "actor": "enderman"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "duration": 15,
+      "camera": "medium",
+      "beat": "追查",
+      "scene_action": "猪灵巡逻到宝箱前，发现一块金条不见了。末影杀手藏在铁栏后，手里闪着金光。猪灵怒吼追过去，末影杀手瞬移到熔岩边，又把金块塞进披风下。",
+      "dialogue": [
+        {
+          "actor": "piglin",
+          "text": "抓住那个偷金条的黑影！"
+        },
+        {
+          "actor": "enderman",
+          "text": "嘶……别看我的眼睛。"
+        }
+      ],
+      "actions": [
+        {
+          "action_id": "villager_surprise",
+          "actor": "piglin"
+        },
+        {
+          "action_id": "villager_run",
+          "actor": "piglin"
+        },
+        {
+          "action_id": "villager_anger",
+          "actor": "piglin"
+        },
+        {
+          "action_id": "entity_glow_red",
+          "actor": "enderman"
+        },
+        {
+          "action_id": "villager_drop_item",
+          "actor": "enderman"
+        }
+      ]
+    },
+    {
+      "start": 18,
+      "duration": 8,
+      "camera": "closeup_object",
+      "beat": "误导",
+      "scene_action": "镜头推近宝箱，地上留下紫色粒子和一张牌子：'末影杀手到此一游'。猪灵以为真凶逃进下界传送门，全部冲向门口，金库中央反而空了。",
+      "dialogue": [
+        {
+          "actor": "piglin",
+          "text": "他跑去传送门了！追！"
+        }
+      ],
+      "actions": [
+        {
+          "action_id": "sign_reveal",
+          "actor": "scene"
+        },
+        {
+          "action_id": "reveal_sign",
+          "actor": "scene"
+        },
+        {
+          "action_id": "villager_flee",
+          "actor": "piglin"
+        },
+        {
+          "action_id": "scene_glow_purple",
+          "actor": "scene"
+        }
+      ]
+    },
+    {
+      "start": 26,
+      "duration": 4,
+      "camera": "freeze_zoom",
+      "beat": "反转",
+      "scene_action": "画面定格放大：宝箱旁的'金条'其实是末影杀手伪装的金块影子。真正的金条已经堆在他身后，他向镜头挥手，瞬移消失，只留下猪灵在空金库里崩溃。",
+      "dialogue": [
+        {
+          "actor": "enderman",
+          "text": "谢谢保管，我只借亿下。"
+        },
+        {
+          "actor": "piglin",
+          "text": "我的金——！"
+        }
+      ],
+      "actions": [
+        {
+          "action_id": "setblock_diamond_block",
+          "actor": "scene"
+        },
+        {
+          "action_id": "villager_wave",
+          "actor": "enderman"
+        },
+        {
+          "action_id": "villager_cry",
+          "actor": "piglin"
+        },
+        {
+          "action_id": "scene_glow_purple",
+          "actor": "enderman"
+        }
+      ]
+    }
+  ],
+  "title": "末影杀手偷走猪灵金条",
+  "subtitle_color": "yellow"
+}

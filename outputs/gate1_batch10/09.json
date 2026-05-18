@@ -1,0 +1,163 @@
+{
+  "scene": "phantom_post",
+  "characters": [
+    "phantom",
+    "villager",
+    "enderman"
+  ],
+  "build_cmds": [
+    "fill -68 79 -198 -52 79 -182 minecraft:polished_blackstone",
+    "fill -68 80 -198 -68 84 -182 minecraft:quartz_block",
+    "fill -52 80 -198 -52 84 -182 minecraft:quartz_block",
+    "fill -68 80 -198 -52 84 -198 minecraft:quartz_block",
+    "fill -68 80 -182 -52 84 -182 minecraft:quartz_block",
+    "fill -67 85 -197 -53 85 -183 minecraft:purple_stained_glass",
+    "fill -64 80 -195 -56 80 -193 minecraft:oak_planks",
+    "setblock -60 81 -192 minecraft:oak_sign",
+    "fill -66 81 -184 -63 83 -184 minecraft:iron_bars",
+    "fill -57 81 -184 -54 83 -184 minecraft:iron_bars",
+    "fill -62 80 -187 -58 82 -187 minecraft:amethyst_block",
+    "fill -61 81 -187 -59 83 -187 minecraft:purple_stained_glass",
+    "setblock -60 80 -186 minecraft:chest",
+    "setblock -60 80 -188 minecraft:redstone_block"
+  ],
+  "scene_origin": [
+    -60,
+    79,
+    -190
+  ],
+  "character_spawns": [
+    {
+      "actor": "phantom",
+      "xyz": [
+        -60,
+        84,
+        -194
+      ]
+    },
+    {
+      "actor": "villager",
+      "xyz": [
+        -64,
+        80,
+        -185
+      ]
+    },
+    {
+      "actor": "enderman",
+      "xyz": [
+        -56,
+        80,
+        -186
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "start": 0,
+      "end": 3,
+      "duration": 3,
+      "beat": "怪事",
+      "camera": "wide",
+      "scene_action": "午夜的幻影邮局突然亮起紫光，一封没有寄件人的信从天花板落到柜台上，信封写着：寄往时间膨胀场。",
+      "dialogue": "村民邮差：这地方……昨天才消失过一次！",
+      "actions": [
+        {
+          "action_id": "time_night",
+          "actor": "scene"
+        },
+        {
+          "action_id": "scene_glow_purple",
+          "actor": "scene"
+        },
+        {
+          "action_id": "villager_surprise",
+          "actor": "villager"
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 18,
+      "duration": 15,
+      "beat": "追查",
+      "camera": "medium",
+      "scene_action": "村民邮差检查信封，幻影在屋顶盘旋发光，末影人守着紫色传送框。柜台标牌逐渐显字：迟到三百年的急件。",
+      "dialogue": "末影人：别投进去。时间膨胀场只收未来写给过去的信。",
+      "actions": [
+        {
+          "action_id": "villager_look_down",
+          "actor": "villager"
+        },
+        {
+          "action_id": "entity_glow_red",
+          "actor": "phantom"
+        },
+        {
+          "action_id": "reveal_sign",
+          "actor": "scene"
+        },
+        {
+          "action_id": "villager_speak",
+          "actor": "villager"
+        }
+      ]
+    },
+    {
+      "start": 18,
+      "end": 26,
+      "duration": 8,
+      "beat": "误导",
+      "camera": "closeup_object",
+      "scene_action": "村民以为这是陷阱，把信塞进箱子。箱子却自动打开，红石亮起，时间膨胀场门框开始倒放闪烁。",
+      "dialogue": "村民邮差：我懂了，是苦力怕恶作剧！先锁起来！",
+      "actions": [
+        {
+          "action_id": "villager_drop_item",
+          "actor": "villager"
+        },
+        {
+          "action_id": "setblock_chest",
+          "actor": "scene"
+        },
+        {
+          "action_id": "setblock_redstone",
+          "actor": "scene"
+        },
+        {
+          "action_id": "scene_glow_purple",
+          "actor": "scene"
+        }
+      ]
+    },
+    {
+      "start": 26,
+      "end": 30,
+      "duration": 4,
+      "beat": "反转",
+      "camera": "freeze_zoom",
+      "scene_action": "信封炸出烟花，标牌最终显示：收件人就是刚才的村民。幻影把未来邮戳盖下，村民瞬间变成白胡子老邮差。",
+      "dialogue": "老邮差：糟了，我三百年前忘了提醒自己别寄！",
+      "actions": [
+        {
+          "action_id": "firework_celebrate",
+          "actor": "scene"
+        },
+        {
+          "action_id": "sign_reveal",
+          "actor": "scene"
+        },
+        {
+          "action_id": "villager_freeze",
+          "actor": "villager"
+        },
+        {
+          "action_id": "villager_appear",
+          "actor": "villager"
+        }
+      ]
+    }
+  ],
+  "title": "寄给三百年前的自己",
+  "subtitle_color": "yellow"
+}

@@ -1,0 +1,37 @@
+# 04 top-down (build_cmds=15)  origin=[-60, 79, -190]
+
+                             
+                             
+                             
+                             
+    sssssssssssssssssssss    
+    sssssssssssssssssssss    
+    ss|sssssssssssssss|ss    
+    ss|PPPPPPPPPPPPPPP|ss    
+    ss|PPPPPPPPPPPPPPP|ss    
+    ss|PPPPPPPPPPPPPPP|ss    
+    ss|PPP+++++++++PPP|ss    
+    ss|PPP+++++++++PPP|ss    
+    ss|PPP+++++++++PPP|ss    
+    ss|PPP+++++++++PPP|ss    
+    ss|PPP+++++++++PPP|ss    
+    ss|PPP+++++++++PPP|ss    
+    ss|PPP+++++++++PPP|ss    
+    ss|PPP+++++++++PPP|ss    
+    ss|PPP+++++++++PPP|ss    
+    ss|PPPPPPPPPPPPPPP|ss    
+    ss|PPPPPPPPPPPPPPP|ss    
+    ss|PPPPPPPPPPPPPPP|ss    
+    ss|sssssssssssssss|ss    
+    sssssssssssssssssssss    
+    sssssssssssssssssssss    
+                             
+                             
+                             
+                             
+
+# legend:
+#   + = glass
+#   | = oak_log
+#   P = oak_planks
+#   s = sand

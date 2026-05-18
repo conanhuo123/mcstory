@@ -1,0 +1,41 @@
+# 08 top-down (build_cmds=12)  origin=[-60, 79, -190]
+
+                             
+                             
+                             
+                             
+                             
+                             
+      ?eeeeeeeeeeeeeee?      
+      ?eeeeeeeeeeeeeee?      
+      ?eeeeeee?eeeeeee?      
+      ?eeeeeeeeeeeeeee?      
+      ?eeeOOOOOOOOOeee?      
+      ?eeeOOOOOOOOOeee?      
+      ?eeeOOOOOOOOOeee?      
+      ?eeeOOOOOOOOOeee?      
+      ?eee?OOO*OOO?eee?      
+      ?eeeOOOOOOOOOeee?      
+      ?eeeOOOOOOOOOeee?      
+      ?eeeOOOOOOOOOeee?      
+      ?eeeOOOOOOOOOeee?      
+      ?eeeeeeeeeeeeeee?      
+      ?eeeeee?T?eeeeee?      
+      ?eeeeeeeeeeeeeee?      
+      ?eeeeeeeeeeeeeee?      
+                             
+                             
+                             
+                             
+                             
+                             
+
+# legend:
+#   ? = chorus_flower
+#   ? = crying_obsidian
+#   ? = end_rod
+#   e = end_stone
+#   T = oak_sign
+#   O = obsidian
+#   ? = purple_stained_glass
+#   * = sea_lantern
