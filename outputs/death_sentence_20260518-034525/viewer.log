@@ -1,0 +1,19 @@
+cam spawned
+VIEWER_READY
+Prismarine viewer web server running on *:3007
+build 0 /fill -64 79 -194 -56 79 -190 polished_b
+build 1 /fill -61 80 -193 -59 81 -191 quartz_blo
+build 2 /setblock -63 80 -192 iron_bars
+[t=0s] 开庭
+cam lookAt scene
+/Users/coco/video_factory/minecraft_bot/node_modules/mineflayer/lib/plugins/physics.js:358
+    const delta = point.minus(bot.entity.position.offset(0, bot.entity.eyeHeight, 0))
+                        ^
+
+TypeError: point.minus is not a function
+    at bot.lookAt (/Users/coco/video_factory/minecraft_bot/node_modules/mineflayer/lib/plugins/physics.js:358:25)
+    at Timeout._onTimeout (/Users/coco/video_factory/minecraft_bot/_vd_20260518-034525.js:21:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+
+Node.js v25.8.0

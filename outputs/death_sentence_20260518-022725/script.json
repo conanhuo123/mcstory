@@ -1,0 +1,22 @@
+{
+  "id": "death_sentence",
+  "title": "判死刑",
+  "logline": "村民临刑前自称上一任服主",
+  "scene": "courtroom",
+  "size": [9, 7, 5],
+  "characters": ["steve", "villager", "iron_golem"],
+  "redline": "不加群众, 不加支线",
+  "dialogue": ["开庭", "押上来", "别杀我", "我建过这里", "名牌证明"],
+  "twist": "被处决者不是 NPC, 是旧服主",
+  "twist_visual": "镜头推近告示牌, 写「上一任服主: villager_42」",
+  "shots": [
+    {"t": [0, 3],   "scene_action": "牢笼村民低头",     "camera": "wide",          "subtitle": "开庭",        "voiceover": "处决台升起, 铁傀儡看守。"},
+    {"t": [3, 6],   "scene_action": "玩家举斧",         "camera": "medium",        "subtitle": "押上来",      "voiceover": "村民被推上处决台, 满身泥土。"},
+    {"t": [6, 9],   "scene_action": "村民求饶",         "camera": "closeup_face",  "subtitle": "别杀我",      "voiceover": "村民突然开口, 全场寂静。"},
+    {"t": [9, 12],  "scene_action": "玩家停手",         "camera": "closeup_face",  "subtitle": "我建过这里",  "voiceover": "玩家僵在原地, 斧头停在空中。"},
+    {"t": [12, 15], "scene_action": "旧牌显名上一任服主","camera": "freeze_zoom",   "subtitle": "名牌证明",    "voiceover": "镜头推近告示牌, 旧名浮出。"}
+  ],
+  "duration_sec": 15,
+  "subtitle_color": "red",
+  "qc": {"任务_3s内": "判死刑", "冲突_3s内": "村民会说话", "收益_3s内": "反转身份"}
+}

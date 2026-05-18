@@ -1,0 +1,19 @@
+{
+  "id": "dying_memory", "title": "少一格记忆",
+  "logline": "村民每天醒来少一格记忆, 最后忘了自己是村民",
+  "scene": "village", "size": [10, 6, 8],
+  "characters": ["steve", "villager"],
+  "redline": "用书本+牌子叠加记忆消失感",
+  "dialogue": ["今天忘了什么?", "我叫...?", "你是谁?", "我...", "他成了苦力怕"],
+  "twist": "村民忘到最后变成苦力怕",
+  "twist_visual": "村民身体爆炸特效一闪, 露出绿色苦力怕轮廓",
+  "shots": [
+    {"t": [0, 3],   "scene_action": "村民翻日记本",           "camera": "wide",          "characters": ["villager"], "subtitle": "今天忘了什么?", "voiceover": "村民翻日记, 每页都缺一段。"},
+    {"t": [3, 6],   "scene_action": "村民看告示牌发愣",        "camera": "medium",        "characters": ["villager"], "subtitle": "我叫...?",      "voiceover": "他盯着告示牌, 想不起自己名字。"},
+    {"t": [6, 9],   "scene_action": "玩家走来打招呼",          "camera": "closeup_face",  "characters": ["steve"],    "subtitle": "你是谁?",       "voiceover": "玩家问候他, 他茫然回望。"},
+    {"t": [9, 12],  "scene_action": "村民颤抖, 手指自己",       "camera": "closeup_face",  "characters": ["villager"], "subtitle": "我...",         "voiceover": "村民颤抖, 指着自己, 说不出口。"},
+    {"t": [12, 15], "scene_action": "爆炸特效一闪, 苦力怕轮廓", "camera": "freeze_zoom",   "characters": ["villager"], "subtitle": "他成了苦力怕", "voiceover": "下一秒, 一声嘶嘶, 他绿色的身体浮现。"}
+  ],
+  "duration_sec": 15, "subtitle_color": "purple",
+  "qc": {"任务_3s内": "丢记忆", "冲突_3s内": "村民忘了自己", "收益_3s内": "变成苦力怕"}
+}

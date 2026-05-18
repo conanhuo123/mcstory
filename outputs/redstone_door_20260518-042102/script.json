@@ -1,0 +1,19 @@
+{
+  "id": "redstone_door", "title": "红石门",
+  "logline": "门后藏着变村民的人",
+  "scene": "redstone_door", "size": [7, 5, 4],
+  "characters": ["steve", "villager"],
+  "redline": "twist 必须入画, 红石门后场景渐变",
+  "dialogue": ["谁在敲门?", "我进去", "你...", "出不来了", "镜子里的脸"],
+  "twist": "门后是昨天进去的玩家, 已变成村民",
+  "twist_visual": "镜子映出玩家脸, 倒影是村民",
+  "shots": [
+    {"t": [0, 3],   "scene_action": "红石门嗡嗡作响",     "camera": "wide",          "characters": ["steve"],    "subtitle": "谁在敲门?",   "voiceover": "深夜, 红石门后传来敲击声。"},
+    {"t": [3, 6],   "scene_action": "玩家推门而入",        "camera": "medium",        "characters": ["steve"],    "subtitle": "我进去",      "voiceover": "玩家举火把推门, 走进密室。"},
+    {"t": [6, 9],   "scene_action": "见到一个陌生村民",    "camera": "closeup_face",  "characters": ["villager"], "subtitle": "你...",       "voiceover": "村民转头看他, 眼神空洞。"},
+    {"t": [9, 12],  "scene_action": "门自动关闭锁死",      "camera": "closeup_object","characters": ["steve"],    "subtitle": "出不来了",    "voiceover": "门嘭地合上, 红石锁咔哒上锁。"},
+    {"t": [12, 15], "scene_action": "镜面反射村民脸",      "camera": "freeze_zoom",   "characters": ["steve","villager"], "subtitle": "镜子里的脸", "voiceover": "玩家看向镜子, 倒影却是一张村民脸。"}
+  ],
+  "duration_sec": 15, "subtitle_color": "blue",
+  "qc": {"任务_3s内": "进密室", "冲突_3s内": "门后有人", "收益_3s内": "玩家自己已变村民"}
+}

@@ -1,0 +1,4 @@
+  0.00	/title @a actionbar {"text":"村民的木屋被炸成了一个大坑！"}
+  3.00	/title @a actionbar {"text":"史蒂夫追查凶手，苦力怕却抱着木板出现了。"}
+ 18.00	/title @a actionbar {"text":"苦力怕：对不起，我不是故意毁掉你家的。"}
+ 26.00	/title @a actionbar {"text":"反转：苦力怕其实炸掉的是一座危房，还连夜盖了新家！"}

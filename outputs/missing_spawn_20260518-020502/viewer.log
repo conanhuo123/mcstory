@@ -1,0 +1,10 @@
+cam spawned
+VIEWER_READY
+Prismarine viewer web server running on *:3007
+[t=0s] 我的床呢?
+[t=3s] 地图...缺了
+[t=6s] 你是谁?
+[t=9s] 新来的?
+[t=12s] 你从没出生过
+(node:49838) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 move listeners added to [EventEmitter]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+(Use `node --trace-warnings ...` to show where the warning was created)

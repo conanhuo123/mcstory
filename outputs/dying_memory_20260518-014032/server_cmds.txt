@@ -1,0 +1,5 @@
+  0.00	/title @a actionbar {"text":"今天忘了什么?"}
+  3.00	/title @a actionbar {"text":"我叫...?"}
+  6.00	/title @a actionbar {"text":"你是谁?"}
+  9.00	/title @a actionbar {"text":"我..."}
+ 12.00	/title @a actionbar {"text":"他成了苦力怕"}

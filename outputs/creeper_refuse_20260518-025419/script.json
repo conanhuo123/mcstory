@@ -1,0 +1,22 @@
+{
+  "id": "creeper_refuse",
+  "title": "苦力怕拒爆",
+  "logline": "苦力怕宁死不爆, 因脚下踩着村民蛋",
+  "scene": "village",
+  "size": [10, 6, 8],
+  "characters": ["steve", "villager", "creeper"],
+  "redline": "不加群众, 不加支线; twist 必须可拍画面, 不靠字幕解释",
+  "dialogue": ["苦力怕!", "让开!", "嘶——", "它不爆?", "原来如此。"],
+  "twist": "苦力怕守的不是命, 是它脚下发光的村民蛋",
+  "twist_visual": "镜头下推, 苦力怕脚下绿色方块裂开, 露出发光村民蛋 + 红色生命条",
+  "shots": [
+    {"t": [0, 3],   "scene_action": "村庄夜袭, 火光冲天",           "camera": "wide",          "characters": ["villager","creeper"], "subtitle": "苦力怕!",     "voiceover": "村庄遭围, 苦力怕站在最后一户人家门前。"},
+    {"t": [3, 6],   "scene_action": "玩家举钻石剑逼近",              "camera": "medium",        "characters": ["steve","creeper"],   "subtitle": "让开!",       "voiceover": "玩家钻石剑出鞘, 喊它让开。"},
+    {"t": [6, 9],   "scene_action": "苦力怕嘶嘶倒计时, 但火焰熄灭",  "camera": "closeup_face",  "characters": ["creeper"],           "subtitle": "嘶——",       "voiceover": "苦力怕开始嘶嘶, 但火焰突然熄灭。"},
+    {"t": [9, 12],  "scene_action": "玩家停手疑惑",                  "camera": "closeup_face",  "characters": ["steve"],             "subtitle": "它不爆?",     "voiceover": "玩家僵在原地, 钻石剑停在半空。"},
+    {"t": [12, 15], "scene_action": "镜头下推, 脚下绿块裂, 露出发光村民蛋+生命条", "camera": "freeze_zoom", "characters": ["creeper"], "subtitle": "原来如此。", "voiceover": "镜头一推, 苦力怕脚下露出闪光的村民蛋, 它在守命。"}
+  ],
+  "duration_sec": 15,
+  "subtitle_color": "yellow",
+  "qc": {"任务_3s内": "守村庄", "冲突_3s内": "苦力怕该爆不爆", "收益_3s内": "反转身份-它在守蛋"}
+}

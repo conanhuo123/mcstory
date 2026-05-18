@@ -1,0 +1,5 @@
+  0.00	/title @a actionbar {"text":"苦力怕!"}
+  3.00	/title @a actionbar {"text":"让开!"}
+  6.00	/title @a actionbar {"text":"嘶——"}
+  9.00	/title @a actionbar {"text":"它不爆?"}
+ 12.00	/title @a actionbar {"text":"原来如此。"}

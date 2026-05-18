@@ -1,0 +1,13 @@
+cam spawned
+VIEWER_READY
+Prismarine viewer web server running on *:3007
+build 0 /fill -64 79 -194 -56 79 -190 polished_b
+build 1 /fill -61 80 -193 -59 81 -191 quartz_blo
+build 2 /setblock -63 80 -192 iron_bars
+summon /summon villager -60 81 -188
+summon /summon iron_golem -58 81 -188
+[t=0s] 开庭
+cam lookAt scene
+[t=3s] 押上来
+[t=6s] 别杀我
+[t=12s] 上一任服主

@@ -1,0 +1,42 @@
+{
+  "version": "0.2",
+  "constraint": "极简, 一条主视角通道, 不加群众/装饰 (林凡 2026-05-18)",
+  "scenes": [
+    {
+      "id": "courtroom",
+      "name": "处决台",
+      "size": [9, 7, 5],
+      "description": "处决台 + 村民牢笼 + 玩家旁观位, 5 镜头内完成身份反转",
+      "spawn_xyz": [0, 64, 0],
+      "schematic": "courtroom_9x7x5.schem",
+      "build_cmd": "/load schematic courtroom_9x7x5"
+    },
+    {
+      "id": "mine",
+      "name": "矿洞",
+      "size": [12, 8, 6],
+      "description": "地下, 一条主视角通道, 火把 + 矿石, 适合冒险/惊悚",
+      "spawn_xyz": [0, 30, 0],
+      "schematic": "mine_12x8x6.schem",
+      "build_cmd": "/load schematic mine_12x8x6"
+    },
+    {
+      "id": "village",
+      "name": "村口",
+      "size": [10, 6, 8],
+      "description": "村口主路, 木屋 + 喷泉 + 告示牌, 适合道歉/审判/反转",
+      "spawn_xyz": [0, 65, 0],
+      "schematic": "village_10x6x8.schem",
+      "build_cmd": "/load schematic village_10x6x8"
+    },
+    {
+      "id": "redstone_door",
+      "name": "红石门",
+      "size": [7, 5, 4],
+      "description": "极简红石门走廊, 门后藏密室, 适合悬疑/反转",
+      "spawn_xyz": [0, 64, 0],
+      "schematic": "redstone_door_7x5x4.schem",
+      "build_cmd": "/load schematic redstone_door_7x5x4"
+    }
+  ]
+}

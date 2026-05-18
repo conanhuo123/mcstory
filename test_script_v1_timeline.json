@@ -1,0 +1,232 @@
+{
+  "scene": "village",
+  "spawn_chars": [
+    "villager",
+    "creeper",
+    "steve"
+  ],
+  "title": "苦力怕的道歉",
+  "subtitle_color": "yellow",
+  "timeline": [
+    {
+      "t": 0,
+      "type": "camera",
+      "preset": "wide",
+      "pos": [
+        10,
+        70,
+        10
+      ],
+      "look_at": [
+        0,
+        64,
+        0
+      ],
+      "fov": 70
+    },
+    {
+      "type": "look",
+      "actor": "villager",
+      "xyz": [
+        2,
+        64,
+        3
+      ],
+      "t": 0.5
+    },
+    {
+      "type": "look",
+      "actor": "creeper",
+      "xyz": [
+        -3,
+        64,
+        2
+      ],
+      "t": 0.5
+    },
+    {
+      "t": 0,
+      "type": "subtitle",
+      "text": "村民的木屋被炸成了一个大坑！",
+      "end_t": 3
+    },
+    {
+      "t": 0.3,
+      "type": "voiceover",
+      "text": "清晨的村庄，一声巨响后，村民的家只剩下冒烟的圆石地基。",
+      "end_t": 3
+    },
+    {
+      "t": 3,
+      "type": "camera",
+      "preset": "medium",
+      "pos": [
+        3,
+        66,
+        3
+      ],
+      "look_at": [
+        0,
+        64,
+        0
+      ],
+      "fov": 60
+    },
+    {
+      "type": "look",
+      "actor": "steve",
+      "xyz": [
+        1,
+        64,
+        1
+      ],
+      "t": 3.5
+    },
+    {
+      "type": "look",
+      "actor": "villager",
+      "xyz": [
+        2,
+        64,
+        3
+      ],
+      "t": 3.5
+    },
+    {
+      "type": "goto",
+      "actor": "creeper",
+      "xyz": [
+        0,
+        64,
+        4
+      ],
+      "t": 3.5
+    },
+    {
+      "t": 3,
+      "type": "subtitle",
+      "text": "史蒂夫追查凶手，苦力怕却抱着木板出现了。",
+      "end_t": 18
+    },
+    {
+      "t": 3.3,
+      "type": "voiceover",
+      "text": "村民气得直跺脚，史蒂夫发现地上有火药和绿色脚印，线索一路指向草垛后面。",
+      "end_t": 18
+    },
+    {
+      "t": 18,
+      "type": "camera",
+      "preset": "closeup_face",
+      "pos": [
+        1,
+        65,
+        1
+      ],
+      "look_at": [
+        0,
+        65,
+        0
+      ],
+      "fov": 50
+    },
+    {
+      "type": "look",
+      "actor": "creeper",
+      "xyz": [
+        0,
+        64,
+        4
+      ],
+      "t": 18.5
+    },
+    {
+      "type": "look",
+      "actor": "villager",
+      "xyz": [
+        2,
+        64,
+        3
+      ],
+      "t": 18.5
+    },
+    {
+      "type": "look",
+      "actor": "steve",
+      "xyz": [
+        1,
+        64,
+        2
+      ],
+      "t": 18.5
+    },
+    {
+      "t": 18,
+      "type": "subtitle",
+      "text": "苦力怕：对不起，我不是故意毁掉你家的。",
+      "end_t": 26
+    },
+    {
+      "t": 18.3,
+      "type": "voiceover",
+      "text": "大家都以为苦力怕又要爆炸，村民吓得后退，连史蒂夫都举起了盾牌。",
+      "end_t": 26
+    },
+    {
+      "t": 26,
+      "type": "camera",
+      "preset": "freeze_zoom",
+      "pos": [
+        2,
+        65,
+        2
+      ],
+      "look_at": [
+        0,
+        64.5,
+        0
+      ],
+      "fov": 55,
+      "freeze": true,
+      "zoom_to": 50
+    },
+    {
+      "type": "use",
+      "actor": "creeper",
+      "item": "hand",
+      "t": 26.5
+    },
+    {
+      "type": "look",
+      "actor": "villager",
+      "xyz": [
+        2,
+        64,
+        3
+      ],
+      "t": 26.5
+    },
+    {
+      "type": "look",
+      "actor": "steve",
+      "xyz": [
+        1,
+        64,
+        2
+      ],
+      "t": 26.5
+    },
+    {
+      "t": 26,
+      "type": "subtitle",
+      "text": "反转：苦力怕其实炸掉的是一座危房，还连夜盖了新家！",
+      "end_t": 30
+    },
+    {
+      "t": 26.3,
+      "type": "voiceover",
+      "text": "定格一看，牌子上写着：免费升级，防爆圆石别墅。",
+      "end_t": 30
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+  0.00	/title @a actionbar {"text":"谁在敲门?"}
+  3.00	/title @a actionbar {"text":"我进去"}
+  6.00	/title @a actionbar {"text":"你..."}
+  9.00	/title @a actionbar {"text":"出不来了"}
+ 12.00	/title @a actionbar {"text":"镜子里的脸"}

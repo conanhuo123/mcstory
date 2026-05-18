@@ -1,0 +1,147 @@
+{
+  "scene": "village",
+  "characters": [
+    "steve",
+    "villager",
+    "creeper"
+  ],
+  "shots": [
+    {
+      "start_sec": 0,
+      "end_sec": 3,
+      "camera": "wide",
+      "actions": [
+        {
+          "actor": "villager",
+          "action": "panic_point_sky",
+          "to_xyz": [
+            2,
+            64,
+            1
+          ]
+        },
+        {
+          "actor": "steve",
+          "action": "run_in",
+          "to_xyz": [
+            0,
+            64,
+            3
+          ]
+        }
+      ],
+      "subtitle": "怪事：村庄正午突然天黑，村民喊末影人偷走了太阳！",
+      "voiceover": "正午十二点，村庄的太阳竟然消失了。"
+    },
+    {
+      "start_sec": 3,
+      "end_sec": 18,
+      "camera": "medium",
+      "actions": [
+        {
+          "actor": "steve",
+          "action": "inspect_bell_and_roofs",
+          "to_xyz": [
+            4,
+            65,
+            2
+          ]
+        },
+        {
+          "actor": "villager",
+          "action": "show_iron_pumpkin_statue",
+          "to_xyz": [
+            6,
+            64,
+            0
+          ]
+        },
+        {
+          "actor": "steve",
+          "action": "find_black_particles_and_missing_glowstone",
+          "to_xyz": [
+            8,
+            64,
+            -2
+          ]
+        }
+      ],
+      "subtitle": "追查：铁傀儡一动不动拒绝出手，只留下黑色粒子和被搬走的发光方块。",
+      "voiceover": "史蒂夫沿着屋顶追查，线索全都指向会搬方块的神秘黑影。"
+    },
+    {
+      "start_sec": 18,
+      "end_sec": 26,
+      "camera": "closeup_object",
+      "actions": [
+        {
+          "actor": "villager",
+          "action": "place_fake_enderman_note",
+          "to_xyz": [
+            8,
+            64,
+            -2
+          ]
+        },
+        {
+          "actor": "steve",
+          "action": "read_note",
+          "to_xyz": [
+            8,
+            64,
+            -1
+          ]
+        },
+        {
+          "actor": "creeper",
+          "action": "hide_behind_hay_bale",
+          "to_xyz": [
+            9,
+            64,
+            -3
+          ]
+        }
+      ],
+      "subtitle": "误导：纸条写着“太阳已被末影人带走”，铁傀儡继续装没看见。",
+      "voiceover": "所有人都以为真凶就是末影人，只有草垛后传来奇怪的嘶嘶声。"
+    },
+    {
+      "start_sec": 26,
+      "end_sec": 30,
+      "camera": "freeze_zoom",
+      "actions": [
+        {
+          "actor": "creeper",
+          "action": "drop_black_banner_reveal_glowstone_sun",
+          "to_xyz": [
+            9,
+            64,
+            -3
+          ]
+        },
+        {
+          "actor": "steve",
+          "action": "stare_shocked",
+          "to_xyz": [
+            8,
+            64,
+            -1
+          ]
+        },
+        {
+          "actor": "villager",
+          "action": "freeze_embarrassed",
+          "to_xyz": [
+            6,
+            64,
+            0
+          ]
+        }
+      ],
+      "subtitle": "反转：不是太阳被偷，是苦力怕用黑旗遮天，想让大家早点睡！",
+      "voiceover": "真相大白：铁傀儡没出手，因为它早看出这只是村庄恶作剧。"
+    }
+  ],
+  "title": "太阳失踪案：铁傀儡拒绝救场",
+  "subtitle_color": "yellow"
+}

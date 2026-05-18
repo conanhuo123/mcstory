@@ -1,0 +1,34 @@
+{
+  "cameras": [
+    {
+      "id": "wide",
+      "name": "远景全景",
+      "description": "镜头远拉, 看到整个场景, 用于开场",
+      "replay_preset": "wide_static"
+    },
+    {
+      "id": "medium",
+      "name": "中景对话",
+      "description": "看到 2-3 个角色半身, 用于对话",
+      "replay_preset": "medium_dialog"
+    },
+    {
+      "id": "closeup_face",
+      "name": "近景脸特写",
+      "description": "对准一个角色脸部, 用于戏剧瞬间",
+      "replay_preset": "closeup_steve"
+    },
+    {
+      "id": "closeup_object",
+      "name": "物品特写",
+      "description": "对准一个物品/方块, 用于证物展示",
+      "replay_preset": "closeup_block"
+    },
+    {
+      "id": "freeze_zoom",
+      "name": "定格放大",
+      "description": "末尾静止+慢推 8%, 用于反杀金句",
+      "replay_preset": "freeze_zoom_end"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+cam spawned
+VIEWER_READY
+Prismarine viewer web server running on *:3007
+build 0 /fill -64 79 -194 -56 79 -190 grass_bloc
+build 1 /fill -64 80 -194 -62 82 -192 oak_planks
+build 2 /setblock -63 80 -194 oak_door[half=lowe
+[t=0s] 我的床呢?
+cam lookAt scene
+[t=3s] 地图...缺了
+[t=6s] 你是谁?
+[t=9s] 新来的?
+[t=12s] 你从没出生过

@@ -1,0 +1,28 @@
+cam spawned
+VIEWER_READY
+node:events:486
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::3007
+    at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+    at listenInCluster (node:net:2065:12)
+    at Server.listen (node:net:2170:7)
+    at module.exports (/Users/coco/video_factory/minecraft_bot/node_modules/prismarine-viewer/lib/mineflayer.js:81:8)
+    at EventEmitter.<anonymous> (/Users/coco/video_factory/minecraft_bot/_vd_20260518-020541.js:6:3)
+    at Object.onceWrapper (node:events:622:28)
+    at EventEmitter.emit (node:events:520:22)
+    at Client.<anonymous> (/Users/coco/video_factory/minecraft_bot/node_modules/mineflayer/lib/plugins/health.js:13:11)
+    at Object.onceWrapper (node:events:623:12)
+    at Client.emit (node:events:520:22)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:2044:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3007
+}
+
+Node.js v25.8.0

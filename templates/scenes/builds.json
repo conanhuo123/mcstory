@@ -1,0 +1,65 @@
+{
+  "version": "v0.2.1",
+  "note": "纯 /setblock 命令搭场景. origin Y=100 空中, 先 fill air 清空周围避免被山地包围",
+  "builds": {
+    "courtroom": {
+      "origin": [-60, 100, -190],
+      "description": "处决台 + 牢笼 + 旁观位",
+      "blocks": [
+        {"cmd": "fill -72 100 -200 -48 115 -180 air"},
+        {"cmd": "fill -64 99 -194 -56 99 -186 polished_blackstone"},
+        {"cmd": "fill -61 100 -193 -59 101 -191 quartz_block"},
+        {"cmd": "setblock -63 100 -192 iron_bars"},
+        {"cmd": "setblock -63 101 -192 iron_bars"},
+        {"cmd": "setblock -64 100 -192 iron_bars"},
+        {"cmd": "setblock -64 101 -192 iron_bars"},
+        {"cmd": "setblock -56 100 -192 oak_sign"},
+        {"cmd": "setblock -56 101 -192 oak_sign{front_text:{messages:['\"\"','\"上一任服主\"','\"\"','\"villager_42\"']}}"}
+      ]
+    },
+    "village": {
+      "origin": [-60, 100, -190],
+      "description": "村口主路 + 木屋 + 喷泉 + 告示",
+      "blocks": [
+        {"cmd": "fill -72 100 -200 -48 115 -180 air"},
+        {"cmd": "fill -64 99 -194 -56 99 -186 grass_block"},
+        {"cmd": "fill -64 100 -194 -62 102 -192 oak_planks hollow"},
+        {"cmd": "setblock -63 100 -194 oak_door[half=lower]"},
+        {"cmd": "setblock -63 101 -194 oak_door[half=upper]"},
+        {"cmd": "fill -61 99 -193 -59 99 -191 stone_bricks"},
+        {"cmd": "setblock -60 100 -192 water"},
+        {"cmd": "setblock -57 100 -192 oak_sign{front_text:{messages:['\"村口\"','\"\"','\"\"','\"\"']}}"}
+      ]
+    },
+    "mine": {
+      "origin": [-60, 100, -190],
+      "description": "矿洞, 火把照明",
+      "blocks": [
+        {"cmd": "fill -72 100 -200 -48 115 -180 air"},
+        {"cmd": "fill -66 99 -193 -55 105 -187 stone"},
+        {"cmd": "fill -65 100 -192 -56 104 -188 air"},
+        {"cmd": "setblock -64 100 -192 coal_ore"},
+        {"cmd": "setblock -62 100 -191 iron_ore"},
+        {"cmd": "setblock -60 100 -190 diamond_ore"},
+        {"cmd": "setblock -58 100 -191 redstone_ore"},
+        {"cmd": "setblock -64 102 -188 torch"},
+        {"cmd": "setblock -56 102 -188 torch"},
+        {"cmd": "setblock -64 102 -192 torch"},
+        {"cmd": "setblock -56 102 -192 torch"}
+      ]
+    },
+    "redstone_door": {
+      "origin": [-60, 100, -190],
+      "description": "红石门 + 密室",
+      "blocks": [
+        {"cmd": "fill -72 100 -200 -48 115 -180 air"},
+        {"cmd": "fill -64 99 -194 -56 103 -188 stone hollow"},
+        {"cmd": "setblock -60 100 -191 iron_door[half=lower]"},
+        {"cmd": "setblock -60 101 -191 iron_door[half=upper]"},
+        {"cmd": "setblock -60 100 -193 stone_button"},
+        {"cmd": "setblock -60 99 -191 redstone_block"},
+        {"cmd": "setblock -60 101 -188 oak_sign{front_text:{messages:['\"密室\"','\"\"','\"门后\"','\"\"']}}"}
+      ]
+    }
+  }
+}

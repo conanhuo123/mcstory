@@ -1,0 +1,18 @@
+cam spawned
+VIEWER_READY
+Prismarine viewer web server running on *:3007
+build 0 /fill -72 100 -200 -48 115 -180 air
+build 1 /fill -64 99 -194 -56 99 -186 polished_b
+build 2 /fill -61 100 -193 -59 101 -191 quartz_b
+summon /summon villager -60 101 -188
+summon /summon iron_golem -58 101 -188
+[t=0s] 开庭
+cam shot t=0 yaw=139.4 pitch=20.8
+cam lookAt scene
+[t=3s] 押上来
+cam shot t=3 yaw=143.1 pitch=16.7
+[t=6s] 别杀我
+cam shot t=6 yaw=143.1 pitch=11.3
+cam shot t=9 yaw=146.3 pitch=15.5
+[t=12s] 上一任服主
+cam shot t=12 yaw=180 pitch=0

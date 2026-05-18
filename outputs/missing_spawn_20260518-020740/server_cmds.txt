@@ -1,0 +1,5 @@
+  0.00	/title @a actionbar {"text":"我的床呢?"}
+  3.00	/title @a actionbar {"text":"地图...缺了"}
+  6.00	/title @a actionbar {"text":"你是谁?"}
+  9.00	/title @a actionbar {"text":"新来的?"}
+ 12.00	/title @a actionbar {"text":"你从没出生过"}

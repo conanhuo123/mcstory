@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mcstory — one sentence → 15s Minecraft short film</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, "PingFang SC", system-ui, sans-serif; background: #0a0e14; color: #e6e6e6; line-height: 1.6; }
+.hero { padding: 120px 24px 80px; text-align: center; background: linear-gradient(180deg, #0a0e14 0%, #1a1f29 100%); }
+.hero h1 { font-size: 56px; font-weight: 700; margin-bottom: 16px; background: linear-gradient(90deg, #5cffb2 0%, #00d4ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero .tag { font-size: 20px; color: #8b95a7; margin-bottom: 32px; max-width: 640px; margin-inline: auto; }
+.hero .demo { display: inline-block; background: #1a1f29; border: 1px solid #2a3140; border-radius: 8px; padding: 16px 24px; font-family: "SF Mono", Menlo, monospace; font-size: 16px; color: #5cffb2; margin-bottom: 40px; }
+.hero .cta { display: inline-block; padding: 14px 32px; background: #5cffb2; color: #0a0e14; text-decoration: none; font-weight: 600; border-radius: 8px; margin-right: 12px; }
+.hero .cta.secondary { background: transparent; color: #5cffb2; border: 1px solid #5cffb2; }
+.samples { padding: 80px 24px; max-width: 1100px; margin: 0 auto; }
+.samples h2 { font-size: 32px; margin-bottom: 48px; text-align: center; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.card { background: #1a1f29; border: 1px solid #2a3140; border-radius: 12px; padding: 24px; }
+.card h3 { font-size: 18px; color: #5cffb2; margin-bottom: 8px; }
+.card .logline { font-size: 14px; color: #8b95a7; margin-bottom: 12px; }
+.card .twist { font-size: 14px; padding: 12px; background: #0a0e14; border-radius: 6px; color: #ffc857; }
+.how { padding: 80px 24px; background: #0d1117; }
+.how-inner { max-width: 900px; margin: 0 auto; }
+.how h2 { font-size: 32px; margin-bottom: 32px; text-align: center; }
+.flow { font-family: "SF Mono", Menlo, monospace; font-size: 14px; background: #1a1f29; border: 1px solid #2a3140; border-radius: 8px; padding: 24px; white-space: pre; color: #e6e6e6; line-height: 1.8; overflow-x: auto; }
+.flow .arrow { color: #5cffb2; }
+.tester { padding: 80px 24px; text-align: center; background: linear-gradient(180deg, #0d1117 0%, #0a0e14 100%); }
+.tester h2 { font-size: 32px; margin-bottom: 16px; }
+.tester p { color: #8b95a7; margin-bottom: 32px; max-width: 540px; margin-inline: auto; }
+footer { text-align: center; padding: 32px; font-size: 13px; color: #4a5263; }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <h1>One sentence → 15s Minecraft short</h1>
+  <p class="tag">Type a logline. Get back a 15-second cinematic Minecraft drama — scene built, characters spawned, camera shots, AI voiceover, subtitles, mp4. Fully automated, ~$0.02 per render.</p>
+  <div class="demo">mcstory "the creeper refuses to explode, because it's guarding a glowing villager egg"</div>
+  <div>
+    <a href="#tester" class="cta">Join 5 beta testers</a>
+    <a href="#samples" class="cta secondary">See 5 samples</a>
+  </div>
+</section>
+
+<section id="samples" class="samples">
+  <h2>Five templates shipping today</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>judge_death</h3>
+      <p class="logline">A villager pleads in his own voice on the execution block.</p>
+      <p class="twist">Twist: he is the previous server owner.</p>
+    </div>
+    <div class="card">
+      <h3>creeper_refuse</h3>
+      <p class="logline">A creeper stands but refuses to detonate.</p>
+      <p class="twist">Twist: it's guarding a glowing villager egg under its feet.</p>
+    </div>
+    <div class="card">
+      <h3>redstone_door</h3>
+      <p class="logline">A player walks through a redstone door at night.</p>
+      <p class="twist">Twist: the mirror inside shows a villager's face — his own.</p>
+    </div>
+    <div class="card">
+      <h3>missing_spawn</h3>
+      <p class="logline">A player wakes; bed gone, map corrupted.</p>
+      <p class="twist">Twist: the sign reads "you were never born here."</p>
+    </div>
+    <div class="card">
+      <h3>dying_memory</h3>
+      <p class="logline">A villager forgets one memory per morning.</p>
+      <p class="twist">Twist: he turns into a creeper before the screen cuts.</p>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="how-inner">
+    <h2>How it works</h2>
+    <pre class="flow">one English (or Chinese) sentence
+   <span class="arrow">↓</span>  GPT-5 (director)        →  5-shot script JSON
+   <span class="arrow">↓</span>  translator              →  23 timeline events
+   <span class="arrow">↓</span>  mineflayer bot          →  spawns characters, executes scene
+   <span class="arrow">↓</span>  prismarine-viewer       →  headless render in Paper 1.20.4
+   <span class="arrow">↓</span>  puppeteer + ffmpeg      →  capture, burn subtitles, mix TTS
+final.mp4 (15s, 1080×1920, vertical)</pre>
+    <p style="color:#8b95a7;margin-top:24px;font-size:14px">Per-render cost: ~$0.02 (just the LLM call). Server is local; no Sora-class $2-per-clip fees. Multi-shot narrative — not one continuous take.</p>
+  </div>
+</section>
+
+<section id="tester" class="tester">
+  <h2>Looking for 5 beta testers</h2>
+  <p>You run Minecraft on Mac, want to ship short-drama IP weekly, and can give honest feedback on which templates land. DM the maintainer.</p>
+  <a href="mailto:co@computelabs.ai?subject=mcstory%20beta" class="cta">Apply via email</a>
+</section>
+
+<footer>
+  Built 2026-05-18 · v0.6 ships nightly · Roadmap: v1.0 chains episodes into 10-minute MC films.
+</footer>
+
+</body>
+</html>

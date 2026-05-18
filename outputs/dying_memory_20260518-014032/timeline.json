@@ -1,0 +1,153 @@
+{
+  "scene": "village",
+  "spawn_chars": [
+    "steve",
+    "villager"
+  ],
+  "title": "少一格记忆",
+  "subtitle_color": "purple",
+  "timeline": [
+    {
+      "t": 0,
+      "type": "camera",
+      "preset": "wide",
+      "pos": [
+        10,
+        70,
+        10
+      ],
+      "look_at": [
+        0,
+        64,
+        0
+      ],
+      "fov": 70
+    },
+    {
+      "t": 0,
+      "type": "subtitle",
+      "text": "今天忘了什么?",
+      "end_t": 3
+    },
+    {
+      "t": 0.3,
+      "type": "voiceover",
+      "text": "村民翻日记, 每页都缺一段。",
+      "end_t": 3
+    },
+    {
+      "t": 3,
+      "type": "camera",
+      "preset": "medium",
+      "pos": [
+        3,
+        66,
+        3
+      ],
+      "look_at": [
+        0,
+        64,
+        0
+      ],
+      "fov": 60
+    },
+    {
+      "t": 3,
+      "type": "subtitle",
+      "text": "我叫...?",
+      "end_t": 6
+    },
+    {
+      "t": 3.3,
+      "type": "voiceover",
+      "text": "他盯着告示牌, 想不起自己名字。",
+      "end_t": 6
+    },
+    {
+      "t": 6,
+      "type": "camera",
+      "preset": "closeup_face",
+      "pos": [
+        1,
+        65,
+        1
+      ],
+      "look_at": [
+        0,
+        65,
+        0
+      ],
+      "fov": 50
+    },
+    {
+      "t": 6,
+      "type": "subtitle",
+      "text": "你是谁?",
+      "end_t": 9
+    },
+    {
+      "t": 6.3,
+      "type": "voiceover",
+      "text": "玩家问候他, 他茫然回望。",
+      "end_t": 9
+    },
+    {
+      "t": 9,
+      "type": "camera",
+      "preset": "closeup_face",
+      "pos": [
+        1,
+        65,
+        1
+      ],
+      "look_at": [
+        0,
+        65,
+        0
+      ],
+      "fov": 50
+    },
+    {
+      "t": 9,
+      "type": "subtitle",
+      "text": "我...",
+      "end_t": 12
+    },
+    {
+      "t": 9.3,
+      "type": "voiceover",
+      "text": "村民颤抖, 指着自己, 说不出口。",
+      "end_t": 12
+    },
+    {
+      "t": 12,
+      "type": "camera",
+      "preset": "freeze_zoom",
+      "pos": [
+        2,
+        65,
+        2
+      ],
+      "look_at": [
+        0,
+        64.5,
+        0
+      ],
+      "fov": 55,
+      "freeze": true,
+      "zoom_to": 50
+    },
+    {
+      "t": 12,
+      "type": "subtitle",
+      "text": "他成了苦力怕",
+      "end_t": 15
+    },
+    {
+      "t": 12.3,
+      "type": "voiceover",
+      "text": "下一秒, 一声嘶嘶, 他绿色的身体浮现。",
+      "end_t": 15
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "death_sentence",
+  "title": "判死刑",
+  "logline": "村民临刑前自称上一任服主",
+  "scene": "courtroom",
+  "size": [9, 7, 5],
+  "characters": ["steve", "villager", "iron_golem"],
+  "redline": "不加群众, 不加支线",
+  "dialogue": ["开庭", "押上来", "别杀我", "(画面: 旧牌半露)", "上一任服主"],
+  "twist": "被处决者不是 NPC, 是旧服主 — 反转由画面完成, 不靠字幕解释 (沈砚 2026-05-18)",
+  "twist_visual": "shot4 旧牌半露 (字残缺) → shot5 旧牌全露「上一任服主: villager_42」",
+  "shots": [
+    {"t": [0, 3],   "scene_action": "牢笼村民低头",       "camera": "wide",          "subtitle": "开庭",        "voiceover": "处决台升起, 铁傀儡看守。"},
+    {"t": [3, 6],   "scene_action": "玩家举斧",           "camera": "medium",        "subtitle": "押上来",      "voiceover": "村民被推上处决台, 满身泥土。"},
+    {"t": [6, 9],   "scene_action": "村民开口求饶",       "camera": "closeup_face",  "subtitle": "别杀我",      "voiceover": "村民突然开口, 全场寂静。"},
+    {"t": [9, 12],  "scene_action": "镜头推到旧牌, 字半露", "camera": "closeup_object","subtitle": "",            "voiceover": "玩家僵住, 镜头缓推, 牌面字迹半隐。"},
+    {"t": [12, 15], "scene_action": "旧牌全露: 上一任服主","camera": "freeze_zoom",   "subtitle": "上一任服主",  "voiceover": "字浮出, 是上一任服主的名字。"}
+  ],
+  "duration_sec": 15,
+  "subtitle_color": "red",
+  "qc": {"任务_3s内": "判死刑", "冲突_3s内": "村民会说话", "收益_3s内": "反转身份"}
+}

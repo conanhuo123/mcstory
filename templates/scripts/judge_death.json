@@ -1,0 +1,15 @@
+{
+  "id": "judge_death",
+  "title": "判死刑",
+  "scene": "courtroom",
+  "characters": ["steve", "villager", "iron_golem"],
+  "dialog_rule": "≤12 字 (何初 2026-05-18)",
+  "shots": [
+    {"start_sec": 0,  "end_sec": 3,  "camera": "wide",          "subtitle": "开庭。",         "voiceover": "处决台升起, 铁傀儡看守。"},
+    {"start_sec": 3,  "end_sec": 10, "camera": "medium",        "subtitle": "押上来。",       "voiceover": "村民被推上处决台, 满身泥土。"},
+    {"start_sec": 10, "end_sec": 18, "camera": "closeup_face",  "subtitle": "他会说话?",      "voiceover": "村民突然开口, 全场寂静。"},
+    {"start_sec": 18, "end_sec": 26, "camera": "closeup_object","subtitle": "别杀我。",       "voiceover": "村民颤抖, 玩家举刀停顿。"},
+    {"start_sec": 26, "end_sec": 30, "camera": "freeze_zoom",   "subtitle": "他是上一任服主。","voiceover": "告示反转, 镜头定格于牌子。"}
+  ],
+  "subtitle_color": "red"
+}

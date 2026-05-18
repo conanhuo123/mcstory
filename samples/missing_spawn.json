@@ -1,0 +1,19 @@
+{
+  "id": "missing_spawn", "title": "出生点被删",
+  "logline": "玩家醒来发现自己从没出生过",
+  "scene": "village", "size": [10, 6, 8],
+  "characters": ["steve", "villager"],
+  "redline": "退档画面感, 告示牌信息必须可读",
+  "dialogue": ["我的床呢?", "地图...缺了", "你是谁?", "新来的?", "告示反转"],
+  "twist": "玩家被世界退档, 不是数据丢了",
+  "twist_visual": "告示牌特写: 你从没出生过. 镜头拉远玩家身体半透明",
+  "shots": [
+    {"t": [0, 3],   "scene_action": "玩家醒来床消失",      "camera": "wide",          "characters": ["steve"],     "subtitle": "我的床呢?",  "voiceover": "玩家睁眼, 床位是空地, 火把灭了。"},
+    {"t": [3, 6],   "scene_action": "翻地图发现缺角",      "camera": "closeup_object","characters": ["steve"],     "subtitle": "地图...缺了","voiceover": "翻出地图, 出生点那块是一片黑。"},
+    {"t": [6, 9],   "scene_action": "村民走过冷漠路过",    "camera": "medium",        "characters": ["villager"],  "subtitle": "你是谁?",    "voiceover": "村民侧身让路, 像是看不见他。"},
+    {"t": [9, 12],  "scene_action": "村民对话气泡: 新来的", "camera": "closeup_face",  "characters": ["villager"],  "subtitle": "新来的?",    "voiceover": "村民只丢下一句, 转身就走。"},
+    {"t": [12, 15], "scene_action": "告示牌特写, 玩家身体半透明", "camera": "freeze_zoom", "characters": ["steve"], "subtitle": "你从没出生过", "voiceover": "镜头特写告示: 你从没出生过. 玩家身体开始透明。"}
+  ],
+  "duration_sec": 15, "subtitle_color": "gray",
+  "qc": {"任务_3s内": "醒来找床", "冲突_3s内": "出生点没了", "收益_3s内": "自己被退档"}
+}

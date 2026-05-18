@@ -1,0 +1,153 @@
+{
+  "scene": "redstone_door",
+  "spawn_chars": [
+    "steve",
+    "villager"
+  ],
+  "title": "红石门",
+  "subtitle_color": "blue",
+  "timeline": [
+    {
+      "t": 0,
+      "type": "camera",
+      "preset": "wide",
+      "pos": [
+        10,
+        70,
+        10
+      ],
+      "look_at": [
+        0,
+        64,
+        0
+      ],
+      "fov": 70
+    },
+    {
+      "t": 0,
+      "type": "subtitle",
+      "text": "谁在敲门?",
+      "end_t": 3
+    },
+    {
+      "t": 0.3,
+      "type": "voiceover",
+      "text": "深夜, 红石门后传来敲击声。",
+      "end_t": 3
+    },
+    {
+      "t": 3,
+      "type": "camera",
+      "preset": "medium",
+      "pos": [
+        3,
+        66,
+        3
+      ],
+      "look_at": [
+        0,
+        64,
+        0
+      ],
+      "fov": 60
+    },
+    {
+      "t": 3,
+      "type": "subtitle",
+      "text": "我进去",
+      "end_t": 6
+    },
+    {
+      "t": 3.3,
+      "type": "voiceover",
+      "text": "玩家举火把推门, 走进密室。",
+      "end_t": 6
+    },
+    {
+      "t": 6,
+      "type": "camera",
+      "preset": "closeup_face",
+      "pos": [
+        1,
+        65,
+        1
+      ],
+      "look_at": [
+        0,
+        65,
+        0
+      ],
+      "fov": 50
+    },
+    {
+      "t": 6,
+      "type": "subtitle",
+      "text": "你...",
+      "end_t": 9
+    },
+    {
+      "t": 6.3,
+      "type": "voiceover",
+      "text": "村民转头看他, 眼神空洞。",
+      "end_t": 9
+    },
+    {
+      "t": 9,
+      "type": "camera",
+      "preset": "closeup_object",
+      "pos": [
+        1,
+        64.5,
+        1
+      ],
+      "look_at": [
+        0,
+        64,
+        0
+      ],
+      "fov": 40
+    },
+    {
+      "t": 9,
+      "type": "subtitle",
+      "text": "出不来了",
+      "end_t": 12
+    },
+    {
+      "t": 9.3,
+      "type": "voiceover",
+      "text": "门嘭地合上, 红石锁咔哒上锁。",
+      "end_t": 12
+    },
+    {
+      "t": 12,
+      "type": "camera",
+      "preset": "freeze_zoom",
+      "pos": [
+        2,
+        65,
+        2
+      ],
+      "look_at": [
+        0,
+        64.5,
+        0
+      ],
+      "fov": 55,
+      "freeze": true,
+      "zoom_to": 50
+    },
+    {
+      "t": 12,
+      "type": "subtitle",
+      "text": "镜子里的脸",
+      "end_t": 15
+    },
+    {
+      "t": 12.3,
+      "type": "voiceover",
+      "text": "玩家看向镜子, 倒影却是一张村民脸。",
+      "end_t": 15
+    }
+  ]
+}

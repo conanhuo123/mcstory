@@ -1,0 +1,23 @@
+{
+  "characters": [
+    {
+      "id": "steve",
+      "name": "玩家史蒂夫",
+      "skin": "default",
+      "description": "默认玩家, 用作主角/法官/导演",
+      "controllable_actions": ["walk", "look", "attack", "use", "place", "say"]
+    },
+    {
+      "id": "villager",
+      "name": "村民",
+      "spawn_cmd": "/summon villager ~ ~ ~ {Profession:0,CustomName:'村民'}",
+      "controllable_actions": ["walk_to", "say", "look_at"]
+    },
+    {
+      "id": "creeper",
+      "name": "苦力怕",
+      "spawn_cmd": "/summon creeper ~ ~ ~ {CustomName:'苦力怕',NoAI:1b}",
+      "controllable_actions": ["walk_to", "explode", "say"]
+    }
+  ]
+}

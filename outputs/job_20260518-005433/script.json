@@ -1,0 +1,147 @@
+{
+  "scene": "village",
+  "characters": [
+    "steve",
+    "villager",
+    "creeper"
+  ],
+  "shots": [
+    {
+      "start_sec": 0,
+      "end_sec": 3,
+      "camera": "wide",
+      "actions": [
+        {
+          "actor": "steve",
+          "action": "look_up",
+          "to_xyz": [
+            0,
+            70,
+            0
+          ]
+        },
+        {
+          "actor": "villager",
+          "action": "panic_run",
+          "to_xyz": [
+            4,
+            64,
+            2
+          ]
+        }
+      ],
+      "subtitle": "怪事：太阳突然被偷走了！",
+      "voiceover": "村庄正午瞬间变黑，所有人都说是末影人干的。"
+    },
+    {
+      "start_sec": 3,
+      "end_sec": 18,
+      "camera": "medium",
+      "actions": [
+        {
+          "actor": "steve",
+          "action": "inspect_daylight_sensor",
+          "to_xyz": [
+            2,
+            64,
+            1
+          ]
+        },
+        {
+          "actor": "villager",
+          "action": "point_at_black_wool_sky",
+          "to_xyz": [
+            3,
+            64,
+            1
+          ]
+        },
+        {
+          "actor": "creeper",
+          "action": "sneak_behind_house",
+          "to_xyz": [
+            -3,
+            64,
+            4
+          ]
+        }
+      ],
+      "subtitle": "追查：史蒂夫发现天空被黑色方块挡住",
+      "voiceover": "史蒂夫沿着掉落的黑色羊毛和红石粉追查，线索一路通向村口屋顶。"
+    },
+    {
+      "start_sec": 18,
+      "end_sec": 26,
+      "camera": "closeup_object",
+      "actions": [
+        {
+          "actor": "steve",
+          "action": "pick_up_ender_pearl",
+          "to_xyz": [
+            -1,
+            65,
+            3
+          ]
+        },
+        {
+          "actor": "villager",
+          "action": "accuse_enderman",
+          "to_xyz": [
+            0,
+            64,
+            3
+          ]
+        },
+        {
+          "actor": "creeper",
+          "action": "freeze_nervous",
+          "to_xyz": [
+            -3,
+            64,
+            4
+          ]
+        }
+      ],
+      "subtitle": "误导：地上竟有一颗末影珍珠",
+      "voiceover": "所有证据都指向末影人，村民已经准备宣布真凶。"
+    },
+    {
+      "start_sec": 26,
+      "end_sec": 30,
+      "camera": "freeze_zoom",
+      "actions": [
+        {
+          "actor": "steve",
+          "action": "pull_lever",
+          "to_xyz": [
+            -2,
+            64,
+            4
+          ]
+        },
+        {
+          "actor": "creeper",
+          "action": "reveal_sun_lamp_machine",
+          "to_xyz": [
+            -3,
+            64,
+            4
+          ]
+        },
+        {
+          "actor": "villager",
+          "action": "shock",
+          "to_xyz": [
+            0,
+            64,
+            3
+          ]
+        }
+      ],
+      "subtitle": "反转：偷走太阳的竟是苦力怕！",
+      "voiceover": "苦力怕用黑羊毛遮住天空，只为让大家看不到它脸红。"
+    }
+  ],
+  "title": "谁偷走了太阳？",
+  "subtitle_color": "yellow"
+}

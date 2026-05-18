@@ -1,0 +1,154 @@
+{
+  "scene": "courtroom",
+  "spawn_chars": [
+    "steve",
+    "villager",
+    "iron_golem"
+  ],
+  "title": "判死刑",
+  "subtitle_color": "red",
+  "timeline": [
+    {
+      "t": 0,
+      "type": "camera",
+      "preset": "wide",
+      "pos": [
+        10,
+        70,
+        10
+      ],
+      "look_at": [
+        0,
+        64,
+        0
+      ],
+      "fov": 70
+    },
+    {
+      "t": 0,
+      "type": "subtitle",
+      "text": "开庭",
+      "end_t": 3
+    },
+    {
+      "t": 0.3,
+      "type": "voiceover",
+      "text": "处决台升起, 铁傀儡看守。",
+      "end_t": 3
+    },
+    {
+      "t": 3,
+      "type": "camera",
+      "preset": "medium",
+      "pos": [
+        3,
+        66,
+        3
+      ],
+      "look_at": [
+        0,
+        64,
+        0
+      ],
+      "fov": 60
+    },
+    {
+      "t": 3,
+      "type": "subtitle",
+      "text": "押上来",
+      "end_t": 6
+    },
+    {
+      "t": 3.3,
+      "type": "voiceover",
+      "text": "村民被推上处决台, 满身泥土。",
+      "end_t": 6
+    },
+    {
+      "t": 6,
+      "type": "camera",
+      "preset": "closeup_face",
+      "pos": [
+        1,
+        65,
+        1
+      ],
+      "look_at": [
+        0,
+        65,
+        0
+      ],
+      "fov": 50
+    },
+    {
+      "t": 6,
+      "type": "subtitle",
+      "text": "别杀我",
+      "end_t": 9
+    },
+    {
+      "t": 6.3,
+      "type": "voiceover",
+      "text": "村民突然开口, 全场寂静。",
+      "end_t": 9
+    },
+    {
+      "t": 9,
+      "type": "camera",
+      "preset": "closeup_face",
+      "pos": [
+        1,
+        65,
+        1
+      ],
+      "look_at": [
+        0,
+        65,
+        0
+      ],
+      "fov": 50
+    },
+    {
+      "t": 9,
+      "type": "subtitle",
+      "text": "我建过这里",
+      "end_t": 12
+    },
+    {
+      "t": 9.3,
+      "type": "voiceover",
+      "text": "玩家僵在原地, 斧头停在空中。",
+      "end_t": 12
+    },
+    {
+      "t": 12,
+      "type": "camera",
+      "preset": "freeze_zoom",
+      "pos": [
+        2,
+        65,
+        2
+      ],
+      "look_at": [
+        0,
+        64.5,
+        0
+      ],
+      "fov": 55,
+      "freeze": true,
+      "zoom_to": 50
+    },
+    {
+      "t": 12,
+      "type": "subtitle",
+      "text": "名牌证明",
+      "end_t": 15
+    },
+    {
+      "t": 12.3,
+      "type": "voiceover",
+      "text": "镜头推近告示牌, 旧名浮出。",
+      "end_t": 15
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+cam spawned
+VIEWER_READY
+Prismarine viewer web server running on *:3007
+build 0 /fill -64 79 -194 -56 83 -188 stone holl
+build 1 /setblock -60 80 -191 iron_door[half=low
+build 2 /setblock -60 81 -191 iron_door[half=upp
+[t=0s] 谁在敲门?
+cam lookAt scene
+[t=3s] 我进去
+[t=6s] 你...
+[t=9s] 出不来了
+[t=12s] 镜子里的脸
