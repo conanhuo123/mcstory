@@ -1,0 +1,14 @@
+{
+  "id":"stage3_trio","title":"三人审判","logline":"steve 审村民, 铁傀儡看守 — stage3 三角色调度",
+  "scene":"courtroom","characters":["steve","villager","iron_golem"],"redline":"3 角色, 验证调度/碰撞/分工",
+  "dialogue":["开庭","villager 上台","iron_golem 看守","steve 举斧","告示反转"],
+  "twist":"3 角色完整审判戏","twist_visual":"告示牌升起反转",
+  "shots":[
+    {"t":[0,3],"scene_action":"3 角色站位 (steve 中, villager 左, iron_golem 右)","camera":"wide","subtitle":"开庭","voiceover":"处决台 3 人站定。"},
+    {"t":[3,6],"scene_action":"villager 走向台中央","camera":"medium","subtitle":"押上来","voiceover":"村民被押到台中央。"},
+    {"t":[6,9],"scene_action":"iron_golem 转向 villager 看","camera":"closeup_face","subtitle":"看守","voiceover":"铁傀儡转头看着村民。"},
+    {"t":[9,12],"scene_action":"steve 举斧逼近","camera":"closeup_face","subtitle":"举斧","voiceover":"steve 举起斧, 步步逼近。"},
+    {"t":[12,15],"scene_action":"setblock 告示反转","camera":"freeze_zoom","subtitle":"上一任服主","voiceover":"告示浮出: 上一任服主。"}
+  ],"duration_sec":15,"subtitle_color":"red",
+  "stage":3
+}
