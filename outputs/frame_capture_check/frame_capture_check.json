@@ -1,0 +1,42 @@
+{
+  "name": "frame_capture_check",
+  "ts": "2026-05-19T04:42:00+08:00",
+  "verdict": "PASS",
+  "method": "puppeteer page.screenshot() against prismarine-viewer http canvas",
+  "为什么不用_macOS_native": [
+    "screencapture rc=127 (锁屏 / 权限失败)",
+    "AppleScript 查窗口超时 (Quartz API 受 macOS 安全沙箱限制)",
+    "window-id 路径需要 Accessibility 权限"
+  ],
+  "puppeteer路径优点": [
+    "不依赖 macOS native screen API",
+    "chrome 窗口 --window-position=2000,2000 移出屏外, 不抢用户焦点",
+    "page.screenshot() 直接抓 chrome WebGL canvas 内容",
+    "deterministic + headless-friendly",
+    "锁屏不影响 (chrome 在自己 process 内渲染)"
+  ],
+  "前置条件": [
+    "paper server.properties: enforce-secure-profile=false (绕 Mojang 1.19+ chat signing 拒绝 mineflayer)",
+    "paper 重启生效",
+    "RCON: gamemode spectator <cam> + tp <cam> <pos>",
+    "mineflayer + prismarine-viewer firstPerson=false (third-person 渲染所有 entity mesh)"
+  ],
+  "已交付真帧": {
+    "村民低头_before": "outputs/gate1_judge_death_min/v_thirdperson_before.png md5=105b86c0a62b3fa1e393504a3224b200",
+    "村民低头_after": "outputs/gate1_judge_death_min/v_thirdperson_after.png md5=928e42bc9d071a3f705d507fb87889ce",
+    "帧不同": true,
+    "帧内容": "真 paper world chunk render: superflat 草地 + iron_bars 牢笼 + polished_blackstone 地板 + 远景山地森林雪 + 牢笼内 villager mesh (深色团)"
+  },
+  "限制": [
+    "puppeteer headed chrome 窗口 1280x720 但 viewer canvas 默认 fit 到 320x180 — villager pitch 在低清下视觉变化不显著",
+    "prismarine-viewer entity sprite 渲染稳定 (block 牢笼清晰) 但 entity NBT (Pose/Rotation) 变化不一定每帧刷 — 需 cam 微动触发",
+    "armor_stand Pose.RightArm merge 后 mineflayer EntityMetadata packet 未 update (举斧真帧 md5 same FAIL)"
+  ],
+  "建议下一步": [
+    "升 1280x720 viewer canvas (改 prismarine-viewer index.html style.css 注入)",
+    "cam tp 更近 villager (距离 1 块, 高度齐眼) + pitch 朝下看 villager 头部",
+    "Pose merge 后强制 cam 微动 2 次 trigger viewer entity refresh",
+    "或: 用 paper 命令 attribute modifier 让 villager 移动后立即停 (触发动画)"
+  ],
+  "脚本": "scripts/gate3_thirdperson.js (commit 42a1409 已 push)"
+}
