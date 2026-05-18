@@ -64,8 +64,9 @@ def main(inp):
     scene_id = sc.get("scene", "courtroom")
     builds = json.loads((ROOT/"templates/scenes/builds.json").read_text()).get("builds", {})
     scene_build = builds.get(scene_id, {})
-    build_cmds = [b["cmd"] for b in scene_build.get("blocks", []) if "cmd" in b]
-    origin = scene_build.get("origin", [-60, 80, -190])
+    # v5.0 (老板 22:11 拍板): GPT 直接生成 build_cmds 优先于 templates
+    build_cmds = sc.get("build_cmds") or [b["cmd"] for b in scene_build.get("blocks", []) if "cmd" in b]
+    origin = sc.get("scene_origin") or scene_build.get("origin", [-60, 80, -190])
     # v0.2.1: summon characters in scene
     SUMMON_MAP = {
         "villager": "/summon villager",
