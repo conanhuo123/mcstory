@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "mcstory Action Grammar Schema v0.1",
+  "description": "动作语法库 — 每个 action token 标准化定义. 4 库 + 1 闭环 中的第 1 库. 跨剧本复利.",
+  "type": "object",
+  "required": ["id", "type", "actor", "params"],
+  "properties": {
+    "id": {"type": "string", "description": "唯一 ID, e.g. 'walk_to_block'"},
+    "type": {
+      "type": "string",
+      "enum": ["walk", "tp", "look", "say", "attack", "use_item", "place_block", "setblock", "give_effect", "summon", "kill", "particle"],
+      "description": "动作类型"
+    },
+    "actor": {
+      "type": "string",
+      "enum": ["steve", "villager", "iron_golem", "creeper", "enderman", "wolf", "any"],
+      "description": "执行者"
+    },
+    "params": {
+      "type": "object",
+      "properties": {
+        "xyz": {"type": "array", "items": {"type": "number"}, "minItems": 3, "maxItems": 3},
+        "target": {"type": "string"},
+        "text": {"type": "string"},
+        "duration_s": {"type": "number"},
+        "effect": {"type": "string"}
+      }
+    },
+    "mc_command": {
+      "type": "string",
+      "description": "底层 MC 命令模板, e.g. '/tp @e[type=<actor>,limit=1] <x> <y> <z>'"
+    },
+    "tags": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "语义 tag e.g. ['plead', 'die', 'reveal']"
+    }
+  },
+  "examples": [
+    {
+      "id": "villager_kneel",
+      "type": "tp",
+      "actor": "villager",
+      "params": {"xyz": [0, 0, 0], "duration_s": 1},
+      "mc_command": "/tp @e[type=villager,limit=1] <x> <y> <z> 0 -30",
+      "tags": ["plead", "submit"]
+    },
+    {
+      "id": "creeper_glow",
+      "type": "give_effect",
+      "actor": "creeper",
+      "params": {"effect": "glowing", "duration_s": 5},
+      "mc_command": "/effect give @e[type=creeper,limit=1] glowing <duration_s> 0 true",
+      "tags": ["highlight", "reveal"]
+    },
+    {
+      "id": "sign_reveal",
+      "type": "setblock",
+      "actor": "any",
+      "params": {"xyz": [0, 0, 0]},
+      "mc_command": "/setblock <x> <y> <z> oak_sign{front_text:{messages:[\"<line1>\"]}}",
+      "tags": ["twist", "reveal"]
+    }
+  ]
+}

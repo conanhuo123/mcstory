@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "mcstory Scene Library Schema v0.1",
+  "description": "场景资产库 — 4 库 + 1 闭环 中的第 3 库.",
+  "type": "object",
+  "required": ["id", "size", "origin", "build_cmds"],
+  "properties": {
+    "id": {"type": "string", "description": "scene id e.g. courtroom"},
+    "name": {"type": "string"},
+    "description": {"type": "string"},
+    "size": {"type": "array", "items": {"type": "integer"}, "minItems": 3, "maxItems": 3},
+    "origin": {"type": "array", "items": {"type": "number"}, "minItems": 3, "maxItems": 3},
+    "biome": {"type": "string", "description": "preferred biome e.g. plains/flat"},
+    "build_cmds": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "MC commands to build (in execution order)"
+    },
+    "default_camera": {"type": "string", "enum": ["wide", "medium", "closeup_face", "closeup_object", "freeze_zoom"]},
+    "tags": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "semantic tags e.g. ['indoor', 'judgement', 'medieval']"
+    }
+  }
+}
