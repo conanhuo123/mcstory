@@ -1,0 +1,45 @@
+{
+  "front_v5.png": {
+    "bbox": [
+      1183,
+      245,
+      1235,
+      263
+    ],
+    "biggest": 214,
+    "head": "PASS",
+    "foot": "PASS",
+    "left": "PASS",
+    "right": "PASS",
+    "overall": "PASS"
+  },
+  "45deg.png": {
+    "bbox": [
+      1049,
+      215,
+      1141,
+      254
+    ],
+    "biggest": 441,
+    "head": "PASS",
+    "foot": "PASS",
+    "left": "PASS",
+    "right": "PASS",
+    "overall": "PASS"
+  },
+  "close_v4.png": {
+    "bbox": [
+      1210,
+      200,
+      1254,
+      216
+    ],
+    "biggest": 226,
+    "head": "PASS",
+    "foot": "PASS",
+    "left": "PASS",
+    "right": "PASS",
+    "overall": "PASS"
+  },
+  "overall": "PASS — 3/3 all four edges margin >=25 TOL"
+}
