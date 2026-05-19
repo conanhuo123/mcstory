@@ -501,6 +501,102 @@
         "witch",
         "weird"
       ]
+    },
+    {
+      "id": "mecha_gundam_RX78",
+      "name": "高达 RX-78",
+      "origin": [
+        -100,
+        80,
+        -300
+      ],
+      "biome": "plains",
+      "build_cmds": [],
+      "default_camera": "medium",
+      "tags": [
+        "mecha",
+        "character",
+        "sci-fi",
+        "polished"
+      ],
+      "template": "mecha_template",
+      "params": {
+        "palette": "gundam_RX78",
+        "weapon": "sword",
+        "height_scale": 1.0
+      }
+    },
+    {
+      "id": "mecha_zaku",
+      "name": "扎古绿色",
+      "origin": [
+        -80,
+        80,
+        -300
+      ],
+      "biome": "plains",
+      "build_cmds": [],
+      "default_camera": "medium",
+      "tags": [
+        "mecha",
+        "character",
+        "villain",
+        "polished"
+      ],
+      "template": "mecha_template",
+      "params": {
+        "palette": "zaku_green",
+        "weapon": "rifle",
+        "height_scale": 1.0
+      }
+    },
+    {
+      "id": "mecha_evangelion",
+      "name": "EVA 紫",
+      "origin": [
+        -60,
+        80,
+        -300
+      ],
+      "biome": "plains",
+      "build_cmds": [],
+      "default_camera": "medium",
+      "tags": [
+        "mecha",
+        "character",
+        "tall",
+        "polished"
+      ],
+      "template": "mecha_template",
+      "params": {
+        "palette": "evangelion_purple",
+        "weapon": "beam_saber",
+        "height_scale": 1.2
+      }
+    },
+    {
+      "id": "mecha_iron_giant",
+      "name": "铁巨人",
+      "origin": [
+        -40,
+        80,
+        -300
+      ],
+      "biome": "plains",
+      "build_cmds": [],
+      "default_camera": "medium",
+      "tags": [
+        "mecha",
+        "character",
+        "defensive",
+        "polished"
+      ],
+      "template": "mecha_template",
+      "params": {
+        "palette": "iron_giant",
+        "weapon": "shield",
+        "height_scale": 1.0
+      }
     }
   ]
 }
