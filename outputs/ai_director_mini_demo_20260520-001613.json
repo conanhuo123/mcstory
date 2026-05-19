@@ -1,0 +1,94 @@
+{
+  "scene": "AI 导演 mini demo: louvre 庭院 + 游客 + 卫士 + 动作",
+  "characters": {
+    "villager_游客": {
+      "spawn": {
+        "gate": 1,
+        "name": "spawn",
+        "entity": "villager",
+        "name_match": "游客",
+        "status": "PASS",
+        "raw": "Test passed, count: 1"
+      },
+      "placement": {
+        "gate": 2,
+        "name": "placement",
+        "actual": [
+          -299.5,
+          95.0,
+          -299.5
+        ],
+        "expected": [
+          -300,
+          95,
+          -300
+        ],
+        "tol": 2,
+        "status": "PASS"
+      }
+    },
+    "armor_stand_卫士": {
+      "spawn": {
+        "gate": 1,
+        "name": "spawn",
+        "entity": "armor_stand",
+        "name_match": "卫士",
+        "status": "PASS",
+        "raw": "Test passed, count: 1"
+      },
+      "placement": {
+        "gate": 2,
+        "name": "placement",
+        "actual": [
+          -297.5,
+          91.6537296175886,
+          -299.5
+        ],
+        "expected": [
+          -298,
+          95,
+          -300
+        ],
+        "tol": 2,
+        "status": "FAIL"
+      }
+    }
+  },
+  "actions": {
+    "villager_低头": {
+      "pose": {
+        "gate": 3,
+        "name": "pose",
+        "actual_pitch": 45.0,
+        "expected_pitch": 45,
+        "status": "PASS"
+      },
+      "animation": {
+        "gate": 4,
+        "name": "animation",
+        "before": "游客 has the following entity data: [0.0f, 0.0f]",
+        "after": "游客 has the following entity data: [0.0f, 45.0f]",
+        "changed": true,
+        "status": "PASS"
+      }
+    },
+    "armor_stand_举剑": {
+      "pose": {
+        "gate": 3,
+        "name": "pose",
+        "actual_arm": -90.0,
+        "expected_arm": -90,
+        "status": "PASS"
+      },
+      "animation": {
+        "gate": 4,
+        "name": "animation",
+        "before": "卫士 has the following entity data: {RightArm: [0.0f, 0.0f, 0.",
+        "after": "卫士 has the following entity data: {RightArm: [-90.0f, 0.0f, ",
+        "changed": true,
+        "status": "PASS"
+      }
+    }
+  },
+  "all_pass": false
+}
