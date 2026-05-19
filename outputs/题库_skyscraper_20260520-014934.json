@@ -1,0 +1,62 @@
+{
+  "origin": [
+    -360,
+    80,
+    -240
+  ],
+  "rcon": "2284/2292",
+  "bbox": [
+    -365,
+    80,
+    -245,
+    -355,
+    145,
+    -235
+  ],
+  "cmds": 2292,
+  "g1": {
+    "gate": 1,
+    "name": "ground_check",
+    "actual_ground": 79,
+    "all_probes": [
+      79,
+      79,
+      79,
+      79
+    ],
+    "build_bottom": 80,
+    "status": "PASS"
+  },
+  "g3": {
+    "gate": 3,
+    "name": "proportion",
+    "h": 66,
+    "w": 11,
+    "ratio": 6.0,
+    "target": [
+      1.0,
+      10.0
+    ],
+    "status": "PASS"
+  },
+  "g4": {
+    "gate": 4,
+    "name": "detail",
+    "block_types": 9,
+    "total_cmds": 2292,
+    "min_types": 5,
+    "min_total": 200,
+    "sample_blocks": [
+      "air",
+      "beacon",
+      "gray_concrete",
+      "iron_bars",
+      "iron_door",
+      "light_gray_concrete",
+      "polished_andesite",
+      "redstone_lamp"
+    ],
+    "status": "PASS"
+  },
+  "pass3": true
+}

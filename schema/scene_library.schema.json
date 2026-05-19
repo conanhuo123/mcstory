@@ -771,6 +771,44 @@
         "outputs/题库_temple_final/temple_45deg.png",
         "outputs/题库_temple_final/temple_close.png"
       ]
+    },
+    {
+      "id": "skyscraper_v1",
+      "name": "摩天楼 v1 (60 块高玻璃幕墙)",
+      "origin": [
+        -360,
+        80,
+        -240
+      ],
+      "biome": "plains",
+      "build_cmds": [],
+      "default_camera": "45deg",
+      "tags": [
+        "famous_building",
+        "skyscraper",
+        "modern",
+        "polished",
+        "verified_5gate"
+      ],
+      "template": "module_library_combo",
+      "params": {
+        "modules": [
+          "Foundation.slab",
+          "20 floors light_gray+tinted_glass+gray_concrete",
+          "iron frame top + beacon"
+        ]
+      },
+      "quality_gate": {
+        "ground": "PASS",
+        "framing": "待截",
+        "proportion": "PASS h/w 6.0",
+        "detail": "PASS 9 blocks",
+        "multiview": "待"
+      },
+      "block_types": 9,
+      "cmds_total": 2292,
+      "rcon_ok": 2284,
+      "screenshots": []
     }
   ]
 }
