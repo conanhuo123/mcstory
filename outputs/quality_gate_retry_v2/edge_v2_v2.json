@@ -1,0 +1,44 @@
+{
+  "front_v2.png": {
+    "bbox": [
+      662,
+      4,
+      692,
+      10
+    ],
+    "head": "FAIL",
+    "foot": "PASS",
+    "left": "PASS",
+    "right": "PASS",
+    "biggest": 102,
+    "overall": "FAIL"
+  },
+  "45deg.png": {
+    "bbox": [
+      1049,
+      215,
+      1141,
+      254
+    ],
+    "head": "PASS",
+    "foot": "PASS",
+    "left": "PASS",
+    "right": "PASS",
+    "biggest": 441,
+    "overall": "PASS"
+  },
+  "close_v2.png": {
+    "bbox": [
+      0,
+      641,
+      1279,
+      719
+    ],
+    "head": "PASS",
+    "foot": "FAIL",
+    "left": "FAIL",
+    "right": "FAIL",
+    "biggest": 61504,
+    "overall": "FAIL"
+  }
+}
