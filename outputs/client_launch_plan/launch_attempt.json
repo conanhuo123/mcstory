@@ -1,0 +1,36 @@
+{
+  "name": "launch_attempt",
+  "ts": "2026-05-19T08:52:00+08:00",
+  "cli_attempt": {
+    "命令": "/opt/homebrew/opt/openjdk@21/bin/java -XstartOnFirstThread -Djava.library.path=/tmp/mc_natives_1.20.4 -Xmx2G -cp <76 jars> net.minecraft.client.main.Main --version 1.20.4 --gameDir <MC dir> --assetsDir <assets> --assetIndex 12 --uuid 00000000-0000-0000-0000-000000000000 --username ClaudeBot --accessToken FFFFFFFFFFFFFFFF --userType legacy",
+    "stage_reached": "Bootstrap (net.minecraft.client.main.Main 已启动 + 走到 game class initialization)",
+    "exit_status": "EXITED (crash, JVM 异常退出)",
+    "失败码": "EXIT_CODE_1 / INCOMPATIBLE_CLASS_CHANGE_ERROR",
+    "exception": "java.lang.IncompatibleClassChangeError: Method 'com.mojang.serialization.DataResult com.mojang.serialization.DataResult.success(java.lang.Object)' must be InterfaceMethodref constant",
+    "root": "manifest 1.20.4.json 期待 datafixerupper 7.x (DataResult.success 是 static method), Launcher 缓存自动升级到 9.0.19 (DataResult 改为 interface), ABI 不兼容",
+    "missing_libs": ["org/lwjgl/lwjgl-glfw/3.3.2/lwjgl-glfw-3.3.2-natives-macos.jar"],
+    "crash_report": "/Users/coco/Library/Application Support/minecraft/crash-reports/crash-2026-05-19_07.10.26-client.txt",
+    "shell可重放": "/tmp/launch_mc_offline.sh"
+  },
+  "gui_attempt_失败码 (沈砚 08:49 要求 4 项细化)": {
+    "无可控会话": {
+      "code": "NO_CONTROLLABLE_SESSION",
+      "证据": "AI 端无法启动 GUI session: macOS launchd 启的 AI process 没有 window server access (只能 ssh-style headless). 启 GUI app (open /Applications/Minecraft.app) 实际只触发 launcher.bundle 后端 process, 真客户端 main jar 启动需 user click PLAY button on Launcher UI."
+    },
+    "无账号": {
+      "code": "TOKEN_EXPIRED + NO_REFRESH_FLOW",
+      "证据": "launcher_accounts.json 唯一 account WellMammal4303 accessTokenExpiresAt=2026-05-19T03:07:39 (5h+ 前过期). refresh 需 Microsoft OAuth, 弹 webview 接受 user 输 Microsoft 账号 + 2FA, AI 无法自动完成."
+    },
+    "无按钮定位": {
+      "code": "NO_BUTTON_LOCATOR / AXACCESS_DENIED",
+      "证据": "osascript: tell application 'System Events' to click button 'PLAY' of window 'Minecraft Launcher' → -25211 错误 (osascript 不允许辅助访问). System Settings → Privacy & Security → Accessibility 授权需 user 手动勾选, AI 自身无法 grant 给自己."
+    },
+    "点击后无客户端": {
+      "code": "NO_CLIENT_AFTER_CLICK",
+      "证据": "假设按钮可点击 (绕过权限), Launcher 检测 token expired 后会弹 Microsoft sign-in webview, 仍需 user 完成 OAuth + 2FA. 即'按钮可点 ≠ 客户端必启'."
+    }
+  },
+  "对老板进度一句话 (周朗 08:49 模板)": "卡在无可控 GUI 会话 + 无 fresh Mojang token, 真实 Minecraft 客户端窗口未起来. 内容关 1-4 已过, 关 5 ReplayMod 高质 mp4 需老板 5 min PLAY + 2FA 解锁.",
+  "升级真人 GUI": "PROCEED — 4 项 GUI 失败码全成立, 通道 ②③ AI 端阻塞证据闭环",
+  "next_action": "等老板物理操作 (或老板远程进 console 启 Screen Sharing → AI 接管 PLAY click)"
+}
