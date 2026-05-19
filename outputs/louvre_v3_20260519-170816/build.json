@@ -1,0 +1,31 @@
+{
+  "origin": [
+    -260,
+    80,
+    -260
+  ],
+  "cmds": 2630,
+  "bbox": [
+    -287,
+    80,
+    -521,
+    -233,
+    92,
+    -247
+  ],
+  "dim": {
+    "L": 54,
+    "H": 10,
+    "W": 26,
+    "pyr_L": 14,
+    "pyr_H": 8
+  },
+  "rcon_ok": 1894,
+  "rcon_total": 2630,
+  "tech": [
+    "Reference.louvre",
+    "ProportionFrame.from_real (scale 0.4)",
+    "StructureTemplate.facade/colonnade/pyramid/roof_dome",
+    "材质分层 palette"
+  ]
+}
