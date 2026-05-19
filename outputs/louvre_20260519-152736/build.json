@@ -1,0 +1,28 @@
+{
+  "origin": [
+    -300,
+    80,
+    -300
+  ],
+  "block_count": 3791,
+  "bbox": [
+    -318,
+    80,
+    -316,
+    -282,
+    94,
+    -288
+  ],
+  "rcon_ok": 0,
+  "rcon_total": 3791,
+  "features": [
+    "Pei 中央玻璃金字塔",
+    "4 mini 金字塔 (卫星)",
+    "U 形宫殿 3 翼",
+    "柱廊 (柱+stairs拱)",
+    "法式 sandstone+smooth_quartz 配色",
+    "2 圆形喷泉 + sea_lantern 雕像",
+    "北翼大门拱形",
+    "横向窗+雕花"
+  ]
+}
