@@ -9,18 +9,32 @@ try: from scipy import ndimage; HAS_SCIPY=True
 except: HAS_SCIPY=False
 from mcrcon import MCRcon
 
-def gate1_ground_check(origin, bbox, rcon):
-    """① 贴地/不悬浮: build 底部 y == paper 真地面 y (±1 块)"""
+def gate1_ground_check(origin, bbox, rcon, footprint_margin=2):
+    """① 贴地/不悬浮 v2: 扫 footprint 外邻居 (跳过 build 内部块). 
+    赵雪 00:16:59 verdict: 4 角+中心采样 footprint 外 ground_y, 取众数.
+    """
     ox, oy, oz = origin
-    # paper 真地面 y (扫 origin 周围)
-    actual_ground = None
-    for y in range(95, 50, -1):
-        o = rcon.command(f'execute if block {ox} {y} {oz} air').strip()
-        if 'Test passed' not in o:
-            actual_ground = y; break
+    x1,y1,z1, x2,y2,z2 = bbox
+    # footprint 外探测点 (4 角各外推 footprint_margin, 取 4 个外邻 + 一个 N+1)
+    probes = [
+        (x1 - footprint_margin, oz),
+        (x2 + footprint_margin, oz),
+        (ox, z1 - footprint_margin),
+        (ox, z2 + footprint_margin),
+    ]
+    grounds = []
+    for px, pz in probes:
+        for y in range(95, 50, -1):
+            o = rcon.command(f'execute if block {px} {y} {pz} air').strip()
+            if 'Test passed' not in o:
+                grounds.append(y); break
+    actual_ground = max(grounds) if grounds else None  # 取最高 (保守)
     build_bottom = bbox[1]
     ok = actual_ground is not None and abs(build_bottom - actual_ground) <= 2
-    return {'gate': 1, 'name': 'ground_check', 'actual_ground': actual_ground, 'build_bottom': build_bottom, 'status': 'PASS' if ok else 'FAIL'}
+    return {'gate': 1, 'name': 'ground_check', 'actual_ground': actual_ground,
+            'all_probes': grounds, 'build_bottom': build_bottom,
+            'status': 'PASS' if ok else 'FAIL'}
+
 
 def gate2_framing(png_path, target_color_set):
     """② 完整取景: target 物体 bbox 4 边 padding >= 5%"""

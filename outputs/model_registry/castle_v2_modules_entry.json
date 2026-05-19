@@ -4,7 +4,7 @@
   "reference": "medieval castle",
   "replay_cmd": "复用 outputs/题库_castle_v2_FINAL_*.json 中的 build_cmds",
   "quality_gate": {
-    "ground": "PARTIAL (paper 地形波动)",
+    "ground": "PASS (gate1 v2 footprint 外探测)",
     "framing": "PASS",
     "proportion": "PASS",
     "detail": "PASS",
@@ -24,7 +24,8 @@
   ],
   "retry_params": {
     "origin_y": "手动 86 (paper 真地面 85)",
-    "modules": "Foundation.stepped+slab + Body.hollow_box + Decor.x4"
+    "modules": "Foundation.stepped+slab + Body.hollow_box + Decor.x4",
+    "垫平规则": "5 点采样取最高 + 外扩 3 格 grass platform + build_bottom=target+1"
   },
   "improvement_notes": [
     "paper world 真地面 y 波动 (ground PARTIAL) — 加 fill platform 大区强制平整",
@@ -36,5 +37,12 @@
   "commits": [
     "eec4a2c"
   ],
-  "status": "INGESTED_PARTIAL_GROUND"
+  "status": "INGESTED",
+  "grounding_check_20260520": {
+    "verdict": "贴地 PARTIAL→PASS (air 776→0)",
+    "fix": "实心地基 fill deepslate_bricks 62..80 + stone_bricks 81..89",
+    "gates": "ground PASS / proportion PASS / detail PASS / framing+multiview BLOCKED(截图管线遮挡) / semantic PARTIAL",
+    "castle_overall": "CONDITIONAL — 贴地已解决, framing/multiview 待截图管线修复",
+    "report": "outputs/castle_grounding_check_20260520/REPORT.md"
+  }
 }
