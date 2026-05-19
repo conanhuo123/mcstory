@@ -637,6 +637,48 @@
         "outputs/quality_gate_retry_v2/45deg.png",
         "outputs/quality_gate_retry_v2/close_v4.png"
       ]
+    },
+    {
+      "id": "mecha_humanoid_v3",
+      "name": "高达全身 humanoid v3 (5/5 PASS)",
+      "origin": [
+        -200,
+        94,
+        -200
+      ],
+      "biome": "plains",
+      "build_cmds": [],
+      "default_camera": "45deg",
+      "tags": [
+        "mecha",
+        "character",
+        "humanoid",
+        "polished",
+        "quality_gate_pass"
+      ],
+      "template": "mecha_humanoid_v3",
+      "template_script": "scripts/mecha_humanoid_v3.py",
+      "params": {
+        "palette": "gundam_RX78",
+        "height": 24,
+        "proportions": "gundam_7head"
+      },
+      "quality_gate": {
+        "ground": "PASS",
+        "framing": "PASS",
+        "proportion": "PASS",
+        "detail": "PASS",
+        "multiview": "PASS",
+        "block_types": 15,
+        "cmds_total": 528,
+        "rcon_ok": 528,
+        "rcon_total": 528
+      },
+      "screenshots": [
+        "outputs/题库_mecha_v3_final/mech_front.png",
+        "outputs/题库_mecha_v3_final/mech_45_SW.png",
+        "outputs/题库_mecha_v3_final/mech_close.png"
+      ]
     }
   ]
 }
