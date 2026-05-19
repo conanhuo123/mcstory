@@ -1,0 +1,93 @@
+{
+  "overall": "FAIL",
+  "gates": [
+    {
+      "gate": 1,
+      "name": "ground_check",
+      "actual_ground": 93,
+      "build_bottom": 80,
+      "status": "FAIL"
+    },
+    {
+      "gate": 2,
+      "name": "framing",
+      "bbox": [
+        0,
+        0,
+        583,
+        236
+      ],
+      "TOL": 64,
+      "edges": {
+        "head": false,
+        "foot": true,
+        "left": false,
+        "right": true
+      },
+      "status": "FAIL"
+    },
+    {
+      "gate": 3,
+      "name": "proportion",
+      "h": 15,
+      "w": 37,
+      "ratio": 0.41,
+      "target": [
+        0.1,
+        5.0
+      ],
+      "status": "PASS"
+    },
+    {
+      "gate": 4,
+      "name": "detail",
+      "block_types": 16,
+      "total_cmds": 3791,
+      "min_types": 5,
+      "min_total": 200,
+      "sample_blocks": [
+        "air",
+        "dark_oak_planks",
+        "dark_oak_stairs",
+        "glass",
+        "glass_pane",
+        "iron_block",
+        "light_gray_concrete",
+        "oak_door"
+      ],
+      "status": "PASS"
+    },
+    {
+      "gate": 5,
+      "name": "multiview",
+      "views": 3,
+      "pass_count": 1,
+      "views_detail": [
+        [
+          "v2p_45deg.png",
+          "FAIL"
+        ],
+        [
+          "v2p_pei_close.png",
+          "FAIL"
+        ],
+        [
+          "v2p_top.png",
+          "PASS"
+        ]
+      ],
+      "status": "FAIL"
+    }
+  ],
+  "cmds": 3791,
+  "rcon_ok": 78,
+  "rcon_total": 3791,
+  "bbox": [
+    -318,
+    80,
+    -316,
+    -282,
+    94,
+    -288
+  ]
+}
