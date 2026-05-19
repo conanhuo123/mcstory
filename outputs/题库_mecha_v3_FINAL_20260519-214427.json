@@ -1,0 +1,55 @@
+{
+  "origin": [
+    -200,
+    94,
+    -200
+  ],
+  "rcon": "528/528",
+  "bbox": [
+    -205,
+    93,
+    -207,
+    -195,
+    126,
+    -197
+  ],
+  "g1": {
+    "gate": 1,
+    "name": "ground_check",
+    "actual_ground": 93,
+    "build_bottom": 93,
+    "status": "PASS"
+  },
+  "g3": {
+    "gate": 3,
+    "name": "proportion",
+    "h": 34,
+    "w": 11,
+    "ratio": 3.09,
+    "target": [
+      0.3,
+      5.0
+    ],
+    "status": "PASS"
+  },
+  "g4": {
+    "gate": 4,
+    "name": "detail",
+    "block_types": 15,
+    "total_cmds": 528,
+    "min_types": 5,
+    "min_total": 200,
+    "sample_blocks": [
+      "black_concrete",
+      "deepslate",
+      "glowstone",
+      "gold_block",
+      "gray_concrete",
+      "green_stained_glass",
+      "iron_block",
+      "lapis_block"
+    ],
+    "status": "PASS"
+  },
+  "pass3": true
+}

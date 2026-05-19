@@ -1,0 +1,44 @@
+{
+  "mech_45deg.png": {
+    "bbox": [
+      1233,
+      0,
+      1279,
+      40
+    ],
+    "biggest": 467,
+    "head": "FAIL",
+    "foot": "PASS",
+    "left": "PASS",
+    "right": "FAIL",
+    "overall": "FAIL"
+  },
+  "mech_close.png": {
+    "bbox": [
+      670,
+      366,
+      685,
+      446
+    ],
+    "biggest": 492,
+    "head": "PASS",
+    "foot": "PASS",
+    "left": "PASS",
+    "right": "PASS",
+    "overall": "PASS"
+  },
+  "mech_front.png": {
+    "bbox": [
+      615,
+      107,
+      632,
+      158
+    ],
+    "biggest": 234,
+    "head": "PASS",
+    "foot": "PASS",
+    "left": "PASS",
+    "right": "PASS",
+    "overall": "PASS"
+  }
+}
