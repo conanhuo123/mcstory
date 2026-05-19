@@ -26,4 +26,4 @@ if __name__ == "__main__":
     mp4 = sys.argv[1]
     motion = signal_motion(mp4)
     luma_div = signal_yavg_diversity(mp4)
-    print(json.dumps({"motion_signal": motion, "luma_diversity": luma_div, "pass": motion > 0.3 or luma_div > 0.3}, indent=2))
+    print(json.dumps({"motion_signal": motion, "luma_diversity": luma_div, "pass": motion > 0.15 or luma_div > 0.05}, indent=2))

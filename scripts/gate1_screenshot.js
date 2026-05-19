@@ -31,27 +31,56 @@ const rcon = new Rcon('127.0.0.1', 25575, 'mcstory123');
 await rcon.connect();
 console.log('RCON connected');
 
+// 先 setworldspawn + forceload chunks, 然后 cam 重连即在那
+rcon.cmd(`setworldspawn ${Math.round(CAM.x)} ${Math.round(CAM.y)} ${Math.round(CAM.z)}`);
+rcon.cmd(`forceload add ${Math.floor(CAM.x/16)*16} ${Math.floor(CAM.z/16)*16}`);
+rcon.cmd(`forceload add ${Math.floor(LOOK.x/16)*16} ${Math.floor(LOOK.z/16)*16}`);
+rcon.cmd(`gamerule spawnRadius 0`);
+await new Promise(r => setTimeout(r, 1500));
+
 const cam = mineflayer.createBot({ host: 'localhost', port: 25565, username: 'gate1cam', version: '1.20.4' });
 cam.on('error', e => { console.error('cam err', e.message); process.exit(1); });
+cam.on('forcedMove', () => console.log('FORCED_MOVE to', cam.entity.position));
 cam.once('spawn', async () => {
   console.log('cam spawned at', cam.entity.position);
-  // RCON tp + gamemode spectator + chunks force-loaded
+  // 1) RCON server-side gamemode + tp (不依赖 cam chat)
   rcon.cmd(`gamemode spectator gate1cam`);
+  await new Promise(r => setTimeout(r, 500));
   rcon.cmd(`tp gate1cam ${CAM.x} ${CAM.y} ${CAM.z}`);
-  await new Promise(r => setTimeout(r, 2500));
-  console.log('after tp cam.pos =', cam.entity.position);
+  // 2) 等 server position packet 回 mineflayer
+  let synced = false;
+  for (let i = 0; i < 20 && !synced; i++) {
+    await new Promise(r => setTimeout(r, 500));
+    if (Math.abs(cam.entity.position.x - CAM.x) < 3 && Math.abs(cam.entity.position.y - CAM.y) < 3) synced = true;
+  }
+  console.log('AFTER_TP cam.pos =', cam.entity.position, 'synced=', synced);
   await cam.lookAt(LOOK);
   await new Promise(r => setTimeout(r, 1000));
-  pv(cam, { port: VIEWER_PORT, firstPerson: true, viewDistance: 8 });
+  // 3) viewer 在 cam 真到目标后再起 (避免 init 时记 spawn 位置)
+  pv(cam, { port: VIEWER_PORT, firstPerson: true, viewDistance: 6 });
   console.log('VIEWER_READY on', VIEWER_PORT);
-  await new Promise(r => setTimeout(r, 15000));
+  await new Promise(r => setTimeout(r, 18000));
   // puppeteer 截图
-  const browser = await puppeteer.launch({ headless: 'new', args: ['--no-sandbox','--disable-gpu'] });
+  // puppeteer headed (WebGL 需要), 窗口移屏外避免抢用户焦点
+  const browser = await puppeteer.launch({ headless: false, args: [
+    '--no-sandbox',
+    '--enable-webgl',
+    '--ignore-gpu-blocklist',
+    '--window-size=1280,720',
+    '--window-position=2000,2000',
+  ] });
   const page = await browser.newPage();
-  await page.setViewport({ width: 1280, height: 720 });
+  await page.setViewport({ width: 1280, height: 720, deviceScaleFactor: 1 });
   await page.goto(`http://localhost:${VIEWER_PORT}`, { waitUntil: 'networkidle2', timeout: 30000 });
-  await new Promise(r => setTimeout(r, 4000));
-  await page.screenshot({ path: OUT });
+  // 等 canvas 真正 init 并渲染 (网络 idle 不等于 GL 渲染完)
+  await new Promise(r => setTimeout(r, 6000));
+  // 强制 canvas fullscreen 走 page CSS, 防止 320x180 默认 size
+  await page.evaluate(() => {
+    const c = document.querySelector('canvas');
+    if (c) { c.style.width = '1280px'; c.style.height = '720px'; c.width = 1280; c.height = 720; }
+  });
+  await new Promise(r => setTimeout(r, 3000));
+  await page.screenshot({ path: OUT, clip: { x: 0, y: 0, width: 1280, height: 720 } });
   console.log('SCREENSHOT_SAVED', OUT);
   await browser.close();
   process.exit(0);

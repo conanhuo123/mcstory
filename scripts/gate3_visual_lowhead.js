@@ -5,9 +5,9 @@ const { Vec3 } = require('vec3');
 const { mineflayer: pv } = require('prismarine-viewer');
 const puppeteer = require('puppeteer');
 
-// 牢笼 origin = (-40, 79, -240). villager 在 (-40, 81, -240). cam 从 (-37, 82, -240) 看 villager.
-const CAM = new Vec3(-37, 82, -240);
-const LOOK = new Vec3(-40, 81, -240);
+// 牢笼 origin = (-40, 79, -240). villager 在 (-40, 81, -240). cam 在 (-37, 82, -240) 朝西看 villager (距离 3 块).
+const CAM = new Vec3(-37, 82.5, -240);
+const LOOK = new Vec3(-40, 82, -240);
 const OUT_BEFORE = '/Users/coco/mcstory/outputs/gate1_judge_death_min/lowhead_before.png';
 const OUT_AFTER = '/Users/coco/mcstory/outputs/gate1_judge_death_min/lowhead_after.png';
 const VIEWER_PORT = 3026;
@@ -50,8 +50,8 @@ async function screenshot(path) {
   rcon.cmd(`forceload add ${Math.floor(CAM.x/16)*16} ${Math.floor(CAM.z/16)*16}`);
   rcon.cmd(`gamerule spawnRadius 0`);
   await new Promise(r => setTimeout(r, 1500));
-  // 重置 villager pitch=0
-  rcon.cmd(`tp @e[type=villager,name="继任者",limit=1] ~ ~ ~ 0 0`);
+  // 把 villager 固定到 -40 81 -240, pitch=0 (yaw 朝南面对 cam)
+  rcon.cmd(`tp @e[type=villager,name="继任者",limit=1] -40 81 -240 0 0`);
   await new Promise(r => setTimeout(r, 800));
 
   // 用唯一 username 避免 player.dat 缓存
@@ -80,7 +80,7 @@ async function screenshot(path) {
     await screenshot(OUT_BEFORE);
 
     // 触发动作: pitch → 45 + cam 微小 tp 强制 viewer 刷新 entity render
-    rcon.cmd(`tp @e[type=villager,name="继任者",limit=1] ~ ~ ~ 0 45`);
+    rcon.cmd(`tp @e[type=villager,name="继任者",limit=1] -40 81 -240 0 45`);
     await new Promise(r => setTimeout(r, 800));
     rcon.cmd(`tp ${uniq} ${CAM.x + 0.5} ${CAM.y} ${CAM.z}`);
     await new Promise(r => setTimeout(r, 800));
