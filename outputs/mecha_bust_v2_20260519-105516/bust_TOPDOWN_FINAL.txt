@@ -1,0 +1,39 @@
+# bust_v2_FINAL top-down (build_cmds=263)  origin=[-130, 80, -300]
+
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+            *RRR*            
+         LQLQQQQQLQL         
+         IRIQYRYQIRI         
+          QIQQQQQIQ          
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+
+# legend:
+#   I = iron_block
+#   L = lapis_block
+#   Q = quartz_block
+#   R = red_concrete
+#   * = redstone_lamp
+#   Y = yellow_concrete
