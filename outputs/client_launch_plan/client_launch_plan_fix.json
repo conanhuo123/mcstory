@@ -1,0 +1,59 @@
+{
+  "name": "client_launch_plan_fix",
+  "ts": "2026-05-19T08:19:00+08:00",
+  "Launcher 点击失败码 (何初 08:17 补)": {
+    "失败码": "NO_AUTO_TRIGGER",
+    "证据_1": "osascript test: 'tell application System Events to click button \"PLAY\"' → -25211 错误 (osascript 不允许辅助访问)",
+    "证据_2": "Accessibility 权限授予需 user 在 System Settings → Privacy & Security → Accessibility 勾选 (GUI 操作)",
+    "证据_3": "Mojang accessToken 2026-05-19T03:07:39 已过期 (launcher_accounts.json), PLAY 按下后 Launcher 必弹 Microsoft re-login (再次需 user OAuth + 2FA)"
+  },
+  "CLI 修复项 (按周朗 08:17:16)": {
+    "auth": {
+      "缺口": "Mojang accessToken — 但 paper enforce-secure-profile=false + online-mode=false 允许伪 token",
+      "已用": "--accessToken FFFFFFFFFFFFFFFF --uuid 00000000-0000-0000-0000-000000000000 --username ClaudeBot",
+      "状态": "✓ 不阻塞 (cracked mode work)"
+    },
+    "version json": "✓ ~/Library/Application Support/minecraft/versions/1.20.4/1.20.4.json 已读, mainClass=net.minecraft.client.main.Main",
+    "libraries classpath": {
+      "缺口": "manifest 1.20.4.json 引用 datafixerupper:7.x / lwjgl:3.3.2 等版本 — Launcher 自动更新缓存到 8.0.16+9.0.19 + lwjgl 3.3.3/3.4.1, 没保留 3.3.2",
+      "修复": [
+        "(A) 强制 launcher 重新下载 manifest 内 exact 版本 — Mojang CDN: https://libraries.minecraft.net/...",
+        "(B) override classpath 用 cached 新版本 (但 IncompatibleClassChangeError, ABI 不兼容)",
+        "(C) 用 PrismLauncher 创建 instance 自动下载完整 lib set"
+      ],
+      "建议": "(A) 写 python 脚本 wget 8 个 missing jar from libraries.minecraft.net, 30 min 内完成"
+    },
+    "assetsDir": "✓ ~/Library/Application Support/minecraft/assets, assetIndex 12",
+    "gameDir": "✓ ~/Library/Application Support/minecraft (默认 cache dir)",
+    "mainClass": "✓ net.minecraft.client.main.Main",
+    "jvm args": "✓ -XstartOnFirstThread (macOS), -Djava.library.path=/tmp/mc_natives_1.20.4, -Xmx2G",
+    "game args": "✓ --version 1.20.4 --gameDir ... --assetsDir ... --assetIndex 12 --uuid ... --username ... --accessToken ... --userType legacy"
+  },
+  "GUI 入口修复项": {
+    "远程桌面": {
+      "macOS 内置 Screen Sharing (VNC)": {
+        "启用步骤": "System Settings → General → Sharing → 启用 Screen Sharing, 设置允许的用户 + 密码",
+        "阻塞": "启用需 user 在 GUI 点击, Accessibility 权限同样问题"
+      },
+      "Apple Remote Desktop": "macOS 自带 vncserver, port 5900, 启动 'sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate -configure -access -on -clientopts -setvnclegacy -vnclegacy yes -setvncpw -vncpw <pw> -restart -agent -privs -all'",
+      "推荐": "老板手机装 'Screens VNC' 或 'TigerVNC iOS', 连 Mac 的 IP:5900, 远程操作 Launcher GUI"
+    },
+    "屏幕共享 Console": {
+      "iOS 自带 Screen Sharing": "macOS Sequoia+ 支持 Continuity. 老板 iPhone/iPad 在同 Apple ID 下可一键看 Mac 屏幕",
+      "步骤": "Control Center → Screen Mirroring → 选 Mac"
+    },
+    "评估": "远程桌面方案需 user 启用 + 配置 + 第二台设备. 比直接物理操作通道 ② 复杂 5+ 倍."
+  },
+  "auto-monitor 已部署": {
+    "脚本": "~/mcstory/scripts/client_window_monitor.sh",
+    "PID": 50331,
+    "log": "/tmp/client_window_monitor.log",
+    "动作": "后台轮询 java net.minecraft.client.main.Main 进程, 出现后立即 screencapture + 飞书通知 + 启动 single_action_visible_check",
+    "老板感知": "0 等待 — 完成 2FA + PLAY 后, AI 自动接管"
+  },
+  "建议下一跳": [
+    "等老板自然查群 (老板说过 5 天不回家但每天看手机)",
+    "选通道 ② 物理操作 (5 min)",
+    "auto-monitor 已 alive, 老板 PLAY 后链条全自动"
+  ]
+}
