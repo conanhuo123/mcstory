@@ -1,0 +1,73 @@
+{
+  "overall": "FAIL",
+  "gates": [
+    {
+      "gate": 1,
+      "name": "ground_check",
+      "actual_ground": 93,
+      "build_bottom": 80,
+      "status": "FAIL"
+    },
+    {
+      "gate": 2,
+      "name": "framing",
+      "bbox": [
+        0,
+        0,
+        583,
+        241
+      ],
+      "TOL": 64,
+      "edges": {
+        "head": false,
+        "foot": true,
+        "left": false,
+        "right": true
+      },
+      "status": "FAIL"
+    },
+    {
+      "gate": 3,
+      "name": "proportion",
+      "h": 15,
+      "w": 37,
+      "ratio": 0.41,
+      "target": [
+        0.2,
+        10.0
+      ],
+      "status": "PASS"
+    },
+    {
+      "gate": 4,
+      "name": "detail",
+      "block_types": 0,
+      "total_cmds": 921,
+      "min_types": 5,
+      "min_total": 200,
+      "sample_blocks": [],
+      "status": "FAIL"
+    },
+    {
+      "gate": 5,
+      "name": "multiview",
+      "views": 3,
+      "pass_count": 0,
+      "views_detail": [
+        [
+          "v2p_45deg.png",
+          "FAIL"
+        ],
+        [
+          "v2p_pei_close.png",
+          "FAIL"
+        ],
+        [
+          "v2p_top.png",
+          "FAIL"
+        ]
+      ],
+      "status": "FAIL"
+    }
+  ]
+}
