@@ -1,0 +1,113 @@
+{
+  "spec": {
+    "reference": "louvre",
+    "scale": 0.4,
+    "origin_xz": [
+      -220,
+      -220
+    ],
+    "modules": [
+      {
+        "name": "foundation",
+        "params": {}
+      },
+      {
+        "name": "wall_box",
+        "params": {
+          "rhythm": 4
+        }
+      },
+      {
+        "name": "colonnade_pair",
+        "params": {}
+      },
+      {
+        "name": "central_pyramid",
+        "params": {
+          "base": 14,
+          "height": 8
+        }
+      },
+      {
+        "name": "roof_layered",
+        "params": {
+          "h_top": 11
+        }
+      }
+    ]
+  },
+  "name": "louvre_engine_v1",
+  "origin": [
+    -220,
+    121,
+    -220
+  ],
+  "bbox": [
+    -247,
+    121,
+    -247,
+    -193,
+    134,
+    -193
+  ],
+  "cmds_count": 3447,
+  "rcon": "3/3447",
+  "gates": [
+    {
+      "gate": 1,
+      "name": "ground_check",
+      "actual_ground": 95,
+      "build_bottom": 121,
+      "status": "FAIL"
+    },
+    {
+      "gate": 3,
+      "name": "proportion",
+      "h": 14,
+      "w": 55,
+      "ratio": 0.25,
+      "target": [
+        0.1,
+        5.0
+      ],
+      "status": "PASS"
+    },
+    {
+      "gate": 4,
+      "name": "detail",
+      "block_types": 10,
+      "total_cmds": 3447,
+      "min_types": 5,
+      "min_total": 200,
+      "sample_blocks": [
+        "chiseled_sandstone",
+        "cut_sandstone",
+        "dark_oak_planks",
+        "dark_oak_stairs",
+        "glass",
+        "gold_block",
+        "iron_block",
+        "light_gray_concrete"
+      ],
+      "status": "PASS"
+    }
+  ],
+  "outdir": "/Users/coco/mcstory/outputs/static_louvre_engine_v1_20260519-172541",
+  "dim": {
+    "L": 54,
+    "H": 10,
+    "W": 26,
+    "palette": {
+      "main": "sandstone",
+      "trim": "cut_sandstone",
+      "deco": "chiseled_sandstone",
+      "pillar": "smooth_quartz_block",
+      "roof": "dark_oak_planks",
+      "roof_edge": "dark_oak_stairs",
+      "floor": "light_gray_concrete",
+      "centerpiece": "glass",
+      "iron_frame": "iron_block",
+      "accent": "gold_block"
+    }
+  }
+}
