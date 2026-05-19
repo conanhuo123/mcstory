@@ -1,0 +1,127 @@
+{
+  "cottage_front.png": {
+    "gate6": {
+      "gate": 6,
+      "name": "semantic",
+      "target": "cottage",
+      "matched_pixels": 67909,
+      "total_pixels": 921600,
+      "ratio": 0.0737,
+      "min_required": 0.1,
+      "status": "FAIL"
+    },
+    "gate7": {
+      "gate": 7,
+      "name": "outline",
+      "target": "cottage",
+      "biggest_cluster": 6906,
+      "biggest_ratio": 0.0075,
+      "edge_pixels": 7766,
+      "edge_ratio": 1.1245,
+      "min_cluster": 2000,
+      "max_ratio": 0.7,
+      "status": "FAIL",
+      "fail_reason": "size_ok=True, edge_ok=False"
+    }
+  },
+  "pyramid_pyramid_front.png": {
+    "gate6": {
+      "gate": 6,
+      "name": "semantic",
+      "target": "pyramid",
+      "matched_pixels": 44128,
+      "total_pixels": 921600,
+      "ratio": 0.0479,
+      "min_required": 0.1,
+      "status": "FAIL"
+    },
+    "gate7": {
+      "gate": 7,
+      "name": "outline",
+      "target": "pyramid",
+      "biggest_cluster": 14668,
+      "biggest_ratio": 0.0159,
+      "edge_pixels": 10210,
+      "edge_ratio": 0.6961,
+      "min_cluster": 2000,
+      "max_ratio": 0.7,
+      "status": "FAIL",
+      "fail_reason": "size_ok=True, edge_ok=False"
+    }
+  },
+  "mecha_mech_front.png": {
+    "gate6": {
+      "gate": 6,
+      "name": "semantic",
+      "target": "mecha",
+      "matched_pixels": 12119,
+      "total_pixels": 921600,
+      "ratio": 0.0131,
+      "min_required": 0.05,
+      "status": "FAIL"
+    },
+    "gate7": {
+      "gate": 7,
+      "name": "outline",
+      "target": "mecha",
+      "biggest_cluster": 356,
+      "biggest_ratio": 0.0004,
+      "edge_pixels": 294,
+      "edge_ratio": 0.8258,
+      "min_cluster": 2000,
+      "max_ratio": 0.7,
+      "status": "FAIL",
+      "fail_reason": "size_ok=False, edge_ok=False"
+    }
+  },
+  "castle_castle_front.png": {
+    "gate6": {
+      "gate": 6,
+      "name": "semantic",
+      "target": "castle",
+      "matched_pixels": 114121,
+      "total_pixels": 921600,
+      "ratio": 0.1238,
+      "min_required": 0.1,
+      "status": "PASS"
+    },
+    "gate7": {
+      "gate": 7,
+      "name": "outline",
+      "target": "castle",
+      "biggest_cluster": 2240,
+      "biggest_ratio": 0.0024,
+      "edge_pixels": 2614,
+      "edge_ratio": 1.167,
+      "min_cluster": 2000,
+      "max_ratio": 0.7,
+      "status": "FAIL",
+      "fail_reason": "size_ok=True, edge_ok=False"
+    }
+  },
+  "mine_front.png": {
+    "gate6": {
+      "gate": 6,
+      "name": "semantic",
+      "target": "mine",
+      "matched_pixels": 65332,
+      "total_pixels": 921600,
+      "ratio": 0.0709,
+      "min_required": 0.05,
+      "status": "PASS"
+    },
+    "gate7": {
+      "gate": 7,
+      "name": "outline",
+      "target": "mine",
+      "biggest_cluster": 34710,
+      "biggest_ratio": 0.0377,
+      "edge_pixels": 24362,
+      "edge_ratio": 0.7019,
+      "min_cluster": 2000,
+      "max_ratio": 0.7,
+      "status": "FAIL",
+      "fail_reason": "size_ok=True, edge_ok=False"
+    }
+  }
+}
