@@ -809,6 +809,43 @@
       "cmds_total": 2292,
       "rcon_ok": 2284,
       "screenshots": []
+    },
+    {
+      "id": "pyramid_v1",
+      "name": "金字塔 v1 (Giza-like)",
+      "origin": [
+        -400,
+        67,
+        -180
+      ],
+      "biome": "desert",
+      "build_cmds": [],
+      "default_camera": "45deg",
+      "tags": [
+        "famous_building",
+        "pyramid",
+        "landmark",
+        "polished",
+        "锁版_地标"
+      ],
+      "template": "voxel_dsl_layer_pyramid",
+      "params": {
+        "base": 25,
+        "height": 25,
+        "trim_band_every": 3,
+        "palette": "sandstone_系"
+      },
+      "quality_gate": {
+        "ground": "PASS",
+        "framing": "待截",
+        "proportion": "PASS 0.53",
+        "detail": "PASS 6 blocks",
+        "multiview": "待"
+      },
+      "block_types": 6,
+      "cmds_total": 3492,
+      "rcon_ok": 3456,
+      "screenshots": []
     }
   ]
 }

@@ -1,0 +1,60 @@
+{
+  "origin": [
+    -400,
+    67,
+    -180
+  ],
+  "rcon": "3456/3492",
+  "bbox": [
+    -425,
+    67,
+    -205,
+    -375,
+    93,
+    -155
+  ],
+  "cmds": 3492,
+  "g1": {
+    "gate": 1,
+    "name": "ground_check",
+    "actual_ground": 65,
+    "all_probes": [
+      65,
+      64,
+      63,
+      62
+    ],
+    "build_bottom": 67,
+    "status": "PASS"
+  },
+  "g3": {
+    "gate": 3,
+    "name": "proportion",
+    "h": 27,
+    "w": 51,
+    "ratio": 0.53,
+    "target": [
+      0.2,
+      5.0
+    ],
+    "status": "PASS"
+  },
+  "g4": {
+    "gate": 4,
+    "name": "detail",
+    "block_types": 6,
+    "total_cmds": 3492,
+    "min_types": 5,
+    "min_total": 200,
+    "sample_blocks": [
+      "air",
+      "chiseled_sandstone",
+      "cut_sandstone",
+      "glowstone",
+      "gold_block",
+      "sandstone"
+    ],
+    "status": "PASS"
+  },
+  "pass3": true
+}
