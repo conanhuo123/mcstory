@@ -1,0 +1,32 @@
+{
+  "origin": [
+    -100,
+    80,
+    -340
+  ],
+  "block_count": 528,
+  "bbox": [
+    -105,
+    79,
+    -347,
+    -95,
+    112,
+    -337
+  ],
+  "rcon_ok": 528,
+  "rcon_total": 528,
+  "palette": "gundam_RX78",
+  "height_target": 24,
+  "proportions": "gundam_7head",
+  "tech": [
+    "Rig humanoid",
+    "Proportions.get",
+    "mirror_axis",
+    "Joint.ball",
+    "Joint.cylinder",
+    "MountPoint beam_saber+shield",
+    "LayeredArmor 装甲分层",
+    "V-fin 4 层",
+    "jet pack 背包推进器"
+  ]
+}
