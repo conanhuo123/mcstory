@@ -1,0 +1,38 @@
+{
+  "template_id": "temple_v1",
+  "template_script": "scripts/module_library.py + tower_layered combo",
+  "reference": "chinese_pagoda (3-layer tower with eaves)",
+  "replay_cmd": "复用 outputs/题库_temple_FINAL_*.json build_cmds",
+  "quality_gate": {
+    "ground": "PARTIAL",
+    "framing": "1/3 PASS",
+    "proportion": "PASS",
+    "detail": "PASS",
+    "multiview": "FAIL"
+  },
+  "cmds_total": 1851,
+  "rcon_ok": 1851,
+  "block_types": 7,
+  "pass_screenshots": [
+    "outputs/题库_temple_final/temple_close.png"
+  ],
+  "fail_screenshots": [
+    "outputs/题库_temple_final/temple_front.png",
+    "outputs/题库_temple_final/temple_45deg.png"
+  ],
+  "retry_params": {
+    "origin_y": "86 (paper 地形 y=85+1)",
+    "cam_close": "PASS, front/45 cam tune needed"
+  },
+  "improvement_notes": [
+    "ground paper 地形波动 — 需 fill platform 强制平整",
+    "只 7 block 种类 — 加 dark_oak_planks/oak_door/lantern 拓充",
+    "cam front/45 head 触边 — cam y 升 + dist 调",
+    "香炉过简 — Decor 加 brazier module",
+    "4 飞檐过简 — 加 stairs 出檐 多排"
+  ],
+  "baidu_pan": "/apps/bypy/mcstory_louvre/TEMPLE_*",
+  "scene_library_id": "temple_v1",
+  "commits": [],
+  "status": "INGESTED_PARTIAL"
+}

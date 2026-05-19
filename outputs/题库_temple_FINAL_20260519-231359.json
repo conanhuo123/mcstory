@@ -1,0 +1,55 @@
+{
+  "origin": [
+    -300,
+    86,
+    -160
+  ],
+  "rcon": "1851/1851",
+  "bbox": [
+    -310,
+    84,
+    -170,
+    -290,
+    108,
+    -150
+  ],
+  "cmds": 1851,
+  "g1": {
+    "gate": 1,
+    "name": "ground_check",
+    "actual_ground": 90,
+    "build_bottom": 84,
+    "status": "FAIL"
+  },
+  "g3": {
+    "gate": 3,
+    "name": "proportion",
+    "h": 25,
+    "w": 21,
+    "ratio": 1.19,
+    "target": [
+      0.3,
+      5.0
+    ],
+    "status": "PASS"
+  },
+  "g4": {
+    "gate": 4,
+    "name": "detail",
+    "block_types": 7,
+    "total_cmds": 1851,
+    "min_types": 5,
+    "min_total": 200,
+    "sample_blocks": [
+      "dark_oak_log",
+      "glowstone",
+      "gold_block",
+      "oak_planks",
+      "red_concrete",
+      "red_glazed_terracotta",
+      "sea_lantern"
+    ],
+    "status": "PASS"
+  },
+  "pass3": false
+}

@@ -727,6 +727,50 @@
         "outputs/题库_castle_v2_final/castle_45deg.png",
         "outputs/题库_castle_v2_final/castle_close.png"
       ]
+    },
+    {
+      "id": "temple_v1",
+      "name": "中式古风寺庙 v1 (3 层塔)",
+      "origin": [
+        -300,
+        86,
+        -160
+      ],
+      "biome": "plains",
+      "build_cmds": [],
+      "default_camera": "close",
+      "tags": [
+        "famous_building",
+        "temple",
+        "chinese",
+        "layered_tower",
+        "polished"
+      ],
+      "template": "module_library_combo",
+      "params": {
+        "modules": [
+          "Foundation.stepped",
+          "Body.tower_layered (3 layers)",
+          "red_glazed roof eaves",
+          "Decor.banner_row",
+          "Decor.carved_band"
+        ]
+      },
+      "quality_gate": {
+        "ground": "PARTIAL (paper 地形波动 6 块)",
+        "framing": "1/3 PASS (close PASS, front/45 head 触)",
+        "proportion": "PASS h/w 1.19",
+        "detail": "PASS 7 blocks",
+        "multiview": "FAIL 1/3"
+      },
+      "block_types": 7,
+      "cmds_total": 1851,
+      "rcon_ok": 1851,
+      "screenshots": [
+        "outputs/题库_temple_final/temple_front.png",
+        "outputs/题库_temple_final/temple_45deg.png",
+        "outputs/题库_temple_final/temple_close.png"
+      ]
     }
   ]
 }
