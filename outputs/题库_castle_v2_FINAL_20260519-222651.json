@@ -1,0 +1,56 @@
+{
+  "origin": [
+    -250,
+    86,
+    -260
+  ],
+  "rcon": "1331/1339",
+  "bbox": [
+    -260,
+    85,
+    -270,
+    -240,
+    99,
+    -250
+  ],
+  "cmds": 1339,
+  "g1": {
+    "gate": 1,
+    "name": "ground_check",
+    "actual_ground": 90,
+    "build_bottom": 85,
+    "status": "FAIL"
+  },
+  "g3": {
+    "gate": 3,
+    "name": "proportion",
+    "h": 15,
+    "w": 21,
+    "ratio": 0.71,
+    "target": [
+      0.1,
+      5.0
+    ],
+    "status": "PASS"
+  },
+  "g4": {
+    "gate": 4,
+    "name": "detail",
+    "block_types": 10,
+    "total_cmds": 1339,
+    "min_types": 5,
+    "min_total": 200,
+    "sample_blocks": [
+      "air",
+      "chiseled_stone_bricks",
+      "cobblestone",
+      "polished_andesite",
+      "red_concrete",
+      "sea_lantern",
+      "stone_brick_slab",
+      "stone_brick_stairs"
+    ],
+    "status": "PASS"
+  },
+  "pass3": false
+}

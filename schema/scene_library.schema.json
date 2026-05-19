@@ -679,6 +679,54 @@
         "outputs/题库_mecha_v3_final/mech_45_SW.png",
         "outputs/题库_mecha_v3_final/mech_close.png"
       ]
+    },
+    {
+      "id": "castle_v2_modules",
+      "name": "中世纪城堡 v2 (4/5 PASS, ground 边缘)",
+      "origin": [
+        -250,
+        86,
+        -260
+      ],
+      "biome": "plains",
+      "build_cmds": [],
+      "default_camera": "45deg",
+      "tags": [
+        "famous_building",
+        "castle",
+        "medieval",
+        "polished",
+        "modules_built"
+      ],
+      "template": "module_library",
+      "params": {
+        "modules": [
+          "Foundation.stepped",
+          "Foundation.slab",
+          "Body.hollow_box",
+          "corner_towers",
+          "Decor.carved_band",
+          "Decor.banner_row",
+          "Decor.fountain",
+          "statue_armorstand"
+        ]
+      },
+      "quality_gate": {
+        "ground": "PARTIAL (paper 地形波动 5 块)",
+        "framing": "PASS 3/3",
+        "proportion": "PASS",
+        "detail": "PASS",
+        "multiview": "PASS",
+        "block_types": 10,
+        "cmds_total": 1339,
+        "rcon_ok": 1331,
+        "rcon_total": 1339
+      },
+      "screenshots": [
+        "outputs/题库_castle_v2_final/castle_front.png",
+        "outputs/题库_castle_v2_final/castle_45deg.png",
+        "outputs/题库_castle_v2_final/castle_close.png"
+      ]
     }
   ]
 }
