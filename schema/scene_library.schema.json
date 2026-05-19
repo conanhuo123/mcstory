@@ -597,6 +597,46 @@
         "weapon": "shield",
         "height_scale": 1.0
       }
+    },
+    {
+      "id": "louvre_v2_retry",
+      "name": "卢浮宫 (quality_gate PASS)",
+      "origin": [
+        -300,
+        94,
+        -300
+      ],
+      "biome": "plains",
+      "build_cmds": [],
+      "default_camera": "45deg",
+      "tags": [
+        "famous_building",
+        "polished",
+        "quality_gate_pass"
+      ],
+      "template": "louvre",
+      "template_script": "scripts/louvre.py",
+      "params": {
+        "scale": 1.0,
+        "ground_y": 94,
+        "reference": "louvre"
+      },
+      "quality_gate": {
+        "ground": "PASS",
+        "framing": "PASS",
+        "proportion": "PASS",
+        "detail": "PASS",
+        "multiview": "PASS",
+        "block_types": 16,
+        "cmds_total": 3791,
+        "rcon_ok": 3563,
+        "rcon_total": 3791
+      },
+      "screenshots": [
+        "outputs/quality_gate_retry_v2/front_v5.png",
+        "outputs/quality_gate_retry_v2/45deg.png",
+        "outputs/quality_gate_retry_v2/close_v4.png"
+      ]
     }
   ]
 }
