@@ -1,0 +1,62 @@
+{
+  "gundam_FULL_45deg.png": {
+    "clusters": 1772,
+    "biggest_size": 2094,
+    "bbox": [
+      451,
+      0,
+      493,
+      143
+    ],
+    "img": [
+      1280,
+      720
+    ],
+    "TOL": 64,
+    "head": "FAIL",
+    "foot": "PASS",
+    "left": "PASS",
+    "right": "PASS",
+    "overall": "FAIL"
+  },
+  "gundam_FULL_45deg_v2.png": {
+    "clusters": 4061,
+    "biggest_size": 3940,
+    "bbox": [
+      961,
+      128,
+      1057,
+      253
+    ],
+    "img": [
+      1280,
+      720
+    ],
+    "TOL": 64,
+    "head": "PASS",
+    "foot": "PASS",
+    "left": "PASS",
+    "right": "PASS",
+    "overall": "PASS"
+  },
+  "gundam_FULL_45deg_v3.png": {
+    "clusters": 5872,
+    "biggest_size": 3473,
+    "bbox": [
+      850,
+      64,
+      928,
+      188
+    ],
+    "img": [
+      1280,
+      720
+    ],
+    "TOL": 64,
+    "head": "FAIL",
+    "foot": "PASS",
+    "left": "PASS",
+    "right": "PASS",
+    "overall": "FAIL"
+  }
+}
