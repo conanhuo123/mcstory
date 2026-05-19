@@ -1,0 +1,18 @@
+{
+  "bbox": [
+    0,
+    0,
+    1279,
+    679
+  ],
+  "image": [
+    1280,
+    720
+  ],
+  "TOL": 64,
+  "head": "FAIL",
+  "foot": "FAIL",
+  "left": "FAIL",
+  "right": "FAIL",
+  "overall": "FAIL"
+}
