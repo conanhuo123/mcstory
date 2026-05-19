@@ -1,0 +1,152 @@
+{
+  "bust_v2_FULL_45deg.png": {
+    "object_present": true,
+    "verdict": "FAIL_TOO_BIG",
+    "obj_bbox": [
+      0,
+      0,
+      1279,
+      719
+    ],
+    "obj_ratio": 0.993,
+    "off_center": [
+      0.001,
+      0.001
+    ],
+    "padding": {
+      "left": 0.0,
+      "right": 0.001,
+      "top": 0.0,
+      "bottom": 0.001
+    },
+    "image_size": [
+      1280,
+      720
+    ]
+  },
+  "bust_v2_FULL_front.png": {
+    "object_present": true,
+    "verdict": "FAIL_TOO_BIG",
+    "obj_bbox": [
+      0,
+      0,
+      1279,
+      719
+    ],
+    "obj_ratio": 0.994,
+    "off_center": [
+      0.001,
+      0.001
+    ],
+    "padding": {
+      "left": 0.0,
+      "right": 0.001,
+      "top": 0.0,
+      "bottom": 0.001
+    },
+    "image_size": [
+      1280,
+      720
+    ]
+  },
+  "castle_FULL_45deg.png": {
+    "object_present": true,
+    "verdict": "FAIL_TOO_BIG",
+    "obj_bbox": [
+      0,
+      1,
+      1279,
+      719
+    ],
+    "obj_ratio": 0.879,
+    "off_center": [
+      0.001,
+      0.0
+    ],
+    "padding": {
+      "left": 0.0,
+      "right": 0.001,
+      "top": 0.001,
+      "bottom": 0.001
+    },
+    "image_size": [
+      1280,
+      720
+    ]
+  },
+  "castle_FULL_front.png": {
+    "object_present": true,
+    "verdict": "FAIL_TOO_BIG",
+    "obj_bbox": [
+      0,
+      0,
+      1279,
+      719
+    ],
+    "obj_ratio": 0.911,
+    "off_center": [
+      0.001,
+      0.001
+    ],
+    "padding": {
+      "left": 0.0,
+      "right": 0.001,
+      "top": 0.0,
+      "bottom": 0.001
+    },
+    "image_size": [
+      1280,
+      720
+    ]
+  },
+  "gundam_v1_FULL_45deg.png": {
+    "object_present": true,
+    "verdict": "FAIL_TOO_BIG",
+    "obj_bbox": [
+      0,
+      0,
+      1279,
+      719
+    ],
+    "obj_ratio": 0.94,
+    "off_center": [
+      0.001,
+      0.001
+    ],
+    "padding": {
+      "left": 0.0,
+      "right": 0.001,
+      "top": 0.0,
+      "bottom": 0.001
+    },
+    "image_size": [
+      1280,
+      720
+    ]
+  },
+  "gundam_v1_FULL_front.png": {
+    "object_present": true,
+    "verdict": "FAIL_TOO_BIG",
+    "obj_bbox": [
+      0,
+      0,
+      1279,
+      719
+    ],
+    "obj_ratio": 0.887,
+    "off_center": [
+      0.001,
+      0.001
+    ],
+    "padding": {
+      "left": 0.0,
+      "right": 0.001,
+      "top": 0.0,
+      "bottom": 0.001
+    },
+    "image_size": [
+      1280,
+      720
+    ]
+  }
+}
