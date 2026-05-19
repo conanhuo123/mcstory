@@ -1,0 +1,62 @@
+{
+  "origin": [
+    -380,
+    63,
+    -100
+  ],
+  "rcon": "235/332",
+  "bbox": [
+    -382,
+    63,
+    -116,
+    -378,
+    68,
+    -100
+  ],
+  "cmds": 332,
+  "g1": {
+    "gate": 1,
+    "name": "ground_check",
+    "actual_ground": 62,
+    "all_probes": [
+      62,
+      62,
+      62,
+      62
+    ],
+    "build_bottom": 63,
+    "status": "PASS"
+  },
+  "g3": {
+    "gate": 3,
+    "name": "proportion",
+    "h": 6,
+    "w": 17,
+    "ratio": 0.35,
+    "target": [
+      0.05,
+      5.0
+    ],
+    "status": "PASS"
+  },
+  "g4": {
+    "gate": 4,
+    "name": "detail",
+    "block_types": 13,
+    "total_cmds": 332,
+    "min_types": 5,
+    "min_total": 100,
+    "sample_blocks": [
+      "air",
+      "coal_ore",
+      "cobblestone",
+      "cobblestone_slab",
+      "cobblestone_stairs",
+      "diamond_ore",
+      "emerald_ore",
+      "gold_ore"
+    ],
+    "status": "PASS"
+  },
+  "pass3": true
+}

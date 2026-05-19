@@ -885,6 +885,48 @@
       "cmds_total": 237,
       "rcon_ok": 237,
       "screenshots": []
+    },
+    {
+      "id": "mine_v1",
+      "name": "普通矿洞 v1 (15 块深隧道+5 种矿)",
+      "origin": [
+        -380,
+        63,
+        -100
+      ],
+      "biome": "plains",
+      "build_cmds": [],
+      "default_camera": "front",
+      "tags": [
+        "B组",
+        "mine",
+        "矿洞",
+        "量产验证"
+      ],
+      "template": "voxel_dsl_tunnel",
+      "params": {
+        "length": 15,
+        "width": 3,
+        "height": 3,
+        "ores": [
+          "coal",
+          "iron",
+          "diamond",
+          "emerald",
+          "gold"
+        ]
+      },
+      "quality_gate": {
+        "ground": "PASS",
+        "framing": "待",
+        "proportion": "PASS 0.35",
+        "detail": "PASS 13 blocks",
+        "multiview": "待"
+      },
+      "block_types": 13,
+      "cmds_total": 332,
+      "rcon_ok": 235,
+      "screenshots": []
     }
   ]
 }
