@@ -1,0 +1,62 @@
+{
+  "v2_45deg.png": {
+    "bbox": [
+      0,
+      482,
+      313,
+      719
+    ],
+    "img": [
+      1280,
+      720
+    ],
+    "TOL": 25,
+    "head": "PASS",
+    "foot": "FAIL",
+    "left": "FAIL",
+    "right": "PASS",
+    "biggest": 36001,
+    "clusters": 848,
+    "overall": "FAIL"
+  },
+  "v2_close.png": {
+    "bbox": [
+      0,
+      0,
+      1279,
+      258
+    ],
+    "img": [
+      1280,
+      720
+    ],
+    "TOL": 25,
+    "head": "FAIL",
+    "foot": "PASS",
+    "left": "FAIL",
+    "right": "FAIL",
+    "biggest": 145635,
+    "clusters": 4601,
+    "overall": "FAIL"
+  },
+  "v2_front.png": {
+    "bbox": [
+      295,
+      0,
+      975,
+      55
+    ],
+    "img": [
+      1280,
+      720
+    ],
+    "TOL": 25,
+    "head": "FAIL",
+    "foot": "PASS",
+    "left": "PASS",
+    "right": "PASS",
+    "biggest": 17309,
+    "clusters": 966,
+    "overall": "FAIL"
+  }
+}
