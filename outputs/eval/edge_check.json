@@ -1,0 +1,38 @@
+{
+  "gundam_FULL_45deg.png": {
+    "object_present": true,
+    "bbox": [
+      0,
+      0,
+      1279,
+      719
+    ],
+    "image_size": [
+      1280,
+      720
+    ],
+    "head_edge": "FAIL",
+    "foot_edge": "FAIL",
+    "weapon_left_edge": "FAIL",
+    "weapon_right_edge": "FAIL",
+    "overall": "FAIL"
+  },
+  "gundam_FULL_45deg_v2.png": {
+    "object_present": true,
+    "bbox": [
+      0,
+      0,
+      1279,
+      719
+    ],
+    "image_size": [
+      1280,
+      720
+    ],
+    "head_edge": "FAIL",
+    "foot_edge": "FAIL",
+    "weapon_left_edge": "FAIL",
+    "weapon_right_edge": "FAIL",
+    "overall": "FAIL"
+  }
+}

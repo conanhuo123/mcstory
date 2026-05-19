@@ -1,0 +1,74 @@
+{
+  "gundam_FULL_45deg.png": {
+    "mech_pixels": 13365,
+    "mech_bbox": [
+      0,
+      0,
+      1279,
+      559
+    ],
+    "image_size": [
+      1280,
+      720
+    ],
+    "head_edge": "FAIL",
+    "foot_edge": "PASS",
+    "weapon_left": "FAIL",
+    "weapon_right": "FAIL",
+    "overall": "FAIL"
+  },
+  "gundam_FULL_45deg_v2.png": {
+    "mech_pixels": 29105,
+    "mech_bbox": [
+      0,
+      79,
+      1279,
+      719
+    ],
+    "image_size": [
+      1280,
+      720
+    ],
+    "head_edge": "PASS",
+    "foot_edge": "FAIL",
+    "weapon_left": "FAIL",
+    "weapon_right": "FAIL",
+    "overall": "FAIL"
+  },
+  "PASS_gundam_45deg.png": {
+    "mech_pixels": 12522,
+    "mech_bbox": [
+      0,
+      0,
+      1171,
+      474
+    ],
+    "image_size": [
+      1280,
+      720
+    ],
+    "head_edge": "FAIL",
+    "foot_edge": "PASS",
+    "weapon_left": "FAIL",
+    "weapon_right": "PASS",
+    "overall": "FAIL"
+  },
+  "PASS_gundam_front.png": {
+    "mech_pixels": 17835,
+    "mech_bbox": [
+      0,
+      0,
+      1279,
+      709
+    ],
+    "image_size": [
+      1280,
+      720
+    ],
+    "head_edge": "FAIL",
+    "foot_edge": "PASS",
+    "weapon_left": "FAIL",
+    "weapon_right": "FAIL",
+    "overall": "FAIL"
+  }
+}
