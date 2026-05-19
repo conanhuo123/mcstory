@@ -1,0 +1,70 @@
+{
+  "before": {
+    "overall": "FAIL",
+    "gates": [
+      {
+        "gate": 1,
+        "name": "spawn",
+        "entity": "villager",
+        "name_match": "继任者",
+        "status": "FAIL",
+        "raw": "Test failed"
+      },
+      {
+        "gate": 2,
+        "name": "placement",
+        "status": "FAIL_NO_POS",
+        "raw": "No entity was found"
+      },
+      {
+        "gate": 3,
+        "name": "pose",
+        "status": "FAIL_NO_ROT"
+      },
+      {
+        "gate": 4,
+        "status": "SKIP"
+      },
+      {
+        "gate": 5,
+        "status": "SKIP"
+      }
+    ]
+  },
+  "after": {
+    "overall": "FAIL",
+    "gates": [
+      {
+        "gate": 1,
+        "name": "spawn",
+        "entity": "villager",
+        "name_match": "继任者",
+        "status": "FAIL",
+        "raw": "Test failed"
+      },
+      {
+        "gate": 2,
+        "name": "placement",
+        "status": "FAIL_NO_POS",
+        "raw": "No entity was found"
+      },
+      {
+        "gate": 3,
+        "name": "pose",
+        "status": "FAIL_NO_ROT"
+      },
+      {
+        "gate": 4,
+        "name": "animation",
+        "before": "No entity was found",
+        "after": "No entity was found",
+        "changed": false,
+        "status": "FAIL"
+      },
+      {
+        "gate": 5,
+        "status": "SKIP"
+      }
+    ]
+  }
+}
