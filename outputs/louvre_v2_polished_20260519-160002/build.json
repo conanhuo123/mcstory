@@ -1,0 +1,16 @@
+{
+  "origin": [
+    -300,
+    80,
+    -300
+  ],
+  "cmds": 921,
+  "features": [
+    "Pei 12 高 23 底 升级",
+    "雕花墙 chiseled+cut 材质分区",
+    "屋顶 stairs 多层 dome",
+    "4 庭院雕像 ArmorStand",
+    "iron 棱 + 4 边中棱",
+    "gold+glowstone 顶"
+  ]
+}
