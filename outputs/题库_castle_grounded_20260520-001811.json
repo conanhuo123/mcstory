@@ -1,0 +1,112 @@
+{
+  "samples_before": [
+    [
+      -250,
+      90,
+      -260
+    ],
+    [
+      -261,
+      80,
+      -271
+    ],
+    [
+      -239,
+      64,
+      -271
+    ],
+    [
+      -261,
+      80,
+      -249
+    ],
+    [
+      -239,
+      62,
+      -249
+    ]
+  ],
+  "target_ground": 90,
+  "wave_before": 28,
+  "new_samples_after_build": [
+    [
+      -250,
+      95,
+      -260
+    ],
+    [
+      -257,
+      104,
+      -267
+    ],
+    [
+      -243,
+      104,
+      -267
+    ],
+    [
+      -257,
+      104,
+      -253
+    ],
+    [
+      -243,
+      104,
+      -253
+    ]
+  ],
+  "wave_after": 9,
+  "origin": [
+    -250,
+    91,
+    -260
+  ],
+  "rcon": "1333/1339",
+  "bbox": [
+    -260,
+    90,
+    -270,
+    -240,
+    104,
+    -250
+  ],
+  "g1": {
+    "gate": 1,
+    "name": "ground_check",
+    "actual_ground": 95,
+    "build_bottom": 90,
+    "status": "FAIL"
+  },
+  "g3": {
+    "gate": 3,
+    "name": "proportion",
+    "h": 15,
+    "w": 21,
+    "ratio": 0.71,
+    "target": [
+      0.1,
+      5.0
+    ],
+    "status": "PASS"
+  },
+  "g4": {
+    "gate": 4,
+    "name": "detail",
+    "block_types": 10,
+    "total_cmds": 1339,
+    "min_types": 5,
+    "min_total": 200,
+    "sample_blocks": [
+      "air",
+      "chiseled_stone_bricks",
+      "cobblestone",
+      "polished_andesite",
+      "red_concrete",
+      "sea_lantern",
+      "stone_brick_slab",
+      "stone_brick_stairs"
+    ],
+    "status": "PASS"
+  },
+  "pass3": false
+}
