@@ -1,0 +1,62 @@
+{
+  "origin": [
+    -340,
+    63,
+    -130
+  ],
+  "rcon": "237/237",
+  "bbox": [
+    -344,
+    63,
+    -133,
+    -336,
+    73,
+    -126
+  ],
+  "cmds": 237,
+  "g1": {
+    "gate": 1,
+    "name": "ground_check",
+    "actual_ground": 62,
+    "all_probes": [
+      62,
+      62,
+      62,
+      62
+    ],
+    "build_bottom": 63,
+    "status": "PASS"
+  },
+  "g3": {
+    "gate": 3,
+    "name": "proportion",
+    "h": 11,
+    "w": 9,
+    "ratio": 1.22,
+    "target": [
+      0.3,
+      5.0
+    ],
+    "status": "PASS"
+  },
+  "g4": {
+    "gate": 4,
+    "name": "detail",
+    "block_types": 9,
+    "total_cmds": 237,
+    "min_types": 5,
+    "min_total": 100,
+    "sample_blocks": [
+      "campfire",
+      "cobblestone",
+      "glass_pane",
+      "lantern",
+      "oak_door",
+      "oak_log",
+      "oak_stairs",
+      "red_concrete"
+    ],
+    "status": "PASS"
+  },
+  "pass3": true
+}

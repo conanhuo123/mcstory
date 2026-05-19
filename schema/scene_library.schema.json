@@ -846,6 +846,45 @@
       "cmds_total": 3492,
       "rcon_ok": 3456,
       "screenshots": []
+    },
+    {
+      "id": "cottage_v1",
+      "name": "小屋 v1 (oak+spruce 斜顶+烟囱)",
+      "origin": [
+        -340,
+        63,
+        -130
+      ],
+      "biome": "plains",
+      "build_cmds": [],
+      "default_camera": "45deg",
+      "tags": [
+        "B组",
+        "小屋",
+        "cottage",
+        "量产验证"
+      ],
+      "template": "module_library_cottage",
+      "params": {
+        "size": "8x4x6",
+        "features": [
+          "双坡斜顶",
+          "烟囱+campfire",
+          "门+4 窗",
+          "内灯"
+        ]
+      },
+      "quality_gate": {
+        "ground": "PASS",
+        "framing": "待",
+        "proportion": "PASS 1.22",
+        "detail": "PASS 9 blocks",
+        "multiview": "待"
+      },
+      "block_types": 9,
+      "cmds_total": 237,
+      "rcon_ok": 237,
+      "screenshots": []
     }
   ]
 }
