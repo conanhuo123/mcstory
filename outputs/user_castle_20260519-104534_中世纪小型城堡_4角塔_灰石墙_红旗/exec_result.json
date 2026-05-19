@@ -1,0 +1,24 @@
+{
+  "exec_ok": 84,
+  "exec_total": 88,
+  "wb_ok": 4,
+  "wb_total": 6,
+  "fails": [
+    {
+      "cmd": "setblock -87 85 -267 stone_bricks",
+      "resp": "Could not set the block"
+    },
+    {
+      "cmd": "setblock -73 85 -267 stone_bricks",
+      "resp": "Could not set the block"
+    },
+    {
+      "cmd": "setblock -87 85 -253 stone_bricks",
+      "resp": "Could not set the block"
+    },
+    {
+      "cmd": "setblock -73 85 -253 stone_bricks",
+      "resp": "Could not set the block"
+    }
+  ]
+}
