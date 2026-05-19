@@ -1,0 +1,56 @@
+{
+  "overall": null,
+  "gate1": {
+    "gate": 1,
+    "name": "ground_check",
+    "actual_ground": 94,
+    "build_bottom": 94,
+    "status": "PASS"
+  },
+  "gate3": {
+    "gate": 3,
+    "name": "proportion",
+    "h": 15,
+    "w": 37,
+    "ratio": 0.41,
+    "target": [
+      0.1,
+      5.0
+    ],
+    "status": "PASS"
+  },
+  "gate4": {
+    "gate": 4,
+    "name": "detail",
+    "block_types": 16,
+    "total_cmds": 3791,
+    "min_types": 5,
+    "min_total": 200,
+    "sample_blocks": [
+      "air",
+      "dark_oak_planks",
+      "dark_oak_stairs",
+      "glass",
+      "glass_pane",
+      "iron_block",
+      "light_gray_concrete",
+      "oak_door"
+    ],
+    "status": "PASS"
+  },
+  "rcon_ok": 3563,
+  "rcon_total": 3791,
+  "origin": [
+    -300,
+    94,
+    -300
+  ],
+  "bbox": [
+    -318,
+    94,
+    -316,
+    -282,
+    108,
+    -288
+  ]
+}
