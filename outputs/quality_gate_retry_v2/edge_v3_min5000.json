@@ -1,0 +1,36 @@
+{
+  "45_v3.png": {
+    "overall": "NO_LARGE_CLUSTER",
+    "top5_sizes": [
+      361.0,
+      332.0,
+      284.0,
+      271.0,
+      270.0
+    ]
+  },
+  "close_v3.png": {
+    "bbox": [
+      0,
+      0,
+      1279,
+      719
+    ],
+    "cluster_size": 722498,
+    "head": "FAIL",
+    "foot": "FAIL",
+    "left": "FAIL",
+    "right": "FAIL",
+    "overall": "FAIL"
+  },
+  "front_v3.png": {
+    "overall": "NO_LARGE_CLUSTER",
+    "top5_sizes": [
+      179.0,
+      165.0,
+      160.0,
+      146.0,
+      121.0
+    ]
+  }
+}
