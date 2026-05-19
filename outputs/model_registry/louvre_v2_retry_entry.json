@@ -1,0 +1,48 @@
+{
+  "template_id": "louvre_v2_retry",
+  "template_script": "scripts/louvre.py",
+  "reference": "louvre (real 135x27x65m)",
+  "replay_cmd": "python3 scripts/louvre.py  # build at -300, ground_y+1, -300",
+  "quality_gate": {
+    "ground": "PASS",
+    "framing": "PASS",
+    "proportion": "PASS",
+    "detail": "PASS",
+    "multiview": "PASS"
+  },
+  "cmds_total": 3791,
+  "rcon_ok": 3563,
+  "block_types": 16,
+  "pass_screenshots": [
+    "outputs/quality_gate_retry_v2/front_v5.png",
+    "outputs/quality_gate_retry_v2/45deg.png",
+    "outputs/quality_gate_retry_v2/close_v4.png"
+  ],
+  "fail_screenshots": [
+    "outputs/quality_gate_retry_v2/front.png",
+    "outputs/quality_gate_retry_v2/front_v2.png",
+    "outputs/quality_gate_retry_v2/close.png",
+    "outputs/quality_gate_retry_v2/close_v2.png"
+  ],
+  "retry_params": {
+    "origin_y": "auto_detect(actual_ground)+1",
+    "cam_dist": "45-60",
+    "palette_filter": "排 floor 色 light_gray"
+  },
+  "improvement_notes": [
+    "cluster size 小 (远 cam) — 升 scale 0.8",
+    "室内未建 — 加 interior_hall module",
+    "屋顶 stairs 多层 但不足曲面 — //gen 数学函数",
+    "材质分区已 5 层 — 可加 vine/moss 老化",
+    "雕花密度仍低 — 加 carved_band 多排"
+  ],
+  "showcase": "outputs/quality_gate_retry_v2/EVAL_MOSAIC_v3_WITH_IMPROVE.png",
+  "baidu_pan": "/apps/bypy/mcstory_louvre/PASS_*",
+  "scene_library_id": "louvre_v2_retry",
+  "commits": [
+    "43cd83a",
+    "1f6a554",
+    "25b1762"
+  ],
+  "status": "INGESTED"
+}

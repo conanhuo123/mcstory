@@ -1,0 +1,43 @@
+{
+  "template_id": "louvre_v2_quality_gate",
+  "status": "READY_FOR_INGEST",
+  "pass_images": {
+    "front": "outputs/quality_gate_retry_v2/front_v5.png",
+    "angle_45": "outputs/quality_gate_retry_v2/45deg.png",
+    "close": "outputs/quality_gate_retry_v2/close_v4.png",
+    "showcase": "outputs/quality_gate_retry_v2/louvre_quality_gate_showcase.jpg"
+  },
+  "fail_images": {
+    "front_fail": "outputs/quality_gate_retry_v2/front_v2.png",
+    "close_fail": "outputs/quality_gate_retry_v2/close_v2.png",
+    "initial_front": "outputs/quality_gate_retry_v2/front.png",
+    "initial_close": "outputs/quality_gate_retry_v2/close.png"
+  },
+  "gate_scores": {
+    "grounded": "PASS",
+    "proportion_bbox": "PASS",
+    "detail_density": "PASS",
+    "framing": "PASS",
+    "multiview": "PASS"
+  },
+  "evidence": {
+    "final_margin_table": "outputs/quality_gate_retry_v2/FINAL_PASS.json",
+    "first_fail_table": "outputs/quality_gate_run_20260519-164937.json",
+    "retry_ground_table": "outputs/quality_gate_retry_20260519-165355.json",
+    "showcase_md": "outputs/quality_gate_retry_v2/louvre_quality_gate_showcase.md"
+  },
+  "rerun_params": {
+    "grounded_fail": "snap_to_ground + rebuild foundation",
+    "framing_fail": "distance += 35%, fov += 10, bbox_margin=25%",
+    "bbox_fail": "scale or camera distance adjust",
+    "detail_fail": "add columns/windows/roof_layers/material_zones",
+    "view_fail": "rerender failed view only"
+  },
+  "remaining_improvements": [
+    "建筑语义仍不像真实卢浮宫",
+    "加强真实比例参考",
+    "加强立面节奏与柱廊细分",
+    "加强玻璃金字塔细节",
+    "加强材质分区"
+  ]
+}

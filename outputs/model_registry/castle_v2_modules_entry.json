@@ -1,0 +1,40 @@
+{
+  "template_id": "castle_v2_modules",
+  "template_script": "scripts/module_library.py (Foundation+Body+Decor 组合)",
+  "reference": "medieval castle",
+  "replay_cmd": "复用 outputs/题库_castle_v2_FINAL_*.json 中的 build_cmds",
+  "quality_gate": {
+    "ground": "PARTIAL (paper 地形波动)",
+    "framing": "PASS",
+    "proportion": "PASS",
+    "detail": "PASS",
+    "multiview": "PASS"
+  },
+  "cmds_total": 1339,
+  "rcon_ok": 1331,
+  "block_types": 10,
+  "pass_screenshots": [
+    "outputs/题库_castle_v2_final/castle_front.png",
+    "outputs/题库_castle_v2_final/castle_45deg.png",
+    "outputs/题库_castle_v2_final/castle_close.png"
+  ],
+  "fail_screenshots": [
+    "outputs/eval/castle_FULL_front.png",
+    "outputs/eval/castle_FULL_45deg.png"
+  ],
+  "retry_params": {
+    "origin_y": "手动 86 (paper 真地面 85)",
+    "modules": "Foundation.stepped+slab + Body.hollow_box + Decor.x4"
+  },
+  "improvement_notes": [
+    "paper world 真地面 y 波动 (ground PARTIAL) — 加 fill platform 大区强制平整",
+    "室内空 — 加 Body.colonnade_pair 内柱列",
+    "城垛 stairs 不足 — 加 multi-stairs 圆角"
+  ],
+  "baidu_pan": "/apps/bypy/mcstory_louvre/CASTLE_PASS_*",
+  "scene_library_id": "castle_v2_modules",
+  "commits": [
+    "eec4a2c"
+  ],
+  "status": "INGESTED_PARTIAL_GROUND"
+}

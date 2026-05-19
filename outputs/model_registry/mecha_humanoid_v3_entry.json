@@ -1,0 +1,43 @@
+{
+  "template_id": "mecha_humanoid_v3",
+  "template_script": "scripts/mecha_humanoid_v3.py",
+  "reference": "gundam RX-78 (humanoid 7-head proportions)",
+  "replay_cmd": "python3 scripts/mecha_humanoid_v3.py  # build at -200, ground_y+1, -200",
+  "quality_gate": {
+    "ground": "PASS",
+    "framing": "PASS",
+    "proportion": "PASS",
+    "detail": "PASS",
+    "multiview": "PASS"
+  },
+  "cmds_total": 528,
+  "rcon_ok": 528,
+  "block_types": 15,
+  "pass_screenshots": [
+    "outputs/题库_mecha_v3_final/mech_front.png",
+    "outputs/题库_mecha_v3_final/mech_45_SW.png",
+    "outputs/题库_mecha_v3_final/mech_close.png"
+  ],
+  "fail_screenshots": [
+    "outputs/题库_mecha_v3_final/mech_45deg.png",
+    "outputs/题库_mecha_v3_final/mech_45_NE_high.png",
+    "outputs/题库_mecha_v3_final/mech_45_S.png"
+  ],
+  "retry_params": {
+    "origin_y": "auto_detect+1",
+    "cam_45": "SW cam (-218,125,-185) dist 25"
+  },
+  "improvement_notes": [
+    "foot 圆角不足 — 加 stairs 收",
+    "关节连接已 Joint.ball 但视觉块感仍重",
+    "武器 (beam_saber + shield) 视觉效果一般 — 升 sea_lantern 多层"
+  ],
+  "baidu_pan": "/apps/bypy/mcstory_louvre/MECHA_PASS_*",
+  "scene_library_id": "mecha_humanoid_v3",
+  "commits": [
+    "fb07633",
+    "4219e17",
+    "e5074be"
+  ],
+  "status": "INGESTED"
+}
