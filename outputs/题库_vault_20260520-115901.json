@@ -1,0 +1,62 @@
+{
+  "origin": [
+    -160,
+    63,
+    -130
+  ],
+  "rcon": "541/544",
+  "bbox": [
+    -165,
+    63,
+    -135,
+    -155,
+    69,
+    -124
+  ],
+  "cmds": 544,
+  "g1": {
+    "gate": 1,
+    "name": "ground_check",
+    "actual_ground": 62,
+    "all_probes": [
+      62,
+      62,
+      62,
+      62
+    ],
+    "build_bottom": 63,
+    "status": "PASS"
+  },
+  "g3": {
+    "gate": 3,
+    "name": "proportion",
+    "h": 7,
+    "w": 12,
+    "ratio": 0.58,
+    "target": [
+      0.1,
+      5.0
+    ],
+    "status": "PASS"
+  },
+  "g4": {
+    "gate": 4,
+    "name": "detail",
+    "block_types": 15,
+    "total_cmds": 544,
+    "min_types": 5,
+    "min_total": 100,
+    "sample_blocks": [
+      "air",
+      "beacon",
+      "chest{Items:",
+      "emerald_block",
+      "gold_block",
+      "iron_bars",
+      "iron_block",
+      "iron_door"
+    ],
+    "status": "PASS"
+  },
+  "pass3": true
+}

@@ -968,6 +968,49 @@
       "cmds_total": 438,
       "rcon_ok": 437,
       "screenshots": []
+    },
+    {
+      "id": "vault_v1",
+      "name": "地下金库 v1 (gold 地板 + beacon)",
+      "origin": [
+        -160,
+        63,
+        -130
+      ],
+      "biome": "plains",
+      "build_cmds": [],
+      "default_camera": "45deg",
+      "tags": [
+        "室内",
+        "锁版",
+        "vault",
+        "金库"
+      ],
+      "template": "module_library_combo",
+      "params": {
+        "size": "10x5x10",
+        "features": [
+          "polished_blackstone_bricks 墙",
+          "gold_block 地板",
+          "中央 beacon",
+          "4 chest+diamond",
+          "emerald 围 beacon",
+          "4 角 iron+redstone_lamp",
+          "iron_door 防盗",
+          "redstone_wire 线路"
+        ]
+      },
+      "quality_gate": {
+        "ground": "PASS",
+        "framing": "待",
+        "proportion": "PASS 0.58",
+        "detail": "PASS 15 blocks",
+        "multiview": "待"
+      },
+      "block_types": 15,
+      "cmds_total": 544,
+      "rcon_ok": 541,
+      "screenshots": []
     }
   ]
 }
