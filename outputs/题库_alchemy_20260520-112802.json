@@ -1,0 +1,62 @@
+{
+  "origin": [
+    -200,
+    63,
+    -130
+  ],
+  "rcon": "437/438",
+  "bbox": [
+    -205,
+    63,
+    -135,
+    -195,
+    75,
+    -125
+  ],
+  "cmds": 438,
+  "g1": {
+    "gate": 1,
+    "name": "ground_check",
+    "actual_ground": 62,
+    "all_probes": [
+      62,
+      62,
+      62,
+      62
+    ],
+    "build_bottom": 63,
+    "status": "PASS"
+  },
+  "g3": {
+    "gate": 3,
+    "name": "proportion",
+    "h": 13,
+    "w": 11,
+    "ratio": 1.18,
+    "target": [
+      0.1,
+      5.0
+    ],
+    "status": "PASS"
+  },
+  "g4": {
+    "gate": 4,
+    "name": "detail",
+    "block_types": 15,
+    "total_cmds": 438,
+    "min_types": 5,
+    "min_total": 100,
+    "sample_blocks": [
+      "bookshelf",
+      "brewing_stand",
+      "campfire",
+      "cauldron",
+      "cobblestone",
+      "dark_oak_door",
+      "dark_oak_log",
+      "dark_oak_planks"
+    ],
+    "status": "PASS"
+  },
+  "pass3": true
+}

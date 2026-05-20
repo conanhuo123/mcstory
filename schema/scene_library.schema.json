@@ -927,6 +927,47 @@
       "cmds_total": 332,
       "rcon_ok": 235,
       "screenshots": []
+    },
+    {
+      "id": "alchemy_workshop_v1",
+      "name": "炼金工坊 v1 (室内)",
+      "origin": [
+        -200,
+        63,
+        -130
+      ],
+      "biome": "plains",
+      "build_cmds": [],
+      "default_camera": "front",
+      "tags": [
+        "室内",
+        "锁版",
+        "alchemy",
+        "interior"
+      ],
+      "template": "module_library_combo",
+      "params": {
+        "size": "10x6x10",
+        "features": [
+          "brewing_stand",
+          "enchanting_table",
+          "cauldron",
+          "bookshelf 墙",
+          "lantern 吊顶",
+          "烟囱+campfire"
+        ]
+      },
+      "quality_gate": {
+        "ground": "PASS",
+        "framing": "待",
+        "proportion": "PASS 1.18",
+        "detail": "PASS 15 blocks",
+        "multiview": "待"
+      },
+      "block_types": 15,
+      "cmds_total": 438,
+      "rcon_ok": 437,
+      "screenshots": []
     }
   ]
 }
