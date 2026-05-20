@@ -1011,6 +1011,40 @@
       "cmds_total": 544,
       "rcon_ok": 541,
       "screenshots": []
+    },
+    {
+      "id": "sky_city_v1",
+      "name": "天空城 v1 (浮空岛+quartz 城堡)",
+      "origin": [
+        -100,
+        100,
+        -460
+      ],
+      "biome": "plains",
+      "build_cmds": [],
+      "default_camera": "45deg",
+      "tags": [
+        "锁版",
+        "幻想",
+        "sky_city",
+        "flying_design"
+      ],
+      "template": "voxel_dsl_combo",
+      "params": {
+        "floating_island": "end_stone 倒锥 8 层",
+        "city": "quartz 城堡 + 4 角塔 + cyan 屋顶 + beacon"
+      },
+      "quality_gate": {
+        "ground": "N/A (flying_design 设计浮空)",
+        "framing": "待",
+        "proportion": "PASS 0.86",
+        "detail": "PASS 9 blocks",
+        "multiview": "待"
+      },
+      "block_types": 9,
+      "cmds_total": 1512,
+      "rcon_ok": 1504,
+      "screenshots": []
     }
   ]
 }

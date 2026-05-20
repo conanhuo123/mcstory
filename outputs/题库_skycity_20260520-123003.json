@@ -1,0 +1,62 @@
+{
+  "origin": [
+    -100,
+    100,
+    -460
+  ],
+  "rcon": "1504/1512",
+  "bbox": [
+    -110,
+    93,
+    -470,
+    -90,
+    110,
+    -450
+  ],
+  "cmds": 1512,
+  "g1": {
+    "gate": 1,
+    "name": "ground_check",
+    "actual_ground": 69,
+    "all_probes": [
+      69,
+      68,
+      68,
+      68
+    ],
+    "build_bottom": 93,
+    "status": "FAIL"
+  },
+  "g3": {
+    "gate": 3,
+    "name": "proportion",
+    "h": 18,
+    "w": 21,
+    "ratio": 0.86,
+    "target": [
+      0.1,
+      5.0
+    ],
+    "status": "PASS"
+  },
+  "g4": {
+    "gate": 4,
+    "name": "detail",
+    "block_types": 9,
+    "total_cmds": 1512,
+    "min_types": 5,
+    "min_total": 100,
+    "sample_blocks": [
+      "air",
+      "beacon",
+      "cyan_concrete",
+      "end_stone",
+      "grass_block",
+      "oak_log",
+      "oak_planks",
+      "quartz_block"
+    ],
+    "status": "PASS"
+  },
+  "pass3": false
+}
