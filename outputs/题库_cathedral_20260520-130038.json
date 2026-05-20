@@ -1,0 +1,62 @@
+{
+  "origin": [
+    -60,
+    70,
+    -460
+  ],
+  "rcon": "1269/1291",
+  "bbox": [
+    -69,
+    70,
+    -469,
+    -51,
+    93,
+    -451
+  ],
+  "cmds": 1291,
+  "g1": {
+    "gate": 1,
+    "name": "ground_check",
+    "actual_ground": 69,
+    "all_probes": [
+      69,
+      69,
+      69,
+      69
+    ],
+    "build_bottom": 70,
+    "status": "PASS"
+  },
+  "g3": {
+    "gate": 3,
+    "name": "proportion",
+    "h": 24,
+    "w": 19,
+    "ratio": 1.26,
+    "target": [
+      0.1,
+      5.0
+    ],
+    "status": "PASS"
+  },
+  "g4": {
+    "gate": 4,
+    "name": "detail",
+    "block_types": 13,
+    "total_cmds": 1291,
+    "min_types": 5,
+    "min_total": 100,
+    "sample_blocks": [
+      "air",
+      "bone_block",
+      "cyan_stained_glass",
+      "deepslate_brick_stairs",
+      "deepslate_bricks",
+      "dragon_egg",
+      "dragon_head",
+      "magenta_stained_glass"
+    ],
+    "status": "PASS"
+  },
+  "pass3": true
+}

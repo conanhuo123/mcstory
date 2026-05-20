@@ -1045,6 +1045,49 @@
       "cmds_total": 1512,
       "rcon_ok": 1504,
       "screenshots": []
+    },
+    {
+      "id": "dragon_cathedral_v1",
+      "name": "龙骨教堂 v1 (bone_block+尖塔+stained_glass)",
+      "origin": [
+        -60,
+        70,
+        -460
+      ],
+      "biome": "plains",
+      "build_cmds": [],
+      "default_camera": "45deg",
+      "tags": [
+        "锁版",
+        "幻想",
+        "cathedral",
+        "dragon"
+      ],
+      "template": "voxel_dsl_cathedral",
+      "params": {
+        "size": "14x24x18",
+        "features": [
+          "bone_block 外墙",
+          "4 飞扶壁 (gothic)",
+          "中央尖塔 dragon_egg 顶",
+          "4 角 spire+soul_lantern",
+          "内部 8 根 bone 柱列",
+          "祭坛 dragon_head+soul_fire",
+          "8 stained_glass 窗 4 色",
+          "deepslate_bricks 地板"
+        ]
+      },
+      "quality_gate": {
+        "ground": "PASS",
+        "framing": "待",
+        "proportion": "PASS 1.26",
+        "detail": "PASS 13 blocks",
+        "multiview": "待"
+      },
+      "block_types": 13,
+      "cmds_total": 1291,
+      "rcon_ok": 1269,
+      "screenshots": []
     }
   ]
 }
