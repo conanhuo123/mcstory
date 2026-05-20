@@ -1,0 +1,62 @@
+{
+  "origin": [
+    -20,
+    73,
+    -460
+  ],
+  "rcon": "2155/2155",
+  "bbox": [
+    -35,
+    73,
+    -475,
+    -5,
+    89,
+    -445
+  ],
+  "cmds": 2155,
+  "g1": {
+    "gate": 1,
+    "name": "ground_check",
+    "actual_ground": 95,
+    "all_probes": [
+      95,
+      95,
+      95,
+      95
+    ],
+    "build_bottom": 73,
+    "status": "FAIL"
+  },
+  "g3": {
+    "gate": 3,
+    "name": "proportion",
+    "h": 17,
+    "w": 31,
+    "ratio": 0.55,
+    "target": [
+      0.05,
+      5.0
+    ],
+    "status": "PASS"
+  },
+  "g4": {
+    "gate": 4,
+    "name": "detail",
+    "block_types": 11,
+    "total_cmds": 2155,
+    "min_types": 5,
+    "min_total": 100,
+    "sample_blocks": [
+      "basalt",
+      "blackstone",
+      "campfire",
+      "lava",
+      "magma_block",
+      "oak_leaves",
+      "oak_log",
+      "oak_sign{front_text:{messages:"
+    ],
+    "status": "PASS"
+  },
+  "pass3": false
+}

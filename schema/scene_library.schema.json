@@ -1088,6 +1088,51 @@
       "cmds_total": 1291,
       "rcon_ok": 1269,
       "screenshots": []
+    },
+    {
+      "id": "volcano_island_v1",
+      "name": "火山岛 v1 (basalt 锥+lava 喷+椰树)",
+      "origin": [
+        -20,
+        73,
+        -460
+      ],
+      "biome": "ocean",
+      "build_cmds": [],
+      "default_camera": "45deg",
+      "tags": [
+        "锁版",
+        "自然",
+        "volcano",
+        "island",
+        "natural_landscape"
+      ],
+      "template": "voxel_dsl_volcano",
+      "params": {
+        "island_radius": 15,
+        "volcano_height": 15,
+        "features": [
+          "basalt 锥",
+          "blackstone 实心",
+          "lava 火山口",
+          "magma_block",
+          "campfire 顶",
+          "4 lava 山坡流",
+          "5 oak 椰树",
+          "sand 岛边"
+        ]
+      },
+      "quality_gate": {
+        "ground": "N/A natural_landscape (周围 paper 海水回流, 实际 build 在 paper 自然地面)",
+        "framing": "待",
+        "proportion": "PASS 0.55",
+        "detail": "PASS 11 blocks",
+        "multiview": "待"
+      },
+      "block_types": 11,
+      "cmds_total": 2155,
+      "rcon_ok": 2155,
+      "screenshots": []
     }
   ]
 }
