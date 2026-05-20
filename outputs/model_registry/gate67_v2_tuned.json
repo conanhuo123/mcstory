@@ -1,0 +1,41 @@
+{
+  "cottage": {
+    "gate6": {
+      "gate": 6,
+      "ratio": 0.0737,
+      "status": "PASS"
+    },
+    "gate7": {
+      "gate": 7,
+      "biggest": 6906,
+      "edge_ratio": 1.125,
+      "status": "PASS"
+    }
+  },
+  "pyramid": {
+    "gate6": {
+      "gate": 6,
+      "ratio": 0.0479,
+      "status": "FAIL"
+    },
+    "gate7": {
+      "gate": 7,
+      "biggest": 14668,
+      "edge_ratio": 0.696,
+      "status": "PASS"
+    }
+  },
+  "mine": {
+    "gate6": {
+      "gate": 6,
+      "ratio": 0.0709,
+      "status": "PASS"
+    },
+    "gate7": {
+      "gate": 7,
+      "biggest": 34710,
+      "edge_ratio": 0.702,
+      "status": "PASS"
+    }
+  }
+}
