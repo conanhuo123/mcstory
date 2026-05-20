@@ -1,0 +1,49 @@
+{
+  "origin": [
+    -180,
+    75,
+    -460
+  ],
+  "rcon": "6128/6128",
+  "bbox": [
+    -195,
+    75,
+    -476,
+    -165,
+    88,
+    -445
+  ],
+  "cmds": 6128,
+  "g3": {
+    "gate": 3,
+    "name": "proportion",
+    "h": 14,
+    "w": 32,
+    "ratio": 0.44,
+    "target": [
+      0.05,
+      5.0
+    ],
+    "status": "PASS"
+  },
+  "g4": {
+    "gate": 4,
+    "name": "detail",
+    "block_types": 11,
+    "total_cmds": 6128,
+    "min_types": 5,
+    "min_total": 100,
+    "sample_blocks": [
+      "amethyst_block",
+      "amethyst_cluster",
+      "blue_ice",
+      "glowstone",
+      "ice",
+      "oak_sign{front_text:{messages:",
+      "packed_ice",
+      "sea_lantern"
+    ],
+    "status": "PASS"
+  },
+  "pass2": true
+}

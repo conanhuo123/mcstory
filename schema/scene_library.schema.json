@@ -1133,6 +1133,49 @@
       "cmds_total": 2155,
       "rcon_ok": 2155,
       "screenshots": []
+    },
+    {
+      "id": "glacier_canyon_v1",
+      "name": "冰川峡谷 v1 (packed_ice 两侧+blue_ice 河谷+冰桥)",
+      "origin": [
+        -180,
+        75,
+        -460
+      ],
+      "biome": "frozen_ocean",
+      "build_cmds": [],
+      "default_camera": "45deg",
+      "tags": [
+        "锁版",
+        "自然",
+        "glacier",
+        "canyon",
+        "natural_landscape"
+      ],
+      "template": "voxel_dsl_canyon",
+      "params": {
+        "size": "30x14x32",
+        "features": [
+          "两侧冰山 (packed_ice+blue_ice+snow_block 3 层渐变)",
+          "中央河谷 (blue_ice 路+ice 边+water)",
+          "2 冰桥",
+          "20 雪堆山顶 scatter",
+          "2 sea_lantern 灯塔",
+          "中央 amethyst 紫晶洞",
+          "spruce_sapling 冻原灌木"
+        ]
+      },
+      "quality_gate": {
+        "ground": "N/A natural",
+        "framing": "待",
+        "proportion": "PASS 0.44",
+        "detail": "PASS 11 blocks",
+        "multiview": "待"
+      },
+      "block_types": 11,
+      "cmds_total": 6128,
+      "rcon_ok": 6128,
+      "screenshots": []
     }
   ]
 }
