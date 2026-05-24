@@ -1,0 +1,59 @@
+{
+  "prompt": "建一个白色希腊神庙, 8 根柱子, 三角山墙顶",
+  "spec": {
+    "id": "white_greek_temple_v1",
+    "name": "白色希腊神庙",
+    "preset_base": "temple",
+    "real_dim_m": [
+      28,
+      14,
+      18
+    ],
+    "modules": [
+      "Foundation.stepped",
+      "Body.hollow_box",
+      "Decor.carved_band"
+    ],
+    "palette_override": {
+      "floor": "smooth_quartz_block",
+      "main": "quartz_block",
+      "trim": "smooth_quartz_block",
+      "deco": "chiseled_sandstone",
+      "pillar": "quartz_block",
+      "roof": "smooth_quartz_block",
+      "roof_edge": "quartz_block"
+    },
+    "tags": [
+      "greek_temple",
+      "white_marble_style",
+      "eight_columns",
+      "triangular_pediment"
+    ],
+    "design_note": "以纯白石英表现古典希腊神庙，正立面设置8根柱子并突出三角山墙顶。"
+  },
+  "origin": [
+    -320,
+    80,
+    -320
+  ],
+  "bbox": [
+    28,
+    14,
+    18
+  ],
+  "cmds_total": 3600,
+  "rcon_ok": 3600,
+  "palette_resolved": {
+    "main": "quartz_block",
+    "trim": "smooth_quartz_block",
+    "deco": "chiseled_sandstone",
+    "pillar": "quartz_block",
+    "roof": "smooth_quartz_block",
+    "roof_edge": "quartz_block",
+    "floor": "smooth_quartz_block",
+    "centerpiece": "gold_block",
+    "iron_frame": "oak_log",
+    "accent": "gold_block"
+  },
+  "ts": "20260524-113707"
+}

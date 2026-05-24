@@ -1,0 +1,62 @@
+{
+  "prompt": "建一个唐代红色 3 层木塔, 飞檐, 中央有香炉",
+  "spec": {
+    "id": "tang_red_wooden_pagoda_v1",
+    "name": "唐代红色三层木塔",
+    "preset_base": "temple",
+    "real_dim_m": [
+      18,
+      28,
+      18
+    ],
+    "modules": [
+      "Foundation.stepped",
+      "Body.tower_layered",
+      "Decor.carved_band"
+    ],
+    "palette_override": {
+      "floor": "smooth_sandstone",
+      "main": "red_concrete",
+      "trim": "gold_block",
+      "deco": "chiseled_sandstone",
+      "pillar": "dark_oak_log",
+      "roof": "dark_oak_planks",
+      "roof_edge": "spruce_planks",
+      "centerpiece": "iron_block",
+      "accent": "glowstone"
+    },
+    "tags": [
+      "唐代",
+      "红色木塔",
+      "三层",
+      "飞檐",
+      "香炉"
+    ],
+    "design_note": "以红墙木柱和层层外挑飞檐塑造唐代三层塔，中央用铁色与微光方块表现香炉焦点。"
+  },
+  "origin": [
+    -380,
+    80,
+    -300
+  ],
+  "bbox": [
+    18,
+    28,
+    18
+  ],
+  "cmds_total": 3436,
+  "rcon_ok": 3436,
+  "palette_resolved": {
+    "main": "red_concrete",
+    "trim": "gold_block",
+    "deco": "chiseled_sandstone",
+    "pillar": "dark_oak_log",
+    "roof": "dark_oak_planks",
+    "roof_edge": "spruce_planks",
+    "floor": "smooth_sandstone",
+    "centerpiece": "iron_block",
+    "iron_frame": "oak_log",
+    "accent": "glowstone"
+  },
+  "ts": "20260524-113809"
+}

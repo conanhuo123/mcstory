@@ -1,0 +1,58 @@
+{
+  "prompt": "建一座 50 米玻璃幕墙摩天楼",
+  "spec": {
+    "id": "glass_curtain_wall_skyscraper_v1",
+    "name": "50米玻璃幕墙摩天楼",
+    "preset_base": "skyscraper",
+    "real_dim_m": [
+      18,
+      50,
+      18
+    ],
+    "modules": [
+      "Foundation.slab",
+      "Body.tower_layered",
+      "Decor.carved_band"
+    ],
+    "palette_override": {
+      "main": "glass",
+      "trim": "light_gray_concrete",
+      "roof": "smooth_quartz_block",
+      "centerpiece": "sea_lantern",
+      "iron_frame": "iron_block",
+      "accent": "blue_concrete"
+    },
+    "tags": [
+      "摩天楼",
+      "玻璃幕墙",
+      "现代建筑",
+      "高层"
+    ],
+    "design_note": "以通透玻璃幕墙和金属框架塑造一座简洁挺拔的50米现代摩天楼。"
+  },
+  "origin": [
+    -440,
+    80,
+    -300
+  ],
+  "bbox": [
+    18,
+    50,
+    18
+  ],
+  "cmds_total": 2714,
+  "rcon_ok": 2714,
+  "palette_resolved": {
+    "main": "glass",
+    "trim": "light_gray_concrete",
+    "deco": "tinted_glass",
+    "pillar": "iron_block",
+    "roof": "smooth_quartz_block",
+    "roof_edge": "gray_concrete_powder",
+    "floor": "polished_andesite",
+    "centerpiece": "sea_lantern",
+    "iron_frame": "iron_block",
+    "accent": "blue_concrete"
+  },
+  "ts": "20260524-113827"
+}
