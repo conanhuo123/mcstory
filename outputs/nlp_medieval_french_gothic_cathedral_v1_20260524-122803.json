@@ -1,0 +1,66 @@
+{
+  "prompt": "建一座中世纪法国哥特教堂, 双塔尖顶, 玫瑰花窗",
+  "spec": {
+    "id": "medieval_french_gothic_cathedral_v1",
+    "name": "中世纪法国哥特双塔教堂",
+    "preset_base": "temple",
+    "real_dim_m": [
+      58,
+      42,
+      34
+    ],
+    "modules": [
+      "Foundation.stepped",
+      "Body.hollow_box",
+      "Body.gothic_double_spire",
+      "Body.colonnade_pair",
+      "Decor.rose_window",
+      "Decor.window_grid",
+      "Decor.carved_band",
+      "Decor.grand_staircase"
+    ],
+    "palette_override": {
+      "floor": "polished_andesite",
+      "main": "stone_bricks",
+      "trim": "smooth_quartz_block",
+      "deco": "chiseled_sandstone",
+      "pillar": "quartz_block",
+      "roof": "dark_prismarine",
+      "centerpiece": "glass",
+      "accent": "gold_block"
+    },
+    "tags": [
+      "哥特教堂",
+      "中世纪法国",
+      "双塔尖顶",
+      "玫瑰花窗",
+      "石造立面"
+    ],
+    "design_note": "以高耸双塔尖顶和正立面玫瑰花窗塑造典型法国哥特教堂的垂直感与庄严仪式轴线。"
+  },
+  "origin": [
+    -800,
+    96,
+    -550
+  ],
+  "bbox": [
+    58,
+    42,
+    34
+  ],
+  "cmds_total": 29700,
+  "rcon_ok": 29700,
+  "palette_resolved": {
+    "main": "stone_bricks",
+    "trim": "smooth_quartz_block",
+    "deco": "chiseled_sandstone",
+    "pillar": "quartz_block",
+    "roof": "dark_prismarine",
+    "roof_edge": "red_glazed_terracotta",
+    "floor": "polished_andesite",
+    "centerpiece": "glass",
+    "iron_frame": "oak_log",
+    "accent": "gold_block"
+  },
+  "ts": "20260524-122803"
+}

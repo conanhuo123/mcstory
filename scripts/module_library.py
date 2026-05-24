@@ -81,6 +81,95 @@ class Body:
                 b.set(dx, y_base+layer_h-1, -cur_b//2-1, palette.get('roof','dark_oak_planks'), mirror=False)
                 b.set(dx, y_base+layer_h-1, cur_b//2+1, palette.get('roof','dark_oak_planks'), mirror=False)
 
+    @staticmethod
+    def pyramid_stepped(b, base, height, palette, layers=None):
+        """真金字塔: layer 缩进, 每层 1 米实心. base=底边, height=高度"""
+        if layers is None: layers = max(3, min(height, base//2))
+        layer_h = max(1, height // layers)
+        shrink_per_layer = max(1, (base//2) // layers)
+        for layer in range(layers):
+            cur = max(1, base//2 - layer*shrink_per_layer)
+            y0 = 1 + layer * layer_h
+            for dh in range(layer_h):
+                b.box(-cur, y0+dh, -cur, cur, y0+dh, cur, palette.get('main','sandstone'), mirror=False)
+        # 顶部祭坛
+        b.set(0, 1 + layers*layer_h, 0, palette.get('accent','gold_block'), mirror=False)
+    @staticmethod
+    def dome_solid(b, radius, palette):
+        """实心半球穹顶 (放在已有墙上, y 从 1+radius 开始)"""
+        for dx in range(-radius, radius+1):
+            for dy in range(0, radius+1):
+                for dz in range(-radius, radius+1):
+                    d2 = dx*dx + dy*dy + dz*dz
+                    if (radius-1)**2 < d2 <= radius*radius:
+                        b.set(dx, 1+dy, dz, palette.get('roof','quartz_block'), mirror=False)
+    @staticmethod
+    def gothic_double_spire(b, length, height, palette):
+        """哥特双尖塔: 主体两侧各一塔 + 尖顶"""
+        spire_h = max(6, height // 2)
+        for side_x in [-length//2 + 2, length//2 - 2]:
+            # 塔身
+            for y in range(1, height+1):
+                for dx in [-1, 0, 1]:
+                    for dz in [-1, 0, 1]:
+                        if abs(dx)==1 or abs(dz)==1:
+                            b.set(side_x+dx, y, dz, palette.get('main','stone_bricks'), mirror=False)
+            # 尖顶
+            for sy in range(spire_h):
+                r = max(0, 1 - sy//2)
+                for dx in range(-r, r+1):
+                    for dz in range(-r, r+1):
+                        b.set(side_x+dx, height+1+sy, dz, palette.get('trim','stone'), mirror=False)
+    @staticmethod
+    def pagoda_eaves(b, base, height, layers, palette):
+        """中式塔: tower_layered 改良版, 每层 dark_oak_stairs 飞檐 4 周"""
+        layer_h = max(2, height // layers)
+        for layer in range(layers):
+            cur_b = max(2, base - layer*2)
+            y_base = 1 + layer * layer_h
+            # 4 面墙
+            for dx in range(-cur_b//2, cur_b//2+1):
+                for dz in range(-cur_b//2, cur_b//2+1):
+                    if abs(dx)==cur_b//2 or abs(dz)==cur_b//2:
+                        b.box(dx, y_base, dz, dx, y_base+layer_h-1, dz, palette.get('main','red_concrete'), mirror=False)
+            # 飞檐 (4 周外凸 2 格 stairs)
+            eaves_y = y_base + layer_h
+            for dx in range(-cur_b//2-2, cur_b//2+3):
+                # 南北檐
+                b.set(dx, eaves_y, -cur_b//2-1, palette.get('roof','dark_oak_planks'), mirror=False)
+                b.set(dx, eaves_y, cur_b//2+1, palette.get('roof','dark_oak_planks'), mirror=False)
+                b.set(dx, eaves_y, -cur_b//2-2, palette.get('roof_edge','dark_oak_stairs'), mirror=False)
+                b.set(dx, eaves_y, cur_b//2+2, palette.get('roof_edge','dark_oak_stairs'), mirror=False)
+            for dz in range(-cur_b//2-2, cur_b//2+3):
+                # 东西檐
+                b.set(-cur_b//2-1, eaves_y, dz, palette.get('roof','dark_oak_planks'), mirror=False)
+                b.set(cur_b//2+1, eaves_y, dz, palette.get('roof','dark_oak_planks'), mirror=False)
+                b.set(-cur_b//2-2, eaves_y, dz, palette.get('roof_edge','dark_oak_stairs'), mirror=False)
+                b.set(cur_b//2+2, eaves_y, dz, palette.get('roof_edge','dark_oak_stairs'), mirror=False)
+        # 塔尖
+        b.set(0, 1 + layers*layer_h + 2, 0, palette.get('accent','gold_block'), mirror=False)
+    @staticmethod
+    def gable_roof(b, length, width, palette, height=4):
+        """双坡硬山屋顶 (盖在墙顶, y=1+height_of_body 起算)"""
+        # 假定调用者已把 cum_height 算好, 这里 y=1 起步往上
+        for h in range(height):
+            d = h
+            for dx in range(-length//2 + d, length//2 - d + 1):
+                b.set(dx, 1+h, -width//2 + d, palette.get('roof','dark_oak_planks'), mirror=False)
+                b.set(dx, 1+h, width//2 - d, palette.get('roof','dark_oak_planks'), mirror=False)
+    @staticmethod
+    def column_grid(b, length, height, width, palette, row_spacing=4):
+        """柱网 (希腊神庙必备)"""
+        col_block = palette.get('pillar','smooth_quartz_block')
+        half_l, half_w = length//2, width//2
+        for dx in range(-half_l, half_l+1, row_spacing):
+            for dz in [-half_w, half_w]:
+                b.box(dx, 1, dz, dx, height, dz, col_block, mirror=False)
+        # 短边也加柱
+        for dz in range(-half_w, half_w+1, row_spacing):
+            for dx in [-half_l, half_l]:
+                b.box(dx, 1, dz, dx, height, dz, col_block, mirror=False)
+
 # === 3. 装饰 (Decor) ===
 class Decor:
     @staticmethod
@@ -117,6 +206,45 @@ class Decor:
         deco = palette.get('deco','chiseled_sandstone')
         for dx in range(-length//2, length//2+1):
             b.set(dx, y, 0, deco, mirror=False)
+    @staticmethod
+    def window_grid(b, length, height, width, palette, row_spacing=3, col_spacing=4):
+        """窗户网格 (4 面墙上挖洞 + glass)"""
+        half_l, half_w = length//2, width//2
+        glass = palette.get('deco','glass')
+        for h in range(3, height-1, row_spacing):
+            for dx in range(-half_l+2, half_l-1, col_spacing):
+                # 南北
+                b.set(dx, h, -half_w, glass, mirror=False)
+                b.set(dx, h+1, -half_w, glass, mirror=False)
+                b.set(dx, h, half_w, glass, mirror=False)
+                b.set(dx, h+1, half_w, glass, mirror=False)
+            for dz in range(-half_w+2, half_w-1, col_spacing):
+                # 东西
+                b.set(-half_l, h, dz, glass, mirror=False)
+                b.set(-half_l, h+1, dz, glass, mirror=False)
+                b.set(half_l, h, dz, glass, mirror=False)
+                b.set(half_l, h+1, dz, glass, mirror=False)
+    @staticmethod
+    def grand_staircase(b, x_origin, length, palette, steps=5):
+        """大台阶 (从前方进入)"""
+        for s in range(steps):
+            b.box(x_origin - (steps-s), -s, -length//2, x_origin - (steps-s), -s, length//2,
+                  palette.get('floor','smooth_quartz_block'), mirror=False)
+    @staticmethod
+    def rose_window(b, y, palette, radius=3):
+        """玫瑰窗 (圆环 + glass 中心) — 哥特教堂前立面"""
+        for dx in range(-radius, radius+1):
+            for dy in range(-radius, radius+1):
+                d2 = dx*dx + dy*dy
+                if (radius-1)**2 < d2 <= radius*radius:
+                    b.set(dx, y+dy, 0, palette.get('deco','iron_block'), mirror=False)
+                elif d2 < (radius-1)**2:
+                    b.set(dx, y+dy, 0, 'pink_stained_glass' if (dx+dy)%2==0 else 'yellow_stained_glass', mirror=False)
+    @staticmethod
+    def lantern_row(b, y, length, palette, spacing=3):
+        """灯笼悬挂排"""
+        for dx in range(-length//2, length//2+1, spacing):
+            b.set(dx, y, 0, 'lantern', mirror=False)
     @staticmethod
     def torch_perimeter(rcon, ox, oy, oz, length, width, interval=5):
         """灯柱外环"""

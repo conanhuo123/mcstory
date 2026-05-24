@@ -24,8 +24,12 @@ PRESET_BASES = list(Reference.PRESETS.keys())  # louvre/temple/skyscraper
 
 MODULE_CATALOG = {
     'Foundation': ['slab', 'stepped', 'plaza_circle'],
-    'Body': ['hollow_box', 'tower_layered'],
-    'Decor': ['fountain', 'banner_row', 'carved_band'],
+    'Body': ['hollow_box', 'tower_layered',
+             'facade_rhythmic', 'colonnade_pair', 'central_pyramid', 'central_dome',
+             'central_spire', 'pyramid_stepped', 'dome_solid', 'gothic_double_spire',
+             'pagoda_eaves', 'gable_roof', 'column_grid'],
+    'Decor': ['fountain', 'banner_row', 'carved_band',
+              'window_grid', 'grand_staircase', 'rose_window', 'lantern_row'],
 }
 
 COMMON_BLOCKS = [
@@ -54,7 +58,27 @@ palette 字段语义:
   floor: 地板  main: 主墙  trim: 装饰带  deco: 雕刻装饰  pillar: 柱  roof: 屋顶
   roof_edge: 屋檐  centerpiece: 中央亮点  iron_frame: 框架  accent: 强调色
 
-real_dim_m: 真实尺寸 (长 高 宽, 单位米=block). 例如教堂 25×18×15, 高塔 12×30×12, 大殿 50×20×30.
+real_dim_m: 真实尺寸 (长 高 宽, 单位米=block).
+**默认 scale 偏大** (老板要精美):
+  - 神庙/教堂/宫殿: 40-60 × 25-35 × 25-40
+  - 塔/尖塔: 15-22 × 35-50 × 15-22
+  - 金字塔: 35-55 × 25-40 × 35-55 (底=高×1.3)
+  - 园林/广场: 50-80 × 8-15 × 50-80
+  - 小屋/木屋: 12-18 × 10-15 × 12-18
+
+**核心规则 — 选 module 必须组合丰富**:
+1. Foundation 1 个 (slab/stepped/plaza_circle 任选)
+2. Body 至少 2 个 (一个主体 + 一个特色, 例如 hollow_box+central_dome / pyramid_stepped+column_grid / pagoda_eaves+central_spire)
+3. Decor 至少 2 个 (window_grid 几乎所有建筑都该有 + 主题装饰如 rose_window 哥特/lantern_row 中式/grand_staircase 神庙)
+
+特定题材建议组合:
+  - 希腊神庙: Foundation.stepped + Body.hollow_box + Body.column_grid + Decor.grand_staircase + Decor.carved_band
+  - 中国宝塔: Foundation.stepped + Body.pagoda_eaves + Decor.lantern_row
+  - 哥特教堂: Foundation.stepped + Body.hollow_box + Body.gothic_double_spire + Decor.rose_window + Decor.window_grid
+  - 玛雅金字塔: Foundation.slab + Body.pyramid_stepped + Decor.carved_band
+  - 阿拉伯清真寺: Foundation.plaza_circle + Body.hollow_box + Body.dome_solid + Decor.carved_band
+  - 北欧木屋: Foundation.slab + Body.hollow_box + Body.gable_roof + Decor.window_grid
+  - 摩天楼: Foundation.slab + Body.hollow_box + Body.central_spire + Decor.window_grid
 
 输出严格 JSON (无 markdown, 无解释):
 {{
@@ -105,13 +129,28 @@ def spec_to_builder(spec, origin):
 
     DISPATCH = {
         'Foundation.slab':         lambda: Foundation.slab(b, L, W, palette),
-        'Foundation.stepped':      lambda: Foundation.stepped(b, L, W, palette, steps=3),
+        'Foundation.stepped':      lambda: Foundation.stepped(b, L, W, palette, steps=max(3, L//8)),
         'Foundation.plaza_circle': lambda: Foundation.plaza_circle(b, max(L,W)//2, palette),
         'Body.hollow_box':         lambda: Body.hollow_box(b, L, H, W, palette),
         'Body.tower_layered':      lambda: Body.tower_layered(b, max(L,W), H, max(3, H//6), palette),
+        'Body.facade_rhythmic':    lambda: Body.facade_rhythmic(b, L, H, W//2, palette, rhythm=4, dir_z=-1),
+        'Body.colonnade_pair':     lambda: Body.colonnade_pair(b, L, H, palette),
+        'Body.central_pyramid':    lambda: Body.central_pyramid(b, min(L,W), H, palette),
+        'Body.central_dome':       lambda: Body.central_dome(b, max(3, min(L,W)//3), palette),
+        'Body.central_spire':      lambda: Body.central_spire(b, max(3, min(L,W)//4), H, palette),
+        'Body.pyramid_stepped':    lambda: Body.pyramid_stepped(b, min(L,W), H, palette),
+        'Body.dome_solid':         lambda: Body.dome_solid(b, max(4, min(L,W)//3), palette),
+        'Body.gothic_double_spire':lambda: Body.gothic_double_spire(b, L, H, palette),
+        'Body.pagoda_eaves':       lambda: Body.pagoda_eaves(b, max(L,W), H, max(3, H//5), palette),
+        'Body.gable_roof':         lambda: Body.gable_roof(b, L, W, palette, height=max(3, H//4)),
+        'Body.column_grid':        lambda: Body.column_grid(b, L, H, W, palette, row_spacing=4),
         'Decor.fountain':          lambda: Decor.fountain(b, 0, 0, max(2, min(L,W)//5), palette),
         'Decor.banner_row':        lambda: Decor.banner_row(b, H, L, palette, on='north'),
         'Decor.carved_band':       lambda: Decor.carved_band(b, H//2, L, palette),
+        'Decor.window_grid':       lambda: Decor.window_grid(b, L, H, W, palette),
+        'Decor.grand_staircase':   lambda: Decor.grand_staircase(b, -L//2, W, palette, steps=max(3, L//8)),
+        'Decor.rose_window':       lambda: Decor.rose_window(b, H//2 + H//4, palette, radius=max(2, H//8)),
+        'Decor.lantern_row':       lambda: Decor.lantern_row(b, H+1, L, palette, spacing=3),
     }
 
     for module_path in spec.get('modules', []):
