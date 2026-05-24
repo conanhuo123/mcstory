@@ -54,15 +54,21 @@ cam.once('spawn', async () => {
     if (Math.abs(cam.entity.position.x - CAM.x) < 3 && Math.abs(cam.entity.position.y - CAM.y) < 3) synced = true;
   }
   console.log('AFTER_TP cam.pos =', cam.entity.position, 'synced=', synced);
+  // FIX(A): 关本地物理 + 钉死坐标。mineflayer 客户端物理给相机 bot 施加重力,
+  // server spectator 拦不住本地 entity.position 下坠, 而 prismarine-viewer 读的正是它 → 相机坠地拍草地。
+  cam.physicsEnabled = false;
+  cam.entity.position.set(CAM.x, CAM.y, CAM.z);
   await cam.lookAt(LOOK);
   await new Promise(r => setTimeout(r, 1000));
   // 3) viewer 在 cam 真到目标后再起 (避免 init 时记 spawn 位置)
-  pv(cam, { port: VIEWER_PORT, firstPerson: true, viewDistance: 6 });
+  pv(cam, { port: VIEWER_PORT, firstPerson: true, viewDistance: 8 });
   console.log('VIEWER_READY on', VIEWER_PORT);
   await new Promise(r => setTimeout(r, 18000));
   // puppeteer 截图
   // puppeteer headed (WebGL 需要), 窗口移屏外避免抢用户焦点
-  const browser = await puppeteer.launch({ headless: false, args: [
+  const CHROME = process.env.CHROME_PATH
+    || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+  const browser = await puppeteer.launch({ headless: false, executablePath: CHROME, args: [
     '--no-sandbox',
     '--enable-webgl',
     '--ignore-gpu-blocklist',
@@ -79,6 +85,15 @@ cam.once('spawn', async () => {
     const c = document.querySelector('canvas');
     if (c) { c.style.width = '1280px'; c.style.height = '720px'; c.width = 1280; c.height = 720; }
   });
+  // FIX(B): prismarine-viewer 相机只在 bot 'move' 事件经 botPosition() 推 'position'(pos/yaw/pitch)。
+  // puppeteer/socket 连上后 bot 静止 → 相机停默认朝向(拍草地)。连上后重钉坐标+朝向并 emit move, 把正确视角推给已连 socket。
+  for (let i = 0; i < 6; i++) {
+    cam.entity.position.set(CAM.x, CAM.y, CAM.z);
+    await cam.lookAt(LOOK);
+    cam.entity.position.set(CAM.x, CAM.y, CAM.z);
+    cam.emit('move');
+    await new Promise(r => setTimeout(r, 300));
+  }
   await new Promise(r => setTimeout(r, 3000));
   await page.screenshot({ path: OUT, clip: { x: 0, y: 0, width: 1280, height: 720 } });
   console.log('SCREENSHOT_SAVED', OUT);

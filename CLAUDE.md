@@ -8,7 +8,7 @@
 1. **静态模型** ✅ (NLP→DSL 已通)
 2. **角色** ✅ humanoid v2 + mc 自带 mob 混合
 3. **动作** ⚠️ (ArmorStand pose + mob AI 编排, 部分)
-4. **镜头** ⚠️ (cam bug + ReplayMod 可用 老板 Mojang 通了)
+4. **镜头** ✅ headless 截图 cam bug 已修 (physicsEnabled=false + emit move); ReplayMod 高质量 render 作 fallback (老板 Mojang 通了)
 5. **导出** ✅ (puppeteer + ffmpeg)
 
 ## 工作目录
@@ -109,7 +109,7 @@ with MCRcon('127.0.0.1','mcstory123',port=25575) as r: print(r.command('list'))"
 
 ## 已知未解决问题 (优先级)
 
-1. **prismarine-viewer cam bug** — lookAt 不真生效, 截图看到草地不是建筑. 苏白吐过的事 (chrome-devtools-mcp + playwright 待试)
+1. ~~**prismarine-viewer cam bug**~~ ✅ 已修 (2026-05-24): 双根因 — (A) mineflayer 本地物理给相机 bot 施加重力, server spectator 拦不住本地 entity.position 下坠, viewer 读的就是它 → 相机坠地拍草地; (B) prismarine-viewer 相机只在 bot 'move' 事件经 botPosition() 推 'position'(pos/yaw/pitch), puppeteer 连上后 bot 静止 → 相机停默认朝向. 修法: gate1_screenshot.js 加 `physicsEnabled=false`+钉死坐标 + 连上后 `emit('move')` 重推. 验证: 对夹具截图建筑清晰入画 (outputs/gate1_verify_*.png). 探针: scripts/cambug_probe.js / cambug_fix_test.js
 2. **gate1 ground NLP 流水线** — batch 偶尔 PARTIAL, 需垫平规则更稳
 3. **outputs/nlp_*.json 命名 overlap** — id 不带时间戳重建覆盖
 4. **5 关链路真 mp4 端到端没跑过** — 关 5 puppeteer 通了但无声
