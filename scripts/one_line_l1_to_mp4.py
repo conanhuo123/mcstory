@@ -59,8 +59,12 @@ with MCRcon('127.0.0.1','mcstory123',port=25575) as r:
         r.command(f'fill {cx-HALF} {y} {cz-HALF} {cx+HALF} {y} {cz+HALF} air'); y += 1
     r.command(f'fill {cx-HALF} 96 {cz-HALF} {cx+HALF} 99 {cz+HALF} stone')
     r.command(f'fill {cx-HALF} {FLOOR_Y} {cz-HALF} {cx+HALF} {FLOOR_Y} {cz+HALF} grass_block')
-# 放置: 精模约40大, 放在 (cx-20,cz-20) 使其中心≈(cx,cz)
-px, pz = cx - 20, cz - 20
+# 按类型估算精模尺寸 → 自适应居中放置 + 后面 orbit 半径
+SIZE = {'citizen':14, 'farmer':32, 'guardtower':12, 'barracks':28, 'warehouse':28, 'townhall':40}
+btype = name.split('_')[1]
+bsz = SIZE.get(btype, 34)
+off = bsz // 2
+px, pz = cx - off, cz - off
 rp = subprocess.run([VENV, 'scripts/nbt_importer.py', 'place', name, str(px), str(FLOOR_Y+1), str(pz)],
                     capture_output=True, text=True, timeout=120)
 print(rp.stdout[-200:], flush=True)
@@ -69,8 +73,8 @@ if 'Loaded' not in rp.stdout and 'placed' not in rp.stdout.lower():
 time.sleep(2)
 
 # 2) 环绕运镜
-ccx, ccy, ccz = cx, FLOOR_Y + 10, cz
-radius = 42
+ccx, ccy, ccz = cx, FLOOR_Y + max(8, int(bsz*0.35)), cz
+radius = max(int(bsz*0.95) + 12, 20)  # 半径随精模尺寸自适应
 outdir = f"outputs/l1auto_{name}_{ts}"
 print(f"[2/3] orbit center({ccx},{ccy},{ccz}) r={radius}", flush=True)
 r2 = subprocess.run(['node', 'scripts/orbit_video.js', str(ccx), str(ccy), str(ccz), str(radius), "36", outdir],
