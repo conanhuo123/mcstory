@@ -149,26 +149,53 @@ class Body:
         # 塔尖
         b.set(0, 1 + layers*layer_h + 2, 0, palette.get('accent','gold_block'), mirror=False)
     @staticmethod
-    def gable_roof(b, length, width, palette, height=4):
-        """双坡硬山屋顶 (盖在墙顶, y=1+height_of_body 起算)"""
-        # 假定调用者已把 cum_height 算好, 这里 y=1 起步往上
-        for h in range(height):
-            d = h
-            for dx in range(-length//2 + d, length//2 - d + 1):
-                b.set(dx, 1+h, -width//2 + d, palette.get('roof','dark_oak_planks'), mirror=False)
-                b.set(dx, 1+h, width//2 - d, palette.get('roof','dark_oak_planks'), mirror=False)
+    def gable_roof(b, length, width, palette, height=None, y_base=1):
+        """双坡屋顶(插值收拢到屋脊,任意坡高都闭合) + 实心三角山墙(pediment)。
+        坐落 y_base(墙顶)。屋脊沿 length(x), 跨 width(z) 收拢。"""
+        roof = palette.get('roof', 'dark_oak_planks')
+        wall = palette.get('main', 'smooth_quartz_block')
+        half_l, half_w = length // 2, width // 2
+        if not height or height < 2:
+            height = max(half_w * 2 // 3, 4)  # 适中坡度
+        prev = half_w
+        for h in range(height + 1):
+            z_off = round(half_w * (1 - h / height))   # 线性收拢, h=height 时到脊(0)
+            # 屋面: 填该层 [z_off, prev] 整带 (两坡, 无台阶缝), 沿 x 全长含 +1 出檐
+            for dx in range(-half_l - 1, half_l + 2):
+                for zz in range(z_off, prev + 1):
+                    b.set(dx, y_base + h, -zz, roof, mirror=False)
+                    b.set(dx, y_base + h,  zz, roof, mirror=False)
+            # 两端山墙三角填实 → 神庙标志轮廓
+            for x_end in (-half_l, half_l):
+                for dz in range(-z_off, z_off + 1):
+                    b.set(x_end, y_base + h, dz, wall, mirror=False)
+            prev = z_off
+            if z_off == 0:
+                break
     @staticmethod
-    def column_grid(b, length, height, width, palette, row_spacing=4):
-        """柱网 (希腊神庙必备)"""
-        col_block = palette.get('pillar','smooth_quartz_block')
-        half_l, half_w = length//2, width//2
-        for dx in range(-half_l, half_l+1, row_spacing):
-            for dz in [-half_w, half_w]:
-                b.box(dx, 1, dz, dx, height, dz, col_block, mirror=False)
-        # 短边也加柱
-        for dz in range(-half_w, half_w+1, row_spacing):
-            for dx in [-half_l, half_l]:
-                b.box(dx, 1, dz, dx, height, dz, col_block, mirror=False)
+    def column_grid(b, length, height, width, palette, row_spacing=5):
+        """柱廊 (希腊神庙必备): 2×2 粗柱 + 柱础/柱头, 周圈环绕。"""
+        col = palette.get('pillar', 'smooth_quartz_block')
+        cap = palette.get('trim', col)  # 柱头/柱础用 trim 区分
+        half_l, half_w = length // 2, width // 2
+        shaft_top = max(height - 1, 2)
+
+        def column(cx, cz):
+            for ox in (0, 1):
+                for oz in (0, 1):          # 2×2 柱身
+                    b.box(cx + ox, 2, cz + oz, cx + ox, shaft_top, cz + oz, col, mirror=False)
+            for ox in range(-1, 3):
+                for oz in range(-1, 3):    # 3×3 柱础(y=1) + 柱头(y=shaft_top+1)
+                    b.set(cx + ox, 1, cz + oz, cap, mirror=False)
+                    b.set(cx + ox, shaft_top + 1, cz + oz, cap, mirror=False)
+
+        step = max(4, row_spacing)
+        for dx in range(-half_l, half_l, step):    # 长边两列
+            column(dx, -half_w)
+            column(dx, half_w - 1)
+        for dz in range(-half_w, half_w, step):    # 短边两列
+            column(-half_l, dz)
+            column(half_l - 1, dz)
 
 # === 3. 装饰 (Decor) ===
 class Decor:
