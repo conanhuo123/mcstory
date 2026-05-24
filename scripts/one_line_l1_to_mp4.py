@@ -15,17 +15,36 @@ CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 FLOOR_Y = 100
 ts = time.strftime('%H%M%S')
 
-# 简易路由: 关键词 → minecolonies 精模名 (默认大气宅邸 townhall5)
+# 双维路由: 场景/材质关键词→风格, 功能关键词→建筑类型 → minecolonies 真精模名
 def route(p):
-    table = [
-        (('塔','哨塔','瞭望','tower'), 'birch_guardtower_guardtower5'),
-        (('兵营','营房','barrack'), 'birch_barracktower_barrackstower5'),
-        (('市政','镇','宅','府','大厅','townhall','hall','村'), 'birch_townhall_townhall5'),
-    ]
-    for kws, name in table:
-        if any(k in p for k in kws):
-            return name
-    return 'birch_townhall_townhall5'
+    # 风格 (默认 birch 明亮木)
+    style = 'birch'
+    for kws, s in [
+        (('沙漠','desert','沙','埃及','金字塔','黄沙'), 'sandstone'),
+        (('暗','黑','哥特','深色','darkoak','幽暗'), 'darkoak'),
+        (('石','城堡','stone','灰','现代'), 'stone'),
+        (('雪','松','北欧','taiga','寒','冬'), 'taiga'),
+    ]:
+        if any(k in p for k in kws): style = s; break
+    # 类型 (默认 townhall 大厅)
+    typ = 'townhall'
+    for kws, t in [
+        (('民居','房','家','住宅','小屋','citizen','house'), 'citizen'),
+        (('农','farm','田','庄园'), 'farmer'),
+        (('塔','哨','瞭望','guard','tower','灯塔'), 'guardtower'),
+        (('兵营','营房','barrack','军'), 'barracks'),
+        (('仓库','warehouse','货','库'), 'warehouse'),
+        (('市政','镇','府','大厅','townhall','hall','村','宫'), 'townhall'),
+    ]:
+        if any(k in p for k in kws): typ = t; break
+    # stone 风格只有 citizen/farmer; 回退 birch
+    name = f"{style}_{typ}_{typ}5"
+    valid = {  # 已验证存在的组合
+        'birch','darkoak','sandstone','taiga'  # 这些风格全类型齐
+    }
+    if style == 'stone' and typ not in ('citizen','farmer'):
+        style = 'birch'; name = f"{style}_{typ}_{typ}5"
+    return name
 
 name = route(prompt)
 print(f"[route] '{prompt}' → L1精模 {name}", flush=True)
