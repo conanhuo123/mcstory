@@ -118,6 +118,25 @@ class MountPoint:
             builder.box(ax, ay-1, az-1, ax, ay+2, az-1, palette.get('weapon','iron_block'), mirror=mirror)
             # 盾面装饰 (cross)
             builder.set(ax, ay+1, az-2, palette.get('accent','red_concrete'), mirror=mirror)
+        elif weapon_type == 'monkey_staff':
+            # 金箍棒: 7 高斜举, gold + 红环
+            for h in range(7):
+                builder.set(ax, ay+h, az, palette.get('weapon','gold_block') if h%3 else palette.get('accent','red_concrete'), mirror=mirror)
+        elif weapon_type == 'web_shooter':
+            # 蛛丝 cobweb 一片
+            builder.set(ax, ay, az, palette.get('weapon','iron_block'), mirror=mirror)
+            for h in range(1, 5):
+                builder.set(ax, ay, az-h, 'cobweb', mirror=mirror)
+            builder.set(ax+1, ay, az-2, 'cobweb', mirror=mirror)
+        elif weapon_type == 'spear':
+            # 长矛: oak_fence 杆 + iron 头
+            for h in range(8):
+                builder.set(ax, ay+h, az, 'oak_fence', mirror=mirror)
+            builder.set(ax, ay+8, az, 'iron_block', mirror=mirror)
+        elif weapon_type == 'magic_orb':
+            # 魔法球: glowstone + glass
+            builder.set(ax, ay, az, palette.get('accent','glowstone'), mirror=mirror)
+            builder.set(ax, ay+1, az, 'glass', mirror=mirror)
 
 # === 6. 镜头验收 (Frame Audit) ===
 class FrameAudit:

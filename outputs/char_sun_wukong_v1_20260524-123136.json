@@ -1,0 +1,53 @@
+{
+  "prompt": "孙悟空, 黄色衣红色围身, 金箍棒, 头戴金箍",
+  "spec": {
+    "id": "sun_wukong_v1",
+    "name": "孙悟空",
+    "palette": {
+      "head": "brown_terracotta",
+      "mask": "white_terracotta",
+      "body": "yellow_concrete",
+      "torso": "yellow_concrete",
+      "arm": "brown_terracotta",
+      "shoulder": "yellow_concrete",
+      "leg": "yellow_concrete",
+      "joint": "black_concrete",
+      "accent": "red_concrete",
+      "antenna": "gold_block",
+      "weapon": "gold_block",
+      "detail_dark": "black_terracotta"
+    },
+    "weapon": "monkey_staff",
+    "height_blocks": 22,
+    "design_note": "以黄色战衣、红色围身和金色头箍突出齐天大圣形象，右手持金箍棒呈现灵动战斗姿态。",
+    "tags": [
+      "神话",
+      "西游记",
+      "猴王",
+      "金箍棒",
+      "红黄配色"
+    ]
+  },
+  "origin": [
+    -600,
+    80,
+    -800
+  ],
+  "cmds_total": 384,
+  "rcon_ok": 384,
+  "palette_resolved": {
+    "leg": "yellow_concrete",
+    "body": "yellow_concrete",
+    "accent": "red_concrete",
+    "head": "brown_terracotta",
+    "mask": "white_terracotta",
+    "antenna": "gold_block",
+    "arm": "brown_terracotta",
+    "shoulder": "yellow_concrete",
+    "weapon": "gold_block",
+    "joint": "black_concrete",
+    "detail_dark": "black_terracotta",
+    "torso": "yellow_concrete"
+  },
+  "ts": "20260524-123136"
+}

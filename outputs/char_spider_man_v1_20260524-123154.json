@@ -1,0 +1,53 @@
+{
+  "prompt": "蜘蛛侠, 红蓝紧身衣, 蛛丝发射器, 黑色蛛网纹",
+  "spec": {
+    "id": "spider_man_v1",
+    "name": "蜘蛛侠",
+    "palette": {
+      "head": "red_concrete",
+      "mask": "white_concrete",
+      "body": "red_concrete",
+      "torso": "blue_concrete",
+      "arm": "red_concrete",
+      "shoulder": "red_concrete",
+      "leg": "blue_concrete",
+      "joint": "black_concrete",
+      "accent": "white_concrete",
+      "antenna": "black_concrete",
+      "weapon": "white_concrete",
+      "detail_dark": "black_concrete"
+    },
+    "weapon": "web_shooter",
+    "height_blocks": 22,
+    "design_note": "以红蓝紧身战衣为主体，白色大眼面罩与黑色蛛网纹突出经典蜘蛛侠造型。",
+    "tags": [
+      "superhero",
+      "red_blue_suit",
+      "web_pattern",
+      "web_shooter",
+      "masked"
+    ]
+  },
+  "origin": [
+    -580,
+    80,
+    -800
+  ],
+  "cmds_total": 385,
+  "rcon_ok": 385,
+  "palette_resolved": {
+    "leg": "blue_concrete",
+    "body": "red_concrete",
+    "accent": "white_concrete",
+    "head": "red_concrete",
+    "mask": "white_concrete",
+    "antenna": "black_concrete",
+    "arm": "red_concrete",
+    "shoulder": "red_concrete",
+    "weapon": "white_concrete",
+    "joint": "black_concrete",
+    "detail_dark": "black_concrete",
+    "torso": "blue_concrete"
+  },
+  "ts": "20260524-123154"
+}
