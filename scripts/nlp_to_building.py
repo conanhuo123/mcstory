@@ -125,6 +125,11 @@ def spec_to_builder(spec, origin):
     palette = dict(ref['palette'])
     palette.update(spec.get('palette_override', {}))
     L, H, W = ProportionFrame.from_real(spec['real_dim_m'], scale=1.0)
+    # 比例守卫: 列柱式建筑(神庙/柱廊)应矮宽, GPT 常把 height 给太大 → 像高厅不像神庙。
+    # 柱高约 0.5~0.6×短边; gable_roof 还会在墙顶再加坡, 故 clamp 墙体 H。
+    _mods = spec.get('modules', [])
+    if 'Body.column_grid' in _mods:
+        H = min(H, max(8, round(min(L, W) * 0.55)))
     b = VoxelBuilder(origin)
 
     DISPATCH = {
