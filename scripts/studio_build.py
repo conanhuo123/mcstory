@@ -19,6 +19,7 @@ t0 = time.time()
 with MCRcon('127.0.0.1', 'mcstory123', port=25575) as r:
     print('range forceload...', flush=True)
     r.command(f'forceload add {x0} {z0} {x1} {z1}')
+    time.sleep(3)  # 等区块真加载完再 fill, 否则远坐标 fill 落空→无平台→建筑下沉→gate1 FAIL
     # 1) 清空上方 (y101..152), 分层 chunk (<32768/fill: 100x100x3=30000)
     print('clearing air above...', flush=True)
     y = FLOOR_Y + 1
