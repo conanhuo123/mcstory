@@ -132,35 +132,77 @@ def builder_to_cmds(b):
         cmds.append(f"setblock {x} {y} {z} {block}")
     return cmds
 
-def run_via_rcon(cmds, host='127.0.0.1', port=25575, password='mcstory123'):
+def probe_real_ground(r, ox, oz):
+    """探测 (ox,oz) 实际地面 y (从 95 往下扫第一个非 air)"""
+    for y in range(95, 50, -1):
+        o = r.command(f'execute if block {ox} {y} {oz} air').strip()
+        if 'Test passed' not in o:
+            return y
+    return None
+
+def ground_prep(r, origin, L, W, margin=3):
+    """5 点采样 footprint 实际地面 + 外扩 margin grass platform + 清上空.
+    返 build_origin_y = target_ground + 1 (build 从此 y 开始)."""
+    ox, _, oz = origin
+    half_l, half_w = L//2, W//2
+    samples = [(ox, oz), (ox-half_l, oz-half_w), (ox+half_l, oz-half_w),
+               (ox-half_l, oz+half_w), (ox+half_l, oz+half_w)]
+    grounds = [probe_real_ground(r, x, z) for x,z in samples]
+    grounds = [g for g in grounds if g is not None]
+    if not grounds:
+        return origin[1]  # fallback
+    target = max(grounds)
+    # fill grass platform 外扩 margin
+    r.command(f"fill {ox-half_l-margin} {target} {oz-half_w-margin} {ox+half_l+margin} {target} {oz+half_w+margin} grass_block")
+    # 清上空 (avoid 树/草杂物)
+    r.command(f"fill {ox-half_l-margin} {target+1} {oz-half_w-margin} {ox+half_l+margin} {target+25} {oz+half_w+margin} air")
+    return target + 1
+
+def run_via_rcon(cmds, host='127.0.0.1', port=25575, password='mcstory123', prep_origin=None, prep_bbox=None):
+    """跑 cmds. 若 prep_origin+prep_bbox 给, 先垫平 + 返 (ok, adjusted_origin_y)."""
     ok = 0
+    adjusted_y = None
     with MCRcon(host, password, port=port) as r:
+        if prep_origin and prep_bbox:
+            L, _, W = prep_bbox
+            adjusted_y = ground_prep(r, prep_origin, L, W)
         for c in cmds:
             try:
                 r.command(c)
                 ok += 1
             except: pass
-    return ok
+    return ok, adjusted_y
 
-def end_to_end(prompt, origin=(-300, 80, -300)):
-    print(f"[1/4] NLP→spec: '{prompt}'")
+def end_to_end(prompt, origin=(-300, 80, -300), prep_ground=True):
+    print(f"[1/5] NLP→spec: '{prompt}'")
     spec = nlp_to_spec(prompt)
     if not spec or 'error' in spec:
         print(f"❌ spec error: {spec}"); return None
     print(json.dumps(spec, ensure_ascii=False, indent=2))
 
-    print(f"\n[2/4] spec→builder @ origin {origin}")
+    print(f"\n[2/5] spec→builder @ origin {origin} (preview, will adjust y)")
+    # 先用 origin 占位算 bbox
+    b_tmp, palette, (L, H, W) = spec_to_builder(spec, origin)
+    print(f"   bbox preview {L}x{H}x{W}")
+
+    if prep_ground:
+        print(f"\n[3/5] probe real ground + lay grass platform...")
+        with MCRcon('127.0.0.1','mcstory123',port=25575) as r:
+            real_y = ground_prep(r, origin, L, W)
+        if real_y and real_y != origin[1]:
+            origin = (origin[0], real_y, origin[2])
+            print(f"   adjusted origin → {origin} (grass platform laid)")
+
+    # 真重 build 用新 origin
     b, palette, (L, H, W) = spec_to_builder(spec, origin)
     cmds = builder_to_cmds(b)
-    print(f"   {len(cmds)} blocks, bbox {L}x{H}x{W}")
-
-    print(f"\n[3/4] RCON build...")
+    print(f"\n[4/5] RCON build {len(cmds)} blocks...")
     t0 = time.time()
-    ok = run_via_rcon(cmds)
+    ok, _ = run_via_rcon(cmds)
     dt = time.time() - t0
     print(f"   {ok}/{len(cmds)} cmds OK in {dt:.1f}s ({100*ok/max(1,len(cmds)):.1f}%)")
 
-    print(f"\n[4/4] save result")
+    print(f"\n[5/5] save result")
     ts = time.strftime('%Y%m%d-%H%M%S')
     out = {
         'prompt': prompt,
