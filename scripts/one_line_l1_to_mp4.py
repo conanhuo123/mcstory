@@ -46,36 +46,53 @@ def route(p):
         style = 'birch'; name = f"{style}_{typ}_{typ}5"
     return name
 
-name = route(prompt)
-print(f"[route] '{prompt}' → L1精模 {name}", flush=True)
+# 优先 L1.1 Mojang 地标精模 (overworld 可放且好看的安全集), 否则 L1.2 minecolonies
+import structure_lookup
+LANDMARKS = {  # mc 原生 structure → 尺寸估算 (避开需水/下界/末地/地下的)
+    'minecraft:mansion': 55, 'minecraft:desert_pyramid': 21, 'minecraft:jungle_pyramid': 12,
+    'minecraft:igloo': 8, 'minecraft:pillager_outpost': 14, 'minecraft:swamp_hut': 8, 'minecraft:trail_ruins': 16,
+}
+sid = structure_lookup.route(prompt)
+use_landmark = sid in LANDMARKS
+if use_landmark:
+    bsz = LANDMARKS[sid]; label = sid
+else:
+    name = route(prompt); label = name
+    SIZE = {'citizen':14, 'farmer':32, 'guardtower':12, 'barracks':28, 'warehouse':28, 'townhall':40}
+    bsz = SIZE.get(name.split('_')[1], 34)
+print(f"[route] '{prompt}' → {('L1.1地标 '+sid) if use_landmark else ('L1.2精模 '+name)}", flush=True)
 
-# 1) 清平整 studio 地台 (120x120) + 放置精模
-HALF = 60
-print(f"[1/3] clear studio @ {cx},{cz} + place {name}", flush=True)
+# 1) 清平整 studio 地台 (必须容纳 orbit 半径 bsz*0.95+12, 否则相机转出清空区) + 放置
+HALF = max(60, int(bsz * 0.95) + 26)
+off = bsz // 2
+px, pz = cx - off, cz - off
+print(f"[1/3] clear studio @ {cx},{cz} (HALF={HALF}) + place {label}", flush=True)
 with MCRcon('127.0.0.1','mcstory123',port=25575) as r:
     r.command(f'forceload add {cx-HALF} {cz-HALF} {cx+HALF} {cz+HALF}')
     y = FLOOR_Y + 1
-    while y <= 150:
+    while y <= 152:
         r.command(f'fill {cx-HALF} {y} {cz-HALF} {cx+HALF} {y} {cz+HALF} air'); y += 1
     r.command(f'fill {cx-HALF} 96 {cz-HALF} {cx+HALF} 99 {cz+HALF} stone')
     r.command(f'fill {cx-HALF} {FLOOR_Y} {cz-HALF} {cx+HALF} {FLOOR_Y} {cz+HALF} grass_block')
-# 按类型估算精模尺寸 → 自适应居中放置 + 后面 orbit 半径
-SIZE = {'citizen':14, 'farmer':32, 'guardtower':12, 'barracks':28, 'warehouse':28, 'townhall':40}
-btype = name.split('_')[1]
-bsz = SIZE.get(btype, 34)
-off = bsz // 2
-px, pz = cx - off, cz - off
-rp = subprocess.run([VENV, 'scripts/nbt_importer.py', 'place', name, str(px), str(FLOOR_Y+1), str(pz)],
-                    capture_output=True, text=True, timeout=120)
-print(rp.stdout[-200:], flush=True)
-if 'Loaded' not in rp.stdout and 'placed' not in rp.stdout.lower():
-    print("PLACE FAILED:", rp.stderr[-200:], flush=True); sys.exit(1)
+
+if use_landmark:
+    res = str(structure_lookup.place_structure(sid, (px, FLOOR_Y + 1, pz)))
+    print("[place L1.1]", res[-140:], flush=True)
+    if 'Generated' not in res:
+        print("STRUCTURE PLACE FAILED:", res, flush=True); sys.exit(1)
+else:
+    rp = subprocess.run([VENV, 'scripts/nbt_importer.py', 'place', name, str(px), str(FLOOR_Y+1), str(pz)],
+                        capture_output=True, text=True, timeout=120)
+    print(rp.stdout[-200:], flush=True)
+    if 'Loaded' not in rp.stdout and 'placed' not in rp.stdout.lower():
+        print("PLACE FAILED:", rp.stderr[-200:], flush=True); sys.exit(1)
 time.sleep(2)
 
 # 2) 环绕运镜
 ccx, ccy, ccz = cx, FLOOR_Y + max(8, int(bsz*0.35)), cz
 radius = max(int(bsz*0.95) + 12, 20)  # 半径随精模尺寸自适应
-outdir = f"outputs/l1auto_{name}_{ts}"
+_slug = label.replace('minecraft:', '').replace(':', '_')
+outdir = f"outputs/l1auto_{_slug}_{ts}"
 print(f"[2/3] orbit center({ccx},{ccy},{ccz}) r={radius}", flush=True)
 r2 = subprocess.run(['node', 'scripts/orbit_video.js', str(ccx), str(ccy), str(ccz), str(radius), "36", outdir],
                     capture_output=True, text=True, env=dict(os.environ, CHROME_PATH=CHROME), timeout=400)
