@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "mcstory": {
+      "command": ".venv/bin/python",
+      "args": ["mcp_server/mcstory_server.py"],
+      "cwd": "/Users/coco/mcstory"
+    }
+  }
+}
