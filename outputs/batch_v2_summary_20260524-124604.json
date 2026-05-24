@@ -1,0 +1,113 @@
+{
+  "duration_s": 1018.3950040340424,
+  "results": [
+    {
+      "idx": 2,
+      "name": "kinkaku_pavilion",
+      "sid": "japanese_kinkakuji_golden_pavilion_v1",
+      "cmds": 16374,
+      "audit": "PARTIAL",
+      "origin": [
+        -730,
+        67,
+        -650
+      ]
+    },
+    {
+      "idx": 3,
+      "name": "forbidden_palace_hall",
+      "sid": "taihe_dian_forbidden_city_v1",
+      "cmds": 39170,
+      "audit": "PARTIAL",
+      "origin": [
+        -660,
+        70,
+        -650
+      ]
+    },
+    {
+      "idx": 4,
+      "name": "maya_pyramid",
+      "sid": "mayan_stepped_pyramid_altar_v1",
+      "cmds": 28054,
+      "audit": "PASS",
+      "origin": [
+        -590,
+        69,
+        -650
+      ]
+    },
+    {
+      "idx": 5,
+      "name": "viking_longhouse",
+      "sid": "viking_longhouse_v1_b1",
+      "cmds": 2294,
+      "audit": "PASS",
+      "origin": [
+        -520,
+        72,
+        -650
+      ]
+    },
+    {
+      "idx": 6,
+      "name": "desert_oasis_market",
+      "sid": "desert_oasis_market_v1_b1",
+      "cmds": 15719,
+      "audit": "PASS",
+      "origin": [
+        -450,
+        69,
+        -650
+      ]
+    },
+    {
+      "idx": 7,
+      "name": "steampunk_factory",
+      "sid": "steampunk_factory_v1_b1",
+      "cmds": 13766,
+      "audit": "PASS",
+      "origin": [
+        -380,
+        65,
+        -650
+      ]
+    },
+    {
+      "idx": 8,
+      "name": "medieval_fortress",
+      "sid": "gothic_stone_fortress_moat_v1",
+      "cmds": 17527,
+      "audit": "PASS",
+      "origin": [
+        -310,
+        96,
+        -650
+      ]
+    },
+    {
+      "idx": 9,
+      "name": "suzhou_garden",
+      "sid": "suzhou_garden_rockery_pond_moongate_redwall_v1",
+      "cmds": 11710,
+      "audit": "PASS",
+      "origin": [
+        -240,
+        96,
+        -650
+      ]
+    },
+    {
+      "idx": 10,
+      "name": "aurora_log_cabin",
+      "sid": "nordic_aurora_cabin_v1_b1",
+      "cmds": 1346,
+      "audit": "PASS",
+      "origin": [
+        -170,
+        96,
+        -650
+      ]
+    }
+  ]
+}
