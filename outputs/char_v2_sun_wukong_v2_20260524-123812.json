@@ -1,0 +1,59 @@
+{
+  "prompt": "孙悟空, 黄色战衣, 红色围身, 金箍棒高举, 头戴金箍, 红色披风",
+  "spec": {
+    "id": "sun_wukong_v2",
+    "name": "孙悟空",
+    "palette": {
+      "head": "brown_terracotta",
+      "mask": "white_terracotta",
+      "body": "yellow_concrete",
+      "torso": "yellow_terracotta",
+      "arm": "yellow_concrete",
+      "shoulder": "gold_block",
+      "leg": "yellow_concrete",
+      "joint": "black_terracotta",
+      "accent": "red_concrete",
+      "antenna": "gold_block",
+      "weapon": "gold_block",
+      "detail_dark": "black_concrete"
+    },
+    "face_pattern": "monkey",
+    "chest_emblem": "tiger_stripe",
+    "weapon": "monkey_staff_v2",
+    "pose": "staff_raised",
+    "cape": true,
+    "cape_color": "red_concrete",
+    "design_note": "以黄色战衣和红色围身突出齐天大圣形象，金箍棒高举并配金箍与红披风增强威武感。",
+    "tags": [
+      "孙悟空",
+      "齐天大圣",
+      "黄色战衣",
+      "金箍棒",
+      "红披风",
+      "神话英雄"
+    ]
+  },
+  "origin": [
+    -600,
+    80,
+    -900
+  ],
+  "cmds_total": 1048,
+  "rcon_ok": 1048,
+  "palette_resolved": {
+    "leg": "yellow_concrete",
+    "body": "yellow_concrete",
+    "accent": "red_concrete",
+    "head": "brown_terracotta",
+    "mask": "white_terracotta",
+    "antenna": "gold_block",
+    "arm": "yellow_concrete",
+    "shoulder": "gold_block",
+    "weapon": "gold_block",
+    "joint": "black_terracotta",
+    "detail_dark": "black_concrete",
+    "torso": "yellow_terracotta"
+  },
+  "pose": "staff_raised",
+  "ts": "20260524-123812"
+}

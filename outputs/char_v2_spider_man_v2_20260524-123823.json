@@ -1,0 +1,59 @@
+{
+  "prompt": "蜘蛛侠, 红蓝紧身衣, 蛛网面罩, 胸口蛛形, 蛛丝发射器, 蹲伏起跳",
+  "spec": {
+    "id": "spider_man_v2",
+    "name": "蜘蛛侠",
+    "palette": {
+      "head": "red_concrete",
+      "mask": "white_concrete",
+      "body": "red_concrete",
+      "torso": "blue_concrete",
+      "arm": "red_concrete",
+      "shoulder": "red_concrete",
+      "leg": "blue_concrete",
+      "joint": "black_concrete",
+      "accent": "black_concrete",
+      "antenna": "red_concrete",
+      "weapon": "white_concrete",
+      "detail_dark": "black_concrete"
+    },
+    "face_pattern": "spider_mask",
+    "chest_emblem": "spider",
+    "weapon": "web_shooter_v2",
+    "pose": "crouch_pounce",
+    "cape": false,
+    "cape_color": null,
+    "design_note": "35块高红蓝紧身战衣比例，头部蛛网面罩与胸口黑色蛛形徽记突出，双腕配置蛛丝发射器并采用蹲伏起跳姿态。",
+    "tags": [
+      "superhero",
+      "spider_theme",
+      "red_blue_suit",
+      "web_mask",
+      "agile",
+      "crouch_pounce"
+    ]
+  },
+  "origin": [
+    -570,
+    80,
+    -900
+  ],
+  "cmds_total": 1032,
+  "rcon_ok": 1032,
+  "palette_resolved": {
+    "leg": "blue_concrete",
+    "body": "red_concrete",
+    "accent": "black_concrete",
+    "head": "red_concrete",
+    "mask": "white_concrete",
+    "antenna": "red_concrete",
+    "arm": "red_concrete",
+    "shoulder": "red_concrete",
+    "weapon": "white_concrete",
+    "joint": "black_concrete",
+    "detail_dark": "black_concrete",
+    "torso": "blue_concrete"
+  },
+  "pose": "crouch_pounce",
+  "ts": "20260524-123823"
+}
