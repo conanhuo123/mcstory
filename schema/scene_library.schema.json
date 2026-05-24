@@ -1176,6 +1176,77 @@
       "cmds_total": 6128,
       "rcon_ok": 6128,
       "screenshots": []
+    },
+    {
+      "id": "glass_curtain_wall_skyscraper_v1",
+      "name": "50米玻璃幕墙摩天楼",
+      "origin": [
+        -440,
+        80,
+        -300
+      ],
+      "biome": "plains",
+      "build_cmds": [],
+      "default_camera": "45deg",
+      "tags": [
+        "摩天楼",
+        "玻璃幕墙",
+        "现代建筑",
+        "高层",
+        "nlp_generated"
+      ],
+      "template": "nlp_to_building",
+      "source": "nlp_glass_curtain_wall_skyscraper_v1_20260524-113827.json",
+      "preset_base": "skyscraper",
+      "real_dim_m": [
+        18,
+        50,
+        18
+      ],
+      "design_note": "以通透玻璃幕墙和金属框架塑造一座简洁挺拔的50米现代摩天楼。",
+      "quality_gate": {
+        "ground": "FAIL",
+        "proportion": "PASS (h/w=2.68)",
+        "detail": "FAIL (9 unique palette blocks)"
+      },
+      "cmds_total": 2714,
+      "rcon_ok": 2714
+    },
+    {
+      "id": "tang_red_wooden_pagoda_v1",
+      "name": "唐代红色三层木塔",
+      "origin": [
+        -380,
+        80,
+        -300
+      ],
+      "biome": "plains",
+      "build_cmds": [],
+      "default_camera": "45deg",
+      "tags": [
+        "唐代",
+        "红色木塔",
+        "三层",
+        "飞檐",
+        "香炉",
+        "nlp_generated"
+      ],
+      "template": "nlp_to_building",
+      "source": "nlp_tang_red_wooden_pagoda_v1_20260524-113809.json",
+      "preset_base": "temple",
+      "real_dim_m": [
+        18,
+        28,
+        18
+      ],
+      "design_note": "以红墙木柱和层层外挑飞檐塑造唐代三层塔，中央用铁色与微光方块表现香炉焦点。",
+      "quality_gate": {
+        "ground": "FAIL",
+        "proportion": "PASS (h/w=1.53)",
+        "detail": "FAIL (10 unique palette blocks)"
+      },
+      "cmds_total": 3436,
+      "rcon_ok": 3436
     }
   ]
 }
