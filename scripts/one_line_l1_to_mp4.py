@@ -48,18 +48,18 @@ def route(p):
 
 # 优先 L1.1 Mojang 地标精模 (overworld 可放且好看的安全集), 否则 L1.2 minecolonies
 import structure_lookup
-LANDMARKS = {  # mc 原生 structure → 尺寸估算 (避开需水/下界/末地/地下的)
-    'minecraft:mansion': 55, 'minecraft:desert_pyramid': 21, 'minecraft:jungle_pyramid': 12,
-    'minecraft:igloo': 8, 'minecraft:pillager_outpost': 14, 'minecraft:swamp_hut': 8, 'minecraft:trail_ruins': 16,
+LANDMARKS = {  # mc 原生 structure → (占地宽, 高度) 估算 (避开需水/下界/末地/地下的)
+    'minecraft:mansion': (55, 22), 'minecraft:desert_pyramid': (21, 13), 'minecraft:jungle_pyramid': (12, 11),
+    'minecraft:igloo': (8, 5), 'minecraft:pillager_outpost': (14, 16), 'minecraft:swamp_hut': (8, 6), 'minecraft:trail_ruins': (16, 5),
 }
 sid = structure_lookup.route(prompt)
 use_landmark = sid in LANDMARKS
 if use_landmark:
-    bsz = LANDMARKS[sid]; label = sid
+    bsz, bh = LANDMARKS[sid]; label = sid
 else:
     name = route(prompt); label = name
-    SIZE = {'citizen':14, 'farmer':32, 'guardtower':12, 'barracks':28, 'warehouse':28, 'townhall':40}
-    bsz = SIZE.get(name.split('_')[1], 34)
+    SIZE = {'citizen':(14,18), 'farmer':(32,8), 'guardtower':(12,20), 'barracks':(28,14), 'warehouse':(28,12), 'townhall':(40,16)}
+    bsz, bh = SIZE.get(name.split('_')[1], (34, 16))
 print(f"[route] '{prompt}' → {('L1.1地标 '+sid) if use_landmark else ('L1.2精模 '+name)}", flush=True)
 
 # 1) 清平整 studio 地台 (必须容纳 orbit 半径 bsz*0.95+12, 否则相机转出清空区) + 放置
@@ -89,8 +89,8 @@ else:
 time.sleep(2)
 
 # 2) 环绕运镜
-ccx, ccy, ccz = cx, FLOOR_Y + max(8, int(bsz*0.35)), cz
-radius = max(int(bsz*0.95) + 12, 20)  # 半径随精模尺寸自适应
+ccx, ccy, ccz = cx, FLOOR_Y + max(6, int(bh*0.55)), cz  # 相机对准建筑中高(用高度,非占地宽)
+radius = max(int(bsz*0.95) + 12, 20)  # 半径随占地宽自适应
 _slug = label.replace('minecraft:', '').replace(':', '_')
 outdir = f"outputs/l1auto_{_slug}_{ts}"
 print(f"[2/3] orbit center({ccx},{ccy},{ccz}) r={radius}", flush=True)
