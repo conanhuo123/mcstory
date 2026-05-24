@@ -1247,6 +1247,402 @@
       },
       "cmds_total": 3436,
       "rcon_ok": 3436
+    },
+    {
+      "id": "french_gothic_cathedral_v1",
+      "name": "中世纪法国哥特双塔教堂",
+      "origin": [
+        -800,
+        96,
+        -450
+      ],
+      "bbox": [
+        46,
+        34,
+        24
+      ],
+      "preset_base": "temple",
+      "real_dim_m": [
+        46,
+        34,
+        24
+      ],
+      "tags": [
+        "哥特式",
+        "中世纪法国",
+        "双塔尖顶",
+        "玫瑰花窗",
+        "教堂",
+        "batch_v1",
+        "nlp_generated"
+      ],
+      "design_note": "以高耸双塔和尖顶强化哥特垂直感，正立面用彩色玫瑰花窗作为视觉中心。",
+      "cmds_total": 14342,
+      "rcon_ok": 14342,
+      "quality_gate": {
+        "ground": "PASS",
+        "proportion": "PASS",
+        "overall": "PASS"
+      },
+      "template": "nlp_to_building",
+      "source": "outputs/nlp_french_gothic_cathedral_v1_*.json"
+    },
+    {
+      "id": "japanese_kinkakuji_v1",
+      "name": "日本金阁寺与中央池塘",
+      "origin": [
+        -750,
+        96,
+        -450
+      ],
+      "bbox": [
+        48,
+        24,
+        38
+      ],
+      "preset_base": "temple",
+      "real_dim_m": [
+        48,
+        24,
+        38
+      ],
+      "tags": [
+        "日本寺院",
+        "金色阁楼",
+        "三层建筑",
+        "中央池塘",
+        "庭园景观",
+        "batch_v1",
+        "nlp_generated"
+      ],
+      "design_note": "以三层金色楼阁为主体，配深色木屋顶与圆形中央池塘，营造金阁寺倒映水面的典雅景观。",
+      "cmds_total": 6708,
+      "rcon_ok": 6708,
+      "quality_gate": {
+        "ground": "PASS",
+        "proportion": "PASS",
+        "overall": "PASS"
+      },
+      "template": "nlp_to_building",
+      "source": "outputs/nlp_japanese_kinkakuji_v1_*.json"
+    },
+    {
+      "id": "taihe_hall_forbidden_city_v1",
+      "name": "北京故宫太和殿",
+      "origin": [
+        -700,
+        96,
+        -450
+      ],
+      "bbox": [
+        50,
+        22,
+        30
+      ],
+      "preset_base": "temple",
+      "real_dim_m": [
+        50,
+        22,
+        30
+      ],
+      "tags": [
+        "中式宫殿",
+        "故宫",
+        "太和殿",
+        "红柱",
+        "黄琉璃瓦",
+        "龙脊",
+        "batch_v1",
+        "nlp_generated"
+      ],
+      "design_note": "以层级台基、红色立柱和金黄色重檐屋顶表现太和殿的皇家气势，并用雕刻装饰带暗示龙脊与宫廷纹样。",
+      "cmds_total": 9402,
+      "rcon_ok": 9402,
+      "quality_gate": {
+        "ground": "PASS",
+        "proportion": "PASS",
+        "overall": "PASS"
+      },
+      "template": "nlp_to_building",
+      "source": "outputs/nlp_taihe_hall_forbidden_city_v1_*.json"
+    },
+    {
+      "id": "maya_step_pyramid_v1",
+      "name": "九层玛雅金字塔祭坛",
+      "origin": [
+        -650,
+        72,
+        -450
+      ],
+      "bbox": [
+        45,
+        24,
+        45
+      ],
+      "preset_base": "temple",
+      "real_dim_m": [
+        45,
+        24,
+        45
+      ],
+      "tags": [
+        "玛雅",
+        "金字塔",
+        "九层阶梯",
+        "石祭坛",
+        "古代神庙",
+        "batch_v1",
+        "nlp_generated"
+      ],
+      "design_note": "以九层递收阶梯塑造玛雅金字塔轮廓，并在顶层设置醒目的石质祭坛作为中心仪式空间。",
+      "cmds_total": 11944,
+      "rcon_ok": 11944,
+      "quality_gate": {
+        "ground": "FAIL",
+        "proportion": "PASS",
+        "overall": "PARTIAL"
+      },
+      "template": "nlp_to_building",
+      "source": "outputs/nlp_maya_step_pyramid_v1_*.json"
+    },
+    {
+      "id": "viking_longhouse_v1",
+      "name": "维京长屋",
+      "origin": [
+        -600,
+        73,
+        -450
+      ],
+      "bbox": [
+        28,
+        10,
+        12
+      ],
+      "preset_base": "temple",
+      "real_dim_m": [
+        28,
+        10,
+        12
+      ],
+      "tags": [
+        "维京",
+        "长屋",
+        "木建筑",
+        "曲顶",
+        "火坑",
+        "烟囱",
+        "batch_v1",
+        "nlp_generated"
+      ],
+      "design_note": "以粗木梁和深色木质曲顶塑造北欧维京长屋气质，中央用发光核心象征火坑并在屋脊设置烟囱意象。",
+      "cmds_total": 1204,
+      "rcon_ok": 1204,
+      "quality_gate": {
+        "ground": "PASS",
+        "proportion": "PASS",
+        "overall": "PASS"
+      },
+      "template": "nlp_to_building",
+      "source": "outputs/nlp_viking_longhouse_v1_*.json"
+    },
+    {
+      "id": "desert_oasis_market_v1",
+      "name": "沙漠绿洲集市",
+      "origin": [
+        -550,
+        81,
+        -450
+      ],
+      "bbox": [
+        45,
+        14,
+        35
+      ],
+      "preset_base": "temple",
+      "real_dim_m": [
+        45,
+        14,
+        35
+      ],
+      "tags": [
+        "desert",
+        "oasis",
+        "central_well",
+        "tent_market",
+        "palm_trees",
+        "batch_v1",
+        "nlp_generated"
+      ],
+      "design_note": "以圆形沙地广场组织中央水井、低矮集市摊棚与棕榈点缀，营造沙漠中热闹而清凉的绿洲节点。",
+      "cmds_total": 3956,
+      "rcon_ok": 3956,
+      "quality_gate": {
+        "ground": "PASS",
+        "proportion": "PASS",
+        "overall": "PASS"
+      },
+      "template": "nlp_to_building",
+      "source": "outputs/nlp_desert_oasis_market_v1_*.json"
+    },
+    {
+      "id": "steampunk_factory_v1",
+      "name": "蒸汽朋克工厂",
+      "origin": [
+        -500,
+        96,
+        -450
+      ],
+      "bbox": [
+        36,
+        22,
+        24
+      ],
+      "preset_base": "skyscraper",
+      "real_dim_m": [
+        36,
+        22,
+        24
+      ],
+      "tags": [
+        "蒸汽朋克",
+        "工厂",
+        "黄铜管道",
+        "蒸汽机",
+        "大齿轮",
+        "工业风",
+        "batch_v1",
+        "nlp_generated"
+      ],
+      "design_note": "以石砖厂房为主体，使用金块模拟黄铜管道与齿轮装饰，铁块和发光核心表现蒸汽机的机械动力感。",
+      "cmds_total": 3637,
+      "rcon_ok": 3637,
+      "quality_gate": {
+        "ground": "PASS",
+        "proportion": "PASS",
+        "overall": "PASS"
+      },
+      "template": "nlp_to_building",
+      "source": "outputs/nlp_steampunk_factory_v1_*.json"
+    },
+    {
+      "id": "gothic_stone_fortress_v1",
+      "name": "哥特石头要塞",
+      "origin": [
+        -450,
+        90,
+        -450
+      ],
+      "bbox": [
+        45,
+        24,
+        35
+      ],
+      "preset_base": "temple",
+      "real_dim_m": [
+        45,
+        24,
+        35
+      ],
+      "tags": [
+        "哥特",
+        "石头要塞",
+        "四角塔楼",
+        "吊桥",
+        "护城河",
+        "城墙",
+        "batch_v1",
+        "nlp_generated"
+      ],
+      "design_note": "以厚重石砖城墙和四角高塔构成防御核心，正门用木质吊桥跨越护城河并加入哥特雕刻装饰。",
+      "cmds_total": 9388,
+      "rcon_ok": 9388,
+      "quality_gate": {
+        "ground": "PASS",
+        "proportion": "PASS",
+        "overall": "PASS"
+      },
+      "template": "nlp_to_building",
+      "source": "outputs/nlp_gothic_stone_fortress_v1_*.json"
+    },
+    {
+      "id": "suzhou_garden_rockery_pond_v1",
+      "name": "苏州园林假山池塘月洞门",
+      "origin": [
+        -400,
+        84,
+        -450
+      ],
+      "bbox": [
+        36,
+        12,
+        28
+      ],
+      "preset_base": "temple",
+      "real_dim_m": [
+        36,
+        12,
+        28
+      ],
+      "tags": [
+        "suzhou_garden",
+        "rockery",
+        "pond",
+        "moon_gate",
+        "red_wall",
+        "chinese_courtyard",
+        "batch_v1",
+        "nlp_generated"
+      ],
+      "design_note": "以红墙围合江南园林空间，用圆形中庭表现池塘与月洞门意象，并以苔石砖雕刻带塑造假山景观。",
+      "cmds_total": 2672,
+      "rcon_ok": 2672,
+      "quality_gate": {
+        "ground": "PASS",
+        "proportion": "PASS",
+        "overall": "PASS"
+      },
+      "template": "nlp_to_building",
+      "source": "outputs/nlp_suzhou_garden_rockery_pond_v1_*.json"
+    },
+    {
+      "id": "nordic_aurora_cabin_v1",
+      "name": "北欧极光木屋",
+      "origin": [
+        -350,
+        74,
+        -450
+      ],
+      "bbox": [
+        18,
+        10,
+        14
+      ],
+      "preset_base": "temple",
+      "real_dim_m": [
+        18,
+        10,
+        14
+      ],
+      "tags": [
+        "北欧",
+        "木屋",
+        "雪地",
+        "烟囱",
+        "玻璃天窗",
+        "极光氛围",
+        "batch_v1",
+        "nlp_generated"
+      ],
+      "design_note": "以深色木材和雪白屋檐塑造雪地北欧木屋，加入玻璃天窗与发光装饰表现极光夜色。",
+      "cmds_total": 942,
+      "rcon_ok": 942,
+      "quality_gate": {
+        "ground": "PASS",
+        "proportion": "PASS",
+        "overall": "PASS"
+      },
+      "template": "nlp_to_building",
+      "source": "outputs/nlp_nordic_aurora_cabin_v1_*.json"
     }
   ]
 }

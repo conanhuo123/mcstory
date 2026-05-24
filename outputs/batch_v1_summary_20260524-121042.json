@@ -1,0 +1,135 @@
+{
+  "duration_s": 767.254093170166,
+  "results": [
+    {
+      "idx": 1,
+      "name": "french_gothic_cathedral",
+      "sid": "french_gothic_cathedral_v1",
+      "cmds": 14342,
+      "audit": "PASS",
+      "origin": [
+        -800,
+        96,
+        -450
+      ],
+      "shot": true
+    },
+    {
+      "idx": 2,
+      "name": "kinkaku_pavilion",
+      "sid": "japanese_kinkakuji_v1",
+      "cmds": 6708,
+      "audit": "PASS",
+      "origin": [
+        -750,
+        96,
+        -450
+      ],
+      "shot": true
+    },
+    {
+      "idx": 3,
+      "name": "forbidden_palace_hall",
+      "sid": "taihe_hall_forbidden_city_v1",
+      "cmds": 9402,
+      "audit": "PASS",
+      "origin": [
+        -700,
+        96,
+        -450
+      ],
+      "shot": true
+    },
+    {
+      "idx": 4,
+      "name": "maya_pyramid",
+      "sid": "maya_step_pyramid_v1",
+      "cmds": 11944,
+      "audit": "PARTIAL",
+      "origin": [
+        -650,
+        72,
+        -450
+      ],
+      "shot": true
+    },
+    {
+      "idx": 5,
+      "name": "viking_longhouse",
+      "sid": "viking_longhouse_v1",
+      "cmds": 1204,
+      "audit": "PASS",
+      "origin": [
+        -600,
+        73,
+        -450
+      ],
+      "shot": true
+    },
+    {
+      "idx": 6,
+      "name": "desert_oasis_market",
+      "sid": "desert_oasis_market_v1",
+      "cmds": 3956,
+      "audit": "PASS",
+      "origin": [
+        -550,
+        81,
+        -450
+      ],
+      "shot": true
+    },
+    {
+      "idx": 7,
+      "name": "steampunk_factory",
+      "sid": "steampunk_factory_v1",
+      "cmds": 3637,
+      "audit": "PASS",
+      "origin": [
+        -500,
+        96,
+        -450
+      ],
+      "shot": true
+    },
+    {
+      "idx": 8,
+      "name": "medieval_fortress",
+      "sid": "gothic_stone_fortress_v1",
+      "cmds": 9388,
+      "audit": "PASS",
+      "origin": [
+        -450,
+        90,
+        -450
+      ],
+      "shot": true
+    },
+    {
+      "idx": 9,
+      "name": "suzhou_garden",
+      "sid": "suzhou_garden_rockery_pond_v1",
+      "cmds": 2672,
+      "audit": "PASS",
+      "origin": [
+        -400,
+        84,
+        -450
+      ],
+      "shot": true
+    },
+    {
+      "idx": 10,
+      "name": "aurora_log_cabin",
+      "sid": "nordic_aurora_cabin_v1",
+      "cmds": 942,
+      "audit": "PASS",
+      "origin": [
+        -350,
+        74,
+        -450
+      ],
+      "shot": true
+    }
+  ]
+}
