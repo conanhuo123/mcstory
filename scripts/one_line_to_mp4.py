@@ -30,7 +30,8 @@ if not new:
 d = json.load(open(new[-1]))
 ox, oy, oz = d['origin']; w, h, dd = d['bbox']
 ccx, ccy, ccz = ox + w/2, oy + h*0.5, oz + dd/2
-radius = max(w, dd) * 0.9 + 18
+# orbit 半径必须夹在 studio 平台内 (studio_build HALF=50 → 100x100), 否则相机转到未清地形
+radius = min(max(w, dd) * 0.75 + 12, 45)
 print(f"[2/3] orbit: center({ccx:.0f},{ccy:.0f},{ccz:.0f}) r={radius:.0f} bbox {w}x{h}x{dd}", flush=True)
 
 outdir = f"outputs/auto_{d.get('id','build')}_{ts}"

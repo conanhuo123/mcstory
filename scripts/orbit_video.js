@@ -56,7 +56,7 @@ await page.evaluate(()=>{const c=document.querySelector('canvas');if(c){c.style.
 
 for (let i=0;i<N;i++){
   const ang = 2*Math.PI*i/N;
-  const camx = CX + R*Math.cos(ang), camz = CZ + R*Math.sin(ang), camy = CY + R*0.5;
+  const camx = CX + R*Math.cos(ang), camz = CZ + R*Math.sin(ang), camy = CY + R*0.3;
   rcon.cmd(`tp orbitcam ${camx.toFixed(1)} ${camy.toFixed(1)} ${camz.toFixed(1)}`);
   await sleep(150);
   // 钉坐标 + 朝中心 + emit move (修复核心), 重复几次确保推送
